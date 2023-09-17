@@ -3,9 +3,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 enum ResponsiveSizes { s, m, l, xl }
 
-/// Для адаптирования контента под размер страницы
 abstract class Responsive {
-  /// Вызывает коллбек текущего размера
   static T get<T>(
     BuildContext context, {
     required T Function() def,
