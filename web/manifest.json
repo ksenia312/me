@@ -1,0 +1,24 @@
+{
+  "name": "Xenikii",
+  "short_name": "Xenikii",
+  "version": "1.0.4.6",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fffbff",
+  "theme_color": "#fffbff",
+  "description": "Kseniia Flutter developer. Contacts and information",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

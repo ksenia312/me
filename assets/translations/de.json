@@ -1,0 +1,7 @@
+{
+  "greeting": "Mein Name ist Kseniia",
+  "greeting2": "Ich bin Flutter-Entwicklerin",
+  "aboutMe": "Lernen wir uns kennen! Mein Name ist Kseniia, ich programmiere seit meinem 15. Lebensjahr. Ich liebe Flutter und verwende es sowohl bei der Arbeit als auch als Hobby.",
+  "aboutMe2": "Ich habe Erfahrung in der Entwicklung von mobilen Apps und Websites mit Flutter Web. Darüber hinaus kenne ich mich bestens mit der Erstellung eines Backends in Dart unter Verwendung von PostgreSQL und TypeORM Conduit aus. Und schließlich bin ich gut darin, eine modulare Architektur mit Paketen für Dart und Flutter zu erstellen. Ich bin auch einfach gut.",
+  "aboutMeTitle": "Über mich"
+}

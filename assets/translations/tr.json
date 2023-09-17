@@ -1,0 +1,7 @@
+{
+  "greeting": "Benim adım Kseniia",
+  "greeting2": "Ben bir Flutter geliştiriciyim",
+  "aboutMe": "Birbirimizi tanıyalım! Benim adım Kseniia, 15 yaşından beri programlama yapıyorum. Flutter'ı çok seviyorum ve hem işte hem de hobi olarak kullanıyorum.",
+  "aboutMe2": "Flutter Web ile mobil uygulamalar ve web siteleri geliştirme konusunda deneyime sahibim. Ayrıca, PostgreSQL ve TypeORM Conduit kullanarak Dart ile backend oluşturma sürecini çok iyi biliyorum. Son olarak, Dart ve Flutter için paketler kullanarak modüler bir mimari oluşturma konusunda iyiyim. Ayrıca sadece iyiyim.",
+  "aboutMeTitle": "Hakkımda"
+}
