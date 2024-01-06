@@ -6,11 +6,11 @@ class ProjectSection extends StatelessWidget {
     super.key,
     required this.child,
     required this.title,
-    required this.subtitle,
+    this.subtitle,
     this.subtitle2,
     required this.backgroundColor,
-    required this.foregroundColor,
-    this.foregroundColor2,
+    required this.titleColor,
+    this.subtitleColor,
     this.reversed = false,
     this.imageFlex = 1,
     this.textFlex = 1,
@@ -19,11 +19,11 @@ class ProjectSection extends StatelessWidget {
 
   final Widget child;
   final String title;
-  final String subtitle;
+  final String? subtitle;
   final String? subtitle2;
   final Color backgroundColor;
-  final Color foregroundColor;
-  final Color? foregroundColor2;
+  final Color titleColor;
+  final Color? subtitleColor;
   final bool reversed;
   final int imageFlex;
   final int textFlex;
@@ -53,24 +53,27 @@ class ProjectSection extends StatelessWidget {
               Text(
                 title,
                 style: Responsive.titleStyleOf(context).copyWith(
-                  color: foregroundColor,
+                  color: titleColor,
                 ),
                 textAlign: align,
               ),
-              const SizedBox(height: 8.0),
-              Text(
-                subtitle,
-                style: Responsive.bodyStyleOf(context, bold: true)
-                    .copyWith(color: foregroundColor2 ?? foregroundColor),
-                textAlign: align,
-              ),
+              if (subtitle != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    subtitle!,
+                    style: Responsive.bodyStyleOf(context, bold: true)
+                        .copyWith(color: subtitleColor ?? titleColor),
+                    textAlign: align,
+                  ),
+                ),
               if (subtitle2 != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
                     subtitle2!,
                     style: Responsive.bodyStyleOf(context)
-                        .copyWith(color: foregroundColor2 ?? foregroundColor),
+                        .copyWith(color: subtitleColor ?? titleColor),
                     textAlign: align,
                   ),
                 ),

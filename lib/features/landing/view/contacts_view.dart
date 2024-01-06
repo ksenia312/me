@@ -25,7 +25,7 @@ class _ContactsView extends StatelessWidget {
         Flexible(
           child: ContactButton(
             image: Assets.icons.icLinkedIn.svg(),
-            url: 'https://www.linkedin.com/in/kseniia-nikitina-0770a324b/',
+            url: 'https://www.linkedin.com/in/xenikii',
             name: 'Linkedin',
             background: const Color(0xFF1594DE),
           ),
@@ -55,7 +55,7 @@ class _ContactsView extends StatelessWidget {
       ],
     );
     return Container(
-      color: Colors.redAccent,
+      color: Theme.of(context).colorScheme.tertiary,
       width: double.infinity,
       alignment: Alignment.center,
       height: Responsive.get(context, def: () => 250, s: () => 150),

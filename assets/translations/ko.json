@@ -3,5 +3,7 @@
   "greeting2": "저는 Flutter 개발자입니다",
   "aboutMe": "우리 서로 알아가봅시다! 제 이름은 Kseniia이며, 15세부터 프로그래밍을 시작했습니다. 저는 Flutter를 좋아하며 일과 취미로 모두 사용합니다.",
   "aboutMe2": "저는 Flutter Web을 사용하여 모바일 앱과 웹 사이트를 개발하는 경험이 있습니다. 또한 PostgreSQL 및 TypeORM Conduit를 사용하여 Dart로 백엔드를 생성하는 프로세스를 깊이 이해하고 있습니다. 그리고 Dart와 Flutter용 패키지를 사용하여 모듈식 아키텍처를 생성하는 데 능숙합니다. 저는 그냥 뛰어납니다.",
-  "aboutMeTitle": "나에 대해"
+  "aboutMeTitle": "나에 대해",
+  "cvTitle": "내 이력서에서 나에 대해 더 읽어보세요!",
+  "openCv": "이력서 열기"
 }

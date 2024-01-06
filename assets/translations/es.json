@@ -3,5 +3,7 @@
   "greeting2": "Soy desarrolladora de Flutter",
   "aboutMe": "¡Conozcámonos! Mi nombre es Kseniia, programo desde que tenía 15 años. Adoro Flutter y lo uso tanto en el trabajo como en mi tiempo libre.",
   "aboutMe2": "Tengo experiencia en el desarrollo de aplicaciones móviles y sitios web con Flutter Web. Además, estoy profundamente familiarizada con el proceso de creación de un backend en Dart usando PostgreSQL y TypeORM Conduit. Y, por último, soy buena en la creación de arquitectura modular utilizando paquetes para Dart y Flutter. También soy simplemente buena.",
-  "aboutMeTitle": "Acerca de mí"
+  "aboutMeTitle": "Acerca de mí",
+  "cvTitle": "¡Lea más sobre mí en mi currículum!",
+  "openCv": "Abrir currículum"
 }

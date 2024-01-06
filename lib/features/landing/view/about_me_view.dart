@@ -11,8 +11,8 @@ class _AboutMeView extends StatelessWidget {
       subtitle2: LocaleKeys.aboutMe2.tr(),
       textFlex: 2,
       backgroundColor: Colors.transparent,
-      foregroundColor: Theme.of(context).colorScheme.primary,
-      foregroundColor2: Theme.of(context).colorScheme.onBackground,
+      titleColor: Theme.of(context).colorScheme.primary,
+      subtitleColor: Theme.of(context).colorScheme.onBackground,
       padding: EdgeInsets.symmetric(
         horizontal: 16,
         vertical: Responsive.get(context, def: () => 50, s: () => 24),

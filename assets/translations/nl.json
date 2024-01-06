@@ -3,5 +3,7 @@
   "greeting2": "Ik ben een Flutter-ontwikkelaar",
   "aboutMe": "Laten we elkaar leren kennen! Mijn naam is Kseniia, ik programmeer sinds mijn 15e. Ik ben dol op Flutter en gebruik het zowel voor mijn werk als als hobby.",
   "aboutMe2": "Ik heb ervaring met het ontwikkelen van zowel mobiele apps als websites met Flutter Web. Bovendien ben ik diep bekend met het proces van het creëren van een backend in Dart met behulp van PostgreSQL en TypeORM Conduit. En tot slot, ik ben goed in het creëren van modulaire architectuur met behulp van pakketten voor Dart en Flutter. Ik ben gewoon goed.",
-  "aboutMeTitle": "Over mij"
+  "aboutMeTitle": "Over mij",
+  "cvTitle": "Lees meer over mij in mijn cv!",
+  "openCv": "CV openen"
 }

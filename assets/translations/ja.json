@@ -3,5 +3,7 @@
   "greeting2": "私はFlutter開発者です",
   "aboutMe": "お互いを知りましょう！ 私の名前はKseniiaで、15歳からプログラムをしています。私はFlutterが大好きで、仕事でも趣味でも使用しています。",
   "aboutMe2": "私はFlutter Webを使ったモバイルアプリとウェブサイトの開発経験があります。また、Dartを使用してPostgreSQLとTypeORM Conduitを使ったバックエンドを作成するプロセスにも詳しいです。最後に、DartとFlutterのパッケージを使用したモジュラーアーキテクチャの作成にも長けています。私は単に上手です。",
-  "aboutMeTitle": "私について"
+  "aboutMeTitle": "私について",
+  "cvTitle": "私の履歴書で私のことをもっと読んでください！",
+  "openCv": "履歴書を開く"
 }

@@ -6,5 +6,7 @@ abstract class  LocaleKeys {
   static const aboutMe = 'aboutMe';
   static const aboutMe2 = 'aboutMe2';
   static const aboutMeTitle = 'aboutMeTitle';
+  static const cvTitle = 'cvTitle';
+  static const openCv = 'openCv';
 
 }
