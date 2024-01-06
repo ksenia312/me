@@ -12,7 +12,7 @@ class LanguageButton extends StatefulWidget {
 class _LanguageButtonState extends State<LanguageButton> {
   final sortedLocales = supportedLocales
     ..sort(
-      (a, b) => b.languageCode.compareTo(a.languageCode),
+      (a, b) => a.languageCode.compareTo(b.languageCode),
     );
 
   BorderRadius get radius {
