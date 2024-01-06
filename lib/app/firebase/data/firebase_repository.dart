@@ -9,7 +9,7 @@ class FirebaseRepository {
 
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
-  Future<String> getDownloadUrl([String filePath='']) {
+  Future<String> getDownloadUrl([String filePath = '']) {
     return _storage.ref(filePath).getDownloadURL();
   }
 }
