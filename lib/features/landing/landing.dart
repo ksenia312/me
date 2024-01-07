@@ -1,16 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/common/utils/responsive_utils.dart';
-import 'package:me/features/download_file/domain/download_cv_service.dart';
+import 'package:me/features/download_file/presentation/download_cv_button.dart';
 import 'package:me/features/landing/components/language_button.dart';
 import 'package:me/generated/assets.gen.dart';
 import 'package:me/localization/codegen_loader.g.dart';
+import 'package:me/uikit/app_section.dart';
 import 'package:me/uikit/hovering_widget.dart';
 
 import 'components/flutter_image.dart';
 import 'components/greetings_text.dart';
 import 'components/contact_button.dart';
-import '../../uikit/project_section.dart';
 
 part 'view/about_me_view.dart';
 

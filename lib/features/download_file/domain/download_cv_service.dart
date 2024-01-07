@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:me/app/firebase/data/firebase_repository.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+
+import 'repository/download_file_repository.dart';
 
 class DownloadCvService extends ChangeNotifier {
   bool isLoading = false;
@@ -8,7 +9,7 @@ class DownloadCvService extends ChangeNotifier {
   Future<void> call() async {
     _setLoading(true);
     try {
-      final url = await FirebaseRepository.instance.getDownloadUrl(
+      final url = await DownloadFileRepository.instance.getDownloadUrl(
         'Kseniia_CV.pdf',
       );
       if (await canLaunchUrlString(url)) {
