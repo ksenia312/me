@@ -18,7 +18,7 @@ class _FlutterImageState extends State<FlutterImage>
     with SingleTickerProviderStateMixin {
   late final AnimationController controller = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 300),
+    duration: const Duration(milliseconds: 400),
   );
 
   @override
@@ -157,7 +157,7 @@ class _FlutterImageState extends State<FlutterImage>
       ).animate(
         CurvedAnimation(
           parent: controller,
-          curve: Curves.easeInOutCirc,
+          curve: Curves.fastLinearToSlowEaseIn,
         ),
       ),
       child: FlutterLogo(size: logoDimension),
