@@ -20,7 +20,7 @@ class _AboutMeView extends StatelessWidget {
               return AnimatedRotation(
                 turns: size,
                 duration: const Duration(milliseconds: 300),
-                child: Assets.icons.icBrain.svg(fit: BoxFit.cover),
+                child: Assets.icons.icHumanBrain.svg(fit: BoxFit.cover),
               );
             },
           ),

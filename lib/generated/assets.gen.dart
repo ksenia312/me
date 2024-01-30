@@ -27,14 +27,15 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/ic_brain.svg
-  SvgGenImage get icBrain => const SvgGenImage('assets/icons/ic_brain.svg');
-
   /// File path: assets/icons/ic_email.svg
   SvgGenImage get icEmail => const SvgGenImage('assets/icons/ic_email.svg');
 
   /// File path: assets/icons/ic_github.svg
   SvgGenImage get icGithub => const SvgGenImage('assets/icons/ic_github.svg');
+
+  /// File path: assets/icons/ic_human_brain.svg
+  SvgGenImage get icHumanBrain =>
+      const SvgGenImage('assets/icons/ic_human_brain.svg');
 
   /// File path: assets/icons/ic_linked_in.svg
   SvgGenImage get icLinkedIn =>
@@ -46,7 +47,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<SvgGenImage> get values =>
-      [icBrain, icEmail, icGithub, icLinkedIn, icTelegram];
+      [icEmail, icGithub, icHumanBrain, icLinkedIn, icTelegram];
 }
 
 class $AssetsImagesGen {
