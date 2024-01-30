@@ -12,12 +12,20 @@ class _GreetingsView extends StatelessWidget {
         def: () => const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [Flexible(child: GreetingsText()), FlutterImage()],
+          children: [
+            Flexible(child: GreetingsText()),
+            SizedBox(width: 32),
+            FlutterImage(),
+          ],
         ),
         s: () => const Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [GreetingsText(), FlutterImage()],
+          children: [
+            GreetingsText(),
+            SizedBox(height: 24),
+            FlutterImage(),
+          ],
         ),
       ),
     );

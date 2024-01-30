@@ -58,7 +58,7 @@ class _ContactsView extends StatelessWidget {
       color: Theme.of(context).colorScheme.tertiary,
       width: double.infinity,
       alignment: Alignment.center,
-      height: Responsive.get(context, def: () => 250, s: () => 150),
+      height: Responsive.get(context, def: () => 350, s: () => 150),
       child: contacts,
     );
   }

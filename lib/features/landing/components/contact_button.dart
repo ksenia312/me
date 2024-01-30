@@ -19,28 +19,47 @@ class ContactButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = Responsive.get(context, def: () => 50.0, m: () => 30.0);
-    return HoveringWidget(
-      elevation: 10,
-      activeColor: Colors.black12,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
-        color: background,
+    const largeIndent = 48.0;
+    const smallIndent = 32.0;
+
+    final idleSize = Responsive.get(context, def: () => 50.0, m: () => 30.0);
+    final activeSize = idleSize + largeIndent;
+    final inactiveSize = idleSize + smallIndent;
+
+    return SizedBox.square(
+      dimension: activeSize,
+      child: Center(
+        child: HoveringWidget(
+          elevation: 10,
+          activeColor: Colors.black12,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: background,
+          ),
+          onTap: () {
+            final uri = Uri.tryParse(url);
+            if (uri != null) {
+              launcher.launchUrl(uri);
+            }
+          },
+          builder: (context, isActive) {
+            final size = isActive ? activeSize : inactiveSize;
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 100),
+              height: size,
+              width: size,
+              child: FractionallySizedBox(
+                heightFactor: 0.6,
+                widthFactor: 0.6,
+                child: FittedBox(
+                  fit: BoxFit.contain,
+                  child: image,
+                ),
+              ),
+            );
+          },
+        ),
       ),
-      onTap: () {
-        final uri = Uri.tryParse(url);
-        if (uri != null) {
-          launcher.launchUrl(uri);
-        }
-      },
-      builder: (context, isActive) {
-        return AnimatedContainer(
-            duration: const Duration(milliseconds: 100),
-            margin: EdgeInsets.all(isActive ? 24 : 16),
-            height: size,
-            width: size,
-            child: FittedBox(fit: BoxFit.contain, child: image));
-      },
     );
   }
 }

@@ -7,8 +7,8 @@ class AppTheme {
   static ThemeData get data {
     return ThemeData(
       colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.red,
-        tertiary: Colors.redAccent,
+        seedColor: const Color(0xFF02539A),
+        tertiary: const Color(0xFF50B9F4),
       ),
       useMaterial3: true,
       textTheme: _textTheme,

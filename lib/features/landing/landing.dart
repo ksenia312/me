@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:me/common/utils/responsive_utils.dart';
 import 'package:me/features/download_file/presentation/download_cv_button.dart';
 import 'package:me/features/landing/components/language_button.dart';
@@ -40,8 +43,9 @@ class Landing extends StatelessWidget {
           )
         ],
       ),
-      body: const SingleChildScrollView(
-        child: Column(
+      body: SingleChildScrollView(
+        controller: ExtraSpeedScrollController(extraScrollSpeed: 30),
+        child: const Column(
           children: [
             SizedBox(height: toolbarHeight),
             _GreetingsView(),
@@ -52,5 +56,37 @@ class Landing extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class CustomScrollPhysics extends ScrollPhysics {
+  const CustomScrollPhysics({ScrollPhysics? parent}) : super(parent: parent);
+
+  @override
+  CustomScrollPhysics applyTo(ScrollPhysics? ancestor) {
+    return CustomScrollPhysics(parent: buildParent(ancestor));
+  }
+
+  @override
+  double get dragStartDistanceMotionThreshold => 10;
+}
+
+class ExtraSpeedScrollController extends ScrollController {
+  ExtraSpeedScrollController({int extraScrollSpeed = 0}) {
+    super.addListener(() => _scrollListener(extraScrollSpeed));
+  }
+
+  void _scrollListener(int speed) {
+    final position = super.position;
+    final direction = position.userScrollDirection;
+    if (direction != ScrollDirection.idle) {
+      final isReverse = direction == ScrollDirection.reverse;
+      final scrollEnd = super.offset + (isReverse ? speed : -speed);
+      final result = min(
+        position.maxScrollExtent,
+        max(position.minScrollExtent, scrollEnd),
+      );
+      jumpTo(result);
+    }
   }
 }

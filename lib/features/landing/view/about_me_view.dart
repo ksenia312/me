@@ -16,7 +16,7 @@ class _AboutMeView extends StatelessWidget {
         AppSectionWidgetItem(
           child: HoveringWidget(
             builder: (context, isActive) {
-              final size = isActive ? -0.5 : -2.0;
+              final size = isActive ? -0.5 : -1.0;
               return AnimatedRotation(
                 turns: size,
                 duration: const Duration(milliseconds: 300),

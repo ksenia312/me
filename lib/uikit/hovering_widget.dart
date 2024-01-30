@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../common/utils/responsive_utils.dart';
@@ -5,6 +7,7 @@ import '../common/utils/responsive_utils.dart';
 class HoveringWidget extends StatefulWidget {
   const HoveringWidget({
     required this.builder,
+    this.listener,
     this.elevation = 0,
     this.decoration,
     this.onTap,
@@ -15,6 +18,7 @@ class HoveringWidget extends StatefulWidget {
   final double elevation;
   final BoxDecoration? decoration;
   final Widget Function(BuildContext, bool) builder;
+  final FutureOr<void> Function(bool)? listener;
   final VoidCallback? onTap;
   final Color activeColor;
 
@@ -27,23 +31,26 @@ class _HoveringWidgetState extends State<HoveringWidget> {
 
   BorderRadius? get radius => widget.decoration?.borderRadius as BorderRadius?;
 
+  ShapeBorder? get shapeBorder => widget.decoration?.shape.shapeBorder;
+
   @override
   Widget build(BuildContext context) {
     final onTapResult = getOnTapResponsive();
     return Material(
       elevation: widget.elevation,
-      borderRadius: radius,
+      borderRadius: shapeBorder != null ? null : radius,
+      shape: shapeBorder,
       color: Colors.transparent,
       child: Ink(
         decoration: widget.decoration,
-        child: MouseRegion(
-          cursor: onTapResult != null
-              ? SystemMouseCursors.click
-              : SystemMouseCursors.basic,
-          onEnter: (_) => getOnHoverResponsive(true)?.call(),
-          onExit: (_) => getOnHoverResponsive(false)?.call(),
-          child: GestureDetector(
-            onTap: onTapResult,
+        child: GestureDetector(
+          onTap: onTapResult,
+          child: MouseRegion(
+            cursor: onTapResult != null
+                ? SystemMouseCursors.click
+                : SystemMouseCursors.basic,
+            onEnter: (_) => getOnHoverResponsive(true)?.call(),
+            onExit: (_) => getOnHoverResponsive(false)?.call(),
             child: widget.builder(context, isActive),
           ),
         ),
@@ -76,5 +83,16 @@ class _HoveringWidgetState extends State<HoveringWidget> {
     } else {
       setState(() => isActive = !isActive);
     }
+    widget.listener?.call(isActive);
+  }
+}
+
+extension on BoxShape? {
+  ShapeBorder? get shapeBorder {
+    return switch (this) {
+      BoxShape.rectangle => const BeveledRectangleBorder(),
+      BoxShape.circle => const CircleBorder(),
+      null => null,
+    };
   }
 }
