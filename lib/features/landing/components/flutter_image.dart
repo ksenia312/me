@@ -53,7 +53,7 @@ class _FlutterImageState extends State<FlutterImage>
                 fit: StackFit.expand,
                 children: [
                   Center(
-                    child: Assets.images.flutterMe.image(
+                    child: Assets.images.me.image(
                       width: dimension,
                       height: dimension,
                       fit: BoxFit.fitWidth,

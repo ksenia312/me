@@ -52,12 +52,11 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/flutter_me.png
-  AssetGenImage get flutterMe =>
-      const AssetGenImage('assets/images/flutter_me.png');
+  /// File path: assets/images/me.png
+  AssetGenImage get me => const AssetGenImage('assets/images/me.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [flutterMe];
+  List<AssetGenImage> get values => [me];
 }
 
 class $AssetsTranslationsGen {

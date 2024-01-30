@@ -80,18 +80,6 @@ class _LandingState extends State<Landing> {
   }
 }
 
-class CustomScrollPhysics extends ScrollPhysics {
-  const CustomScrollPhysics({ScrollPhysics? parent}) : super(parent: parent);
-
-  @override
-  CustomScrollPhysics applyTo(ScrollPhysics? ancestor) {
-    return CustomScrollPhysics(parent: buildParent(ancestor));
-  }
-
-  @override
-  double get dragStartDistanceMotionThreshold => 10;
-}
-
 class ExtraSpeedScrollController extends ScrollController {
   ExtraSpeedScrollController({int extraScrollSpeed = 0}) {
     super.addListener(() => _scrollListener(extraScrollSpeed));
