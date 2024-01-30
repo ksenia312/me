@@ -23,10 +23,27 @@ part 'view/greetings_view.dart';
 
 part 'view/download_cv_view.dart';
 
-class Landing extends StatelessWidget {
+class Landing extends StatefulWidget {
   const Landing({super.key});
 
   static const toolbarHeight = 80.0;
+
+  @override
+  State<Landing> createState() => _LandingState();
+}
+
+class _LandingState extends State<Landing> {
+  final _extraSpeedController = ExtraSpeedScrollController(
+    extraScrollSpeed: 40,
+  );
+  final _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _extraSpeedController.dispose();
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +52,7 @@ class Landing extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        toolbarHeight: toolbarHeight,
+        toolbarHeight: Landing.toolbarHeight,
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 16),
@@ -44,10 +61,14 @@ class Landing extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        controller: ExtraSpeedScrollController(extraScrollSpeed: 30),
+        controller: Responsive.get(
+          context,
+          def: () => _extraSpeedController,
+          s: () => _scrollController,
+        ),
         child: const Column(
           children: [
-            SizedBox(height: toolbarHeight),
+            SizedBox(height: Landing.toolbarHeight),
             _GreetingsView(),
             _ContactsView(),
             _AboutMeView(),
