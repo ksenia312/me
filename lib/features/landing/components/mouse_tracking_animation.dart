@@ -20,6 +20,8 @@ class MouseTrackingAnimationWrapper extends StatefulWidget {
     BuildContext context,
   ) builder;
 
+  static const defaultSize = Size(451, 392);
+
   @override
   State<MouseTrackingAnimationWrapper> createState() => _MouseTrackingAnimationWrapperState();
 }

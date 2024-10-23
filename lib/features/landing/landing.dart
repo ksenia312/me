@@ -64,20 +64,13 @@ class _LandingState extends State<Landing> {
               def: () => _extraSpeedController,
               s: () => _scrollController,
             ),
-            child: Column(
+            child: const Column(
               children: [
-                const SizedBox(height: Landing.toolbarHeight),
-                const _GreetingsView(),
-                const _ContactsView(),
-                const _AboutMeView(),
-                const _DownloadCVView(),
-                SizedBox(
-                  key: key,
-                  child: MouseTrackingAnimation(
-                    size: const Size(451, 392),
-                    artboard: artboard,
-                  ),
-                ),
+                SizedBox(height: Landing.toolbarHeight),
+                _GreetingsView(),
+                _ContactsView(),
+                _AboutMeView(),
+                _DownloadCVView(),
               ],
             ),
           ),
