@@ -2,7 +2,7 @@ cd ../
 source .env
 export $(cut -d= -f1 .env)
 
-fvm flutter build web \
+fvm flutter build web --web-renderer canvaskit \
 --dart-define=API_KEY="$API_KEY" \
 --dart-define=APP_ID="$APP_ID" \
 --dart-define=MESSAGING_SENDER_ID="$MESSAGING_SENDER_ID" \
