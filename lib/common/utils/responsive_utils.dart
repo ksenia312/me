@@ -27,8 +27,7 @@ abstract class Responsive {
     return function?.call() ?? def();
   }
 
-  static TextStyle bodyStyleOf(BuildContext context, {bool bold = false}) =>
-      get(
+  static TextStyle bodyStyleOf(BuildContext context, {bool bold = false}) => get(
         context,
         def: () => Theme.of(context).textTheme.titleSmall!.copyWith(
               fontWeight: bold ? FontWeight.bold : FontWeight.normal,

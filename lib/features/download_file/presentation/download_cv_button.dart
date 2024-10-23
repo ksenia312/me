@@ -11,8 +11,7 @@ class DownloadCVButton extends StatefulWidget {
 }
 
 class _DownloadCVButtonState extends State<DownloadCVButton> {
-  late final downloadCVService = DownloadCvService()
-    ..addListener(() => setState(() {}));
+  late final downloadCVService = DownloadCvService()..addListener(() => setState(() {}));
 
   @override
   Widget build(BuildContext context) {

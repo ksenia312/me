@@ -14,8 +14,7 @@ class FlutterImage extends StatefulWidget {
   State<FlutterImage> createState() => _FlutterImageState();
 }
 
-class _FlutterImageState extends State<FlutterImage>
-    with SingleTickerProviderStateMixin {
+class _FlutterImageState extends State<FlutterImage> with SingleTickerProviderStateMixin {
   late final AnimationController controller = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 400),
@@ -132,8 +131,7 @@ class _FlutterImageState extends State<FlutterImage>
     required double endLeftDelimiter,
     required double endTopDelimiter,
   }) {
-    final startLeft =
-        startCorner == Corner.bottomLeft ? 0.0 : maxSize.width - logoDimension;
+    final startLeft = startCorner == Corner.bottomLeft ? 0.0 : maxSize.width - logoDimension;
     return PositionedTransition(
       rect: RelativeRectTween(
         begin: RelativeRect.fromSize(
@@ -182,7 +180,7 @@ class _GradientBorderWrapper extends StatelessWidget {
 
     final innerDecoration = BoxDecoration(
       shape: BoxShape.circle,
-      color: colorScheme.background,
+      color: colorScheme.surface,
     );
 
     final outerDecoration = BoxDecoration(

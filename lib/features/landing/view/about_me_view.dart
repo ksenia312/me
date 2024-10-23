@@ -31,8 +31,8 @@ class _AboutMeView extends StatelessWidget {
           subtitle: LocaleKeys.aboutMe.tr(),
           body: LocaleKeys.aboutMe2.tr(),
           titleColor: colorScheme.primary,
-          subtitleColor: colorScheme.onBackground,
-          bodyColor: colorScheme.onBackground,
+          subtitleColor: colorScheme.onSurface,
+          bodyColor: colorScheme.onSurface,
         ),
       ],
     );

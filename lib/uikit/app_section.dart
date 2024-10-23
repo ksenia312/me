@@ -103,8 +103,7 @@ class AppSectionTextItem extends AppSectionFlexItem {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   subtitle!,
-                  style: Responsive.bodyStyleOf(context, bold: true)
-                      .copyWith(color: subtitleColor ?? titleColor),
+                  style: Responsive.bodyStyleOf(context, bold: true).copyWith(color: subtitleColor ?? titleColor),
                   textAlign: align,
                 ),
               ),
@@ -113,8 +112,7 @@ class AppSectionTextItem extends AppSectionFlexItem {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   body!,
-                  style: Responsive.bodyStyleOf(context)
-                      .copyWith(color: bodyColor ?? titleColor),
+                  style: Responsive.bodyStyleOf(context).copyWith(color: bodyColor ?? titleColor),
                   textAlign: align,
                 ),
               ),

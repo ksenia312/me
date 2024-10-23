@@ -14,6 +14,7 @@ import 'package:me/uikit/hovering_widget.dart';
 import 'components/flutter_image.dart';
 import 'components/greetings_text.dart';
 import 'components/contact_button.dart';
+import 'components/mouse_tracking_animation.dart';
 
 part 'view/about_me_view.dart';
 
@@ -47,35 +48,41 @@ class _LandingState extends State<Landing> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        toolbarHeight: Landing.toolbarHeight,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: LanguageButton(),
-          )
-        ],
-      ),
-      body: SingleChildScrollView(
-        controller: Responsive.get(
-          context,
-          def: () => _extraSpeedController,
-          s: () => _scrollController,
-        ),
-        child: const Column(
-          children: [
-            SizedBox(height: Landing.toolbarHeight),
-            _GreetingsView(),
-            _ContactsView(),
-            _AboutMeView(),
-            _DownloadCVView(),
-          ],
-        ),
-      ),
+    return MouseTrackingAnimationWrapper(
+      builder: (key, artboard, context) {
+        return Scaffold(
+          extendBodyBehindAppBar: true,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            toolbarHeight: Landing.toolbarHeight,
+            actions: const [Padding(padding: EdgeInsets.only(right: 16), child: LanguageButton())],
+          ),
+          body: SingleChildScrollView(
+            controller: Responsive.get(
+              context,
+              def: () => _extraSpeedController,
+              s: () => _scrollController,
+            ),
+            child: Column(
+              children: [
+                const SizedBox(height: Landing.toolbarHeight),
+                const _GreetingsView(),
+                const _ContactsView(),
+                const _AboutMeView(),
+                const _DownloadCVView(),
+                SizedBox(
+                  key: key,
+                  child: MouseTrackingAnimation(
+                    size: const Size(451, 392),
+                    artboard: artboard,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

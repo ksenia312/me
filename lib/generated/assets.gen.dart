@@ -34,20 +34,16 @@ class $AssetsIconsGen {
   SvgGenImage get icGithub => const SvgGenImage('assets/icons/ic_github.svg');
 
   /// File path: assets/icons/ic_human_brain.svg
-  SvgGenImage get icHumanBrain =>
-      const SvgGenImage('assets/icons/ic_human_brain.svg');
+  SvgGenImage get icHumanBrain => const SvgGenImage('assets/icons/ic_human_brain.svg');
 
   /// File path: assets/icons/ic_linked_in.svg
-  SvgGenImage get icLinkedIn =>
-      const SvgGenImage('assets/icons/ic_linked_in.svg');
+  SvgGenImage get icLinkedIn => const SvgGenImage('assets/icons/ic_linked_in.svg');
 
   /// File path: assets/icons/ic_telegram.svg
-  SvgGenImage get icTelegram =>
-      const SvgGenImage('assets/icons/ic_telegram.svg');
+  SvgGenImage get icTelegram => const SvgGenImage('assets/icons/ic_telegram.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [icEmail, icGithub, icHumanBrain, icLinkedIn, icTelegram];
+  List<SvgGenImage> get values => [icEmail, icGithub, icHumanBrain, icLinkedIn, icTelegram];
 }
 
 class $AssetsImagesGen {
@@ -103,8 +99,7 @@ class $AssetsTranslationsGen {
   String get zh => 'assets/translations/zh.json';
 
   /// List of all assets
-  List<String> get values =>
-      [de, en, es, fr, hi, it, ja, ko, nl, pt, ru, tr, zh];
+  List<String> get values => [de, en, es, fr, hi, it, ja, ko, nl, pt, ru, tr, zh];
 }
 
 class Assets {
