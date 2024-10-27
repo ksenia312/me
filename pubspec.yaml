@@ -1,6 +1,6 @@
 name: me
 description: Kseniia Flutter developer. Contacts and information
-version: 1.1.2
+version: 2.0.4
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
