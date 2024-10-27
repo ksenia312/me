@@ -10,6 +10,7 @@ import 'package:me/generated/assets.gen.dart';
 import 'package:me/localization/codegen_loader.g.dart';
 import 'package:me/uikit/components/custom_app_bar.dart';
 import 'package:me/uikit/components/language_button.dart';
+import 'package:me/uikit/components/main_image.dart';
 import 'package:me/uikit/elements/app_section.dart';
 import 'package:me/uikit/elements/hovering_widget.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
@@ -72,7 +73,7 @@ class _LandingState extends State<Landing> {
                     onPressed: () => context.goNamed('uikit'),
                     child: const Text('Open debug menu'),
                   ),
-                const _GreetingsView(),
+               MainImage(),
                 const _ContactsView(),
                 const _AboutMeView(),
                 const _DownloadCVView(),
