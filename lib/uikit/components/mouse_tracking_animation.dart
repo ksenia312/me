@@ -53,7 +53,6 @@ class _MouseTrackingAnimationWrapperState extends State<MouseTrackingAnimationWr
       setState(() => _controller = controller);
       setState(() => _artboard = artboard);
     }
-
   }
 
   void _updateAnimationPosition(Offset globalPosition) {
@@ -83,10 +82,10 @@ class _MouseTrackingAnimationWrapperState extends State<MouseTrackingAnimationWr
 
 class MouseTrackingAnimation extends StatelessWidget {
   const MouseTrackingAnimation({
-    Key? key,
+    super.key,
     this.artboard,
     required this.size,
-  }) : super(key: key);
+  });
 
   final Size size;
   final Artboard? artboard;

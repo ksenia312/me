@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:me/features/download_file/domain/download_cv_service.dart';
-import 'package:me/localization/codegen_loader.g.dart';
+import 'package:me/features/download_file/notifier/download_cv_notifier.dart';
+import 'package:me/uikit/localization/codegen_loader.g.dart';
 
 class DownloadCVButton extends StatefulWidget {
   const DownloadCVButton({super.key});
@@ -11,7 +11,7 @@ class DownloadCVButton extends StatefulWidget {
 }
 
 class _DownloadCVButtonState extends State<DownloadCVButton> {
-  late final downloadCVService = DownloadCvService()..addListener(() => setState(() {}));
+  late final downloadCVService = DownloadCvNotifier()..addListener(() => setState(() {}));
 
   @override
   Widget build(BuildContext context) {

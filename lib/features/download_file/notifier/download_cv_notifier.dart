@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import 'repository/download_file_repository.dart';
+import '../../../domain/download_file/download_file_repository.dart';
 
-class DownloadCvService extends ChangeNotifier {
+class DownloadCvNotifier extends ChangeNotifier {
   bool isLoading = false;
 
   Future<void> call() async {

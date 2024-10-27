@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
-import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/app_constants.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -19,38 +18,46 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return AppBar(
       elevation: 0,
-      color: AppColors.red,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Flexible(
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ...leftTabs.map(
-                  (e) => Flexible(
-                    child: SizedBox(height: double.infinity, child: e),
+      toolbarOpacity: 0.2,
+      scrolledUnderElevation: 0,
+      titleSpacing: 0,
+      toolbarHeight: preferredSize.height,
+      centerTitle: true,
+      automaticallyImplyLeading: false,
+      surfaceTintColor: Colors.transparent,
+      flexibleSpace: SizedBox.expand(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Flexible(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ...leftTabs.map(
+                    (e) => Flexible(
+                      child: SizedBox(height: double.infinity, child: e),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Flexible(
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ...rightTabs.map(
-                  (e) => Flexible(
-                    child: SizedBox(height: double.infinity, child: e),
-                  ),
-                )
-              ],
+            Flexible(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ...rightTabs.map(
+                    (e) => Flexible(
+                      child: SizedBox(height: double.infinity, child: e),
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

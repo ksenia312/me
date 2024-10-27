@@ -5,39 +5,35 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
-import 'package:me/features/download_file/presentation/download_cv_button.dart';
+import 'package:me/features/download_file/view/download_cv_button.dart';
 import 'package:me/generated/assets.gen.dart';
-import 'package:me/localization/codegen_loader.g.dart';
+import 'package:me/uikit/components/mouse_tracking_animation.dart';
+import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/components/custom_app_bar.dart';
 import 'package:me/uikit/components/language_button.dart';
 import 'package:me/uikit/components/main_image.dart';
 import 'package:me/uikit/elements/app_section.dart';
+import 'package:me/uikit/elements/app_title.dart';
 import 'package:me/uikit/elements/hovering_widget.dart';
+import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 
-import 'components/flutter_image.dart';
-import 'components/greetings_text.dart';
-import 'components/contact_button.dart';
-import 'components/mouse_tracking_animation.dart';
+part 'widgets/about_me_view.dart';
 
-part 'view/about_me_view.dart';
+part 'widgets/contacts_view.dart';
 
-part 'view/contacts_view.dart';
+part 'widgets/download_cv_view.dart';
 
-part 'view/greetings_view.dart';
-
-part 'view/download_cv_view.dart';
-
-class Landing extends StatefulWidget {
-  const Landing({super.key});
+class LandingPage extends StatefulWidget {
+  const LandingPage({super.key});
 
   static const toolbarHeight = 80.0;
 
   @override
-  State<Landing> createState() => _LandingState();
+  State<LandingPage> createState() => _LandingState();
 }
 
-class _LandingState extends State<Landing> {
+class _LandingState extends State<LandingPage> {
   final _extraSpeedController = ExtraSpeedScrollController(
     extraScrollSpeed: 40,
   );
@@ -60,20 +56,24 @@ class _LandingState extends State<Landing> {
             rightTabs: [LanguageButton()],
           ),
           body: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: AppResponsiveSizes.landingMargin(context)),
             controller: Responsive.get(
               context,
               def: () => _extraSpeedController,
               s: () => _scrollController,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: Landing.toolbarHeight),
+                const SizedBox(height: LandingPage.toolbarHeight),
                 if (kDebugMode)
                   ElevatedButton(
                     onPressed: () => context.goNamed('uikit'),
                     child: const Text('Open debug menu'),
                   ),
-               MainImage(),
+                AppTitle(title: 'FLUTTER DEVELOPER', subtitle: 'Kseniia Nikitina'),
+                SizedBox(height: AppResponsiveSizes.x10large(context)),
+                Align(alignment: Alignment.centerLeft, child: MainImage()),
                 const _ContactsView(),
                 const _AboutMeView(),
                 const _DownloadCVView(),

@@ -1,8 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:me/localization/locales.dart';
-import 'package:me/uikit/components/custom_app_bar.dart';
+import 'package:me/uikit/localization/locales.dart';
 import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/app_constants.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
@@ -50,7 +49,7 @@ class _LanguageButtonState extends State<LanguageButton> {
           child: child,
         ),
       ),
-      style: Theme.of(context).textTheme.bodyMedium,
+      style: context.textTheme.bodyMedium,
       value: context.locale,
       underline: const SizedBox.shrink(),
       alignment: Alignment.center,

@@ -1,18 +1,12 @@
-import 'dart:async';
-import 'dart:typed_data';
-import 'dart:ui';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:me/app/firebase/firebase_options.dart';
-import 'package:me/generated/assets.gen.dart';
-import 'package:me/localization/locales.dart';
+import 'package:me/config/firebase_options.dart';
+import 'package:me/uikit/localization/locales.dart';
 import 'package:me/uikit/components/main_image.dart';
+import 'package:me/uikit/responsive/responsive_builder.dart';
+import 'package:me/uikit/router/app_router.dart';
 import 'package:me/uikit/theme/theme.dart';
-
-import 'app/router/app_router.dart';
-import 'uikit/responsive/responsive_builder.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

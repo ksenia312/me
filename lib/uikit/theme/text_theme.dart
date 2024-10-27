@@ -48,6 +48,7 @@ class AppTextTheme {
     ),
     titleMedium: TextStyle(
       fontFamily: FontFamily.inter,
+      fontWeight: FontWeight.w300,
       fontSize: 24,
       height: 1.2,
     ),
@@ -113,6 +114,7 @@ class AppTextTheme {
     ),
     titleMedium: TextStyle(
       fontFamily: FontFamily.inter,
+      fontWeight: FontWeight.w300,
       fontSize: 14,
       height: 1.2,
     ),

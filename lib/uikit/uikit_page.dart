@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:me/generated/assets.gen.dart';
+import 'package:me/uikit/components/main_image.dart';
+import 'package:me/uikit/elements/app_title.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:me/uikit/components/summary_circle.dart';
 
@@ -39,21 +42,28 @@ class UikitPage extends StatelessWidget {
           ),
         ],
       ),
-      SizedBox(
-        width: 796,
-        height: 732,
-        child: Image.asset(Assets.images.me.path, fit: BoxFit.scaleDown),
+      MainImage(),
+      Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+         crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            AppTitle(title: 'FLUTTER DEVELOPER', subtitle: 'Kseniia Nikitina', alignment: AppTitleAlignment.left),
+            AppTitle(title: 'FLUTTER DEVELOPER', subtitle: 'Kseniia Nikitina', alignment: AppTitleAlignment.right),
+          ],
+        ),
       ),
     ];
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
         rightTabs: [
           CustomToolbarTab(title: 'title', onPressed: (_) {}),
         ],
         leftTabs: [
           CustomToolbarTab(
-            titleWidget: Icon(Icons.add),
-            onPressed: (_) {},
+            titleWidget: Icon(Icons.arrow_back_ios_new, size: 12),
+            onPressed: (_) => context.go('/'),
           ),
         ],
       ),

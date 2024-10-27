@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:me/uikit/components/summary_circle.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 

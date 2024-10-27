@@ -1,4 +1,4 @@
-part of '../landing.dart';
+part of '../landing_page.dart';
 
 class _AboutMeView extends StatelessWidget {
   const _AboutMeView();

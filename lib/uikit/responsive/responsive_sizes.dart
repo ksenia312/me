@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'responsive_utils.dart';
 
 class AppResponsiveSizes {
+  AppResponsiveSizes._();
+
   static double x2Small(BuildContext context) => Responsive.get(
         context,
         def: () => 4,
@@ -30,6 +32,36 @@ class AppResponsiveSizes {
   static double x2Large(BuildContext context) => Responsive.get(
         context,
         def: () => 20,
+        s: () => 16,
+      );
+
+  static double x3Large(BuildContext context) => Responsive.get(
+        context,
+        def: () => 24,
+        s: () => 20,
+      );
+
+  static double x4Large(BuildContext context) => Responsive.get(
+        context,
+        def: () => 32,
+        s: () => 24,
+      );
+
+  static double x5Large(BuildContext context) => Responsive.get(
+        context,
+        def: () => 44,
+        s: () => 32,
+      );
+
+  static double x10large(BuildContext context) => Responsive.get(
+        context,
+        def: () => 88,
+        s: () => 66,
+      );
+
+  static double landingMargin(BuildContext context) => Responsive.get(
+        context,
+        def: () => 64,
         s: () => 16,
       );
 

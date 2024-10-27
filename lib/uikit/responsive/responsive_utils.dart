@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:me/app/router/app_router.dart';
+import 'package:me/uikit/router/app_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 enum ResponsiveSizes { s, m, l, xl }
