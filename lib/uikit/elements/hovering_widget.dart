@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../common/utils/responsive_utils.dart';
+import '../responsive/responsive_utils.dart';
 
 class HoveringWidget extends StatefulWidget {
   const HoveringWidget({
@@ -57,22 +57,11 @@ class _HoveringWidgetState extends State<HoveringWidget> {
   }
 
   VoidCallback? getOnHoverResponsive(bool value) {
-    return Responsive.get(
-      context,
-      def: () => () {
-        setActive(value);
-      },
-      s: () => null,
-    );
+    return Responsive.get(context, def: () => () => setActive(value), s: () => null);
   }
 
   VoidCallback? getOnTapResponsive() {
-    return widget.onTap ??
-        Responsive.get(
-          context,
-          def: () => null,
-          s: () => setActive,
-        );
+    return widget.onTap ?? Responsive.get(context, def: () => null, s: () => setActive);
   }
 
   void setActive([bool? value]) {

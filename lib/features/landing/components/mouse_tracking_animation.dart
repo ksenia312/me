@@ -49,8 +49,11 @@ class _MouseTrackingAnimationWrapperState extends State<MouseTrackingAnimationWr
     if (controller == null) return;
 
     artboard.addController(controller);
-    setState(() => _controller = controller);
-    setState(() => _artboard = artboard);
+    if (mounted) {
+      setState(() => _controller = controller);
+      setState(() => _artboard = artboard);
+    }
+
   }
 
   void _updateAnimationPosition(Offset globalPosition) {

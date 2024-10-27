@@ -1,7 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:me/common/utils/responsive_utils.dart';
 import 'package:me/localization/codegen_loader.g.dart';
+import 'package:me/uikit/responsive/responsive_utils.dart';
+import 'package:me/uikit/theme/context_extensions.dart';
 
 class GreetingsText extends StatelessWidget {
   const GreetingsText({super.key});
@@ -14,16 +15,16 @@ class GreetingsText extends StatelessWidget {
         Flexible(
           child: Text(
             LocaleKeys.greeting.tr(),
-            style: Responsive.titleStyleOf(context),
+            style: context.textTheme.titleLarge,
             textAlign: TextAlign.center,
           ),
         ),
         Flexible(
           child: Text(
             LocaleKeys.greeting2.tr(),
-            style: Responsive.displayStyleOf(context).copyWith(
+            style: context.textTheme.displaySmall?.copyWith(
               fontWeight: FontWeight.bold,
-              color: Theme.of(context).colorScheme.primary,
+              color: context.colorScheme.primary,
             ),
             textAlign: TextAlign.center,
           ),

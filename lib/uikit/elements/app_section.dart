@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:me/common/utils/responsive_utils.dart';
+import 'package:me/uikit/components/summary_circle.dart';
+import 'package:me/uikit/responsive/responsive_utils.dart';
+import 'package:me/uikit/theme/context_extensions.dart';
 
 class AppSection extends StatelessWidget {
   const AppSection({
@@ -93,9 +95,7 @@ class AppSectionTextItem extends AppSectionFlexItem {
           children: [
             Text(
               title,
-              style: Responsive.titleStyleOf(context).copyWith(
-                color: titleColor,
-              ),
+              style: context.textTheme.titleLarge?.copyWith(color: titleColor),
               textAlign: align,
             ),
             if (subtitle != null)
@@ -103,7 +103,10 @@ class AppSectionTextItem extends AppSectionFlexItem {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   subtitle!,
-                  style: Responsive.bodyStyleOf(context, bold: true).copyWith(color: subtitleColor ?? titleColor),
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: subtitleColor ?? titleColor,
+                  ),
                   textAlign: align,
                 ),
               ),
@@ -112,7 +115,7 @@ class AppSectionTextItem extends AppSectionFlexItem {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   body!,
-                  style: Responsive.bodyStyleOf(context).copyWith(color: bodyColor ?? titleColor),
+                  style: context.textTheme.bodyMedium?.copyWith(color: bodyColor ?? titleColor),
                   textAlign: align,
                 ),
               ),

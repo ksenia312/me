@@ -1,15 +1,18 @@
 import 'dart:math';
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:me/common/utils/responsive_utils.dart';
+import 'package:go_router/go_router.dart';
 import 'package:me/features/download_file/presentation/download_cv_button.dart';
-import 'package:me/features/landing/components/language_button.dart';
 import 'package:me/generated/assets.gen.dart';
 import 'package:me/localization/codegen_loader.g.dart';
-import 'package:me/uikit/app_section.dart';
-import 'package:me/uikit/hovering_widget.dart';
+import 'package:me/uikit/components/custom_app_bar.dart';
+import 'package:me/uikit/components/language_button.dart';
+import 'package:me/uikit/elements/app_section.dart';
+import 'package:me/uikit/elements/hovering_widget.dart';
+import 'package:me/uikit/responsive/responsive_utils.dart';
 
 import 'components/flutter_image.dart';
 import 'components/greetings_text.dart';
@@ -52,11 +55,8 @@ class _LandingState extends State<Landing> {
       builder: (key, artboard, context) {
         return Scaffold(
           extendBodyBehindAppBar: true,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            toolbarHeight: Landing.toolbarHeight,
-            actions: const [Padding(padding: EdgeInsets.only(right: 16), child: LanguageButton())],
+          appBar: CustomAppBar(
+            rightTabs: [LanguageButton()],
           ),
           body: SingleChildScrollView(
             controller: Responsive.get(
@@ -64,13 +64,18 @@ class _LandingState extends State<Landing> {
               def: () => _extraSpeedController,
               s: () => _scrollController,
             ),
-            child: const Column(
+            child: Column(
               children: [
-                SizedBox(height: Landing.toolbarHeight),
-                _GreetingsView(),
-                _ContactsView(),
-                _AboutMeView(),
-                _DownloadCVView(),
+                const SizedBox(height: Landing.toolbarHeight),
+                if (kDebugMode)
+                  ElevatedButton(
+                    onPressed: () => context.goNamed('uikit'),
+                    child: const Text('Open debug menu'),
+                  ),
+                const _GreetingsView(),
+                const _ContactsView(),
+                const _AboutMeView(),
+                const _DownloadCVView(),
               ],
             ),
           ),

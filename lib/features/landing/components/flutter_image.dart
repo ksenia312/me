@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:me/common/utils/responsive_utils.dart';
+import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/generated/assets.gen.dart';
-import 'package:me/uikit/hovering_widget.dart';
+import 'package:me/uikit/elements/hovering_widget.dart';
 
 class FlutterImage extends StatefulWidget {
   const FlutterImage({super.key});
