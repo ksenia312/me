@@ -9,14 +9,9 @@ class DownloadCvNotifier extends ChangeNotifier {
   Future<void> call() async {
     _setLoading(true);
     try {
-      final url = await DownloadFileRepository.instance.getDownloadUrl(
-        'Kseniia_CV.pdf',
-      );
+      final url = await DownloadFileRepository.instance.getDownloadUrl('Kseniia_CV.pdf');
       if (await canLaunchUrlString(url)) {
-        await launchUrlString(
-          url,
-          mode: LaunchMode.externalApplication,
-        );
+        await launchUrlString(url, mode: LaunchMode.externalApplication);
       }
     } catch (e, s) {
       if (kDebugMode) {

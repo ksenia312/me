@@ -14,43 +14,50 @@ class AppResponsiveSizes {
   static double small(BuildContext context) => Responsive.get(
         context,
         def: () => 8,
-        s: () => 6,
+        s: () => 4,
       );
 
   static double medium(BuildContext context) => Responsive.get(
         context,
         def: () => 12,
-        s: () => 8,
+        s: () => 6,
       );
 
   static double large(BuildContext context) => Responsive.get(
         context,
         def: () => 16,
-        s: () => 12,
+        s: () => 8,
       );
 
   static double x2Large(BuildContext context) => Responsive.get(
         context,
         def: () => 20,
-        s: () => 16,
+        s: () => 12,
       );
 
   static double x3Large(BuildContext context) => Responsive.get(
         context,
         def: () => 24,
-        s: () => 20,
+        s: () => 16,
       );
 
   static double x4Large(BuildContext context) => Responsive.get(
         context,
         def: () => 32,
-        s: () => 24,
+        s: () => 18,
       );
 
   static double x5Large(BuildContext context) => Responsive.get(
         context,
         def: () => 44,
-        s: () => 32,
+        m: () => 32,
+        s: () => 20,
+      );
+
+  static double x8large(BuildContext context) => Responsive.get(
+        context,
+        def: () => 66,
+        s: () => 52,
       );
 
   static double x10large(BuildContext context) => Responsive.get(
@@ -62,12 +69,19 @@ class AppResponsiveSizes {
   static double landingMargin(BuildContext context) => Responsive.get(
         context,
         def: () => 64,
-        s: () => 16,
+        m: () => 16,
+        s: () => 0,
       );
 
   static double toolbarHeight([BuildContext? context]) => Responsive.get(
         context,
         def: () => 50,
         s: () => 70,
+      );
+
+  static double shadowBlurRadius([BuildContext? context]) => Responsive.get(
+        context,
+        def: () => 8,
+        m: () => 4,
       );
 }

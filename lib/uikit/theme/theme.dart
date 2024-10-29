@@ -35,6 +35,12 @@ class AppTheme {
       ),
       useMaterial3: true,
       textTheme: AppTextTheme.current(context),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.lightBlue,
+          minimumSize: const Size(150, 40),
+        ),
+      ),
       extensions: [
         CustomColorScheme(borderColor: AppColors.lightBlue),
       ],

@@ -1,4 +1,4 @@
-import 'package:me/data/download_file/download_file_repository.dart';
+import 'package:me/data/download_file/download_file_repository_impl.dart';
 
 abstract class DownloadFileRepository {
   static DownloadFileRepository? _instance;

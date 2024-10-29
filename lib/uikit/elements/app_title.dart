@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
+import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
 enum AppTitleAlignment { left, right }
@@ -18,21 +19,23 @@ class AppTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final crossAxisAlignment = Responsive.get(
+      context,
+      def: () => alignment == AppTitleAlignment.left ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+      m: () => CrossAxisAlignment.center,
+    );
+    final textAlignment = Responsive.get(
+      context,
+      def: () => alignment == AppTitleAlignment.left ? TextAlign.start : TextAlign.end,
+      m: () => TextAlign.center,
+    );
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: alignment == AppTitleAlignment.left ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+      crossAxisAlignment: crossAxisAlignment,
       children: [
-        Text(
-          title.toUpperCase(),
-          style: context.textTheme.displaySmall,
-          textAlign: alignment == AppTitleAlignment.left ? TextAlign.start : TextAlign.end,
-        ),
+        Text(title.toUpperCase(), style: context.textTheme.displaySmall, textAlign: textAlignment),
         SizedBox(height: AppResponsiveSizes.small(context)),
-        Text(
-          subtitle,
-          style: context.textTheme.titleMedium,
-          textAlign: alignment == AppTitleAlignment.left ? TextAlign.start : TextAlign.end,
-        ),
+        Text(subtitle, style: context.textTheme.titleMedium, textAlign: textAlignment),
       ],
     );
   }

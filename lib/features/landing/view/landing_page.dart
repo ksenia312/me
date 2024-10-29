@@ -1,22 +1,17 @@
 import 'dart:math';
 
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
-import 'package:me/features/download_file/view/download_cv_button.dart';
-import 'package:me/generated/assets.gen.dart';
-import 'package:me/uikit/components/mouse_tracking_animation.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
-import 'package:me/uikit/components/custom_app_bar.dart';
+import 'package:me/uikit/components/cat_animation.dart';
+import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/components/language_button.dart';
-import 'package:me/uikit/components/main_image.dart';
-import 'package:me/uikit/elements/app_section.dart';
-import 'package:me/uikit/elements/app_title.dart';
-import 'package:me/uikit/elements/hovering_widget.dart';
-import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
+import 'package:me/uikit/theme/context_extensions.dart';
+
+import 'widgets/summary_view.dart';
+import 'widgets/welcome_view.dart';
 
 part 'widgets/about_me_view.dart';
 
@@ -48,35 +43,37 @@ class _LandingState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseTrackingAnimationWrapper(
+    return CatAnimationWrapper(
       builder: (key, artboard, context) {
         return Scaffold(
           extendBodyBehindAppBar: true,
           appBar: CustomAppBar(
-            rightTabs: [LanguageButton()],
+            leftTabs: [],
+            rightTabs: [
+              if (kDebugMode)
+                CustomToolbarTab(
+                  color: context.customColorScheme.borderColor,
+                  onPressed: (context) => context.goNamed('uikit'),
+                  title: 'Open debug menu',
+                ),
+              LanguageButton(),
+            ],
           ),
           body: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: AppResponsiveSizes.landingMargin(context)),
             controller: Responsive.get(
               context,
-              def: () => _extraSpeedController,
+              def: () => _scrollController,
               s: () => _scrollController,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: LandingPage.toolbarHeight),
-                if (kDebugMode)
-                  ElevatedButton(
-                    onPressed: () => context.goNamed('uikit'),
-                    child: const Text('Open debug menu'),
-                  ),
-                AppTitle(title: 'FLUTTER DEVELOPER', subtitle: 'Kseniia Nikitina'),
-                SizedBox(height: AppResponsiveSizes.x10large(context)),
-                Align(alignment: Alignment.centerLeft, child: MainImage()),
-                const _ContactsView(),
-                const _AboutMeView(),
-                const _DownloadCVView(),
+                const WelcomeView(),
+                Transform.translate(
+                  offset: Offset(0, -SummaryView.waveHeightOf(context)),
+                  child: SummaryView(globalKey: key, artboard: artboard),
+                ),
               ],
             ),
           ),

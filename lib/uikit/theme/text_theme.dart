@@ -7,7 +7,7 @@ class AppTextTheme {
   static TextTheme current(BuildContext context) => Responsive.get(
         context,
         def: () => _defaultTextTheme,
-        s: () => _smallTextTheme,
+        m: () => _smallTextTheme,
       );
 
   static final _defaultTextTheme = TextTheme(
@@ -29,7 +29,7 @@ class AppTextTheme {
       fontFamily: FontFamily.inter,
       shadows: [_fontShadow],
       fontWeight: FontWeight.bold,
-      fontSize: 36,
+      fontSize: 32,
       height: 1.2,
     ),
     headlineSmall: TextStyle(

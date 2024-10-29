@@ -28,35 +28,39 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       surfaceTintColor: Colors.transparent,
       flexibleSpace: SizedBox.expand(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Flexible(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ...leftTabs.map(
-                    (e) => Flexible(
-                      child: SizedBox(height: double.infinity, child: e),
+        child: Padding(
+          padding: EdgeInsets.all(AppResponsiveSizes.x2Small(context)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Flexible(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ...leftTabs.map(
+                      (e) => Flexible(
+                        child: SizedBox(height: double.infinity, child: e),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            Flexible(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ...rightTabs.map(
-                    (e) => Flexible(
-                      child: SizedBox(height: double.infinity, child: e),
-                    ),
-                  )
-                ],
+              Align(
+                alignment: Alignment.centerRight,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ...rightTabs.map(
+                      (e) => Flexible(
+                        child: SizedBox(height: double.infinity, child: e),
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -69,6 +73,7 @@ class CustomToolbarTab extends StatelessWidget {
     this.title,
     this.titleWidget,
     this.onPressed,
+    this.color,
   }) : assert(title != null || titleWidget != null);
 
   static EdgeInsets paddingOf(BuildContext context) {
@@ -80,6 +85,7 @@ class CustomToolbarTab extends StatelessWidget {
 
   final String? title;
   final Widget? titleWidget;
+  final Color? color;
   final void Function(BuildContext)? onPressed;
 
   @override
@@ -90,10 +96,16 @@ class CustomToolbarTab extends StatelessWidget {
       child: Container(
         padding: paddingOf(context),
         height: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: AppSizes.toolbarBorderRadius,
+          color: color,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            title != null ? Text(title!, style: context.textTheme.bodySmall) : titleWidget!,
+            title != null
+                ? Flexible(child: Text(title!, style: context.textTheme.bodySmall, textAlign: TextAlign.center))
+                : titleWidget!,
           ],
         ),
       ),

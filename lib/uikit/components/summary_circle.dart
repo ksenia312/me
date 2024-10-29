@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -13,14 +14,15 @@ class SummaryCircle extends StatelessWidget {
     final size = Responsive.get(
       context,
       def: () => 290.0,
+      m: () => 200.0,
       s: () => 156.0,
     );
     return Container(
       width: size,
       height: size,
       padding: EdgeInsets.symmetric(
-       horizontal: Responsive.get(context, def: () => 32, s: () => 16),
-       vertical: Responsive.get(context, def: () => 16, s: () => 12),
+        horizontal: AppResponsiveSizes.x4Large(context),
+        vertical: AppResponsiveSizes.large(context),
       ),
       decoration: BoxDecoration(
         color: context.colorScheme.surface,
@@ -29,7 +31,7 @@ class SummaryCircle extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: context.colorScheme.onSurface.withOpacity(0.7),
-            blurRadius: 8,
+            blurRadius: AppResponsiveSizes.shadowBlurRadius(context),
           ),
         ],
       ),
@@ -39,10 +41,10 @@ class SummaryCircle extends StatelessWidget {
           children: [
             Text(
               title,
-              style: context.textTheme.headlineSmall,
+              style: context.textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
-            SizedBox(height:Responsive.get(context, def: () => 12, s: () => 8)),
+            SizedBox(height: Responsive.get(context, def: () => 12, s: () => 8)),
             Text(
               subtitle,
               style: context.textTheme.bodyMedium,

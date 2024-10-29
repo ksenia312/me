@@ -18,7 +18,7 @@ class MainImage extends StatefulWidget {
   State<MainImage> createState() => _MainImageState();
 }
 
-class _MainImageState extends State<MainImage> {
+class _MainImageState extends State<MainImage> with AutomaticKeepAliveClientMixin {
   bool _isLoaded = false;
 
   @override
@@ -31,37 +31,41 @@ class _MainImageState extends State<MainImage> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final isLoading = MainImage._kMainImage == null || !_isLoaded;
     final width = Responsive.get(
       context,
-      def: () => MediaQuery.of(context).size.width / 2.3,
+      def: () => 796.0,
       s: () => MediaQuery.of(context).size.width,
     );
-    final height = width * 0.7;
     final duration = const Duration(milliseconds: 300);
     final curve = Curves.easeInOut;
     return SizedBox(
       width: width,
-      height: height,
-      child: AnimatedSlide(
-        curve: curve,
-        offset: isLoading ? const Offset(0, 1) : Offset.zero,
-        duration: duration,
-        child: AnimatedOpacity(
+      child: AspectRatio(
+        aspectRatio: 1194 / 828,
+        child: AnimatedSlide(
           curve: curve,
+          offset: isLoading ? const Offset(0, 1) : Offset.zero,
           duration: duration,
-          opacity: isLoading ? 0 : 1,
-          child: isLoading
-              ? SizedBox.shrink()
-              : Image.memory(
-                  MainImage._kMainImage!,
-                  fit: BoxFit.fitHeight,
-                  width: width,
-                  height: height,
-                  alignment: Alignment.topCenter,
-                ),
+          child: AnimatedOpacity(
+            curve: curve,
+            duration: duration,
+            opacity: isLoading ? 0 : 1,
+            child: isLoading
+                ? SizedBox.shrink()
+                : Image.memory(
+                    MainImage._kMainImage!,
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.bottomCenter,
+                    filterQuality: FilterQuality.high,
+                  ),
+          ),
         ),
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

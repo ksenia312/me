@@ -1,9 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/math.dart';
 import 'package:rive/rive.dart';
 
-class MouseTrackingAnimationWrapper extends StatefulWidget {
-  const MouseTrackingAnimationWrapper({
+class CatAnimationWrapper extends StatefulWidget {
+  const CatAnimationWrapper({
     super.key,
     this.artboardName = 'Burb',
     this.animationName = 'Burb',
@@ -23,10 +24,10 @@ class MouseTrackingAnimationWrapper extends StatefulWidget {
   static const defaultSize = Size(451, 392);
 
   @override
-  State<MouseTrackingAnimationWrapper> createState() => _MouseTrackingAnimationWrapperState();
+  State<CatAnimationWrapper> createState() => _CatAnimationWrapperState();
 }
 
-class _MouseTrackingAnimationWrapperState extends State<MouseTrackingAnimationWrapper> {
+class _CatAnimationWrapperState extends State<CatAnimationWrapper> {
   final _key = GlobalKey();
 
   StateMachineController? _controller;
@@ -73,18 +74,25 @@ class _MouseTrackingAnimationWrapperState extends State<MouseTrackingAnimationWr
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onHover: (event) => _updateAnimationPosition(event.position),
-      child: widget.builder(_key, _artboard, context),
+    return Listener(
+      onPointerSignal: (event) {
+        if (event is PointerScrollEvent) {
+          _updateAnimationPosition(event.position);
+        }
+      },
+      child: MouseRegion(
+        onHover: (event) => _updateAnimationPosition(event.position),
+        child: widget.builder(_key, _artboard, context),
+      ),
     );
   }
 }
 
-class MouseTrackingAnimation extends StatelessWidget {
-  const MouseTrackingAnimation({
+class CatAnimation extends StatelessWidget {
+  const CatAnimation({
     super.key,
     this.artboard,
-    required this.size,
+    this.size = CatAnimationWrapper.defaultSize,
   });
 
   final Size size;

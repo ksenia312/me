@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:me/generated/assets.gen.dart';
 import 'package:me/uikit/components/main_image.dart';
+import 'package:me/uikit/custom_paint/background_wave_paint.dart';
 import 'package:me/uikit/elements/app_title.dart';
+import 'package:me/uikit/elements/custom_app_bar.dart';
+import 'package:me/uikit/responsive/responsive_sizes.dart';
+import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:me/uikit/components/summary_circle.dart';
-
-import 'components/custom_app_bar.dart';
-import 'theme/app_colors.dart';
 
 class UikitPage extends StatelessWidget {
   const UikitPage({super.key});
@@ -42,11 +42,11 @@ class UikitPage extends StatelessWidget {
           ),
         ],
       ),
-      MainImage(),
+      Center(child: MainImage()),
       Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(
-         crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             AppTitle(title: 'FLUTTER DEVELOPER', subtitle: 'Kseniia Nikitina', alignment: AppTitleAlignment.left),
             AppTitle(title: 'FLUTTER DEVELOPER', subtitle: 'Kseniia Nikitina', alignment: AppTitleAlignment.right),
@@ -68,12 +68,32 @@ class UikitPage extends StatelessWidget {
         ],
       ),
       backgroundColor: AppColors.blue,
-      body: ListView.separated(
-        itemCount: widgets.length,
-        itemBuilder: (context, index) {
-          return widgets[index];
-        },
-        separatorBuilder: (context, index) => SizedBox(height: 16),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: AppResponsiveSizes.toolbarHeight(context) + AppResponsiveSizes.small(context),
+                horizontal: AppResponsiveSizes.landingMargin(context),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ...widgets.expand((e) => [e, const SizedBox(height: 16)]),
+                ],
+              ),
+            ),
+            BackgroundWavePaint(
+              waveHeight: MediaQuery.sizeOf(context).width / 8,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 2),
+                child: SizedBox(height: 300.0),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
