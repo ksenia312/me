@@ -35,7 +35,7 @@ class _MainImageState extends State<MainImage> with AutomaticKeepAliveClientMixi
     final isLoading = MainImage._kMainImage == null || !_isLoaded;
     final width = Responsive.get(
       context,
-      def: () => 796.0,
+      def: () => 750.0,
       s: () => MediaQuery.of(context).size.width,
     );
     final duration = const Duration(milliseconds: 300);

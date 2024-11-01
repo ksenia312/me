@@ -2,6 +2,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/uikit/localization/locales.dart';
+import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/app_constants.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
@@ -26,7 +27,7 @@ class _LanguageButtonState extends State<LanguageButton> {
         if (locale != null) context.setLocale(locale);
       },
       buttonStyleData: ButtonStyleData(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.symmetric(horizontal: AppResponsiveSizes.medium(context)),
         height: double.infinity,
         decoration: BoxDecoration(borderRadius: AppSizes.toolbarBorderRadius),
       ),
@@ -57,6 +58,7 @@ class _LanguageButtonState extends State<LanguageButton> {
         ...sortedLocales.map(
           (e) => DropdownMenuItem(
             value: e,
+            alignment: Alignment.center,
             child: Text(
               e.languageCode.toUpperCase(),
               style: context.textTheme.bodySmall,

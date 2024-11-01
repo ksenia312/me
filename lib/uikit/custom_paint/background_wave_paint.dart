@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:me/uikit/theme/context_extensions.dart';
 
 class BackgroundWavePaint extends StatelessWidget {
   const BackgroundWavePaint({super.key, required this.child, required this.waveHeight});
@@ -15,7 +16,17 @@ class BackgroundWavePaint extends StatelessWidget {
       width: screenWidth,
       child: CustomPaint(
         size: Size.fromWidth(screenWidth),
-        painter: _BackgroundWavePainter(waveHeight: waveHeight),
+        painter: _BackgroundWavePainter(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              context.customColorScheme.gradientLightColor,
+              context.customColorScheme.gradientDarkColor,
+            ],
+          ),
+          waveHeight: waveHeight,
+        ),
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: waveHeight),
           child: child,
@@ -26,9 +37,10 @@ class BackgroundWavePaint extends StatelessWidget {
 }
 
 class _BackgroundWavePainter extends CustomPainter {
-  const _BackgroundWavePainter({required this.waveHeight});
+  const _BackgroundWavePainter({required this.waveHeight, required this.gradient});
 
   final double waveHeight;
+  final Gradient gradient;
 
   double get clippedWaveHeight => waveHeight - 10;
 
@@ -36,11 +48,6 @@ class _BackgroundWavePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final borderWidth = 2.5;
     final sizeInner = Size(size.width, size.height - borderWidth * 2);
-    final gradient = LinearGradient(
-      colors: [Color(0xFF141723), Color(0xFF090B0D)],
-      begin: Alignment.topCenter,
-      end: Alignment.bottomCenter,
-    );
 
     final paintBorder = Paint()
       ..strokeWidth = borderWidth

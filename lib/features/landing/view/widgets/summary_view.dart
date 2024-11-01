@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/features/landing/notifier/summary_notifier.dart';
 import 'package:me/uikit/components/cat_animation.dart';
 import 'package:me/uikit/components/summary_circle.dart';
 import 'package:me/uikit/custom_paint/background_wave_paint.dart';
@@ -7,47 +8,103 @@ import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:rive/rive.dart';
 
-class SummaryViewModel {
-  const SummaryViewModel({required this.title, required this.subtitle});
-
-  final String title;
-  final String subtitle;
-}
-
-class SummaryView extends StatelessWidget {
+class SummaryView extends StatefulWidget {
   const SummaryView({super.key, required this.globalKey, this.artboard});
 
   final GlobalKey globalKey;
   final Artboard? artboard;
 
   static double waveHeightOf(BuildContext context) {
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    return screenWidth / 8;
+    return Responsive.get(
+      context,
+      def: () => MediaQuery.sizeOf(context).width / 10,
+      xl: () => MediaQuery.sizeOf(context).width / 12,
+      xxl: () => MediaQuery.sizeOf(context).width / 16,
+    );
   }
+
+  @override
+  State<SummaryView> createState() => _SummaryViewState();
+}
+
+class _SummaryViewState extends State<SummaryView> {
+  final _summaryNotifier = SummaryNotifier();
 
   @override
   Widget build(BuildContext context) {
     final models = [
-      const SummaryViewModel(title: '6 years', subtitle: 'total experience'),
-      const SummaryViewModel(title: '2.5 years', subtitle: 'Flutter experience'),
-      const SummaryViewModel(title: 'High education', subtitle: 'in tech field'),
-      const SummaryViewModel(title: 'Open-source', subtitle: 'currently active project'),
-      const SummaryViewModel(title: 'Google Play', subtitle: 'currently active app'),
-      const SummaryViewModel(title: 'English language', subtitle: 'working proficiency'),
+      SummaryCircle(
+        title: '${_summaryNotifier.overallExperienceInYears.toStringAsFixed(1)} years',
+        subtitle: 'total experience',
+        activeContent: ActiveSummaryText(
+          text: 'Apart from Dart, I used Kotlin, Swift, JavaScript, Python, C#, R and more',
+        ),
+      ),
+      SummaryCircle(
+        title: '${_summaryNotifier.flutterExperienceInYears.toStringAsFixed(1)} years',
+        subtitle: 'Flutter experience',
+        activeContent: ActiveSummaryRawText(
+          spans: [
+            ActiveSummaryTextSpan(text: 'I build both'),
+            ActiveSummaryTextSpan(text: 'web, mobile', isBold: true, hasSpaceInTheEnd: false),
+            ActiveSummaryTextSpan(text: ', and'),
+            ActiveSummaryTextSpan(text: 'backend', isBold: true),
+            ActiveSummaryTextSpan(
+              text: 'structures. I specialize in complex, multi-app systems and custom Dart/Flutter packages',
+            ),
+          ],
+        ),
+      ),
+      SummaryCircle(
+        title: 'High education',
+        subtitle: 'in tech field',
+        activeContent: ActiveSummaryRawText(
+          spans: [
+            ActiveSummaryTextSpan(text: 'Programming in information and communication systems at'),
+            ActiveSummaryTextSpan(text: 'ITMO University', isBold: true),
+          ],
+        ),
+      ),
+      SummaryCircle(
+        title: 'Open-source',
+        subtitle: 'currently active project',
+        activeContent: ActiveSummaryLink(
+          title: 'Package for P2P communication',
+          buttonText: 'Open package',
+          link: _summaryNotifier.packageLink,
+        ),
+      ),
+      SummaryCircle(
+        title: 'Google Play',
+        subtitle: 'currently active app',
+        activeContent: ActiveSummaryLink(
+          title: 'Offline chat application, supports texts and files',
+          buttonText: 'Open app',
+          link: _summaryNotifier.appLink,
+        ),
+      ),
+      SummaryCircle(
+        title: 'English language',
+        subtitle: 'working proficiency',
+        activeContent: ActiveSummaryText(text: 'I\'m fluent in English'),
+      ),
     ];
+
     return BackgroundWavePaint(
-      waveHeight: waveHeightOf(context),
+      waveHeight: SummaryView.waveHeightOf(context),
       child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: AppResponsiveSizes.landingMargin(context),
-          vertical: AppResponsiveSizes.x4Large(context),
+        padding: EdgeInsets.fromLTRB(
+          AppResponsiveSizes.landingMargin(context),
+          AppResponsiveSizes.large(context) + AppResponsiveSizes.toolbarHeight(context),
+          AppResponsiveSizes.landingMargin(context),
+          AppResponsiveSizes.large(context),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             AppTitle(title: 'SUMMARY', subtitle: 'Very very briefly', alignment: AppTitleAlignment.left),
-            SizedBox(height: AppResponsiveSizes.x10large(context)),
+            SizedBox(height: AppResponsiveSizes.x5Large(context)),
             Flexible(
               child: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
@@ -55,17 +112,15 @@ class SummaryView extends StatelessWidget {
                 runAlignment: WrapAlignment.center,
                 runSpacing: AppResponsiveSizes.x5Large(context),
                 spacing: AppResponsiveSizes.x5Large(context),
-                children: [
-                  ...models.map((e) => SummaryCircle(title: e.title, subtitle: e.subtitle)),
-                ],
+                children: models,
               ),
             ),
-            SizedBox(height: AppResponsiveSizes.x5Large(context)),
+            SizedBox(height: AppResponsiveSizes.large(context)),
             ...Responsive.get(
               context,
               def: () => [
-                Center(child: CatAnimation(key: globalKey, artboard: artboard)),
-                SizedBox(height: AppResponsiveSizes.x10large(context)),
+                Center(child: CatAnimation(key: widget.globalKey, artboard: widget.artboard)),
+                SizedBox(height: AppResponsiveSizes.x2Large(context)),
               ],
               s: () => [],
             ),

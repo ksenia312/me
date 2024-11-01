@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:me/uikit/theme/app_colors.dart';
-import 'package:me/uikit/theme/custom_theme.dart';
+import 'package:me/uikit/theme/custom_color_scheme.dart';
 import 'package:me/uikit/theme/text_theme.dart';
 
 class AppTheme {
@@ -38,11 +38,18 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.lightBlue,
-          minimumSize: const Size(150, 40),
+          minimumSize: const Size(150, 50),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         ),
       ),
       extensions: [
-        CustomColorScheme(borderColor: AppColors.lightBlue),
+        CustomColorScheme(
+          borderColor: AppColors.lightBlue,
+          gradientExtraLightColor: AppColors.extraBlue,
+          gradientLightColor: AppColors.veryDarkBlue,
+          gradientDarkColor: AppColors.extraDarkBlue,
+        ),
+        AppTextTheme.currentCustom(context),
       ],
     );
   }

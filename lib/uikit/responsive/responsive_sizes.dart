@@ -76,7 +76,7 @@ class AppResponsiveSizes {
   static double toolbarHeight([BuildContext? context]) => Responsive.get(
         context,
         def: () => 50,
-        s: () => 70,
+        s: () => 60,
       );
 
   static double shadowBlurRadius([BuildContext? context]) => Responsive.get(

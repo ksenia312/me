@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:me/uikit/components/cat_animation.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/components/language_button.dart';
+import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -22,23 +23,33 @@ part 'widgets/download_cv_view.dart';
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
-  static const toolbarHeight = 80.0;
-
   @override
   State<LandingPage> createState() => _LandingState();
 }
 
 class _LandingState extends State<LandingPage> {
-  final _extraSpeedController = ExtraSpeedScrollController(
-    extraScrollSpeed: 40,
-  );
+  final _extraSpeedController = ExtraSpeedScrollController(extraScrollSpeed: 40);
   final _scrollController = ScrollController();
+
+  final _welcomeKey = GlobalKey();
+  final _summaryKey = GlobalKey();
 
   @override
   void dispose() {
     _extraSpeedController.dispose();
     _scrollController.dispose();
     super.dispose();
+  }
+
+  void _scrollTo(GlobalKey key) {
+    final context = key.currentContext;
+    if (context == null) return;
+
+    Scrollable.ensureVisible(
+      context,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOutCubic,
+    );
   }
 
   @override
@@ -48,7 +59,16 @@ class _LandingState extends State<LandingPage> {
         return Scaffold(
           extendBodyBehindAppBar: true,
           appBar: CustomAppBar(
-            leftTabs: [],
+            leftTabs: [
+              CustomToolbarTab(
+                onPressed: (context) => _scrollTo(_welcomeKey),
+                title: 'Home',
+              ),
+              CustomToolbarTab(
+                onPressed: (context) => _scrollTo(_summaryKey),
+                title: 'Summary',
+              ),
+            ],
             rightTabs: [
               if (kDebugMode)
                 CustomToolbarTab(
@@ -68,9 +88,13 @@ class _LandingState extends State<LandingPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: LandingPage.toolbarHeight),
-                const WelcomeView(),
+                Padding(
+                  key: _welcomeKey,
+                  padding: EdgeInsets.only(top: AppResponsiveSizes.toolbarHeight(context)),
+                  child: WelcomeView(),
+                ),
                 Transform.translate(
+                  key: _summaryKey,
                   offset: Offset(0, -SummaryView.waveHeightOf(context)),
                   child: SummaryView(globalKey: key, artboard: artboard),
                 ),

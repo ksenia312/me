@@ -29,7 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       surfaceTintColor: Colors.transparent,
       flexibleSpace: SizedBox.expand(
         child: Padding(
-          padding: EdgeInsets.all(AppResponsiveSizes.x2Small(context)),
+          padding: EdgeInsets.all(0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -78,7 +78,7 @@ class CustomToolbarTab extends StatelessWidget {
 
   static EdgeInsets paddingOf(BuildContext context) {
     return EdgeInsets.symmetric(
-      horizontal: AppResponsiveSizes.large(context),
+      horizontal: AppResponsiveSizes.x4Large(context),
       vertical: AppResponsiveSizes.small(context),
     );
   }

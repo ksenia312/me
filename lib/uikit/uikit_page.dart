@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/uikit/components/main_image.dart';
 import 'package:me/uikit/custom_paint/background_wave_paint.dart';
+import 'package:me/uikit/elements/app_chip.dart';
 import 'package:me/uikit/elements/app_title.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
@@ -35,11 +36,24 @@ class UikitPage extends StatelessWidget {
           SummaryCircle(
             title: 'Summary Circle',
             subtitle: 'Summary Circle Subtitle',
+            activeContent: ActiveSummaryText(text: 'Summary Circle Subtitle Active'),
           ),
           SummaryCircle(
             title: '6 years',
             subtitle: 'total experience',
+            activeContent: ActiveSummaryText(
+              text: 'total experience Active total experience Active total experience Active total experience Active',
+            ),
           ),
+        ],
+      ),
+      Wrap(
+        spacing: 10,
+        runSpacing: 10,
+        children: [
+          AppChip(text: 'Flutter'),
+          AppChip(text: 'Dart'),
+          AppChip(text: 'Java'),
         ],
       ),
       Center(child: MainImage()),
