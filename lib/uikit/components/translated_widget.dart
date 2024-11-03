@@ -9,7 +9,7 @@ class TranslatedWidget extends StatelessWidget {
       context,
       def: () => MediaQuery.sizeOf(context).width / 10,
       xl: () => MediaQuery.sizeOf(context).width / 12,
-      xxl: () => MediaQuery.sizeOf(context).width / 16,
+      xxl: () => MediaQuery.sizeOf(context).width / 24,
     );
   }
 

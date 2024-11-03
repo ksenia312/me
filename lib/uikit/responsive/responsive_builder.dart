@@ -21,7 +21,7 @@ abstract class ResponsiveBuilder {
       name: ResponsiveSizes.l.name,
     ),
     Breakpoint(
-      start: 1921,
+      start: 1700,
       end: 3700,
       name: ResponsiveSizes.xl.name,
     ),

@@ -23,7 +23,10 @@ class SummaryCircle extends StatelessWidget {
       builder: (context, isActive) {
         final size = Responsive.get(
           context,
-          def: () => 280.0,
+          def: () => 250.0,
+          xxl: () => 350.0,
+          xl: () => 400.0,
+          l: () => 280.0,
           m: () => 200.0,
           s: () => MediaQuery.sizeOf(context).width,
         );
@@ -69,7 +72,7 @@ class SummaryCircle extends StatelessWidget {
                       style: context.textTheme.titleLarge,
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: Responsive.get(context, def: () => 12, s: () => 8)),
+                    SizedBox(height: AppResponsiveSizes.medium(context)),
                     Text(
                       subtitle,
                       style: context.textTheme.bodyMedium,

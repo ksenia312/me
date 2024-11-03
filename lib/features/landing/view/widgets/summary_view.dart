@@ -42,7 +42,7 @@ class _SummaryViewState extends State<SummaryView> {
             ActiveSummaryTextSpan(text: ', and'),
             ActiveSummaryTextSpan(text: 'backend', isBold: true),
             ActiveSummaryTextSpan(
-              text: 'structures. I specialize in complex, multi-app systems and custom Dart/Flutter packages',
+              text: 'structures. I specialize in complex systems and custom Flutter packages',
             ),
           ],
         ),
