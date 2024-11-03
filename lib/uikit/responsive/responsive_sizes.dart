@@ -50,7 +50,7 @@ class AppResponsiveSizes {
   static double x5Large(BuildContext context) => Responsive.get(
         context,
         def: () => 44,
-        m: () => 32,
+        m: () => 24,
         s: () => 20,
       );
 
@@ -69,8 +69,8 @@ class AppResponsiveSizes {
   static double landingMargin(BuildContext context) => Responsive.get(
         context,
         def: () => 64,
-        m: () => 16,
-        s: () => 0,
+        m: () => 16.0,
+        s: () => 16.0,
       );
 
   static double toolbarHeight([BuildContext? context]) => Responsive.get(

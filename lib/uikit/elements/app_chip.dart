@@ -9,19 +9,18 @@ class AppChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(
+    return Container(
       padding: EdgeInsets.symmetric(
         horizontal: AppResponsiveSizes.medium(context),
         vertical: AppResponsiveSizes.small(context),
       ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppResponsiveSizes.small(context)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppResponsiveSizes.medium(context)),
+        color: context.colorScheme.secondary,
       ),
-      side: BorderSide.none,
-      color: WidgetStatePropertyAll(context.colorScheme.secondary),
-      label: Text(
+      child: Text(
         text,
-        style: context.textTheme.bodySmall,
+        style: context.textTheme.bodySmall?.copyWith(height: 1),
       ),
     );
   }

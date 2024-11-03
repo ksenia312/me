@@ -20,47 +20,43 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      toolbarOpacity: 0.2,
       scrolledUnderElevation: 0,
       titleSpacing: 0,
-      toolbarHeight: preferredSize.height,
       centerTitle: true,
       automaticallyImplyLeading: false,
+      toolbarHeight: preferredSize.height,
       surfaceTintColor: Colors.transparent,
       flexibleSpace: SizedBox.expand(
-        child: Padding(
-          padding: EdgeInsets.all(0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Flexible(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    ...leftTabs.map(
-                      (e) => Flexible(
-                        child: SizedBox(height: double.infinity, child: e),
-                      ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Flexible(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ...leftTabs.map(
+                    (e) => Flexible(
+                      child: SizedBox(height: double.infinity, child: e),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    ...rightTabs.map(
-                      (e) => Flexible(
-                        child: SizedBox(height: double.infinity, child: e),
-                      ),
-                    )
-                  ],
-                ),
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ...rightTabs.map(
+                    (e) => Flexible(
+                      child: SizedBox(height: double.infinity, child: e),
+                    ),
+                  )
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

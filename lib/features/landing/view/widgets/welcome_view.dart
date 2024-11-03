@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:me/features/landing/view/landing_page.dart';
 import 'package:me/uikit/components/main_image.dart';
 import 'package:me/uikit/elements/app_chip.dart';
 import 'package:me/uikit/elements/app_title.dart';
@@ -39,7 +38,7 @@ class WelcomeView extends StatelessWidget {
       ),
       padding: EdgeInsets.fromLTRB(
         AppResponsiveSizes.landingMargin(context),
-        AppResponsiveSizes.x4Large(context),
+        AppResponsiveSizes.x4Large(context) + AppResponsiveSizes.toolbarHeight(context),
         AppResponsiveSizes.landingMargin(context),
         0.0,
       ),

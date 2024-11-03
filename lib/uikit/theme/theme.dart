@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/custom_color_scheme.dart';
 import 'package:me/uikit/theme/text_theme.dart';
@@ -38,7 +39,7 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.lightBlue,
-          minimumSize: const Size(150, 50),
+          minimumSize: Responsive.get(context, def: () => const Size(150, 50), s: () => const Size(150, 40)),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         ),
       ),

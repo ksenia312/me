@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:me/features/landing/notifier/summary_notifier.dart';
 import 'package:me/uikit/components/cat_animation.dart';
 import 'package:me/uikit/components/summary_circle.dart';
+import 'package:me/uikit/components/translated_widget.dart';
 import 'package:me/uikit/custom_paint/background_wave_paint.dart';
 import 'package:me/uikit/elements/app_title.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
@@ -13,15 +14,6 @@ class SummaryView extends StatefulWidget {
 
   final GlobalKey globalKey;
   final Artboard? artboard;
-
-  static double waveHeightOf(BuildContext context) {
-    return Responsive.get(
-      context,
-      def: () => MediaQuery.sizeOf(context).width / 10,
-      xl: () => MediaQuery.sizeOf(context).width / 12,
-      xxl: () => MediaQuery.sizeOf(context).width / 16,
-    );
-  }
 
   @override
   State<SummaryView> createState() => _SummaryViewState();
@@ -86,16 +78,16 @@ class _SummaryViewState extends State<SummaryView> {
       SummaryCircle(
         title: 'English language',
         subtitle: 'working proficiency',
-        activeContent: ActiveSummaryText(text: 'I\'m fluent in English'),
+        activeContent: ActiveSummaryText(text: 'I speak English every day'),
       ),
     ];
 
     return BackgroundWavePaint(
-      waveHeight: SummaryView.waveHeightOf(context),
+      waveHeight: TranslatedWidget.waveHeightOf(context),
       child: Padding(
         padding: EdgeInsets.fromLTRB(
           AppResponsiveSizes.landingMargin(context),
-          AppResponsiveSizes.large(context) + AppResponsiveSizes.toolbarHeight(context),
+          AppResponsiveSizes.x2Large(context) + AppResponsiveSizes.toolbarHeight(context),
           AppResponsiveSizes.landingMargin(context),
           AppResponsiveSizes.large(context),
         ),

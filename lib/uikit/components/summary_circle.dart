@@ -25,12 +25,11 @@ class SummaryCircle extends StatelessWidget {
           context,
           def: () => 280.0,
           m: () => 200.0,
-          s: () => 156.0,
+          s: () => MediaQuery.sizeOf(context).width,
         );
-        return AnimatedContainer(
+        final widget = AnimatedContainer(
           duration: const Duration(milliseconds: 150),
-          width: size,
-          height: size,
+          curve: Curves.easeInOut,
           padding: EdgeInsets.symmetric(
             horizontal: AppResponsiveSizes.x3Large(context),
             vertical: AppResponsiveSizes.large(context),
@@ -42,7 +41,16 @@ class SummaryCircle extends StatelessWidget {
               width: isActive ? 4 : 2,
               strokeAlign: BorderSide.strokeAlignOutside,
             ),
-            shape: BoxShape.circle,
+            borderRadius: Responsive.get(
+              context,
+              def: () => null,
+              s: () => BorderRadius.circular(AppResponsiveSizes.x3Large(context)),
+            ),
+            shape: Responsive.get(
+              context,
+              def: () => BoxShape.circle,
+              s: () => BoxShape.rectangle,
+            ),
             boxShadow: [
               BoxShadow(
                 color: context.colorScheme.onSurface.withOpacity(0.7),
@@ -69,6 +77,11 @@ class SummaryCircle extends StatelessWidget {
                     ),
                   ],
                 ),
+        );
+        return Responsive.get(
+          context,
+          def: () => SizedBox.square(dimension: size, child: widget),
+          s: () => SizedBox(width: size, height: size / 3.5, child: widget),
         );
       },
     );
@@ -111,7 +124,7 @@ class ActiveSummaryLink extends ActiveSummaryContent {
           style: context.textTheme.bodyMedium,
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: Responsive.get(context, def: () => 12, s: () => 4)),
+        SizedBox(height: AppResponsiveSizes.large(context)),
         ElevatedButton(
           onPressed: () => launchUrlString(link),
           child: Text(

@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/uikit/components/cat_animation.dart';
+import 'package:me/uikit/components/translated_widget.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/components/language_button.dart';
-import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
+import 'widgets/projects_view.dart';
 import 'widgets/summary_view.dart';
 import 'widgets/welcome_view.dart';
 
@@ -33,6 +34,7 @@ class _LandingState extends State<LandingPage> {
 
   final _welcomeKey = GlobalKey();
   final _summaryKey = GlobalKey();
+  final _projectsKey = GlobalKey();
 
   @override
   void dispose() {
@@ -47,7 +49,7 @@ class _LandingState extends State<LandingPage> {
 
     Scrollable.ensureVisible(
       context,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOutCubic,
     );
   }
@@ -67,6 +69,10 @@ class _LandingState extends State<LandingPage> {
               CustomToolbarTab(
                 onPressed: (context) => _scrollTo(_summaryKey),
                 title: 'Summary',
+              ),
+              CustomToolbarTab(
+                onPressed: (context) => _scrollTo(_projectsKey),
+                title: 'Projects',
               ),
             ],
             rightTabs: [
@@ -88,15 +94,13 @@ class _LandingState extends State<LandingPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Padding(
-                  key: _welcomeKey,
-                  padding: EdgeInsets.only(top: AppResponsiveSizes.toolbarHeight(context)),
-                  child: WelcomeView(),
-                ),
-                Transform.translate(
+                WelcomeView(key: _welcomeKey),
+                TranslatedWidget(
                   key: _summaryKey,
-                  offset: Offset(0, -SummaryView.waveHeightOf(context)),
                   child: SummaryView(globalKey: key, artboard: artboard),
+                ),
+                TranslatedWidget(
+                  child: ProjectsView(key: _projectsKey),
                 ),
               ],
             ),

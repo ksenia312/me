@@ -24,6 +24,9 @@ class $AssetsFontsGen {
   /// File path: assets/fonts/Inter-ExtraBold.otf
   String get interExtraBold => 'assets/fonts/Inter-ExtraBold.otf';
 
+  /// File path: assets/fonts/Inter-Light.otf
+  String get interLight => 'assets/fonts/Inter-Light.otf';
+
   /// File path: assets/fonts/Inter-Medium.otf
   String get interMedium => 'assets/fonts/Inter-Medium.otf';
 
@@ -38,6 +41,7 @@ class $AssetsFontsGen {
         interBlack,
         interBold,
         interExtraBold,
+        interLight,
         interMedium,
         interRegular,
         interSemiBold
@@ -79,8 +83,11 @@ class $AssetsImagesGen {
   /// File path: assets/images/me.png
   AssetGenImage get me => const AssetGenImage('assets/images/me.png');
 
+  /// File path: assets/images/naming.png
+  AssetGenImage get naming => const AssetGenImage('assets/images/naming.png');
+
   /// List of all assets
-  List<dynamic> get values => [cat, me];
+  List<dynamic> get values => [cat, me, naming];
 }
 
 class $AssetsTranslationsGen {
