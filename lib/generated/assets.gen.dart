@@ -36,6 +36,9 @@ class $AssetsFontsGen {
   /// File path: assets/fonts/Inter-SemiBold.otf
   String get interSemiBold => 'assets/fonts/Inter-SemiBold.otf';
 
+  /// File path: assets/fonts/RobotoMono-Regular.ttf
+  String get robotoMonoRegular => 'assets/fonts/RobotoMono-Regular.ttf';
+
   /// List of all assets
   List<String> get values => [
         interBlack,
@@ -44,7 +47,8 @@ class $AssetsFontsGen {
         interLight,
         interMedium,
         interRegular,
-        interSemiBold
+        interSemiBold,
+        robotoMonoRegular
       ];
 }
 

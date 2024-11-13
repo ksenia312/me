@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:me/config/firebase_options.dart';
 import 'package:me/uikit/localization/locales.dart';
 import 'package:me/uikit/components/main_image.dart';
@@ -15,6 +16,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await MainImage.load();
+
+  usePathUrlStrategy();
 
   runApp(
     EasyLocalization(

@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:me/features/landing/notifier/pet_project_list_notifier.dart';
+import 'package:me/uikit/components/project_cards_grid.dart';
 import 'package:me/uikit/elements/app_title.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 
-class ProjectsView extends StatelessWidget {
+class ProjectsView extends StatefulWidget {
   const ProjectsView({super.key});
+
+  @override
+  State<ProjectsView> createState() => _ProjectsViewState();
+}
+
+class _ProjectsViewState extends State<ProjectsView> {
+  late final _notifier = PetProjectListNotifier()..addListener(() => setState(() {}));
+
+  @override
+  void initState() {
+    _notifier.init();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +34,8 @@ class ProjectsView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           AppTitle(title: 'PET PROJECTS', subtitle: 'Unique, creative, mine!'),
-          SizedBox(height: 10000),
+          SizedBox(height: AppResponsiveSizes.x3Large(context)),
+          ProjectCardsGrid(vms: _notifier.vms)
         ],
       ),
     );

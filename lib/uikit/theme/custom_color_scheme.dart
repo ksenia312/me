@@ -6,12 +6,14 @@ class CustomColorScheme extends ThemeExtension<CustomColorScheme> {
     required this.gradientExtraLightColor,
     required this.gradientLightColor,
     required this.gradientDarkColor,
+    required this.videoBackgroundColor,
   });
 
   final Color borderColor;
   final Color gradientExtraLightColor;
   final Color gradientLightColor;
   final Color gradientDarkColor;
+  final Color videoBackgroundColor;
 
   @override
   CustomColorScheme copyWith({
@@ -19,12 +21,14 @@ class CustomColorScheme extends ThemeExtension<CustomColorScheme> {
     Color? gradientExtraLightColor,
     Color? gradientLightColor,
     Color? gradientDarkColor,
+    Color? videoBackgroundColor,
   }) {
     return CustomColorScheme(
       borderColor: borderColor ?? this.borderColor,
       gradientExtraLightColor: gradientExtraLightColor ?? this.gradientExtraLightColor,
       gradientLightColor: gradientLightColor ?? this.gradientLightColor,
       gradientDarkColor: gradientDarkColor ?? this.gradientDarkColor,
+      videoBackgroundColor: videoBackgroundColor ?? this.videoBackgroundColor,
     );
   }
 
@@ -42,6 +46,7 @@ class CustomColorScheme extends ThemeExtension<CustomColorScheme> {
           Color.lerp(gradientExtraLightColor, other.gradientExtraLightColor, t) ?? gradientExtraLightColor,
       gradientLightColor: Color.lerp(gradientLightColor, other.gradientLightColor, t) ?? gradientLightColor,
       gradientDarkColor: Color.lerp(gradientDarkColor, other.gradientDarkColor, t) ?? gradientDarkColor,
+      videoBackgroundColor: Color.lerp(videoBackgroundColor, other.videoBackgroundColor, t) ?? videoBackgroundColor,
     );
   }
 

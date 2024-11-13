@@ -70,6 +70,7 @@ class CustomToolbarTab extends StatelessWidget {
     this.titleWidget,
     this.onPressed,
     this.color,
+    this.hasIndents = true,
   }) : assert(title != null || titleWidget != null);
 
   static EdgeInsets paddingOf(BuildContext context) {
@@ -82,6 +83,7 @@ class CustomToolbarTab extends StatelessWidget {
   final String? title;
   final Widget? titleWidget;
   final Color? color;
+  final bool hasIndents;
   final void Function(BuildContext)? onPressed;
 
   @override
@@ -90,7 +92,7 @@ class CustomToolbarTab extends StatelessWidget {
       borderRadius: AppSizes.toolbarBorderRadius,
       onTap: onPressed != null ? () => onPressed?.call(context) : null,
       child: Container(
-        padding: paddingOf(context),
+        padding: hasIndents ? paddingOf(context) : EdgeInsets.zero,
         height: double.infinity,
         decoration: BoxDecoration(
           borderRadius: AppSizes.toolbarBorderRadius,

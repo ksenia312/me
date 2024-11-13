@@ -1,4 +1,4 @@
-import 'package:me/data/experience_repository/experience_repository_impl.dart';
+import 'package:me/data/experience/experience_repository_impl.dart';
 
 abstract class ExperienceRepository {
   static ExperienceRepository? _instance;

@@ -79,7 +79,7 @@ class _LandingState extends State<LandingPage> {
               if (kDebugMode)
                 CustomToolbarTab(
                   color: context.customColorScheme.borderColor,
-                  onPressed: (context) => context.goNamed('uikit'),
+                  onPressed: (context) => context.go('/uikit'),
                   title: 'Open debug menu',
                 ),
               LanguageButton(),

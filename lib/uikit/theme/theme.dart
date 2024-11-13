@@ -43,12 +43,18 @@ class AppTheme {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         ),
       ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: AppColors.lightBlue,
+        foregroundColor: AppColors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10000)),
+      ),
       extensions: [
         CustomColorScheme(
           borderColor: AppColors.lightBlue,
           gradientExtraLightColor: AppColors.extraBlue,
           gradientLightColor: AppColors.veryDarkBlue,
           gradientDarkColor: AppColors.extraDarkBlue,
+          videoBackgroundColor: AppColors.megaDarkBlue,
         ),
         AppTextTheme.currentCustom(context),
       ],

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:me/domain/pet_project/model/pet_project_data.dart';
+import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
 import 'package:me/uikit/components/main_image.dart';
+import 'package:me/uikit/components/project_cards_grid.dart';
 import 'package:me/uikit/custom_paint/background_wave_paint.dart';
+import 'package:me/uikit/elements/app_back_button.dart';
 import 'package:me/uikit/elements/app_chip.dart';
 import 'package:me/uikit/elements/app_title.dart';
+import 'package:me/uikit/elements/app_video_player.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/app_colors.dart';
@@ -16,6 +20,14 @@ class UikitPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final widgets = [
+      SizedBox(
+        height: MediaQuery.of(context).size.height / 2,
+        child: AppVideoPlayer(
+          url:
+          'https://firebasestorage.googleapis.com/v0/b/xenikii-d8064.appspot.com/o/conneqt-android-demo.mp4?alt=media&token=dd7b167a-5d8d-4fbb-82ab-c1b6f2da8878',
+          aspectRatio: 1,
+        ),
+      ),
       Text('Display Large'.toUpperCase(), style: context.textTheme.displayLarge),
       Text('Display Medium'.toUpperCase(), style: context.textTheme.displayMedium),
       Text('Display Small'.toUpperCase(), style: context.textTheme.displaySmall),
@@ -29,6 +41,7 @@ class UikitPage extends StatelessWidget {
       Text('Label Large', style: context.textTheme.labelLarge),
       Text('Label Medium', style: context.textTheme.labelMedium),
       Text('Label Small', style: context.textTheme.labelSmall),
+
       Wrap(
         spacing: 16,
         runSpacing: 16,
@@ -67,6 +80,12 @@ class UikitPage extends StatelessWidget {
           ],
         ),
       ),
+      ProjectCardsGrid(
+        vms: [
+          PetProjectLoadedCard(data: _kData, imageUrl: ''),
+        ],
+      ),
+
     ];
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -74,12 +93,7 @@ class UikitPage extends StatelessWidget {
         rightTabs: [
           CustomToolbarTab(title: 'title', onPressed: (_) {}),
         ],
-        leftTabs: [
-          CustomToolbarTab(
-            titleWidget: Icon(Icons.arrow_back_ios_new, size: 12),
-            onPressed: (_) => context.go('/'),
-          ),
-        ],
+        leftTabs: [AppBackButton()],
       ),
       backgroundColor: AppColors.blue,
       body: SingleChildScrollView(
@@ -112,3 +126,13 @@ class UikitPage extends StatelessWidget {
     );
   }
 }
+
+final _kData = PetProjectData(
+  id: 'conneqt',
+  order: 1,
+  titles: {'en': 'Conneqt'},
+  subtitles: {'en': 'Unique, creative, mine!'},
+  imageStoragePath: 'conneqt-small.png',
+  imageLargeStoragePath: 'conneqt-large.png',
+  accentColor: Color(0xFF4361EE),
+);

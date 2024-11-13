@@ -66,6 +66,13 @@ class AppResponsiveSizes {
         s: () => 66,
       );
 
+  static double landingMarginSmall(BuildContext context) => Responsive.get(
+        context,
+        def: () => 34,
+        m: () => 12.0,
+        s: () => 12.0,
+      );
+
   static double landingMargin(BuildContext context) => Responsive.get(
         context,
         def: () => 64,

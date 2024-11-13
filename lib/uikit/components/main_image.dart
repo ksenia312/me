@@ -24,7 +24,9 @@ class _MainImageState extends State<MainImage> with AutomaticKeepAliveClientMixi
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      setState(() => _isLoaded = true);
+      Future.delayed(const Duration(milliseconds: 100), () {
+        setState(() => _isLoaded = true);
+      });
     });
     super.initState();
   }
