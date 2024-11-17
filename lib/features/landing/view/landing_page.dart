@@ -1,46 +1,79 @@
-import 'dart:math';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
+import 'package:me/features/landing/notifier/landing_notifier.dart';
 import 'package:me/uikit/components/cat_animation.dart';
 import 'package:me/uikit/components/translated_widget.dart';
+import 'package:me/uikit/components/up_button.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/components/language_button.dart';
-import 'package:me/uikit/responsive/responsive_utils.dart';
+import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
+import 'package:provider/provider.dart';
 
 import 'widgets/projects_view.dart';
 import 'widgets/summary_view.dart';
 import 'widgets/welcome_view.dart';
 
-part 'widgets/about_me_view.dart';
-
 part 'widgets/contacts_view.dart';
 
 part 'widgets/download_cv_view.dart';
 
-class LandingPage extends StatefulWidget {
+class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
 
   @override
-  State<LandingPage> createState() => _LandingState();
-}
+  Widget build(BuildContext context) {
+    return Title(
+      title: 'Xenikii | ${LocaleKeys.pageTitle.tr()}',
+      color: Colors.white,
+      child: ChangeNotifierProvider(
+        create: (context) => LandingNotifier(),
+        child: Consumer<LandingNotifier>(
+          builder: (context, notifier, _) {
+            return Scaffold(
+              extendBodyBehindAppBar: true,
+              floatingActionButton: UpButton(controller: notifier.scrollController),
+              appBar: CustomAppBar(
+                rightTabs: _buildRightTabs(context, notifier),
+                leftTabs: _buildLeftTabs(context, notifier),
+              ),
+              body: _LandingPageBody(),
+            );
+          },
+        ),
+      ),
+    );
+  }
 
-class _LandingState extends State<LandingPage> {
-  final _extraSpeedController = ExtraSpeedScrollController(extraScrollSpeed: 40);
-  final _scrollController = ScrollController();
+  List<Widget> _buildRightTabs(BuildContext context, LandingNotifier notifier) {
+    return [
+      if (kDebugMode)
+        CustomToolbarTab.listItem(
+          color: context.customColorScheme.borderColor,
+          onPressed: (context) => context.go('/uikit'),
+          title: 'Open debug menu',
+        ),
+      LanguageButton(),
+    ];
+  }
 
-  final _welcomeKey = GlobalKey();
-  final _summaryKey = GlobalKey();
-  final _projectsKey = GlobalKey();
-
-  @override
-  void dispose() {
-    _extraSpeedController.dispose();
-    _scrollController.dispose();
-    super.dispose();
+  List<Widget> _buildLeftTabs(BuildContext context, LandingNotifier notifier) {
+    return [
+      CustomToolbarTab.listItem(
+        onPressed: (context) => _scrollTo(notifier.welcomeKey),
+        title: LocaleKeys.tabHome.tr(),
+      ),
+      CustomToolbarTab.listItem(
+        onPressed: (context) => _scrollTo(notifier.summaryKey),
+        title: LocaleKeys.tabSummary.tr(),
+      ),
+      CustomToolbarTab.listItem(
+        onPressed: (context) => _scrollTo(notifier.projectsKey),
+        title: LocaleKeys.tabProjects.tr(),
+      ),
+    ];
   }
 
   void _scrollTo(GlobalKey key) {
@@ -53,80 +86,34 @@ class _LandingState extends State<LandingPage> {
       curve: Curves.easeInOutCubic,
     );
   }
+}
+
+class _LandingPageBody extends StatelessWidget {
+  const _LandingPageBody();
 
   @override
   Widget build(BuildContext context) {
-    return CatAnimationWrapper(
-      builder: (key, artboard, context) {
-        return Scaffold(
-          extendBodyBehindAppBar: true,
-          appBar: CustomAppBar(
-            leftTabs: [
-              CustomToolbarTab(
-                onPressed: (context) => _scrollTo(_welcomeKey),
-                title: 'Home',
-              ),
-              CustomToolbarTab(
-                onPressed: (context) => _scrollTo(_summaryKey),
-                title: 'Summary',
-              ),
-              CustomToolbarTab(
-                onPressed: (context) => _scrollTo(_projectsKey),
-                title: 'Projects',
-              ),
-            ],
-            rightTabs: [
-              if (kDebugMode)
-                CustomToolbarTab(
-                  color: context.customColorScheme.borderColor,
-                  onPressed: (context) => context.go('/uikit'),
-                  title: 'Open debug menu',
-                ),
-              LanguageButton(),
-            ],
-          ),
-          body: SingleChildScrollView(
-            controller: Responsive.get(
-              context,
-              def: () => _scrollController,
-              s: () => _scrollController,
-            ),
+    return Consumer<LandingNotifier>(builder: (context, notifier, child) {
+      return CatAnimationWrapper(
+        builder: (key, artboard, context) {
+          return SingleChildScrollView(
+            controller: notifier.scrollController,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                WelcomeView(key: _welcomeKey),
+                WelcomeView(key: notifier.welcomeKey),
                 TranslatedWidget(
-                  key: _summaryKey,
+                  key: notifier.summaryKey,
                   child: SummaryView(globalKey: key, artboard: artboard),
                 ),
                 TranslatedWidget(
-                  child: ProjectsView(key: _projectsKey),
+                  child: ProjectsView(key: notifier.projectsKey),
                 ),
               ],
             ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class ExtraSpeedScrollController extends ScrollController {
-  ExtraSpeedScrollController({int extraScrollSpeed = 0}) {
-    super.addListener(() => _scrollListener(extraScrollSpeed));
-  }
-
-  void _scrollListener(int speed) {
-    final position = super.position;
-    final direction = position.userScrollDirection;
-    if (direction != ScrollDirection.idle) {
-      final isReverse = direction == ScrollDirection.reverse;
-      final scrollEnd = super.offset + (isReverse ? speed : -speed);
-      final result = min(
-        position.maxScrollExtent,
-        max(position.minScrollExtent, scrollEnd),
+          );
+        },
       );
-      jumpTo(result);
-    }
+    });
   }
 }

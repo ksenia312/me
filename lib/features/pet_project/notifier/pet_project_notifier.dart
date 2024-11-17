@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:me/domain/download_file/download_file_repository.dart';
 import 'package:me/domain/pet_project/model/pet_project_data.dart';
 import 'package:me/domain/pet_project/pet_project_repository.dart';
-import 'package:http/http.dart' as http;
+import 'package:me/domain/pet_project/readme_repository.dart';
 
 import 'pet_project_vm.dart';
 
@@ -14,7 +14,7 @@ class PetProjectNotifier extends ChangeNotifier {
   bool isLoading = true;
   bool isMarkdownLoading = false;
 
-  PetProjectLoadedPage? vm;
+  PetProjectPageVM? vm;
 
   Future<void> init() async {
     try {
@@ -23,7 +23,7 @@ class PetProjectNotifier extends ChangeNotifier {
     } catch (_) {}
   }
 
-  Future<void> initWithData(PetProjectLoadedPage loaded) async {
+  Future<void> initWithData(PetProjectPageVM loaded) async {
     vm = loaded;
     _setLoading(false);
     await _load(
@@ -42,7 +42,7 @@ class PetProjectNotifier extends ChangeNotifier {
       final androidStoragePath = data.androidStoragePath;
       final iosStoragePath = data.iosStoragePath;
 
-      vm = PetProjectLoadedPage(
+      vm = PetProjectPageVM(
         data: data,
         coverImageUrl: coverImageUrl ?? await _storageURL(data.imageStoragePath),
         androidDemoUrl: androidDemoUrl ?? (androidStoragePath == null ? null : await _storageURL(androidStoragePath)),
@@ -60,7 +60,7 @@ class PetProjectNotifier extends ChangeNotifier {
   Future<void> _fetchMarkdown(String githubLink) async {
     _setMarkdownLoading(true);
     try {
-      final markdown = await _getMarkdown(githubLink);
+      final markdown = await ReadmeRepository.instance.fetch(githubLink);
       vm = vm?.copyWith(markdown: markdown);
     } catch (_) {}
     _setMarkdownLoading(false);
@@ -69,15 +69,6 @@ class PetProjectNotifier extends ChangeNotifier {
   Future<String> _storageURL(String storagePath) async {
     final url = await DownloadFileRepository.instance.getDownloadUrl(storagePath);
     return url;
-  }
-
-  Future<String?> _getMarkdown(String githubLink) async {
-    try {
-      final response = await http.get(Uri.parse(generateRawGitHubLink(githubLink)));
-      return response.body;
-    } catch (_) {
-      return null;
-    }
   }
 
   void _setLoading(bool value) {
@@ -92,20 +83,5 @@ class PetProjectNotifier extends ChangeNotifier {
       isMarkdownLoading = value;
       notifyListeners();
     }
-  }
-
-  String generateRawGitHubLink(String url) {
-    final regex = RegExp(r'^https://github\.com/([^/]+)/([^/]+)(/tree/[^/]+)?/?');
-    final match = regex.firstMatch(url);
-
-    if (match == null) {
-      throw ArgumentError('Invalid GitHub URL');
-    }
-
-    final user = match.group(1);
-    final repo = match.group(2);
-    final branch = match.group(3)?.replaceFirst('/tree/', '') ?? 'main';
-
-    return 'https://raw.githubusercontent.com/$user/$repo/$branch/README.md';
   }
 }

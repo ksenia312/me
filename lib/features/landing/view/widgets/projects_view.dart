@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/landing/notifier/pet_project_list_notifier.dart';
 import 'package:me/uikit/components/project_cards_grid.dart';
 import 'package:me/uikit/elements/app_title.dart';
+import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 
 class ProjectsView extends StatefulWidget {
@@ -33,7 +35,7 @@ class _ProjectsViewState extends State<ProjectsView> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          AppTitle(title: 'PET PROJECTS', subtitle: 'Unique, creative, mine!'),
+          AppTitle(title: LocaleKeys.petProjectsTitle.tr(), subtitle: LocaleKeys.petProjectsSubtitle.tr()),
           SizedBox(height: AppResponsiveSizes.x3Large(context)),
           ProjectCardsGrid(vms: _notifier.vms)
         ],

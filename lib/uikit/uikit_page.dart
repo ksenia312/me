@@ -24,7 +24,7 @@ class UikitPage extends StatelessWidget {
         height: MediaQuery.of(context).size.height / 2,
         child: AppVideoPlayer(
           url:
-          'https://firebasestorage.googleapis.com/v0/b/xenikii-d8064.appspot.com/o/conneqt-android-demo.mp4?alt=media&token=dd7b167a-5d8d-4fbb-82ab-c1b6f2da8878',
+              'https://firebasestorage.googleapis.com/v0/b/xenikii-d8064.appspot.com/o/conneqt-android-demo.mp4?alt=media&token=dd7b167a-5d8d-4fbb-82ab-c1b6f2da8878',
           aspectRatio: 1,
         ),
       ),
@@ -41,7 +41,6 @@ class UikitPage extends StatelessWidget {
       Text('Label Large', style: context.textTheme.labelLarge),
       Text('Label Medium', style: context.textTheme.labelMedium),
       Text('Label Small', style: context.textTheme.labelSmall),
-
       Wrap(
         spacing: 16,
         runSpacing: 16,
@@ -82,16 +81,18 @@ class UikitPage extends StatelessWidget {
       ),
       ProjectCardsGrid(
         vms: [
-          PetProjectLoadedCard(data: _kData, imageUrl: ''),
+          PetProjectCardVM(data: _kData, imageUrl: ''),
         ],
       ),
-
     ];
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
         rightTabs: [
-          CustomToolbarTab(title: 'title', onPressed: (_) {}),
+          CustomToolbarTab.listItem(
+            title: 'title',
+            onPressed: (_) {},
+          ),
         ],
         leftTabs: [AppBackButton()],
       ),
@@ -133,6 +134,5 @@ final _kData = PetProjectData(
   titles: {'en': 'Conneqt'},
   subtitles: {'en': 'Unique, creative, mine!'},
   imageStoragePath: 'conneqt-small.png',
-  imageLargeStoragePath: 'conneqt-large.png',
   accentColor: Color(0xFF4361EE),
 );

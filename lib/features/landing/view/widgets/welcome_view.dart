@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/uikit/components/main_image.dart';
 import 'package:me/uikit/elements/app_chip.dart';
 import 'package:me/uikit/elements/app_title.dart';
+import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
@@ -17,14 +19,14 @@ class WelcomeView extends StatelessWidget {
       runSpacing: AppResponsiveSizes.large(context),
       alignment: Responsive.get(context, def: () => WrapAlignment.end, m: () => WrapAlignment.center),
       children: [
-        AppChip(text: 'Team player'),
-        AppChip(text: 'Сommunicative'),
-        AppChip(text: 'Problem solver'),
-        AppChip(text: 'Leader'),
-        AppChip(text: 'Non-conflictual'),
+        AppChip(text: LocaleKeys.skillTeamPlayer.tr()),
+        AppChip(text: LocaleKeys.skillCommunicative.tr()),
+        AppChip(text: LocaleKeys.skillProblemSolver.tr()),
+        AppChip(text: LocaleKeys.skillLeader.tr()),
+        AppChip(text: LocaleKeys.skillNonConflictual.tr()),
       ],
     );
-    final title = AppTitle(title: 'FLUTTER DEVELOPER', subtitle: 'Kseniia Nikitina');
+    final title = AppTitle(title: LocaleKeys.welcomeTile.tr(), subtitle: LocaleKeys.welcomeSubtitle.tr());
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(

@@ -7,7 +7,7 @@ import 'package:me/uikit/theme/context_extensions.dart';
 class PetProjectTitle extends StatelessWidget {
   const PetProjectTitle({super.key, required this.vm});
 
-  final PetProjectLoadedPage vm;
+  final PetProjectPageVM vm;
 
   @override
   Widget build(BuildContext context) {

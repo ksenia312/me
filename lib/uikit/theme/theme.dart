@@ -47,6 +47,9 @@ class AppTheme {
         backgroundColor: AppColors.lightBlue,
         foregroundColor: AppColors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10000)),
+        splashColor: AppColors.lightBlueShaded,
+        focusColor: AppColors.lightBlueShaded,
+        hoverColor: AppColors.lightBlueShaded,
       ),
       extensions: [
         CustomColorScheme(

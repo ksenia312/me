@@ -1,21 +1,21 @@
 import 'package:me/domain/pet_project/model/pet_project_data.dart';
 
-class PetProjectLoadedCard {
-  const PetProjectLoadedCard({required this.data, required this.imageUrl});
+class PetProjectCardVM {
+  const PetProjectCardVM({required this.data, required this.imageUrl});
 
   final PetProjectData data;
   final String imageUrl;
 
-  PetProjectLoadedPage toPage() {
-    return PetProjectLoadedPage(
+  PetProjectPageVM toPage() {
+    return PetProjectPageVM(
       data: data,
       coverImageUrl: imageUrl,
     );
   }
 }
 
-class PetProjectLoadedPage {
-  const PetProjectLoadedPage({
+class PetProjectPageVM {
+  const PetProjectPageVM({
     required this.data,
     required this.coverImageUrl,
     this.androidDemoUrl,
@@ -33,14 +33,14 @@ class PetProjectLoadedPage {
 
   bool get hasMarkdown => data.githubLink != null;
 
-  PetProjectLoadedPage copyWith({
+  PetProjectPageVM copyWith({
     PetProjectData? data,
     String? coverImageUrl,
     String? androidDemoUrl,
     String? iosDemoUrl,
     String? markdown,
   }) {
-    return PetProjectLoadedPage(
+    return PetProjectPageVM(
       data: data ?? this.data,
       coverImageUrl: coverImageUrl ?? this.coverImageUrl,
       androidDemoUrl: androidDemoUrl ?? this.androidDemoUrl,

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/landing/notifier/summary_notifier.dart';
 import 'package:me/uikit/components/cat_animation.dart';
@@ -5,6 +6,7 @@ import 'package:me/uikit/components/summary_circle.dart';
 import 'package:me/uikit/components/translated_widget.dart';
 import 'package:me/uikit/custom_paint/background_wave_paint.dart';
 import 'package:me/uikit/elements/app_title.dart';
+import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:rive/rive.dart';
@@ -26,59 +28,67 @@ class _SummaryViewState extends State<SummaryView> {
   Widget build(BuildContext context) {
     final models = [
       SummaryCircle(
-        title: '${_summaryNotifier.overallExperienceInYears.toStringAsFixed(1)} years',
-        subtitle: 'total experience',
+        title: LocaleKeys.year.plural(
+          _summaryNotifier.overallExperienceInYears,
+          format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
+        ),
+        subtitle: LocaleKeys.summaryTotalExperienceSubtitle.tr(),
         activeContent: ActiveSummaryText(
-          text: 'Apart from Dart, I used Kotlin, Swift, JavaScript, Python, C#, R and more',
+          text: LocaleKeys.summaryTotalExperienceContent.tr(),
         ),
       ),
       SummaryCircle(
-        title: '${_summaryNotifier.flutterExperienceInYears.toStringAsFixed(1)} years',
-        subtitle: 'Flutter experience',
+        title: LocaleKeys.year.plural(
+          _summaryNotifier.flutterExperienceInYears,
+          format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
+        ),
+        subtitle: LocaleKeys.summaryFlutterExperienceSubtitle.tr(),
         activeContent: ActiveSummaryRawText(
           spans: [
-            ActiveSummaryTextSpan(text: 'I build both'),
-            ActiveSummaryTextSpan(text: 'web, mobile', isBold: true, hasSpaceInTheEnd: false),
-            ActiveSummaryTextSpan(text: ', and'),
-            ActiveSummaryTextSpan(text: 'backend', isBold: true),
+            ActiveSummaryTextSpan(text: LocaleKeys.summaryFlutterExperienceContent1.tr()),
             ActiveSummaryTextSpan(
-              text: 'structures. I specialize in complex systems and custom Flutter packages',
+              text: LocaleKeys.summaryFlutterExperienceContent2.tr(),
+              isBold: true,
+              // hasSpaceInTheEnd: false,
             ),
+            ActiveSummaryTextSpan(text: LocaleKeys.summaryFlutterExperienceContent3.tr()),
+            ActiveSummaryTextSpan(text: LocaleKeys.summaryFlutterExperienceContent4.tr(), isBold: true),
+            ActiveSummaryTextSpan(text: LocaleKeys.summaryFlutterExperienceContent5.tr()),
           ],
         ),
       ),
       SummaryCircle(
-        title: 'High education',
-        subtitle: 'in tech field',
+        title: LocaleKeys.summaryHighEducationTitle.tr(),
+        subtitle: LocaleKeys.summaryHighEducationSubtitle.tr(),
         activeContent: ActiveSummaryRawText(
           spans: [
-            ActiveSummaryTextSpan(text: 'Programming in information and communication systems at'),
-            ActiveSummaryTextSpan(text: 'ITMO University', isBold: true),
+            ActiveSummaryTextSpan(text: LocaleKeys.summaryHighEducationContent1.tr()),
+            ActiveSummaryTextSpan(text: LocaleKeys.summaryHighEducationContent2.tr(), isBold: true),
           ],
         ),
       ),
       SummaryCircle(
-        title: 'Open-source',
-        subtitle: 'currently active project',
+        title: LocaleKeys.summaryOpenSourceTitle.tr(),
+        subtitle: LocaleKeys.summaryOpenSourceSubtitle.tr(),
         activeContent: ActiveSummaryLink(
-          title: 'Package for P2P communication',
-          buttonText: 'Open package',
+          title: LocaleKeys.summaryOpenSourceContent.tr(),
+          buttonText: LocaleKeys.summaryOpenSourceContentButton.tr(),
           link: _summaryNotifier.packageLink,
         ),
       ),
       SummaryCircle(
-        title: 'Google Play',
-        subtitle: 'currently active app',
+        title: LocaleKeys.summaryGooglePlayTitle.tr(),
+        subtitle: LocaleKeys.summaryGooglePlaySubtitle.tr(),
         activeContent: ActiveSummaryLink(
-          title: 'Offline chat application, supports texts and files',
-          buttonText: 'Open app',
+          title: LocaleKeys.summaryGooglePlayContent.tr(),
+          buttonText: LocaleKeys.summaryGooglePlayContentButton.tr(),
           link: _summaryNotifier.appLink,
         ),
       ),
       SummaryCircle(
-        title: 'English language',
-        subtitle: 'working proficiency',
-        activeContent: ActiveSummaryText(text: 'I speak English every day'),
+        title: LocaleKeys.summaryEnglishTitle.tr(),
+        subtitle: LocaleKeys.summaryEnglishSubtitle.tr(),
+        activeContent: ActiveSummaryText(text: LocaleKeys.summaryEnglishContent.tr()),
       ),
     ];
 
@@ -95,7 +105,11 @@ class _SummaryViewState extends State<SummaryView> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            AppTitle(title: 'SUMMARY', subtitle: 'Very very briefly', alignment: AppTitleAlignment.left),
+            AppTitle(
+              title: LocaleKeys.summaryTitle.tr(),
+              subtitle: LocaleKeys.summarySubtitle.tr(),
+              alignment: AppTitleAlignment.left,
+            ),
             SizedBox(height: AppResponsiveSizes.x5Large(context)),
             Flexible(
               child: Wrap(

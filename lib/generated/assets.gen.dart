@@ -55,6 +55,15 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/cat.riv
+  String get cat => 'assets/icons/cat.riv';
+
+  /// File path: assets/icons/close.riv
+  String get closeRiv => 'assets/icons/close.riv';
+
+  /// File path: assets/icons/close.svg
+  SvgGenImage get closeSvg => const SvgGenImage('assets/icons/close.svg');
+
   /// File path: assets/icons/ic_email.svg
   SvgGenImage get icEmail => const SvgGenImage('assets/icons/ic_email.svg');
 
@@ -73,9 +82,21 @@ class $AssetsIconsGen {
   SvgGenImage get icTelegram =>
       const SvgGenImage('assets/icons/ic_telegram.svg');
 
+  /// File path: assets/icons/menu.svg
+  SvgGenImage get menu => const SvgGenImage('assets/icons/menu.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [icEmail, icGithub, icHumanBrain, icLinkedIn, icTelegram];
+  List<dynamic> get values => [
+        cat,
+        closeRiv,
+        closeSvg,
+        icEmail,
+        icGithub,
+        icHumanBrain,
+        icLinkedIn,
+        icTelegram,
+        menu
+      ];
 }
 
 class $AssetsImagesGen {

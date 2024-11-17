@@ -13,7 +13,7 @@ class ProjectCard extends StatelessWidget {
 
   static const _hiddenIndent = 10.0;
 
-  final PetProjectLoadedCard vm;
+  final PetProjectCardVM vm;
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class _Image extends StatelessWidget {
   const _Image({required this.vm, required this.borderRadius});
 
   final BorderRadius borderRadius;
-  final PetProjectLoadedCard vm;
+  final PetProjectCardVM vm;
 
   @override
   Widget build(BuildContext context) {

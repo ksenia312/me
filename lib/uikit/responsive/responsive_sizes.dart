@@ -86,6 +86,12 @@ class AppResponsiveSizes {
         s: () => 60,
       );
 
+  static double tabHeight([BuildContext? context]) => Responsive.get(
+        context,
+        def: () => double.infinity,
+        s: () => 40,
+      );
+
   static double shadowBlurRadius([BuildContext? context]) => Responsive.get(
         context,
         def: () => 8,

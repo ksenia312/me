@@ -5,14 +5,14 @@ import 'package:me/domain/pet_project/pet_project_repository.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
 
 class PetProjectListNotifier extends ChangeNotifier {
-  List<PetProjectLoadedCard> vms = [];
+  List<PetProjectCardVM> vms = [];
 
   Future<void> init() async {
     try {
       final dataList = await PetProjectRepository.instance.fetchList();
 
       for (final data in dataList) {
-        vms.add(PetProjectLoadedCard(data: data, imageUrl: await getImageUrl(data)));
+        vms.add(PetProjectCardVM(data: data, imageUrl: await getImageUrl(data)));
         notifyListeners();
       }
     } catch (_) {}

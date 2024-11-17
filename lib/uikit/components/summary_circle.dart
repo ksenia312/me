@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/uikit/elements/app_elevated_button.dart';
 import 'package:me/uikit/elements/hovering_widget.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
@@ -128,7 +129,7 @@ class ActiveSummaryLink extends ActiveSummaryContent {
           textAlign: TextAlign.center,
         ),
         SizedBox(height: AppResponsiveSizes.large(context)),
-        ElevatedButton(
+        AppElevatedButton(
           onPressed: () => launchUrlString(link),
           child: Text(
             buttonText,

@@ -6,7 +6,7 @@ import 'package:me/uikit/responsive/responsive_utils.dart';
 class ProjectCardsGrid extends StatelessWidget {
   const ProjectCardsGrid({super.key, required this.vms});
 
-  final List<PetProjectLoadedCard> vms;
+  final List<PetProjectCardVM> vms;
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,6 @@ class PetProjectData {
     required this.titles,
     required this.subtitles,
     required this.imageStoragePath,
-    required this.imageLargeStoragePath,
     required this.accentColor,
     this.androidDemoAspectRatio,
     this.iosDemoAspectRatio,
@@ -27,7 +26,6 @@ class PetProjectData {
       titles: Map<String, String>.from(json['titles']),
       subtitles: Map<String, String>.from(json['subtitles']),
       imageStoragePath: json['imageSmall'] as String,
-      imageLargeStoragePath: json['imageLarge'] as String,
       androidStoragePath: json['androidDemo'] as String?,
       androidDemoAspectRatio: json['androidDemoAspectRatio'] as double?,
       iosStoragePath: json['iosDemo'] as String?,
@@ -44,7 +42,6 @@ class PetProjectData {
   final Map<String, String> titles;
   final Map<String, String> subtitles;
   final String imageStoragePath;
-  final String imageLargeStoragePath;
   final Color accentColor;
   final String? androidStoragePath;
   final double? androidDemoAspectRatio;
@@ -63,7 +60,6 @@ class PetProjectData {
           titles == other.titles &&
           subtitles == other.subtitles &&
           imageStoragePath == other.imageStoragePath &&
-          imageLargeStoragePath == other.imageLargeStoragePath &&
           accentColor == other.accentColor &&
           androidStoragePath == other.androidStoragePath &&
           iosStoragePath == other.iosStoragePath &&
@@ -77,7 +73,6 @@ class PetProjectData {
       titles.hashCode ^
       subtitles.hashCode ^
       imageStoragePath.hashCode ^
-      imageLargeStoragePath.hashCode ^
       accentColor.hashCode ^
       androidStoragePath.hashCode ^
       iosStoragePath.hashCode ^
@@ -87,6 +82,6 @@ class PetProjectData {
 
   @override
   String toString() {
-    return 'PetProjectData{id: $id, order: $order, titles: $titles, subtitles: $subtitles, imageSmallStoragePath: $imageStoragePath, imageLargeStoragePath: $imageLargeStoragePath, accentColor: $accentColor, androidDemoStoragePath: $androidStoragePath, iosDemoStoragePath: $iosStoragePath, githubLink: $githubLink, googlePlayLink: $googlePlayLink, websiteLink: $websiteLink}';
+    return 'PetProjectData{id: $id, order: $order, titles: $titles, subtitles: $subtitles, imageSmallStoragePath: $imageStoragePath, accentColor: $accentColor, androidDemoStoragePath: $androidStoragePath, iosDemoStoragePath: $iosStoragePath, githubLink: $githubLink, googlePlayLink: $googlePlayLink, websiteLink: $websiteLink}';
   }
 }

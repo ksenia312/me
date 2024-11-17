@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
 import 'package:me/uikit/elements/app_video_player.dart';
+import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
@@ -8,7 +10,7 @@ import 'package:me/uikit/theme/context_extensions.dart';
 class PetProjectDemo extends StatelessWidget {
   const PetProjectDemo({super.key, required this.vm});
 
-  final PetProjectLoadedPage vm;
+  final PetProjectPageVM vm;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class PetProjectDemo extends StatelessWidget {
               context,
               url: vm.androidDemoUrl!,
               aspectRatio: vm.data.androidDemoAspectRatio ?? 16 / 9,
-              title: 'Android demo',
+              title: LocaleKeys.androidDemo.tr(),
             ),
             SizedBox(height: AppResponsiveSizes.large(context)),
           ],
@@ -31,7 +33,7 @@ class PetProjectDemo extends StatelessWidget {
               context,
               url: vm.iosDemoUrl!,
               aspectRatio: vm.data.iosDemoAspectRatio ?? 16 / 9,
-              title: 'iOS demo',
+              title: LocaleKeys.iosDemo.tr(),
             ),
             SizedBox(height: AppResponsiveSizes.large(context)),
           ],

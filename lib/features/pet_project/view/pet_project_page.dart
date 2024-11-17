@@ -1,12 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/features/pet_project/notifier/pet_project_notifier.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
 import 'package:me/uikit/components/language_button.dart';
+import 'package:me/uikit/components/up_button.dart';
 import 'package:me/uikit/elements/app_back_button.dart';
-import 'package:me/uikit/elements/app_markdown.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
-import 'package:me/uikit/extensions/scroll_extension.dart';
+import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -48,10 +49,10 @@ class _PetProjectIDPageState extends State<PetProjectIDPage> {
 class PetProjectDataPage extends StatefulWidget {
   const PetProjectDataPage({super.key, required this.loaded});
 
-  final PetProjectLoadedPage loaded;
+  final PetProjectPageVM loaded;
 
-  static Future<void> go(BuildContext context, {required PetProjectLoadedPage loaded}) async {
-    context.go('/pet-project/${loaded.data.id}', extra: loaded);
+  static Future<void> go(BuildContext context, {required PetProjectPageVM loaded}) async {
+    context.push('/pet-project/${loaded.data.id}', extra: loaded);
   }
 
   @override
@@ -100,15 +101,9 @@ class _PetProjectWrapperState extends State<_PetProjectWrapper> {
   @override
   Widget build(BuildContext context) {
     final vm = widget.notifier.vm;
-    final shouldShowFAB = _controller.hasClients && _controller.position.pixels > MediaQuery.sizeOf(context).height / 2;
 
     return Scaffold(
-      floatingActionButton: shouldShowFAB
-          ? FloatingActionButton(
-              onPressed: () => _controller.animateWithFlatSpeed(context, offset: 0),
-              child: const Icon(Icons.keyboard_arrow_up),
-            )
-          : null,
+      floatingActionButton: UpButton(controller: _controller),
       body: CustomScrollView(
         controller: _controller,
         slivers: [
@@ -135,7 +130,20 @@ class _PetProjectWrapperState extends State<_PetProjectWrapper> {
                     vertical: AppResponsiveSizes.landingMarginSmall(context),
                   ),
                   child: vm == null
-                      ? Text('Connection failed', style: context.textTheme.titleMedium)
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              LocaleKeys.petProjectPageErrorTitle.tr(),
+                              style: context.textTheme.titleMedium,
+                            ),
+                            SizedBox(height: AppResponsiveSizes.x3Large(context)),
+                            Text(
+                              LocaleKeys.petProjectPageErrorSubtitle.tr(),
+                              style: context.textTheme.bodyMedium,
+                            ),
+                          ],
+                        )
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

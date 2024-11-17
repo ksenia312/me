@@ -12,6 +12,7 @@ class AppColors {
   static const blueMore = Color(0xFF252B41);
   static final blueMore2 = Color(0xFF2B3452);
   static const dimBlue = Color(0xFF2D3140);
+  static const lightBlueShaded = Color(0xB348598F);
   static const lightBlue = Color(0xB383A0FE);
   static const extraLightBlue = Color(0xFF859EFF);
   static const white = Color(0xFFFFFFFF);

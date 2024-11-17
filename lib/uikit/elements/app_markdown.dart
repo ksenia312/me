@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:me/generated/fonts.gen.dart';
+import 'package:me/uikit/elements/app_elevated_button.dart';
 import 'package:me/uikit/extensions/scroll_extension.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/app_colors.dart';
@@ -77,7 +78,7 @@ class _AppMarkdownState extends State<AppMarkdown> {
         ),
         blockquoteDecoration: BoxDecoration(
           color: context.customColorScheme.borderColor.withOpacity(0.2),
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(3),
           border: Border(
             left: BorderSide(color: context.customColorScheme.borderColor, width: 3),
           ),
@@ -91,9 +92,8 @@ class _AppMarkdownState extends State<AppMarkdown> {
       imageBuilder: (uri, title, alt) {
         final link = widget.imagesSourceLink;
         if (link != null && uri.toString().contains(Uri.parse(link).host)) {
-          return ElevatedButton(
+          return AppDarkElevatedButton(
             onPressed: () => launchUrlString(link),
-            style: ElevatedButton.styleFrom(backgroundColor: AppColors.blueMore2),
             child: Text('View image on GitHub'),
           );
         }
