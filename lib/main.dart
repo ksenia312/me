@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/config/firebase_options.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/localization/locales.dart';
 import 'package:me/uikit/components/main_image.dart';
 import 'package:me/uikit/responsive/responsive_builder.dart';

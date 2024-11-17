@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:me/generated/fonts.gen.dart';
 import 'package:me/uikit/elements/app_elevated_button.dart';
@@ -108,9 +109,15 @@ class _AppMarkdownState extends State<AppMarkdown> {
 
         if (href.startsWith('#')) {
           final key = href.toString().replaceFirst('#', '').toLowerCase().replaceAll(' ', '-');
-          final renderBox = _findRenderBox(label: key);
+          RenderBox? renderBox;
+          try {
+            renderBox = _findRenderBox(label: key);
+          } catch (_) {}
+
           if (renderBox != null && widget.scrollController != null) {
-            _ensureVisibleWithRenderBox(renderBox, widget.scrollController!);
+            try {
+              _ensureVisibleWithRenderBox(renderBox, widget.scrollController!);
+            } catch (_) {}
           }
         }
 
@@ -139,10 +146,8 @@ class _AppMarkdownState extends State<AppMarkdown> {
       RenderBox? res;
       renderBox.visitChildren((child) {
         if (child is RenderBox) {
-          final debugCreator = child.debugCreator as DebugCreator?;
-          if (debugCreator?.element.widget is RichText) {
-            final richText = debugCreator?.element.widget as RichText;
-            final id = richText.text.toPlainText().replaceAll(' ', '-').toLowerCase();
+          if (child is RenderParagraph) {
+            final id = child.text.toPlainText().replaceAll(' ', '-').toLowerCase();
             if (id == label) {
               res = child;
             }
