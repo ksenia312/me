@@ -25,7 +25,7 @@ class PetProjectData {
       order: json['order'] as int? ?? 10000,
       titles: Map<String, String>.from(json['titles']),
       subtitles: Map<String, String>.from(json['subtitles']),
-      imageStoragePath: json['imageSmall'] as String,
+      imageStoragePath: json['imageStoragePath'] as String,
       androidStoragePath: json['androidDemo'] as String?,
       androidDemoAspectRatio: json['androidDemoAspectRatio'] as double?,
       iosStoragePath: json['iosDemo'] as String?,

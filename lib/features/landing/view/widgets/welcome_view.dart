@@ -26,7 +26,10 @@ class WelcomeView extends StatelessWidget {
         AppChip(text: LocaleKeys.skillNonConflictual.tr()),
       ],
     );
-    final title = AppTitle(title: LocaleKeys.welcomeTile.tr(), subtitle: LocaleKeys.welcomeSubtitle.tr());
+    final title = AppTitle(
+      title: LocaleKeys.welcomeTile.tr(),
+      subtitle: LocaleKeys.welcomeSubtitle.tr()
+    );
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(

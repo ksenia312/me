@@ -81,6 +81,11 @@ class AppTextTheme {
       fontSize: 14,
       height: 1.2,
     ),
+    labelSmall: TextStyle(
+      fontFamily: FontFamily.inter,
+      fontSize: 10,
+      height: 1.2,
+    ),
   );
 
   static final _smallTextTheme = TextTheme(
@@ -145,6 +150,11 @@ class AppTextTheme {
       shadows: [_fontShadowSmall],
       fontFamily: FontFamily.inter,
       fontSize: 12,
+      height: 1.2,
+    ),
+    labelSmall: TextStyle(
+      fontFamily: FontFamily.inter,
+      fontSize: 6,
       height: 1.2,
     ),
   );

@@ -35,7 +35,11 @@ class _ProjectsViewState extends State<ProjectsView> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          AppTitle(title: LocaleKeys.petProjectsTitle.tr(), subtitle: LocaleKeys.petProjectsSubtitle.tr()),
+          AppTitle(
+            title: LocaleKeys.petProjectsTitle.tr(),
+            subtitle: LocaleKeys.petProjectsSubtitle.tr(),
+            alignment: AppTitleAlignment.left,
+          ),
           SizedBox(height: AppResponsiveSizes.x3Large(context)),
           ProjectCardsGrid(vms: _notifier.vms)
         ],

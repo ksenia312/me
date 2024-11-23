@@ -27,25 +27,39 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      elevation: 0,
-      scrolledUnderElevation: 0,
-      titleSpacing: 0,
-      centerTitle: true,
-      automaticallyImplyLeading: false,
-      toolbarHeight: preferredSize.height,
-      surfaceTintColor: Colors.transparent,
-      backgroundColor: backgroundColor,
-      flexibleSpace: AppFlexibleSpace(
-        rightTabs: rightTabs,
-        leftTabs: leftTabs,
-      ),
-      actions: [
-        AppActions(
+    return Hero(
+      tag: 'custom-app-bar',
+      flightShuttleBuilder: (flightContext, animation, direction, fromContext, toContext) {
+        if (direction == HeroFlightDirection.pop) {
+          // Skip the animation during reverse
+          return SizedBox.shrink();
+        }
+        // Use the default animation during forward
+        return Material(
+          color: Colors.transparent,
+          child: toContext.widget,
+        );
+      },
+      child: AppBar(
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        titleSpacing: 0,
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        toolbarHeight: preferredSize.height,
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: backgroundColor,
+        flexibleSpace: AppFlexibleSpace(
           rightTabs: rightTabs,
           leftTabs: leftTabs,
         ),
-      ],
+        actions: [
+          AppActions(
+            rightTabs: rightTabs,
+            leftTabs: leftTabs,
+          ),
+        ],
+      ),
     );
   }
 }

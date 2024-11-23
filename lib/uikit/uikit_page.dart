@@ -7,6 +7,7 @@ import 'package:me/uikit/custom_paint/background_wave_paint.dart';
 import 'package:me/uikit/elements/app_back_button.dart';
 import 'package:me/uikit/elements/app_chip.dart';
 import 'package:me/uikit/elements/app_title.dart';
+import 'package:me/uikit/elements/app_transform_y_animation.dart';
 import 'package:me/uikit/elements/app_video_player.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
@@ -20,6 +21,15 @@ class UikitPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final widgets = [
+      Center(
+        child: SizedBox.square(
+          dimension: 200,
+          child: AppTransformYAnimation(
+            faceChild: _Widget1(),
+            backChild: _Widget2(),
+          ),
+        ),
+      ),
       SizedBox(
         height: MediaQuery.of(context).size.height / 2,
         child: AppVideoPlayer(
@@ -136,3 +146,35 @@ final _kData = PetProjectData(
   imageStoragePath: 'conneqt-small.png',
   accentColor: Color(0xFF4361EE),
 );
+
+class _Widget1 extends StatelessWidget {
+  const _Widget1();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.blue),
+        color: Colors.red,
+        shape: BoxShape.circle,
+      ),
+      child: Center(child: Text('_Widget1')),
+    );
+  }
+}
+
+class _Widget2 extends StatelessWidget {
+  const _Widget2();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.green),
+        color: Colors.yellow,
+        shape: BoxShape.circle,
+      ),
+      child: Center(child: Text('_Widget2')),
+    );
+  }
+}

@@ -1,6 +1,6 @@
 {
   "tabHome": "Home",
-  "tabSummary": "Chi sono",
+  "tabSummary": "Sommario",
   "tabProjects": "Progetti",
   "skillTeamPlayer": "Giocatrice di squadra",
   "skillCommunicative": "Comunicativa",
@@ -51,5 +51,6 @@
   "notFoundPageTitle": "404",
   "notFoundPageSubtitle": "Questa pagina non esiste",
   "notFoundPageButton": "Vai alla home page",
-  "pageTitle": "Pagina sviluppatore Flutter"
+  "pageTitle": "Kseniia | Sviluppatrice Flutter",
+  "mainImageCaption": "L'immagine è stata creata utilizzando l'elaborazione grafica"
 }

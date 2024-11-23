@@ -47,5 +47,6 @@ abstract class  LocaleKeys {
   static const notFoundPageSubtitle = 'notFoundPageSubtitle';
   static const notFoundPageButton = 'notFoundPageButton';
   static const pageTitle = 'pageTitle';
+  static const mainImageCaption = 'mainImageCaption';
 
 }

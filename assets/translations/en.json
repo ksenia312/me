@@ -1,6 +1,6 @@
 {
   "tabHome": "Home",
-  "tabSummary": "About",
+  "tabSummary": "Summary",
   "tabProjects": "Projects",
   "skillTeamPlayer": "Team player",
   "skillCommunicative": "Сommunicative",
@@ -51,6 +51,6 @@
   "notFoundPageTitle": "404",
   "notFoundPageSubtitle": "This page does not exist",
   "notFoundPageButton": "Go to home page",
-  "pageTitle": "Flutter developer page"
-
+  "pageTitle": "Kseniia | Flutter Developer",
+  "mainImageCaption": "The image was created using graphic processing"
 }

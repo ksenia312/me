@@ -1,6 +1,6 @@
 {
   "tabHome": "ホーム",
-  "tabSummary": "自己紹介",
+  "tabSummary": "概要",
   "tabProjects": "プロジェクト",
   "skillTeamPlayer": "チームプレーヤー",
   "skillCommunicative": "コミュニケーション能力がある",
@@ -51,5 +51,6 @@
   "notFoundPageTitle": "404",
   "notFoundPageSubtitle": "このページは存在しません",
   "notFoundPageButton": "ホームページに戻る",
-  "pageTitle": "Flutter開発者ページ"
+  "pageTitle": "Kseniia | Flutter開発者",
+  "mainImageCaption": "画像はグラフィック処理を使用して作成されました"
 }

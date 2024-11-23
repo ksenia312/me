@@ -1,6 +1,6 @@
 {
   "tabHome": "홈",
-  "tabSummary": "소개",
+  "tabSummary": "요약",
   "tabProjects": "프로젝트",
   "skillTeamPlayer": "팀 플레이어",
   "skillCommunicative": "소통 능력",
@@ -51,5 +51,6 @@
   "notFoundPageTitle": "404",
   "notFoundPageSubtitle": "이 페이지는 존재하지 않습니다",
   "notFoundPageButton": "홈페이지로 가기",
-  "pageTitle": "Flutter 개발자 페이지"
+  "pageTitle": "Kseniia | 플러터 개발자",
+  "mainImageCaption": "이미지는 그래픽 처리를 사용하여 생성되었습니다"
 }

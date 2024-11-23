@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:me/uikit/elements/app_elevated_button.dart';
+import 'package:me/uikit/elements/app_transform_y_animation.dart';
 import 'package:me/uikit/elements/hovering_widget.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
+import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -20,74 +22,106 @@ class SummaryCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = Responsive.get(
+      context,
+      def: () => 250.0,
+      xxl: () => 350.0,
+      xl: () => 400.0,
+      l: () => 280.0,
+      m: () => 200.0,
+      s: () => MediaQuery.sizeOf(context).width,
+    );
+
     return HoveringWidget(
-      builder: (context, isActive) {
-        final size = Responsive.get(
-          context,
-          def: () => 250.0,
-          xxl: () => 350.0,
-          xl: () => 400.0,
-          l: () => 280.0,
-          m: () => 200.0,
-          s: () => MediaQuery.sizeOf(context).width,
+      builder: (context, isHover) {
+        final backWidget = _Decoration(
+          hasBorders: isHover,
+          backgroundColor: AppColors.extraBlueMore,
+          child: Center(child: activeContent),
         );
-        final widget = AnimatedContainer(
-          duration: const Duration(milliseconds: 150),
-          curve: Curves.easeInOut,
-          padding: EdgeInsets.symmetric(
-            horizontal: AppResponsiveSizes.x3Large(context),
-            vertical: AppResponsiveSizes.large(context),
-          ),
-          decoration: BoxDecoration(
-            color: context.colorScheme.surface,
-            border: Border.all(
-              color: isActive ? context.colorScheme.primary : context.customColorScheme.borderColor,
-              width: isActive ? 4 : 2,
-              strokeAlign: BorderSide.strokeAlignOutside,
-            ),
-            borderRadius: Responsive.get(
-              context,
-              def: () => null,
-              s: () => BorderRadius.circular(AppResponsiveSizes.x3Large(context)),
-            ),
-            shape: Responsive.get(
-              context,
-              def: () => BoxShape.circle,
-              s: () => BoxShape.rectangle,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: context.colorScheme.onSurface.withOpacity(0.7),
-                blurRadius: AppResponsiveSizes.shadowBlurRadius(context),
-                spreadRadius: isActive ? 2.0 : 0.0,
+        final faceWidget = _Decoration(
+          hasBorders: isHover,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: context.textTheme.titleLarge,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: AppResponsiveSizes.medium(context)),
+              Text(
+                subtitle,
+                style: context.textTheme.bodyMedium,
+                textAlign: TextAlign.center,
               ),
             ],
           ),
-          child: isActive
-              ? Center(child: activeContent)
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      title,
-                      style: context.textTheme.titleLarge,
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: AppResponsiveSizes.medium(context)),
-                    Text(
-                      subtitle,
-                      style: context.textTheme.bodyMedium,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
         );
         return Responsive.get(
           context,
-          def: () => SizedBox.square(dimension: size, child: widget),
-          s: () => SizedBox(width: size, height: size / 3.5, child: widget),
+          def: () => SizedBox.square(
+            dimension: size,
+            child: AppTransformYAnimation(
+              faceChild: faceWidget,
+              backChild: backWidget,
+            ),
+          ),
+          s: () => SizedBox(
+            width: size,
+            height: size / 3.5,
+            child: isHover ? backWidget : faceWidget,
+          ),
         );
       },
+    );
+  }
+}
+
+class _Decoration extends StatelessWidget {
+  const _Decoration({
+    required this.hasBorders,
+    required this.child,
+    this.backgroundColor,
+  });
+
+  final bool hasBorders;
+  final Widget child;
+  final Color? backgroundColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: AppResponsiveSizes.x3Large(context),
+        vertical: AppResponsiveSizes.large(context),
+      ),
+      decoration: BoxDecoration(
+        color: backgroundColor ?? context.colorScheme.surface,
+        border: Border.all(
+          color: hasBorders ? context.colorScheme.primary : context.customColorScheme.borderColor,
+          width: hasBorders ? 4 : 2,
+          strokeAlign: BorderSide.strokeAlignOutside,
+        ),
+        borderRadius: Responsive.get(
+          context,
+          def: () => null,
+          s: () => BorderRadius.circular(AppResponsiveSizes.x3Large(context)),
+        ),
+        shape: Responsive.get(
+          context,
+          def: () => BoxShape.circle,
+          s: () => BoxShape.rectangle,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: context.colorScheme.onSurface.withOpacity(0.7),
+            blurRadius: AppResponsiveSizes.shadowBlurRadius(context),
+            spreadRadius: hasBorders ? 2.0 : 0.0,
+          ),
+        ],
+      ),
+      child: child,
     );
   }
 }

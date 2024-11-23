@@ -1,6 +1,6 @@
 {
   "tabHome": "首页",
-  "tabSummary": "关于我",
+  "tabSummary": "摘要",
   "tabProjects": "项目",
   "skillTeamPlayer": "团队合作者",
   "skillCommunicative": "善于沟通",
@@ -51,5 +51,6 @@
   "notFoundPageTitle": "404",
   "notFoundPageSubtitle": "此页面不存在",
   "notFoundPageButton": "返回首页",
-  "pageTitle": "Flutter 开发者页面"
+  "pageTitle": "Kseniia | Flutter开发者",
+  "mainImageCaption": "图像是通过图形处理创建的"
 }

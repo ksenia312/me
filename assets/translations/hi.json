@@ -1,6 +1,6 @@
 {
   "tabHome": "होम",
-  "tabSummary": "मेरे बारे में",
+  "tabSummary": "सारांश",
   "tabProjects": "प्रोजेक्ट्स",
   "skillTeamPlayer": "टीम खिलाड़ी",
   "skillCommunicative": "संचार में माहिर",
@@ -51,5 +51,6 @@
   "notFoundPageTitle": "404",
   "notFoundPageSubtitle": "यह पृष्ठ अस्तित्व में नहीं है",
   "notFoundPageButton": "मुख्य पृष्ठ पर जाएं",
-  "pageTitle": "Flutter डेवलपर पृष्ठ"
+  "pageTitle": "Kseniia | फ़्लटर डेवलपर",
+  "mainImageCaption": "छवि को ग्राफिक प्रोसेसिंग की मदद से बनाया गया था"
 }

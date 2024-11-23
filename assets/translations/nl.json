@@ -1,6 +1,6 @@
 {
   "tabHome": "Startpagina",
-  "tabSummary": "Over mij",
+  "tabSummary": "Samenvatting",
   "tabProjects": "Projecten",
   "skillTeamPlayer": "Teamspeler",
   "skillCommunicative": "Communicatief",
@@ -51,5 +51,6 @@
   "notFoundPageTitle": "404",
   "notFoundPageSubtitle": "Deze pagina bestaat niet",
   "notFoundPageButton": "Ga naar de startpagina",
-  "pageTitle": "Flutter-ontwikkelaarspagina"
+  "pageTitle": "Kseniia | Flutter-ontwikkelaar",
+  "mainImageCaption": "De afbeelding is gemaakt met behulp van grafische verwerking"
 }

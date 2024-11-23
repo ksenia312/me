@@ -81,7 +81,7 @@ class AppTransitionPage extends CustomTransitionPage {
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             final slideTransition = SlideTransition(
               position: Tween<Offset>(
-                begin: const Offset(0.0, 1.0),
+                begin: const Offset(0.0, 0.3),
                 end: Offset.zero,
               ).animate(
                 CurvedAnimation(

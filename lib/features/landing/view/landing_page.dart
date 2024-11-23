@@ -26,7 +26,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Title(
-      title: 'Xenikii | ${LocaleKeys.pageTitle.tr()}',
+      title: LocaleKeys.pageTitle.tr(context: context),
       color: Colors.white,
       child: ChangeNotifierProvider(
         create: (context) => LandingNotifier(),
@@ -63,15 +63,15 @@ class LandingPage extends StatelessWidget {
     return [
       CustomToolbarTab.listItem(
         onPressed: (context) => _scrollTo(notifier.welcomeKey),
-        title: LocaleKeys.tabHome.tr(),
+        title: LocaleKeys.tabHome.tr(context: context),
       ),
       CustomToolbarTab.listItem(
         onPressed: (context) => _scrollTo(notifier.summaryKey),
-        title: LocaleKeys.tabSummary.tr(),
+        title: LocaleKeys.tabSummary.tr(context: context),
       ),
       CustomToolbarTab.listItem(
         onPressed: (context) => _scrollTo(notifier.projectsKey),
-        title: LocaleKeys.tabProjects.tr(),
+        title: LocaleKeys.tabProjects.tr(context: context),
       ),
     ];
   }
