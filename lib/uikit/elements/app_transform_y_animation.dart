@@ -50,7 +50,7 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Ti
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: () {
-        if (_controller.isCompleted) {
+        if (_controller.status.isForwardOrCompleted) {
           _controller.reverse();
         } else {
           _controller.forward();
