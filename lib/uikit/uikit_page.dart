@@ -14,6 +14,7 @@ import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:me/uikit/components/summary_circle.dart';
+import 'package:video_player/video_player.dart';
 
 class UikitPage extends StatelessWidget {
   const UikitPage({super.key});
@@ -27,6 +28,7 @@ class UikitPage extends StatelessWidget {
           child: AppTransformYAnimation(
             faceChild: _Widget1(),
             backChild: _Widget2(),
+            duration: const Duration(milliseconds: 5000),
           ),
         ),
       ),

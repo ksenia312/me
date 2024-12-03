@@ -28,6 +28,7 @@ class _SummaryViewState extends State<SummaryView> {
   Widget build(BuildContext context) {
     final models = [
       SummaryCircle(
+        key: ValueKey(LocaleKeys.summaryTotalExperienceSubtitle),
         title: LocaleKeys.year.plural(
           _summaryNotifier.overallExperienceInYears,
           format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
@@ -38,6 +39,7 @@ class _SummaryViewState extends State<SummaryView> {
         ),
       ),
       SummaryCircle(
+        key: ValueKey(LocaleKeys.summaryFlutterExperienceSubtitle),
         title: LocaleKeys.year.plural(
           _summaryNotifier.flutterExperienceInYears,
           format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
@@ -58,6 +60,7 @@ class _SummaryViewState extends State<SummaryView> {
         ),
       ),
       SummaryCircle(
+        key: ValueKey(LocaleKeys.summaryHighEducationTitle),
         title: LocaleKeys.summaryHighEducationTitle.tr(),
         subtitle: LocaleKeys.summaryHighEducationSubtitle.tr(),
         activeContent: ActiveSummaryRawText(
@@ -68,6 +71,7 @@ class _SummaryViewState extends State<SummaryView> {
         ),
       ),
       SummaryCircle(
+        key: ValueKey(LocaleKeys.summaryOpenSourceTitle),
         title: LocaleKeys.summaryOpenSourceTitle.tr(),
         subtitle: LocaleKeys.summaryOpenSourceSubtitle.tr(),
         activeContent: ActiveSummaryLink(
@@ -77,6 +81,7 @@ class _SummaryViewState extends State<SummaryView> {
         ),
       ),
       SummaryCircle(
+        key: ValueKey(LocaleKeys.summaryGooglePlayTitle),
         title: LocaleKeys.summaryGooglePlayTitle.tr(),
         subtitle: LocaleKeys.summaryGooglePlaySubtitle.tr(),
         activeContent: ActiveSummaryLink(
@@ -86,6 +91,7 @@ class _SummaryViewState extends State<SummaryView> {
         ),
       ),
       SummaryCircle(
+        key: ValueKey(LocaleKeys.summaryEnglishTitle),
         title: LocaleKeys.summaryEnglishTitle.tr(),
         subtitle: LocaleKeys.summaryEnglishSubtitle.tr(),
         activeContent: ActiveSummaryText(text: LocaleKeys.summaryEnglishContent.tr()),

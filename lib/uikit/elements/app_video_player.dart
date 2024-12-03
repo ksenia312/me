@@ -20,6 +20,7 @@ class AppVideoPlayer extends StatefulWidget {
 class _AppVideoPlayerState extends State<AppVideoPlayer> {
   late final _controller = VideoPlayerController.networkUrl(
     Uri.parse(widget.url),
+    formatHint: VideoFormat.ss,
     videoPlayerOptions: VideoPlayerOptions(
       allowBackgroundPlayback: true,
       webOptions: VideoPlayerWebOptions(

@@ -8,11 +8,15 @@ class AppTransformYAnimation extends StatefulWidget {
     required this.faceChild,
     required this.backChild,
     this.borderRadius = const BorderRadius.all(Radius.circular(500.0)),
+    this.duration = const Duration(milliseconds: 500),
+    this.turnsCount = 0.5,
   });
 
+  final Duration duration;
   final Widget faceChild;
   final Widget backChild;
   final BorderRadius borderRadius;
+  final double turnsCount;
 
   @override
   State<AppTransformYAnimation> createState() => _AppTransformYAnimationState();
@@ -26,9 +30,9 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Ti
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 500),
+      duration: widget.duration,
       vsync: this,
-    )..addListener(() => setState(() {}));
+    );
     _animation = CurvedAnimation(
       parent: _controller,
       curve: Curves.easeOutBack,
@@ -86,7 +90,7 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Ti
       ..rotateY(_angle(value));
   }
 
-  double _angle(double value) => pi * 1 * value;
+  double _angle(double value) => pi * widget.turnsCount * 2 * value;
 
   double _toDegrees(double radians) => radians * (180 / pi);
 }
