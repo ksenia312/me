@@ -10,28 +10,34 @@ class ProjectCardsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
+    return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: Responsive.get(
-        context,
-        def: () => 3,
-        xxl: () => 6,
-        xl: () => 5,
-        l: () => 4,
-        m: () => 2,
-        s: () => 1,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: Responsive.get(
+          context,
+          def: () => 3,
+          xxl: () => 6,
+          xl: () => 5,
+          l: () => 4,
+          m: () => 2,
+          s: () => 1,
+        ),
+        childAspectRatio: Responsive.get(
+          context,
+          def: () => 357 / 357,
+          xxl: () => 357 / 200,
+          m: () => 357 / 420,
+          s: () => 328 / 241,
+        ),
+        mainAxisSpacing: 12,
+        crossAxisSpacing: 12,
       ),
       shrinkWrap: true,
-      childAspectRatio: Responsive.get(
-        context,
-        def: () => 357 / 357,
-        xxl: () => 357 / 200,
-        m: () => 357 / 420,
-        s: () => 328 / 241,
+      itemCount: vms.length,
+      itemBuilder: (context, index) => ProjectCard(
+        key: ValueKey('${vms[index].data.id}-$index'),
+        vm: vms[index],
       ),
-      mainAxisSpacing: 12,
-      crossAxisSpacing: 12,
-      children: [...vms.map((e) => ProjectCard(vm: e))],
     );
   }
 }

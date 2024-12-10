@@ -36,12 +36,12 @@ class _AppMarkdownState extends State<AppMarkdown> {
     return MarkdownBody(
       key: _markdownKey,
       shrinkWrap: true,
-      data: widget.markdown,
+      data: widget.markdown.trim(),
       styleSheet: MarkdownStyleSheet(
         p: context.textTheme.bodyMedium?.copyWith(height: 1.5, shadows: []),
         a: context.textTheme.bodyMedium?.copyWith(color: AppColors.extraLightBlue, shadows: []),
         h1: context.textTheme.headlineSmall?.copyWith(shadows: []),
-        h2: context.textTheme.titleMedium?.copyWith(fontSize: context.textTheme.titleMedium!.fontSize! * 1.3),
+        h2: context.textTheme.titleMedium?.copyWith(fontSize: (context.textTheme.titleMedium?.fontSize ?? 12) * 1.3),
         h3: context.textTheme.titleMedium?.copyWith(),
         h4: context.textTheme.bodyLarge,
         h5: context.textTheme.bodyMedium,

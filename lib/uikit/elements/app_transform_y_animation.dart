@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class AppTransformYAnimation extends StatefulWidget {
@@ -22,7 +21,7 @@ class AppTransformYAnimation extends StatefulWidget {
   State<AppTransformYAnimation> createState() => _AppTransformYAnimationState();
 }
 
-class _AppTransformYAnimationState extends State<AppTransformYAnimation> with TickerProviderStateMixin {
+class _AppTransformYAnimationState extends State<AppTransformYAnimation> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -33,10 +32,12 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Ti
       duration: widget.duration,
       vsync: this,
     );
-    _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOutBack,
-      reverseCurve: Curves.easeInBack,
+    _animation = Tween(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeOutBack,
+        reverseCurve: Curves.easeInBack,
+      ),
     );
   }
 
@@ -46,30 +47,29 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Ti
     super.dispose();
   }
 
+  void _toggleAnimation() {
+    if (_controller.status.isForwardOrCompleted) {
+      _controller.reverse();
+    } else {
+      _controller.forward();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      focusColor: Colors.transparent,
-      hoverColor: Colors.transparent,
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent,
-      onTap: () {
-        if (_controller.status.isForwardOrCompleted) {
-          _controller.reverse();
-        } else {
-          _controller.forward();
-        }
-      },
-      borderRadius: widget.borderRadius,
+    return GestureDetector(
+      onTap: _toggleAnimation,
       child: AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
-          final angle = _angle(_animation.value);
-          final degrees = _toDegrees(angle) % 360;
-          final isFaceVisible = degrees < 90 || degrees > 270;
+          final value = _animation.value;
+          final angle = pi * widget.turnsCount * 2 * value;
+          final isFaceVisible = (angle <= pi / 2) || (angle >= 3 * pi / 2);
 
           return Transform(
-            transform: _onTransform(_animation.value),
+            transform: Matrix4.identity()
+              ..setEntry(3, 2, 0.002) // Reduced perspective for better performance
+              ..rotateY(angle),
             alignment: Alignment.center,
             child: isFaceVisible
                 ? widget.faceChild
@@ -83,14 +83,4 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Ti
       ),
     );
   }
-
-  Matrix4 _onTransform(double value) {
-    return Matrix4.identity()
-      ..setEntry(3, 2, 0.004)
-      ..rotateY(_angle(value));
-  }
-
-  double _angle(double value) => pi * widget.turnsCount * 2 * value;
-
-  double _toDegrees(double radians) => radians * (180 / pi);
 }

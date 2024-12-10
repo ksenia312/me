@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       context,
       Builder(builder: (context) {
         return MaterialApp.router(
-          title: 'Xenikii',
+          title: 'Kseniia',
           debugShowCheckedModeBanner: false,
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,

@@ -41,7 +41,7 @@ class _ProjectsViewState extends State<ProjectsView> {
             alignment: AppTitleAlignment.left,
           ),
           SizedBox(height: AppResponsiveSizes.x3Large(context)),
-          ProjectCardsGrid(vms: _notifier.vms)
+          ProjectCardsGrid(vms: _notifier.vms),
         ],
       ),
     );
