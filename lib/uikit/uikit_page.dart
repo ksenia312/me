@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:me/domain/pet_project/model/pet_project_data.dart';
+import 'package:me/features/landing/notifier/experience_vm.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
+import 'package:me/generated/assets.gen.dart';
+import 'package:me/uikit/components/experience_section/experience_section.dart';
 import 'package:me/uikit/components/main_image.dart';
 import 'package:me/uikit/components/project_cards_grid.dart';
 import 'package:me/uikit/custom_paint/background_wave_paint.dart';
@@ -11,7 +14,6 @@ import 'package:me/uikit/elements/app_transform_y_animation.dart';
 import 'package:me/uikit/elements/app_video_player.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
-import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:me/uikit/components/summary_circle.dart';
 
@@ -20,7 +22,68 @@ class UikitPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final data1 = ExperienceVM(
+      title: 'Flutter Developer',
+      organization: 'Greenflux Assets B.V.',
+      location: 'ST. PETERSBURG',
+      image: Assets.images.greenfluxImage.svg(),
+      duration: 'Feb 2024 – Present',
+      subtitle: 'Developing applications for electric vehicle charging',
+      skills: ['Flutter', 'Dart', 'Java', 'Kotlin', 'C#', 'R'],
+      achievements: [
+        'Supported the full development cycle: from technical specification to publication',
+        'Maintained a system of 10+ applications with a shared code base',
+        'Set up linter, formatting, and introduced a common class system for all applications',
+        'Created pipelines to check pull requests and publish applications, scripts to simplify processes',
+        'Set up Git Flow and monitored its compliance',
+        'Worked closely with Google Maps, notifications, and other complex tasks',
+      ],
+      order: ExperienceSectionOrder.first,
+    );
+    final data2 = ExperienceVM(
+      title: 'Flutter Developer',
+      organization: 'Greenflux Assets B.V.',
+      location: 'ST. PETERSBURG',
+      image: Assets.images.greenfluxImage.svg(),
+      duration: 'Feb 2024 – Present',
+      subtitle: 'Developing applications for electric vehicle charging',
+      skills: ['Flutter', 'Dart', 'Java', 'Kotlin', 'C#', 'R'],
+      achievements: [
+        'Supported the full development cycle: from technical specification to publication',
+        'Maintained a system of 10+ applications with a shared code base',
+        'Set up linter, formatting, and introduced a common class system for all applications',
+        'Created pipelines to check pull requests and publish applications, scripts to simplify processes',
+        'Set up Git Flow and monitored its compliance',
+        'Worked closely with Google Maps, notifications, and other complex tasks',
+      ],
+      order: ExperienceSectionOrder.middle,
+    );
+    final data3 = ExperienceVM(
+      title: 'Flutter Developer',
+      organization: 'Greenflux Assets B.V.',
+      location: 'ST. PETERSBURG',
+      image: Assets.images.greenfluxImage.svg(),
+      duration: 'Feb 2024 – Present',
+      subtitle: 'Developing applications for electric vehicle charging',
+      skills: ['Flutter', 'Dart', 'Java', 'Kotlin', 'C#', 'R'],
+      achievements: [
+        'Supported the full development cycle: from technical specification to publication',
+        'Maintained a system of 10+ applications with a shared code base',
+        'Set up linter, formatting, and introduced a common class system for all applications',
+        'Created pipelines to check pull requests and publish applications, scripts to simplify processes',
+        'Set up Git Flow and monitored its compliance',
+        'Worked closely with Google Maps, notifications, and other complex tasks',
+      ],
+      order: ExperienceSectionOrder.last,
+    );
     final widgets = [
+      Column(
+        children: [
+          ExperienceSection(vm: data1),
+          ExperienceSection(vm: data2),
+          ExperienceSection(vm: data3),
+        ],
+      ),
       Center(
         child: SizedBox.square(
           dimension: 200,
@@ -107,7 +170,7 @@ class UikitPage extends StatelessWidget {
         ],
         leftTabs: [AppBackButton()],
       ),
-      backgroundColor: AppColors.blue,
+      // backgroundColor: AppColors.blue,
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,

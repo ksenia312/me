@@ -19,7 +19,7 @@ class PetProjectAppBar extends StatelessWidget {
         builder: (context) {
           final imageUrl = notifier.vm?.coverImageUrl;
           return Hero(
-            tag:'pet-project-${notifier.id}',
+            tag: 'pet-project-${notifier.id}',
             placeholderBuilder: (context, heroSize, child) => Container(),
             flightShuttleBuilder: (flightContext, animation, direction, fromContext, toContext) {
               if (direction == HeroFlightDirection.pop) {

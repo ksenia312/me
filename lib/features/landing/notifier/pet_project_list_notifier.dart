@@ -13,8 +13,8 @@ class PetProjectListNotifier extends ChangeNotifier {
 
       for (final data in dataList) {
         vms.add(PetProjectCardVM(data: data, imageUrl: await getImageUrl(data)));
-        notifyListeners();
       }
+      notifyListeners();
     } catch (_) {}
   }
 

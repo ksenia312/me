@@ -12,6 +12,7 @@ import 'package:me/uikit/localization/codegen_loader.g.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:provider/provider.dart';
 
+import 'widgets/experience_view.dart';
 import 'widgets/projects_view.dart';
 import 'widgets/summary_view.dart';
 import 'widgets/welcome_view.dart';
@@ -70,6 +71,10 @@ class LandingPage extends StatelessWidget {
         title: LocaleKeys.tabSummary.tr(context: context),
       ),
       CustomToolbarTab.listItem(
+        onPressed: (context) => _scrollTo(notifier.experienceKey),
+        title: 'Experience',
+      ),
+      CustomToolbarTab.listItem(
         onPressed: (context) => _scrollTo(notifier.projectsKey),
         title: LocaleKeys.tabProjects.tr(context: context),
       ),
@@ -105,6 +110,9 @@ class _LandingPageBody extends StatelessWidget {
                 TranslatedWidget(
                   key: notifier.summaryKey,
                   child: SummaryView(globalKey: key, artboard: artboard),
+                ),
+                TranslatedWidget(
+                  child: ExperienceView(key: notifier.experienceKey),
                 ),
                 TranslatedWidget(
                   child: ProjectsView(key: notifier.projectsKey),

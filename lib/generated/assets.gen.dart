@@ -40,16 +40,8 @@ class $AssetsFontsGen {
   String get robotoMonoRegular => 'assets/fonts/RobotoMono-Regular.ttf';
 
   /// List of all assets
-  List<String> get values => [
-        interBlack,
-        interBold,
-        interExtraBold,
-        interLight,
-        interMedium,
-        interRegular,
-        interSemiBold,
-        robotoMonoRegular
-      ];
+  List<String> get values =>
+      [interBlack, interBold, interExtraBold, interLight, interMedium, interRegular, interSemiBold, robotoMonoRegular];
 }
 
 class $AssetsIconsGen {
@@ -71,39 +63,42 @@ class $AssetsIconsGen {
   SvgGenImage get icGithub => const SvgGenImage('assets/icons/ic_github.svg');
 
   /// File path: assets/icons/ic_human_brain.svg
-  SvgGenImage get icHumanBrain =>
-      const SvgGenImage('assets/icons/ic_human_brain.svg');
+  SvgGenImage get icHumanBrain => const SvgGenImage('assets/icons/ic_human_brain.svg');
 
   /// File path: assets/icons/ic_linked_in.svg
-  SvgGenImage get icLinkedIn =>
-      const SvgGenImage('assets/icons/ic_linked_in.svg');
+  SvgGenImage get icLinkedIn => const SvgGenImage('assets/icons/ic_linked_in.svg');
 
   /// File path: assets/icons/ic_telegram.svg
-  SvgGenImage get icTelegram =>
-      const SvgGenImage('assets/icons/ic_telegram.svg');
+  SvgGenImage get icTelegram => const SvgGenImage('assets/icons/ic_telegram.svg');
+
+  /// File path: assets/icons/location.svg
+  SvgGenImage get location => const SvgGenImage('assets/icons/location.svg');
 
   /// File path: assets/icons/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/icons/menu.svg');
 
+  /// File path: assets/icons/organization.svg
+  SvgGenImage get organization => const SvgGenImage('assets/icons/organization.svg');
+
   /// List of all assets
-  List<dynamic> get values => [
-        cat,
-        closeRiv,
-        closeSvg,
-        icEmail,
-        icGithub,
-        icHumanBrain,
-        icLinkedIn,
-        icTelegram,
-        menu
-      ];
+  List<dynamic> get values =>
+      [cat, closeRiv, closeSvg, icEmail, icGithub, icHumanBrain, icLinkedIn, icTelegram, location, menu, organization];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/agro-stab-image.svg
+  SvgGenImage get agroStabImage => const SvgGenImage('assets/images/agro-stab-image.svg');
+
   /// File path: assets/images/cat.riv
   String get cat => 'assets/images/cat.riv';
+
+  /// File path: assets/images/friflex-image.svg
+  SvgGenImage get friflexImage => const SvgGenImage('assets/images/friflex-image.svg');
+
+  /// File path: assets/images/greenflux-image.svg
+  SvgGenImage get greenfluxImage => const SvgGenImage('assets/images/greenflux-image.svg');
 
   /// File path: assets/images/me.png
   AssetGenImage get me => const AssetGenImage('assets/images/me.png');
@@ -112,7 +107,7 @@ class $AssetsImagesGen {
   AssetGenImage get naming => const AssetGenImage('assets/images/naming.png');
 
   /// List of all assets
-  List<dynamic> get values => [cat, me, naming];
+  List<dynamic> get values => [agroStabImage, cat, friflexImage, greenfluxImage, me, naming];
 }
 
 class $AssetsTranslationsGen {
@@ -158,8 +153,7 @@ class $AssetsTranslationsGen {
   String get zh => 'assets/translations/zh.json';
 
   /// List of all assets
-  List<String> get values =>
-      [de, en, es, fr, hi, it, ja, ko, nl, pt, ru, tr, zh];
+  List<String> get values => [de, en, es, fr, hi, it, ja, ko, nl, pt, ru, tr, zh];
 }
 
 class Assets {
@@ -317,8 +311,7 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ??
-          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

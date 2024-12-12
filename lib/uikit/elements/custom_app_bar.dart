@@ -221,16 +221,20 @@ class _AppActionsState extends State<AppActions> with AppRouterObserver {
   void didChangeLocation(String location, String? previousLocation) {
     if (previousLocation == '/menu' && previousLocation != location) {
       Future.delayed(const Duration(milliseconds: 0), () {
-        setState(() {
-          isOpen = false;
-        });
+        if (mounted) {
+          setState(() {
+            isOpen = false;
+          });
+        }
       });
     }
     if (location == '/menu' && previousLocation != location) {
       Future.delayed(const Duration(milliseconds: 0), () {
-        setState(() {
-          isOpen = true;
-        });
+        if (mounted) {
+          setState(() {
+            isOpen = true;
+          });
+        }
       });
     }
   }

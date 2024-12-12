@@ -32,18 +32,21 @@ class AppResponsiveSizes {
   static double x2Large(BuildContext context) => Responsive.get(
         context,
         def: () => 20,
+        m: () => 16,
         s: () => 12,
       );
 
   static double x3Large(BuildContext context) => Responsive.get(
         context,
         def: () => 24,
+        m: () => 20,
         s: () => 16,
       );
 
   static double x4Large(BuildContext context) => Responsive.get(
         context,
         def: () => 32,
+        m: () => 24,
         s: () => 18,
       );
 

@@ -24,6 +24,7 @@ class AppTransformYAnimation extends StatefulWidget {
 class _AppTransformYAnimationState extends State<AppTransformYAnimation> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
+  bool isFaceVisible = false;
 
   @override
   void initState() {
@@ -48,6 +49,9 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Si
   }
 
   void _toggleAnimation() {
+    setState(() {
+      isFaceVisible = !isFaceVisible;
+    });
     if (_controller.status.isForwardOrCompleted) {
       _controller.reverse();
     } else {
@@ -59,7 +63,7 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Si
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _toggleAnimation,
-      child: AnimatedBuilder(
+      child: isFaceVisible ? widget.backChild : widget.faceChild/* AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
           final value = _animation.value;
@@ -80,7 +84,7 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Si
                   ),
           );
         },
-      ),
+      ),*/
     );
   }
 }

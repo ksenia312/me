@@ -31,7 +31,6 @@ final supportedLocales = [
   ...SupportedLocales.values.map((e) => Locale(e.name)),
 ];
 
-
 extension PrettyView on Locale {
   String toPrettyView() {
     final enumValue = SupportedLocales.fromString(languageCode);

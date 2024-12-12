@@ -62,7 +62,7 @@ class AppTextTheme {
     titleSmall: TextStyle(
       fontFamily: FontFamily.inter,
       fontWeight: FontWeight.w600,
-      fontSize: 14,
+      fontSize: 18,
       height: 1.2,
     ),
     bodyLarge: TextStyle(
@@ -133,7 +133,7 @@ class AppTextTheme {
     titleSmall: TextStyle(
       fontFamily: FontFamily.inter,
       fontWeight: FontWeight.w600,
-      fontSize: 18,
+      fontSize: 14,
       height: 1.2,
     ),
     bodyLarge: TextStyle(
