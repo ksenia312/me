@@ -63,7 +63,7 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Si
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _toggleAnimation,
-      child: isFaceVisible ? widget.backChild : widget.faceChild/* AnimatedBuilder(
+      child: /*isFaceVisible ? widget.backChild : widget.faceChild */AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
           final value = _animation.value;
@@ -84,7 +84,7 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Si
                   ),
           );
         },
-      ),*/
+      ),
     );
   }
 }

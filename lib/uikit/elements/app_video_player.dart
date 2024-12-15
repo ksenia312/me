@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/generated/assets.gen.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:video_player/video_player.dart';
@@ -58,7 +59,9 @@ class _AppVideoPlayerState extends State<AppVideoPlayer> {
                 Responsive.get(
                   context,
                   def: () => Center(
-                    child: Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow, size: 52),
+                    child: _controller.value.isPlaying
+                        ? Assets.icons.icPause.svg(height: 70, width: 70)
+                        : Assets.icons.icPlay.svg(height: 70, width: 70),
                   ),
                   s: () => SizedBox.shrink(),
                 )

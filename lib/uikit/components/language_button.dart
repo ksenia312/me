@@ -1,5 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:me/uikit/localization/localization_temp.dart';
 import 'package:flutter/material.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/localization/locales.dart';

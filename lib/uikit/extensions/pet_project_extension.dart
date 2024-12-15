@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:me/uikit/localization/localization_temp.dart';
 import 'package:flutter/material.dart';
 import 'package:me/domain/pet_project/model/pet_project_data.dart';
 import 'package:me/uikit/localization/locales.dart';

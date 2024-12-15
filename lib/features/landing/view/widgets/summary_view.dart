@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:me/uikit/localization/localization_temp.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/landing/notifier/summary_notifier.dart';
 import 'package:me/uikit/components/cat_animation.dart';
@@ -31,7 +31,7 @@ class _SummaryViewState extends State<SummaryView> {
         key: ValueKey(LocaleKeys.summaryTotalExperienceSubtitle),
         title: LocaleKeys.year.plural(
           _summaryNotifier.overallExperienceInYears,
-          format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
+          // format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
         ),
         subtitle: LocaleKeys.summaryTotalExperienceSubtitle.tr(),
         activeContent: ActiveSummaryText(
@@ -42,7 +42,7 @@ class _SummaryViewState extends State<SummaryView> {
         key: ValueKey(LocaleKeys.summaryFlutterExperienceSubtitle),
         title: LocaleKeys.year.plural(
           _summaryNotifier.flutterExperienceInYears,
-          format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
+          // format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
         ),
         subtitle: LocaleKeys.summaryFlutterExperienceSubtitle.tr(),
         activeContent: ActiveSummaryRawText(

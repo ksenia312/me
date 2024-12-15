@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:me/uikit/localization/localization_temp.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
 import 'package:me/uikit/elements/app_video_player.dart';

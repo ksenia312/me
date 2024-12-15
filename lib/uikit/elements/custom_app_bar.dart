@@ -294,13 +294,13 @@ class AnimatedMenuButtonState extends State<AnimatedMenuButton> {
           height: 24,
           child: _controller != null
               ? RiveAnimation.asset(
-                  Assets.icons.closeRiv,
+                  Assets.icons.icCloseRiv,
                   controllers: [_controller!],
                   fit: BoxFit.contain,
                 )
               : widget.isOpen
-                  ? Assets.icons.closeSvg.svg()
-                  : Assets.icons.menu.svg(),
+                  ? Assets.icons.icCloseSvg.svg()
+                  : Assets.icons.icMenu.svg(),
         ),
       ),
     );

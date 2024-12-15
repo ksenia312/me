@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:easy_localization/easy_localization.dart';
+import 'package:me/uikit/localization/localization_temp.dart';
 import 'package:flutter/material.dart';
 import 'package:me/generated/assets.gen.dart';
 import 'package:me/uikit/elements/app_images_cache.dart';

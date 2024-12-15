@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:me/uikit/localization/localization_temp.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/landing/notifier/pet_project_list_notifier.dart';
 import 'package:me/uikit/components/project_cards_grid.dart';
