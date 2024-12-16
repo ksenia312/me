@@ -17,10 +17,14 @@ class PetProjectNotifier extends ChangeNotifier {
   PetProjectPageVM? vm;
 
   Future<void> init() async {
+    PetProjectData data;
     try {
-      final data = await PetProjectRepository.instance.fetch(id);
-      await _load(data: data);
-    } catch (_) {}
+      data = await PetProjectRepository.instance.fetch(id);
+    } catch (_) {
+      _setLoading(false);
+      return;
+    }
+    await _load(data: data);
   }
 
   Future<void> initWithData(PetProjectPageVM loaded) async {

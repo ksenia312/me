@@ -1,56 +1,179 @@
 {
-  "tabHome": "होम",
-  "tabSummary": "सारांश",
-  "tabProjects": "प्रोजेक्ट्स",
-  "skillTeamPlayer": "टीम खिलाड़ी",
-  "skillCommunicative": "संचार में माहिर",
-  "skillProblemSolver": "समस्या हल करने वाली",
-  "skillLeader": "नेता",
-  "skillNonConflictual": "संघर्षहीन",
-  "welcomeTile": "Flutter डेवलपर",
-  "welcomeSubtitle": "Kseniia Nikitina",
-  "summaryTotalExperienceSubtitle": "कुल अनुभव",
-  "summaryTotalExperienceContent": "Dart के अलावा, मेरे पास Kotlin, Swift, JavaScript, Python, C#, R और अन्य में अनुभव है",
-  "summaryFlutterExperienceSubtitle": "Flutter अनुभव",
-  "summaryFlutterExperienceContent1": "मैं विकसित करती हूँ",
-  "summaryFlutterExperienceContent2": "वेब और मोबाइल",
-  "summaryFlutterExperienceContent3": "एप्लिकेशन, साथ ही",
-  "summaryFlutterExperienceContent4": "बैकएंड",
-  "summaryFlutterExperienceContent5": "संरचनाएँ। मैं जटिल प्रणालियों और कस्टम Flutter पैकेजों में विशेषज्ञ हूँ",
-  "summaryHighEducationTitle": "उच्च शिक्षा",
-  "summaryHighEducationSubtitle": "इंजीनियरिंग में",
-  "summaryHighEducationContent1": "«सूचना और संचार प्रणालियों में प्रोग्रामिंग»",
-  "summaryHighEducationContent2": "ITMO विश्वविद्यालय में",
-  "summaryOpenSourceTitle": "Open-source",
-  "summaryOpenSourceSubtitle": "सक्रिय परियोजना",
-  "summaryOpenSourceContent": "P2P संचार के लिए एक पैकेज",
-  "summaryOpenSourceContentButton": "पैकेज देखें",
-  "summaryGooglePlayTitle": "Google Play",
-  "summaryGooglePlaySubtitle": "सक्रिय एप्लिकेशन",
-  "summaryGooglePlayContent": "टेक्स्ट और फाइल साझाकरण के साथ एक ऑफ़लाइन चैट ऐप",
-  "summaryGooglePlayContentButton": "एप्लिकेशन खोलें",
-  "summaryEnglishTitle": "अंग्रेजी",
-  "summaryEnglishSubtitle": "कामकाजी दक्षता",
-  "summaryEnglishContent": "I very, very, very speak English",
-  "summaryTitle": "सारांश",
-  "summarySubtitle": "बहुत संक्षिप्त और मीठा",
-  "petProjectsTitle": "पेट प्रोजेक्ट्स",
-  "petProjectsSubtitle": "विशिष्ट, रचनात्मक, मेरे!",
-  "petProjectPageErrorTitle": "उफ़!",
-  "petProjectPageErrorSubtitle": "कुछ गलत हो गया",
-  "year": {
-    "zero": "{} वर्ष",
-    "one": "{} साल",
-    "two": "{} साल",
-    "few": "{} साल",
-    "many": "{} साल",
-    "other": "{} साल"
+  "tab": {
+    "home": "होम",
+    "summary": "सारांश",
+    "projects": "प्रोजेक्ट्स",
+    "experience": "अनुभव"
+  },
+  "skill": {
+    "teamPlayer": "टीम खिलाड़ी",
+    "communicative": "संचार में माहिर",
+    "problemSolver": "समस्या हल करने वाली",
+    "leader": "नेता",
+    "nonConflictual": "संघर्षहीन"
+  },
+  "welcome": {
+    "title": "Flutter डेवलपर",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "कुल अनुभव",
+      "content": "Dart के अलावा, मेरे पास Kotlin, Swift, JavaScript, Python, C#, R और अन्य में अनुभव है"
+    },
+    "flutterExperience": {
+      "subtitle": "Flutter अनुभव",
+      "content1": "मैं विकसित करती हूँ",
+      "content2": "वेब और मोबाइल",
+      "content3": "एप्लिकेशन, साथ ही",
+      "content4": "बैकएंड",
+      "content5": "संरचनाएँ। मैं जटिल प्रणालियों और कस्टम Flutter पैकेजों में विशेषज्ञ हूँ"
+    },
+    "highEducation": {
+      "title": "उच्च शिक्षा",
+      "subtitle": "इंजीनियरिंग में",
+      "content1": "«सूचना और संचार प्रणालियों में प्रोग्रामिंग»",
+      "content2": "ITMO विश्वविद्यालय में"
+    },
+    "openSource": {
+      "title": "Open-source",
+      "subtitle": "सक्रिय परियोजना",
+      "content": "P2P संचार के लिए एक पैकेज",
+      "contentButton": "पैकेज देखें"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "सक्रिय एप्लिकेशन",
+      "content": "टेक्स्ट और फाइल साझाकरण के साथ एक ऑफ़लाइन चैट ऐप",
+      "contentButton": "एप्लिकेशन खोलें"
+    },
+    "english": {
+      "title": "अंग्रेजी",
+      "subtitle": "कामकाजी दक्षता",
+      "content": "I very, very, very speak English"
+    },
+    "title": "सारांश",
+    "subtitle": "बहुत संक्षिप्त और मीठा"
+  },
+  "petProjects": {
+    "title": "पेट प्रोजेक्ट्स",
+    "subtitle": "विशिष्ट, रचनात्मक, मेरे!",
+    "error": {
+      "title": "Oops!",
+      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n वर्ष",
+    "one": "$n साल",
+    "two": "$n साल",
+    "few": "$n साल",
+    "many": "$n साल",
+    "other": "$n साल"
   },
   "androidDemo": "Android डेमो",
   "iosDemo": "iOS डेमो",
-  "notFoundPageTitle": "404",
-  "notFoundPageSubtitle": "यह पृष्ठ अस्तित्व में नहीं है",
-  "notFoundPageButton": "मुख्य पृष्ठ पर जाएं",
-  "pageTitle": "Kseniia | फ़्लटर डेवलपर",
-  "mainImageCaption": "छवि को ग्राफिक प्रोसेसिंग की मदद से बनाया गया था"
+  "notFound": {
+    "title": "404",
+    "subtitle": "यह पृष्ठ अस्तित्व में नहीं है",
+    "button": "मुख्य पृष्ठ पर जाएं"
+  },
+  "pageTitle": "Kseniia | Flutter डेवलपर",
+  "mainImageCaption": "छवि को ग्राफिक प्रोसेसिंग की मदद से बनाया गया था",
+  "experience": {
+    "title": "अनुभव",
+    "subtitle": "उबाऊ हिस्सा",
+    "greenflux": {
+      "title": "मोबाइल एप्लिकेशन डेवलपर",
+      "organization": "Greenflux Assets B.V.",
+      "location": "एम्स्टर्डम, नीदरलैंड्स (हाइब्रिड)",
+      "duration": "फरवरी 2024 – वर्तमान",
+      "subtitle": "इलेक्ट्रिक वाहन चार्जिंग के लिए एप्लिकेशन विकसित करना",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "अंग्रेज़ी",
+        "skill11": "REST API",
+        "skill12": "Figma",
+        "skill13": "ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग (OOP)"
+      },
+      "achievements": {
+        "achievement1": "सभी विकास चक्र का समर्थन किया: तकनीकी विनिर्देशन से लेकर प्रकाशन तक",
+        "achievement2": "10+ एप्लिकेशन की एक साझा कोडबेस के साथ सिस्टम का समर्थन किया",
+        "achievement3": "लिन्टर्स, फॉर्मेटिंग सेट की और सभी एप्लिकेशन के लिए एक सामान्य क्लास सिस्टम लागू किया",
+        "achievement4": "पुल्ल-रिक्वेस्ट की समीक्षा, एप्लिकेशन के निर्माण और प्रकाशन के लिए पाइपलाइन बनाई, और प्रक्रियाओं को सरल बनाने के लिए स्क्रिप्ट बनाई",
+        "achievement5": "Git Flow सेट किया और इसकी अनुपालना की निगरानी की",
+        "achievement6": "Google Maps, सूचनाओं और अन्य जटिल कार्यों के साथ निकटता से काम किया",
+        "achievement7": "SwiftUI के साथ iOS Live Activities को पूरी तरह से लागू किया और इसे कई एप्लिकेशनों तक विस्तारित किया",
+        "achievement8": "संपूर्ण कोडबेस के लिए परीक्षण कवर किए"
+      }
+    },
+    "friflex": {
+      "title": "मोबाइल एप्लिकेशन डेवलपर",
+      "organization": "Friflex",
+      "location": "मॉस्को, रूस",
+      "duration": "अगस्त 2022 – दिसंबर 2023",
+      "subtitle": "शतरंज और चौपड़ खेलों की पहचान करने वाली सेवाओं का विकास",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "डेटाबेस",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "स्थानीयकरण",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST API",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "डिज़ाइन पैटर्न",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग (OOP)"
+      },
+      "achievements": {
+        "achievement1": "सभी विकास चक्र का समर्थन किया: तकनीकी विनिर्देशन से लेकर प्रकाशन तक",
+        "achievement2": "3 कस्टम पैकेज बनाए और 10+ पैकेजों का समर्थन किया, और उनके बीच निर्भरता सेट की",
+        "achievement3": "तीसरे पक्ष की सेवाओं (MiniO, Firebase) का सफलतापूर्वक एकीकरण किया",
+        "achievement4": "Flutter Web पर प्रशासनिक वेब डैशबोर्ड का विकास किया",
+        "achievement5": "Dart का उपयोग करके बैकएंड विकास किया",
+        "achievement6": "असंख्य UI घटक और एनीमेशन बनाए",
+        "achievement7": "क्लाउड स्टोरेज में डेटा भेजने के लिए बैकग्राउंड सेवा विकसित की",
+        "achievement8": "लाइव स्ट्रीमिंग प्रणाली को बनाए रखा, जिसमें मोबाइल एप्लिकेशन, बैकएंड और वेब पार्ट शामिल थे"
+      }
+    },
+    "agroStab": {
+      "title": "Full-stack डेवलपर",
+      "organization": "AgroSTAB",
+      "location": "सेंट पीटर्सबर्ग, रूस",
+      "duration": "फरवरी 2022 – जुलाई 2022",
+      "subtitle": "स्मार्ट ग्रीनहाउस के लिए प्रशासनिक पैनल का विकास",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "अंग्रेज़ी",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "सभी विकास चक्र का समर्थन किया: तकनीकी विनिर्देशन से लेकर प्रकाशन तक",
+        "achievement2": "React.js का उपयोग करके यूजर इंटरफेस बनाया",
+        "achievement3": "react-redux का उपयोग करके डेटा प्रोसेसिंग का एकीकरण किया",
+        "achievement4": "घटक संरचना, उनकी स्थिति और कनेक्शन डिजाइन किए",
+        "achievement5": "UX सुधारने के लिए इंटरएक्टिव तत्व जोड़े",
+        "achievement6": "Nest.js पर लिखे गए बैकएंड की संरचना में सुधार किया और डेटा प्रोसेसिंग लॉजिक जोड़ा",
+        "achievement7": "PostgreSQL डेटाबेस संरचना डिजाइन की और अपडेट लागू किए",
+        "achievement8": "Cron का उपयोग करके डेटाबेस में डेटा के अपडेट के लिए एल्गोरिदम विकसित किए"
+      }
+    }
+  }
 }

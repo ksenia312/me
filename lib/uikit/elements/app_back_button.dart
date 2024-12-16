@@ -9,7 +9,7 @@ class AppBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomToolbarTab(
-      titleWidget: Assets.icons.icBackArrow.svg(height: 20, width: 20),
+      titleWidget: Assets.icons.icBackArrow.svg(height: 32, width: 32),
       onPressed: (_) {
         try {
           context.pop();

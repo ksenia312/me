@@ -9,12 +9,14 @@ class ExperienceRepositoryImpl implements ExperienceRepository {
 
   @override
   double getOverallExperienceInYears() {
-    return DateTime.now().difference(_overallStartingDateTime).inDays / 365;
+    final stringValue = (DateTime.now().difference(_overallStartingDateTime).inDays / 365).toStringAsFixed(1);
+    return double.parse(stringValue);
   }
 
   @override
   double getFlutterExperienceInYears() {
-    return DateTime.now().difference(_flutterStartingDateTime).inDays / 365;
+    final stringValue = (DateTime.now().difference(_flutterStartingDateTime).inDays / 365).toStringAsFixed(1);
+    return double.parse(stringValue);
   }
 
   @override

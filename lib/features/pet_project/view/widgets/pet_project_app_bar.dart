@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/pet_project/notifier/pet_project_notifier.dart';
+import 'package:me/generated/assets.gen.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -12,6 +13,7 @@ class PetProjectAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = notifier.vm?.data.accentColor ?? context.customColorScheme.gradientExtraLightColor;
+    final isError = !notifier.isLoading && notifier.vm?.coverImageUrl == null;
 
     return FlexibleSpaceBar(
       collapseMode: CollapseMode.pin,
@@ -34,19 +36,27 @@ class PetProjectAppBar extends StatelessWidget {
             },
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              color: color,
+              color: isError ? context.colorScheme.error.withOpacity(0.2) : color,
               padding: EdgeInsets.only(top: AppResponsiveSizes.toolbarHeight(context)),
-              child: imageUrl == null
-                  ? SizedBox.shrink()
-                  : CachedNetworkImage(
-                      imageUrl: imageUrl,
-                      fit: BoxFit.fitHeight,
-                      fadeInCurve: Curves.easeInOut,
-                      fadeOutCurve: Curves.easeInOut,
-                      filterQuality: FilterQuality.high,
-                      fadeInDuration: const Duration(milliseconds: 300),
-                      fadeOutDuration: const Duration(milliseconds: 300),
-                    ),
+              child: isError
+                  ? Center(
+                      child: Assets.icons.icError.svg(
+                        height: 52,
+                        width: 52,
+                        colorFilter: ColorFilter.mode(context.colorScheme.error, BlendMode.srcIn),
+                      ),
+                    )
+                  : imageUrl == null
+                      ? SizedBox.shrink()
+                      : CachedNetworkImage(
+                          imageUrl: imageUrl,
+                          fit: BoxFit.fitHeight,
+                          fadeInCurve: Curves.easeInOut,
+                          fadeOutCurve: Curves.easeInOut,
+                          filterQuality: FilterQuality.high,
+                          fadeInDuration: const Duration(milliseconds: 300),
+                          fadeOutDuration: const Duration(milliseconds: 300),
+                        ),
             ),
           );
         },

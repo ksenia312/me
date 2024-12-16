@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 
-import 'package:me/uikit/localization/localization_temp.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/generated/assets.gen.dart';
 import 'package:me/uikit/elements/app_images_cache.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
+
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -28,7 +28,10 @@ class _MainImageState extends State<MainImage> with AutomaticKeepAliveClientMixi
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(const Duration(milliseconds: 100), () {
-        setState(() => _isLoaded = true);
+        _isLoaded = true;
+        if (mounted) {
+          setState(() {});
+        }
       });
     });
     super.initState();
@@ -84,7 +87,7 @@ class _MainImageState extends State<MainImage> with AutomaticKeepAliveClientMixi
                 child: SizedBox(
                   width: Responsive.get(context, def: () => width / 3, m: () => width / 2),
                   child: Text(
-                    LocaleKeys.mainImageCaption.tr(context: context),
+                    context.keys.mainImageCaption,
                     style: context.textTheme.labelSmall?.copyWith(
                       color: context.colorScheme.onSurface.withOpacity(0.2),
                     ),

@@ -1,9 +1,9 @@
-import 'package:me/uikit/localization/localization_temp.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/landing/notifier/pet_project_list_notifier.dart';
 import 'package:me/uikit/components/project_cards_grid.dart';
 import 'package:me/uikit/elements/app_title.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
+
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 
 class ProjectsView extends StatefulWidget {
@@ -24,6 +24,7 @@ class _ProjectsViewState extends State<ProjectsView> {
 
   @override
   Widget build(BuildContext context) {
+    final petProjects = context.keys.petProjects;
     return Padding(
       padding: EdgeInsets.fromLTRB(
         AppResponsiveSizes.landingMargin(context),
@@ -36,8 +37,8 @@ class _ProjectsViewState extends State<ProjectsView> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           AppTitle(
-            title: LocaleKeys.petProjectsTitle.tr(),
-            subtitle: LocaleKeys.petProjectsSubtitle.tr(),
+            title: petProjects.title,
+            subtitle: petProjects.subtitle,
             alignment: AppTitleAlignment.left,
           ),
           SizedBox(height: AppResponsiveSizes.x3Large(context)),

@@ -1,56 +1,179 @@
 {
-  "tabHome": "Home",
-  "tabSummary": "Summary",
-  "tabProjects": "Projects",
-  "skillTeamPlayer": "Team player",
-  "skillCommunicative": "Сommunicative",
-  "skillProblemSolver": "Problem solver",
-  "skillLeader": "Leader",
-  "skillNonConflictual": "Non-conflictual",
-  "welcomeTile": "Flutter developer",
-  "welcomeSubtitle": "Kseniia Nikitina",
-  "summaryTotalExperienceSubtitle": "total experience",
-  "summaryTotalExperienceContent": "In addition to Dart, I have experience with Kotlin, Swift, JavaScript, Python, C#, R, and more",
-  "summaryFlutterExperienceSubtitle": "Flutter experience",
-  "summaryFlutterExperienceContent1": "I develop",
-  "summaryFlutterExperienceContent2": "web and mobile",
-  "summaryFlutterExperienceContent3": "applications as well as",
-  "summaryFlutterExperienceContent4": "backend",
-  "summaryFlutterExperienceContent5": "structures. I specialize in complex systems and custom Flutter packages",
-  "summaryHighEducationTitle": "Higher education",
-  "summaryHighEducationSubtitle": "in engineering",
-  "summaryHighEducationContent1": "«Programming in information and communication systems» at",
-  "summaryHighEducationContent2": "ITMO University",
-  "summaryOpenSourceTitle": "Open-source",
-  "summaryOpenSourceSubtitle": "active project",
-  "summaryOpenSourceContent": "A package for P2P communication",
-  "summaryOpenSourceContentButton": "View Package",
-  "summaryGooglePlayTitle": "Google Play",
-  "summaryGooglePlaySubtitle": "active app",
-  "summaryGooglePlayContent": "An offline chat app with support for text and file sharing",
-  "summaryGooglePlayContentButton": "Open app",
-  "summaryEnglishTitle": "English",
-  "summaryEnglishSubtitle": "working proficiency",
-  "summaryEnglishContent": "I very, very, very speak English",
-  "summaryTitle": "Summary",
-  "summarySubtitle": "Super short and sweet",
-  "petProjectsTitle": "Pet projects",
-  "petProjectsSubtitle": "Unique, creative, mine!",
-  "petProjectPageErrorTitle": "Oops!",
-  "petProjectPageErrorSubtitle": "Something went wrong",
-  "year": {
-    "zero": "{} years",
-    "one": "{} year",
-    "two": "{} years",
-    "few": "{} years",
-    "many": "{} years",
-    "other": "{} years"
+  "tab": {
+    "home": "Home",
+    "summary": "Summary",
+    "projects": "Projects",
+    "experience": "Experience"
+  },
+  "skill": {
+    "teamPlayer": "Team player",
+    "communicative": "Сommunicative",
+    "problemSolver": "Problem solver",
+    "leader": "Leader",
+    "nonConflictual": "Non-conflictual"
+  },
+  "welcome": {
+    "title": "Flutter developer",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "total experience",
+      "content": "In addition to Dart, I have experience with Kotlin, Swift, JavaScript, Python, C#, R, and more"
+    },
+    "flutterExperience": {
+      "subtitle": "Flutter experience",
+      "content1": "I develop",
+      "content2": "web and mobile",
+      "content3": "applications as well as",
+      "content4": "backend",
+      "content5": "structures. I specialize in complex systems and custom Flutter packages"
+    },
+    "highEducation": {
+      "title": "Higher education",
+      "subtitle": "in engineering",
+      "content1": "«Programming in information and communication systems» at",
+      "content2": "ITMO University"
+    },
+    "openSource": {
+      "title": "Open-source",
+      "subtitle": "active project",
+      "content": "A package for P2P communication",
+      "contentButton": "View Package"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "active app",
+      "content": "An offline chat app with support for text and file sharing",
+      "contentButton": "Open app"
+    },
+    "english": {
+      "title": "English",
+      "subtitle": "working proficiency",
+      "content": "I very, very, very speak English"
+    },
+    "title": "Summary",
+    "subtitle": "Super short and sweet"
+  },
+  "petProjects": {
+    "title": "Pet projects",
+    "subtitle": "Unique, creative, mine!",
+    "error": {
+      "title": "Oops!",
+      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n years",
+    "one": "$n year",
+    "two": "$n years",
+    "few": "$n years",
+    "many": "$n years",
+    "other": "$n years"
   },
   "androidDemo": "Android demo",
   "iosDemo": "iOS demo",
-  "notFoundPageTitle": "404",
-  "notFoundPageSubtitle": "This page does not exist",
-  "notFoundPageButton": "Go to home page",
+  "notFound": {
+    "title": "404",
+    "subtitle": "This page does not exist",
+    "button": "Go to home page"
+  },
   "pageTitle": "Kseniia | Flutter Developer",
-  "mainImageCaption": "The image was created using graphic processing"
+  "mainImageCaption": "The image was created using graphic processing",
+  "experience": {
+    "title": "Experience",
+    "subtitle": "The boring part",
+    "greenflux": {
+      "title": "Mobile Application Developer",
+      "organization": "Greenflux Assets B.V.",
+      "location": "Amsterdam, Netherlands (Hybrid)",
+      "duration": "February 2024 – Present",
+      "subtitle": "Developing applications for electric vehicle charging stations",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "English",
+        "skill11": "REST APIs",
+        "skill12": "Figma",
+        "skill13": "Object-Oriented Programming (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Supported the full development cycle: from technical specification to publication",
+        "achievement2": "Maintained a system of over 10 applications with a shared codebase",
+        "achievement3": "Set up linters, formatting, and introduced a common class system for all applications",
+        "achievement4": "Created pipelines to check pull requests, build and publish applications, and scripts to simplify processes",
+        "achievement5": "Set up Git Flow and monitored its compliance",
+        "achievement6": "Worked closely with Google Maps, notifications, and other complex features",
+        "achievement7": "Fully implemented iOS Live Activities using SwiftUI and extended it to multiple applications",
+        "achievement8": "Covered the entire codebase with tests"
+      }
+    },
+    "friflex": {
+      "title": "Mobile Application Developer",
+      "organization": "Friflex",
+      "location": "Moscow, Russia",
+      "duration": "August 2022 – December 2023",
+      "subtitle": "Development of services for recognizing chess and draughts games",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "Databases",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "Localization",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST APIs",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "Design Patterns",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "Object-Oriented Programming (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Supported the full development cycle: from technical specification to publication",
+        "achievement2": "Fully created 3 custom packages, maintained 10+ packages, and configured their dependencies",
+        "achievement3": "Successfully integrated third-party services (MiniO, Firebase)",
+        "achievement4": "Developed administrative web dashboards with Flutter Web",
+        "achievement5": "Worked on backend development using Dart",
+        "achievement6": "Created numerous UI components and animations",
+        "achievement7": "Developed a background service to send data in chunks to cloud storage",
+        "achievement8": "Maintained a live streaming system consisting of mobile apps, backend, and frontend areas"
+      }
+    },
+    "agroStab": {
+      "title": "Full-stack Developer",
+      "organization": "AgroSTAB",
+      "location": "St. Petersburg, Russia",
+      "duration": "February 2022 – July 2022",
+      "subtitle": "Development of administrative control panels for smart greenhouses",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "English",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "Supported the full development cycle: from technical specification to publication",
+        "achievement2": "Worked on creating user interfaces using React.js",
+        "achievement3": "Implemented data handling using react-redux",
+        "achievement4": "Designed component structure, layout, and connections",
+        "achievement5": "Added interactive elements to improve UX",
+        "achievement6": "Improved the backend structure written in Nest.js and added data processing logic",
+        "achievement7": "Designed database architecture (PostgreSQL) and implemented updates",
+        "achievement8": "Developed algorithms for scheduled data updates in the database using Cron"
+      }
+    }
+  }
 }

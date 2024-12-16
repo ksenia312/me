@@ -1,56 +1,179 @@
 {
-  "tabHome": "홈",
-  "tabSummary": "요약",
-  "tabProjects": "프로젝트",
-  "skillTeamPlayer": "팀 플레이어",
-  "skillCommunicative": "소통 능력",
-  "skillProblemSolver": "문제 해결자",
-  "skillLeader": "리더",
-  "skillNonConflictual": "갈등 없음",
-  "welcomeTile": "Flutter 개발자",
-  "welcomeSubtitle": "Kseniia Nikitina",
-  "summaryTotalExperienceSubtitle": "총 경험",
-  "summaryTotalExperienceContent": "Dart 외에도 Kotlin, Swift, JavaScript, Python, C#, R 등 다양한 경험이 있습니다",
-  "summaryFlutterExperienceSubtitle": "Flutter 경험",
-  "summaryFlutterExperienceContent1": "저는 개발합니다",
-  "summaryFlutterExperienceContent2": "웹 및 모바일",
-  "summaryFlutterExperienceContent3": "애플리케이션, 또한",
-  "summaryFlutterExperienceContent4": "백엔드",
-  "summaryFlutterExperienceContent5": "구조. 저는 복잡한 시스템과 맞춤형 Flutter 패키지에 전문화되어 있습니다",
-  "summaryHighEducationTitle": "고등 교육",
-  "summaryHighEducationSubtitle": "공학 전공",
-  "summaryHighEducationContent1": "«정보 및 통신 시스템 프로그래밍»",
-  "summaryHighEducationContent2": "ITMO 대학교",
-  "summaryOpenSourceTitle": "오픈소스",
-  "summaryOpenSourceSubtitle": "활성 프로젝트",
-  "summaryOpenSourceContent": "P2P 통신을 위한 패키지",
-  "summaryOpenSourceContentButton": "패키지 보기",
-  "summaryGooglePlayTitle": "Google Play",
-  "summaryGooglePlaySubtitle": "활성 앱",
-  "summaryGooglePlayContent": "텍스트 및 파일 공유를 지원하는 오프라인 채팅 앱",
-  "summaryGooglePlayContentButton": "앱 열기",
-  "summaryEnglishTitle": "영어",
-  "summaryEnglishSubtitle": "업무 수준",
-  "summaryEnglishContent": "I very, very, very speak English",
-  "summaryTitle": "요약",
-  "summarySubtitle": "매우 간단하고 달콤하게",
-  "petProjectsTitle": "개인 프로젝트",
-  "petProjectsSubtitle": "독특하고 창의적이며 내 것!",
-  "petProjectPageErrorTitle": "앗!",
-  "petProjectPageErrorSubtitle": "문제가 발생했습니다",
-  "year": {
-    "zero": "{} 년",
-    "one": "{} 년",
-    "two": "{} 년",
-    "few": "{} 년",
-    "many": "{} 년",
-    "other": "{} 년"
+  "tab": {
+    "home": "홈",
+    "summary": "요약",
+    "projects": "프로젝트",
+    "experience": "경험"
+  },
+  "skill": {
+    "teamPlayer": "팀 플레이어",
+    "communicative": "소통 능력",
+    "problemSolver": "문제 해결자",
+    "leader": "리더",
+    "nonConflictual": "갈등 없음"
+  },
+  "welcome": {
+    "title": "플러터 개발자",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "총 경험",
+      "content": "Dart 외에도 Kotlin, Swift, JavaScript, Python, C#, R 등 다양한 경험이 있습니다"
+    },
+    "flutterExperience": {
+      "subtitle": "Flutter 경험",
+      "content1": "저는 개발합니다",
+      "content2": "웹 및 모바일",
+      "content3": "애플리케이션, 또한",
+      "content4": "백엔드",
+      "content5": "구조. 저는 복잡한 시스템과 맞춤형 Flutter 패키지에 전문화되어 있습니다"
+    },
+    "highEducation": {
+      "title": "고등 교육",
+      "subtitle": "공학 전공",
+      "content1": "«정보 및 통신 시스템 프로그래밍»",
+      "content2": "ITMO 대학교"
+    },
+    "openSource": {
+      "title": "오픈소스",
+      "subtitle": "활성 프로젝트",
+      "content": "P2P 통신을 위한 패키지",
+      "contentButton": "패키지 보기"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "활성 앱",
+      "content": "텍스트 및 파일 공유를 지원하는 오프라인 채팅 앱",
+      "contentButton": "앱 열기"
+    },
+    "english": {
+      "title": "영어",
+      "subtitle": "업무 수준",
+      "content": "I very, very, very speak English"
+    },
+    "title": "요약",
+    "subtitle": "매우 간단하고 달콤하게"
+  },
+  "petProjects": {
+    "title": "개인 프로젝트",
+    "subtitle": "독특하고 창의적이며 내 것!",
+    "error": {
+      "title": "Oops!",
+      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n 년",
+    "one": "$n 년",
+    "two": "$n 년",
+    "few": "$n 년",
+    "many": "$n 년",
+    "other": "$n 년"
   },
   "androidDemo": "Android 데모",
   "iosDemo": "iOS 데모",
-  "notFoundPageTitle": "404",
-  "notFoundPageSubtitle": "이 페이지는 존재하지 않습니다",
-  "notFoundPageButton": "홈페이지로 가기",
+  "notFound": {
+    "title": "404",
+    "subtitle": "이 페이지는 존재하지 않습니다",
+    "button": "홈페이지로 가기"
+  },
   "pageTitle": "Kseniia | 플러터 개발자",
-  "mainImageCaption": "이미지는 그래픽 처리를 사용하여 생성되었습니다"
+  "mainImageCaption": "이미지는 그래픽 처리를 사용하여 생성되었습니다",
+  "experience": {
+    "title": "경험",
+    "subtitle": "지루한 부분",
+    "greenflux": {
+      "title": "모바일 애플리케이션 개발자",
+      "organization": "Greenflux Assets B.V.",
+      "location": "암스테르담, 네덜란드 (하이브리드)",
+      "duration": "2024년 2월 – 현재",
+      "subtitle": "전기차 충전소 애플리케이션 개발",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "영어",
+        "skill11": "REST API",
+        "skill12": "Figma",
+        "skill13": "객체지향 프로그래밍(OOP)"
+      },
+      "achievements": {
+        "achievement1": "기술 사양에서 출시까지의 전체 개발 주기를 지원",
+        "achievement2": "공유 코드 베이스를 가진 10개 이상의 애플리케이션 시스템 유지",
+        "achievement3": "모든 애플리케이션에 대해 린터, 포맷팅 및 공통 클래스 시스템 설정",
+        "achievement4": "풀 리퀘스트 검토, 애플리케이션 빌드 및 출시 파이프라인을 만들고 프로세스를 단순화하는 스크립트 작성",
+        "achievement5": "Git Flow 설정 및 준수 모니터링",
+        "achievement6": "Google Maps, 알림 및 기타 복잡한 기능들과 긴밀히 작업",
+        "achievement7": "SwiftUI를 사용하여 iOS Live Activities를 완전 구현하고 여러 애플리케이션에 확장",
+        "achievement8": "전체 코드 베이스를 테스트로 커버"
+      }
+    },
+    "friflex": {
+      "title": "모바일 애플리케이션 개발자",
+      "organization": "Friflex",
+      "location": "모스크바, 러시아",
+      "duration": "2022년 8월 – 2023년 12월",
+      "subtitle": "체스 및 장기 게임 인식 서비스 개발",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "데이터베이스",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "로컬라이제이션",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST API",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "디자인 패턴",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "객체지향 프로그래밍(OOP)"
+      },
+      "achievements": {
+        "achievement1": "기술 사양에서 출시까지의 전체 개발 주기를 지원",
+        "achievement2": "3개의 커스텀 패키지 완성, 10개 이상의 패키지 유지 및 종속성 설정",
+        "achievement3": "MiniO, Firebase 등의 서드파티 서비스 통합 성공",
+        "achievement4": "Flutter Web을 사용하여 관리용 웹 대시보드 개발",
+        "achievement5": "Dart를 사용하여 백엔드 개발",
+        "achievement6": "수많은 UI 컴포넌트 및 애니메이션 제작",
+        "achievement7": "클라우드 저장소로 데이터를 청크로 전송하는 백그라운드 서비스 개발",
+        "achievement8": "모바일 애플리케이션, 백엔드 및 웹 부분으로 구성된 라이브 스트리밍 시스템 유지"
+      }
+    },
+    "agroStab": {
+      "title": "풀스택 개발자",
+      "organization": "AgroSTAB",
+      "location": "상트페테르부르크, 러시아",
+      "duration": "2022년 2월 – 2022년 7월",
+      "subtitle": "스마트 온실을 위한 관리 대시보드 개발",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "영어",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "기술 사양에서 출시까지의 전체 개발 주기를 지원",
+        "achievement2": "React.js를 사용하여 사용자 인터페이스 개발",
+        "achievement3": "react-redux를 사용하여 데이터 처리 통합",
+        "achievement4": "컴포넌트 구조, 배치 및 연결 설계",
+        "achievement5": "UX 향상을 위한 인터랙티브 요소 추가",
+        "achievement6": "Nest.js로 작성된 백엔드 구조 개선 및 데이터 처리 로직 추가",
+        "achievement7": "PostgreSQL 데이터베이스 아키텍처 설계 및 업데이트 수행",
+        "achievement8": "Cron을 사용하여 데이터베이스 업데이트 알고리즘 개발"
+      }
+    }
+  }
 }

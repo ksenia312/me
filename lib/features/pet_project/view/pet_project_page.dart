@@ -1,4 +1,4 @@
-import 'package:me/uikit/localization/localization_temp.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/features/pet_project/notifier/pet_project_notifier.dart';
@@ -7,7 +7,7 @@ import 'package:me/uikit/components/language_button.dart';
 import 'package:me/uikit/components/up_button.dart';
 import 'package:me/uikit/elements/app_back_button.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
+
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -123,6 +123,7 @@ class _PetProjectWrapperState extends State<_PetProjectWrapper> {
                   child: Center(child: CircularProgressIndicator()),
                 );
               }
+              final petProject = context.keys.petProjects;
 
               return SliverToBoxAdapter(
                 child: Padding(
@@ -130,19 +131,24 @@ class _PetProjectWrapperState extends State<_PetProjectWrapper> {
                     vertical: AppResponsiveSizes.landingMarginSmall(context),
                   ),
                   child: vm == null
-                      ? Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              LocaleKeys.petProjectPageErrorTitle.tr(),
-                              style: context.textTheme.titleMedium,
-                            ),
-                            SizedBox(height: AppResponsiveSizes.x3Large(context)),
-                            Text(
-                              LocaleKeys.petProjectPageErrorSubtitle.tr(),
-                              style: context.textTheme.bodyMedium,
-                            ),
-                          ],
+                      ? Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: AppResponsiveSizes.landingMargin(context),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                petProject.error.title.toUpperCase(),
+                                style: context.textTheme.displaySmall,
+                              ),
+                              SizedBox(height: AppResponsiveSizes.x3Large(context)),
+                              Text(
+                                petProject.error.subtitle(id: widget.notifier.id),
+                                style: context.textTheme.bodyLarge,
+                              ),
+                            ],
+                          ),
                         )
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

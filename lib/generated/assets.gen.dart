@@ -72,6 +72,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_email.svg
   SvgGenImage get icEmail => const SvgGenImage('assets/icons/ic_email.svg');
 
+  /// File path: assets/icons/ic_error.svg
+  SvgGenImage get icError => const SvgGenImage('assets/icons/ic_error.svg');
+
   /// File path: assets/icons/ic_github.svg
   SvgGenImage get icGithub => const SvgGenImage('assets/icons/ic_github.svg');
 
@@ -111,6 +114,7 @@ class $AssetsIconsGen {
         icCloseRiv,
         icCloseSvg,
         icEmail,
+        icError,
         icGithub,
         icHumanBrain,
         icLinkedIn,

@@ -1,9 +1,9 @@
-import 'package:me/uikit/localization/localization_temp.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/uikit/components/main_image.dart';
 import 'package:me/uikit/elements/app_chip.dart';
 import 'package:me/uikit/elements/app_title.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
+
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
@@ -13,20 +13,23 @@ class WelcomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final image = MainImage();
+    final skill = context.keys.skill;
+    final welcome = context.keys.welcome;
+
+    final imageWidget = MainImage();
     final chips = Wrap(
       spacing: AppResponsiveSizes.large(context),
       runSpacing: AppResponsiveSizes.large(context),
       alignment: Responsive.get(context, def: () => WrapAlignment.end, m: () => WrapAlignment.center),
       children: [
-        AppChip(text: LocaleKeys.skillTeamPlayer.tr()),
-        AppChip(text: LocaleKeys.skillCommunicative.tr()),
-        AppChip(text: LocaleKeys.skillProblemSolver.tr()),
-        AppChip(text: LocaleKeys.skillLeader.tr()),
-        AppChip(text: LocaleKeys.skillNonConflictual.tr()),
+        AppChip(text: skill.teamPlayer),
+        AppChip(text: skill.communicative),
+        AppChip(text: skill.problemSolver),
+        AppChip(text: skill.leader),
+        AppChip(text: skill.nonConflictual),
       ],
     );
-    final title = AppTitle(title: LocaleKeys.welcomeTile.tr(), subtitle: LocaleKeys.welcomeSubtitle.tr());
+    final titleWidget = AppTitle(title: welcome.title, subtitle: welcome.subtitle);
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -49,16 +52,13 @@ class WelcomeView extends StatelessWidget {
         def: () => Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            title,
+            titleWidget,
             SizedBox(height: AppResponsiveSizes.x10large(context)),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Flexible(
-                  flex: 2,
-                  child: image,
-                ),
+                Flexible(flex: 2, child: imageWidget),
                 Flexible(
                   child: ConstrainedBox(
                     constraints: BoxConstraints(maxWidth: 400.0, minWidth: 0),
@@ -72,14 +72,14 @@ class WelcomeView extends StatelessWidget {
         m: () => Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            title,
+            titleWidget,
             SizedBox(height: AppResponsiveSizes.x10large(context)),
             ConstrainedBox(
               constraints: BoxConstraints(maxWidth: 400.0, minWidth: 0),
               child: chips,
             ),
             SizedBox(height: AppResponsiveSizes.x10large(context)),
-            Center(child: image),
+            Center(child: imageWidget),
           ],
         ),
       ),

@@ -1,4 +1,4 @@
-import 'package:me/uikit/localization/localization_temp.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/landing/notifier/summary_notifier.dart';
 import 'package:me/uikit/components/cat_animation.dart';
@@ -6,7 +6,7 @@ import 'package:me/uikit/components/summary_circle.dart';
 import 'package:me/uikit/components/translated_widget.dart';
 import 'package:me/uikit/custom_paint/background_wave_paint.dart';
 import 'package:me/uikit/elements/app_title.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
+
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 import 'package:rive/rive.dart';
@@ -26,75 +26,70 @@ class _SummaryViewState extends State<SummaryView> {
 
   @override
   Widget build(BuildContext context) {
+    final summary = context.keys.summary;
+    final totalExperience = summary.totalExperience;
+    final flutterExperience = summary.flutterExperience;
+    final highEducation = summary.highEducation;
+    final openSource = summary.openSource;
+    final googlePlay = summary.googlePlay;
+    final english = summary.english;
     final models = [
       SummaryCircle(
-        key: ValueKey(LocaleKeys.summaryTotalExperienceSubtitle),
-        title: LocaleKeys.year.plural(
-          _summaryNotifier.overallExperienceInYears,
-          // format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
-        ),
-        subtitle: LocaleKeys.summaryTotalExperienceSubtitle.tr(),
-        activeContent: ActiveSummaryText(
-          text: LocaleKeys.summaryTotalExperienceContent.tr(),
-        ),
+        key: ValueKey(totalExperience.subtitle),
+        title: context.keys.year(n: _summaryNotifier.overallExperienceInYears),
+        subtitle: totalExperience.subtitle,
+        activeContent: ActiveSummaryText(text: totalExperience.content),
       ),
       SummaryCircle(
-        key: ValueKey(LocaleKeys.summaryFlutterExperienceSubtitle),
-        title: LocaleKeys.year.plural(
-          _summaryNotifier.flutterExperienceInYears,
-          // format: NumberFormat.decimalPatternDigits(decimalDigits: 1),
-        ),
-        subtitle: LocaleKeys.summaryFlutterExperienceSubtitle.tr(),
+        key: ValueKey(flutterExperience.subtitle),
+        title: context.keys.year(n: _summaryNotifier.flutterExperienceInYears),
+        subtitle: flutterExperience.subtitle,
         activeContent: ActiveSummaryRawText(
           spans: [
-            ActiveSummaryTextSpan(text: LocaleKeys.summaryFlutterExperienceContent1.tr()),
-            ActiveSummaryTextSpan(
-              text: LocaleKeys.summaryFlutterExperienceContent2.tr(),
-              isBold: true,
-              // hasSpaceInTheEnd: false,
-            ),
-            ActiveSummaryTextSpan(text: LocaleKeys.summaryFlutterExperienceContent3.tr()),
-            ActiveSummaryTextSpan(text: LocaleKeys.summaryFlutterExperienceContent4.tr(), isBold: true),
-            ActiveSummaryTextSpan(text: LocaleKeys.summaryFlutterExperienceContent5.tr()),
+            ActiveSummaryTextSpan(text: flutterExperience.content1),
+            ActiveSummaryTextSpan(text: flutterExperience.content2, isBold: true),
+            ActiveSummaryTextSpan(text: flutterExperience.content3),
+            ActiveSummaryTextSpan(text: flutterExperience.content4, isBold: true),
+            ActiveSummaryTextSpan(text: flutterExperience.content5),
           ],
         ),
       ),
       SummaryCircle(
-        key: ValueKey(LocaleKeys.summaryHighEducationTitle),
-        title: LocaleKeys.summaryHighEducationTitle.tr(),
-        subtitle: LocaleKeys.summaryHighEducationSubtitle.tr(),
+        key: ValueKey(highEducation.title),
+        title: highEducation.title,
+        subtitle: highEducation.subtitle,
         activeContent: ActiveSummaryRawText(
           spans: [
-            ActiveSummaryTextSpan(text: LocaleKeys.summaryHighEducationContent1.tr()),
-            ActiveSummaryTextSpan(text: LocaleKeys.summaryHighEducationContent2.tr(), isBold: true),
+            ActiveSummaryTextSpan(text: highEducation.content1),
+            ActiveSummaryTextSpan(text: highEducation.content2, isBold: true),
           ],
         ),
       ),
       SummaryCircle(
-        key: ValueKey(LocaleKeys.summaryOpenSourceTitle),
-        title: LocaleKeys.summaryOpenSourceTitle.tr(),
-        subtitle: LocaleKeys.summaryOpenSourceSubtitle.tr(),
+        key: ValueKey(openSource.title),
+        title: openSource.title,
+        subtitle: openSource.subtitle,
         activeContent: ActiveSummaryLink(
-          title: LocaleKeys.summaryOpenSourceContent.tr(),
-          buttonText: LocaleKeys.summaryOpenSourceContentButton.tr(),
+          title: openSource.content,
+          buttonText: openSource.contentButton,
           link: _summaryNotifier.packageLink,
         ),
       ),
       SummaryCircle(
-        key: ValueKey(LocaleKeys.summaryGooglePlayTitle),
-        title: LocaleKeys.summaryGooglePlayTitle.tr(),
-        subtitle: LocaleKeys.summaryGooglePlaySubtitle.tr(),
+        key: ValueKey(googlePlay.title),
+        title: googlePlay.title,
+        subtitle: googlePlay.subtitle,
         activeContent: ActiveSummaryLink(
-          title: LocaleKeys.summaryGooglePlayContent.tr(),
-          buttonText: LocaleKeys.summaryGooglePlayContentButton.tr(),
+          title:googlePlay.content,
+          buttonText: googlePlay.contentButton,
           link: _summaryNotifier.appLink,
         ),
       ),
       SummaryCircle(
-        key: ValueKey(LocaleKeys.summaryEnglishTitle),
-        title: LocaleKeys.summaryEnglishTitle.tr(),
-        subtitle: LocaleKeys.summaryEnglishSubtitle.tr(),
-        activeContent: ActiveSummaryText(text: LocaleKeys.summaryEnglishContent.tr()),
+        key: ValueKey(english.title),
+        title: english.title,
+        subtitle: english.subtitle,
+        activeContent: ActiveSummaryText(text: english.content),
       ),
     ];
 
@@ -112,8 +107,8 @@ class _SummaryViewState extends State<SummaryView> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             AppTitle(
-              title: LocaleKeys.summaryTitle.tr(),
-              subtitle: LocaleKeys.summarySubtitle.tr(),
+              title: summary.title,
+              subtitle: summary.subtitle,
               alignment: AppTitleAlignment.left,
             ),
             SizedBox(height: AppResponsiveSizes.x5Large(context)),

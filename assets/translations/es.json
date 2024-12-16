@@ -1,56 +1,179 @@
 {
-  "tabHome": "Inicio",
-  "tabSummary": "Resumen",
-  "tabProjects": "Proyectos",
-  "skillTeamPlayer": "Jugadora de equipo",
-  "skillCommunicative": "Comunicativa",
-  "skillProblemSolver": "Resolutora de problemas",
-  "skillLeader": "Líder",
-  "skillNonConflictual": "No conflictiva",
-  "welcomeTile": "Desarrolladora Flutter",
-  "welcomeSubtitle": "Kseniia Nikitina",
-  "summaryTotalExperienceSubtitle": "experiencia total",
-  "summaryTotalExperienceContent": "Además de Dart, tengo experiencia con Kotlin, Swift, JavaScript, Python, C#, R y más",
-  "summaryFlutterExperienceSubtitle": "Experiencia en Flutter",
-  "summaryFlutterExperienceContent1": "Desarrollo",
-  "summaryFlutterExperienceContent2": "aplicaciones web y móviles",
-  "summaryFlutterExperienceContent3": "así como",
-  "summaryFlutterExperienceContent4": "estructuras backend",
-  "summaryFlutterExperienceContent5": "Me especializo en sistemas complejos y paquetes personalizados de Flutter",
-  "summaryHighEducationTitle": "Educación superior",
-  "summaryHighEducationSubtitle": "en ingeniería",
-  "summaryHighEducationContent1": "«Programación en sistemas de información y comunicación» en",
-  "summaryHighEducationContent2": "la Universidad ITMO",
-  "summaryOpenSourceTitle": "Open-source",
-  "summaryOpenSourceSubtitle": "proyecto activo",
-  "summaryOpenSourceContent": "Un paquete para comunicación P2P",
-  "summaryOpenSourceContentButton": "Ver paquete",
-  "summaryGooglePlayTitle": "Google Play",
-  "summaryGooglePlaySubtitle": "aplicación activa",
-  "summaryGooglePlayContent": "Una aplicación de chat offline con soporte para compartir texto y archivos",
-  "summaryGooglePlayContentButton": "Abrir aplicación",
-  "summaryEnglishTitle": "Inglés",
-  "summaryEnglishSubtitle": "nivel de trabajo",
-  "summaryEnglishContent": "I very, very, very speak English",
-  "summaryTitle": "Resumen",
-  "summarySubtitle": "Muy corto y dulce",
-  "petProjectsTitle": "Proyectos personales",
-  "petProjectsSubtitle": "¡Únicos, creativos, míos!",
-  "petProjectPageErrorTitle": "¡Vaya!",
-  "petProjectPageErrorSubtitle": "Algo salió mal",
-  "year": {
-    "zero": "{} años",
-    "one": "{} año",
-    "two": "{} años",
-    "few": "{} años",
-    "many": "{} años",
-    "other": "{} años"
+  "tab": {
+    "home": "Inicio",
+    "summary": "Resumen",
+    "projects": "Proyectos",
+    "experience": "Experiencia"
+  },
+  "skill": {
+    "teamPlayer": "Jugadora de equipo",
+    "communicative": "Comunicativa",
+    "problemSolver": "Resolutora de problemas",
+    "leader": "Líder",
+    "nonConflictual": "No conflictiva"
+  },
+  "welcome": {
+    "title": "Desarrolladora Flutter",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "experiencia total",
+      "content": "Además de Dart, tengo experiencia con Kotlin, Swift, JavaScript, Python, C#, R y más"
+    },
+    "flutterExperience": {
+      "subtitle": "Experiencia en Flutter",
+      "content1": "Desarrollo",
+      "content2": "aplicaciones web y móviles",
+      "content3": "así como",
+      "content4": "estructuras backend",
+      "content5": "Me especializo en sistemas complejos y paquetes personalizados de Flutter"
+    },
+    "highEducation": {
+      "title": "Educación superior",
+      "subtitle": "en ingeniería",
+      "content1": "«Programación en sistemas de información y comunicación» en",
+      "content2": "la Universidad ITMO"
+    },
+    "openSource": {
+      "title": "Open-source",
+      "subtitle": "proyecto activo",
+      "content": "Un paquete para comunicación P2P",
+      "contentButton": "Ver paquete"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "aplicación activa",
+      "content": "Una aplicación de chat offline con soporte para compartir texto y archivos",
+      "contentButton": "Abrir aplicación"
+    },
+    "english": {
+      "title": "Inglés",
+      "subtitle": "nivel de trabajo",
+      "content": "I very, very, very speak English"
+    },
+    "title": "Resumen",
+    "subtitle": "Muy corto y dulce"
+  },
+  "petProjects": {
+    "title": "Proyectos personales",
+    "subtitle": "¡Únicos, creativos, míos!",
+    "error": {
+      "title": "Oops!",
+      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n años",
+    "one": "$n año",
+    "two": "$n años",
+    "few": "$n años",
+    "many": "$n años",
+    "other": "$n años"
   },
   "androidDemo": "Demo de Android",
   "iosDemo": "Demo de iOS",
-  "notFoundPageTitle": "404",
-  "notFoundPageSubtitle": "Esta página no existe",
-  "notFoundPageButton": "Ir a la página principal",
+  "notFound": {
+    "title": "404",
+    "subtitle": "Esta página no existe",
+    "button": "Ir a la página principal"
+  },
   "pageTitle": "Kseniia | Desarrolladora Flutter",
-  "mainImageCaption": "La imagen fue creada mediante procesamiento gráfico"
+  "mainImageCaption": "La imagen fue creada mediante procesamiento gráfico",
+  "experience": {
+    "title": "Experiencia",
+    "subtitle": "La parte aburrida",
+    "greenflux": {
+      "title": "Desarrolladora de Aplicaciones Móviles",
+      "organization": "Greenflux Assets B.V.",
+      "location": "Ámsterdam, Países Bajos (Híbrido)",
+      "duration": "Febrero 2024 – Actualidad",
+      "subtitle": "Desarrollo de aplicaciones para estaciones de carga de vehículos eléctricos",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "Inglés",
+        "skill11": "REST API",
+        "skill12": "Figma",
+        "skill13": "Programación Orientada a Objetos (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Apoyé todo el ciclo de desarrollo: desde la especificación técnica hasta la publicación",
+        "achievement2": "Mantuve un sistema de más de 10 aplicaciones con una base de código compartida",
+        "achievement3": "Configuré linters, formateo e implementé un sistema común de clases para todas las aplicaciones",
+        "achievement4": "Creé pipelines para revisar pull requests, compilar y publicar aplicaciones, así como scripts para simplificar procesos",
+        "achievement5": "Configuré Git Flow y supervisé su cumplimiento",
+        "achievement6": "Trabajé estrechamente con Google Maps, notificaciones y otras funciones complejas",
+        "achievement7": "Implementé completamente iOS Live Activities con SwiftUI y lo extendí a varias aplicaciones",
+        "achievement8": "Cubrí toda la base de código con pruebas"
+      }
+    },
+    "friflex": {
+      "title": "Desarrolladora de Aplicaciones Móviles",
+      "organization": "Friflex",
+      "location": "Moscú, Rusia",
+      "duration": "Agosto 2022 – Diciembre 2023",
+      "subtitle": "Desarrollo de servicios para el reconocimiento de juegos de ajedrez y damas",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "Bases de datos",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "Localización",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST API",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "Patrones de Diseño",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "Programación Orientada a Objetos (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Apoyé todo el ciclo de desarrollo: desde la especificación técnica hasta la publicación",
+        "achievement2": "Creé 3 paquetes personalizados y mantuve más de 10 paquetes, configurando dependencias",
+        "achievement3": "Integré con éxito servicios de terceros (MiniO, Firebase)",
+        "achievement4": "Desarrollé paneles administrativos web con Flutter Web",
+        "achievement5": "Desarrollé el backend utilizando Dart",
+        "achievement6": "Creé innumerables componentes de UI y animaciones",
+        "achievement7": "Desarrollé un servicio en segundo plano para enviar datos a la nube en partes",
+        "achievement8": "Mantuve un sistema de transmisión en vivo compuesto por una aplicación móvil, backend y web"
+      }
+    },
+    "agroStab": {
+      "title": "Desarrolladora Full-stack",
+      "organization": "AgroSTAB",
+      "location": "San Petersburgo, Rusia",
+      "duration": "Febrero 2022 – Julio 2022",
+      "subtitle": "Desarrollo de paneles de administración para invernaderos inteligentes",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "Inglés",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "Apoyé todo el ciclo de desarrollo: desde la especificación técnica hasta la publicación",
+        "achievement2": "Desarrollé la interfaz de usuario con React.js",
+        "achievement3": "Integré procesamiento de datos utilizando react-redux",
+        "achievement4": "Diseñé la estructura de los componentes, su disposición y conexiones",
+        "achievement5": "Añadí elementos interactivos para mejorar la experiencia de usuario",
+        "achievement6": "Mejoré la estructura del backend escrito en Nest.js y agregué lógica de procesamiento de datos",
+        "achievement7": "Diseñé la arquitectura de la base de datos PostgreSQL e implementé actualizaciones",
+        "achievement8": "Desarrollé algoritmos para actualizaciones programadas de datos usando Cron"
+      }
+    }
+  }
 }

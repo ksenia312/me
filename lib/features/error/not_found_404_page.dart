@@ -1,9 +1,9 @@
-import 'package:me/uikit/localization/localization_temp.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/uikit/elements/app_back_button.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
+
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -12,6 +12,7 @@ class NotFound404Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final notFound = context.keys.notFound;
     return Scaffold(
       appBar: CustomAppBar(leftTabs: [AppBackButton()]),
       body: Center(
@@ -21,13 +22,13 @@ class NotFound404Page extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(LocaleKeys.notFoundPageTitle.tr(), style: context.textTheme.displayLarge),
+              Text(notFound.title, style: context.textTheme.displayLarge),
               SizedBox(height: AppResponsiveSizes.x3Large(context)),
-              Text(LocaleKeys.notFoundPageSubtitle.tr(), style: context.textTheme.bodyLarge),
+              Text(notFound.subtitle, style: context.textTheme.bodyLarge),
               SizedBox(height: AppResponsiveSizes.x3Large(context)),
               ElevatedButton(
                 onPressed: () => context.go('/'),
-                child: Text(LocaleKeys.notFoundPageButton.tr()),
+                child: Text(notFound.button),
               ),
             ],
           ),

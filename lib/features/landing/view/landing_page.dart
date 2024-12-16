@@ -1,4 +1,4 @@
-import 'package:me/uikit/localization/localization_temp.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -8,7 +8,7 @@ import 'package:me/uikit/components/translated_widget.dart';
 import 'package:me/uikit/components/up_button.dart';
 import 'package:me/uikit/elements/custom_app_bar.dart';
 import 'package:me/uikit/components/language_button.dart';
-import 'package:me/uikit/localization/codegen_loader.g.dart';
+
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +27,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Title(
-      title: LocaleKeys.pageTitle.tr(context: context),
+      title: context.keys.pageTitle,
       color: Colors.white,
       child: ChangeNotifierProvider(
         create: (context) => LandingNotifier(),
@@ -61,22 +61,23 @@ class LandingPage extends StatelessWidget {
   }
 
   List<Widget> _buildLeftTabs(BuildContext context, LandingNotifier notifier) {
+    final tab = context.keys.tab;
     return [
       CustomToolbarTab.listItem(
         onPressed: (context) => _scrollTo(notifier.welcomeKey),
-        title: LocaleKeys.tabHome.tr(context: context),
+        title: tab.home,
       ),
       CustomToolbarTab.listItem(
         onPressed: (context) => _scrollTo(notifier.summaryKey),
-        title: LocaleKeys.tabSummary.tr(context: context),
+        title: tab.summary,
       ),
       CustomToolbarTab.listItem(
         onPressed: (context) => _scrollTo(notifier.experienceKey),
-        title: 'Experience',
+        title: tab.experience,
       ),
       CustomToolbarTab.listItem(
         onPressed: (context) => _scrollTo(notifier.projectsKey),
-        title: LocaleKeys.tabProjects.tr(context: context),
+        title: tab.projects,
       ),
     ];
   }

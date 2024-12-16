@@ -1,56 +1,179 @@
 {
-  "tabHome": "Startpagina",
-  "tabSummary": "Samenvatting",
-  "tabProjects": "Projecten",
-  "skillTeamPlayer": "Teamspeler",
-  "skillCommunicative": "Communicatief",
-  "skillProblemSolver": "Probleemoplosser",
-  "skillLeader": "Leidster",
-  "skillNonConflictual": "Conflictloos",
-  "welcomeTile": "Flutter-ontwikkelaar",
-  "welcomeSubtitle": "Kseniia Nikitina",
-  "summaryTotalExperienceSubtitle": "totale ervaring",
-  "summaryTotalExperienceContent": "Naast Dart heb ik ervaring met Kotlin, Swift, JavaScript, Python, C#, R en meer",
-  "summaryFlutterExperienceSubtitle": "Flutter ervaring",
-  "summaryFlutterExperienceContent1": "Ik ontwikkel",
-  "summaryFlutterExperienceContent2": "web- en mobiele",
-  "summaryFlutterExperienceContent3": "applicaties, evenals",
-  "summaryFlutterExperienceContent4": "backend",
-  "summaryFlutterExperienceContent5": "structuren. Ik ben gespecialiseerd in complexe systemen en aangepaste Flutter-pakketten",
-  "summaryHighEducationTitle": "Hogere opleiding",
-  "summaryHighEducationSubtitle": "in engineering",
-  "summaryHighEducationContent1": "«Programmeren in informatie- en communicatiesystemen» aan",
-  "summaryHighEducationContent2": "ITMO Universiteit",
-  "summaryOpenSourceTitle": "Open-source",
-  "summaryOpenSourceSubtitle": "actief project",
-  "summaryOpenSourceContent": "Een pakket voor P2P-communicatie",
-  "summaryOpenSourceContentButton": "Bekijk pakket",
-  "summaryGooglePlayTitle": "Google Play",
-  "summaryGooglePlaySubtitle": "actieve app",
-  "summaryGooglePlayContent": "Een offline chat-app met ondersteuning voor tekst- en bestandsh sharing",
-  "summaryGooglePlayContentButton": "Open app",
-  "summaryEnglishTitle": "Engels",
-  "summaryEnglishSubtitle": "werkend niveau",
-  "summaryEnglishContent": "I very, very, very speak English",
-  "summaryTitle": "Samenvatting",
-  "summarySubtitle": "Super kort en zoet",
-  "petProjectsTitle": "Pet projecten",
-  "petProjectsSubtitle": "Uniek, creatief, van mij!",
-  "petProjectPageErrorTitle": "Oeps!",
-  "petProjectPageErrorSubtitle": "Er is iets mis gegaan",
-  "year": {
-    "zero": "{} jaar",
-    "one": "{} jaar",
-    "two": "{} jaar",
-    "few": "{} jaar",
-    "many": "{} jaar",
-    "other": "{} jaar"
+  "tab": {
+    "home": "Startpagina",
+    "summary": "Samenvatting",
+    "projects": "Projecten",
+    "experience": "Ervaring"
+  },
+  "skill": {
+    "teamPlayer": "Teamspeler",
+    "communicative": "Communicatief",
+    "problemSolver": "Probleemoplosser",
+    "leader": "Leidster",
+    "nonConflictual": "Conflictloos"
+  },
+  "welcome": {
+    "title": "Flutter-ontwikkelaar",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "totale ervaring",
+      "content": "Naast Dart heb ik ervaring met Kotlin, Swift, JavaScript, Python, C#, R en meer"
+    },
+    "flutterExperience": {
+      "subtitle": "Flutter ervaring",
+      "content1": "Ik ontwikkel",
+      "content2": "web- en mobiele",
+      "content3": "applicaties, evenals",
+      "content4": "backend",
+      "content5": "structuren. Ik ben gespecialiseerd in complexe systemen en aangepaste Flutter-pakketten"
+    },
+    "highEducation": {
+      "title": "Hogere opleiding",
+      "subtitle": "in engineering",
+      "content1": "«Programmeren in informatie- en communicatiesystemen» aan",
+      "content2": "ITMO Universiteit"
+    },
+    "openSource": {
+      "title": "Open-source",
+      "subtitle": "actief project",
+      "content": "Een pakket voor P2P-communicatie",
+      "contentButton": "Bekijk pakket"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "actieve app",
+      "content": "Een offline chat-app met ondersteuning voor tekst- en bestandsh sharing",
+      "contentButton": "Open app"
+    },
+    "english": {
+      "title": "Engels",
+      "subtitle": "werkend niveau",
+      "content": "I very, very, very speak English"
+    },
+    "title": "Samenvatting",
+    "subtitle": "Super kort en zoet"
+  },
+  "petProjects": {
+    "title": "Pet projecten",
+    "subtitle": "Uniek, creatief, van mij!",
+    "error": {
+      "title": "Oops!",
+      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n jaar",
+    "one": "$n jaar",
+    "two": "$n jaar",
+    "few": "$n jaar",
+    "many": "$n jaar",
+    "other": "$n jaar"
   },
   "androidDemo": "Android-demo",
   "iosDemo": "iOS-demo",
-  "notFoundPageTitle": "404",
-  "notFoundPageSubtitle": "Deze pagina bestaat niet",
-  "notFoundPageButton": "Ga naar de startpagina",
+  "notFound": {
+    "title": "404",
+    "subtitle": "Deze pagina bestaat niet",
+    "button": "Ga naar de startpagina"
+  },
   "pageTitle": "Kseniia | Flutter-ontwikkelaar",
-  "mainImageCaption": "De afbeelding is gemaakt met behulp van grafische verwerking"
+  "mainImageCaption": "De afbeelding is gemaakt met behulp van grafische verwerking",
+  "experience": {
+    "title": "Ervaring",
+    "subtitle": "Het saaie deel",
+    "greenflux": {
+      "title": "Mobiele Applicatie Ontwikkelaar",
+      "organization": "Greenflux Assets B.V.",
+      "location": "Amsterdam, Nederland (hybride)",
+      "duration": "Februari 2024 – Heden",
+      "subtitle": "Ontwikkeling van applicaties voor laadstations voor elektrische voertuigen",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "Engels",
+        "skill11": "REST API",
+        "skill12": "Figma",
+        "skill13": "Objectgeoriënteerd Programmeren (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Ondersteunde de volledige ontwikkelingscyclus: van technische specificatie tot publicatie",
+        "achievement2": "Onderhield een systeem van meer dan 10 applicaties met een gedeelde codebase",
+        "achievement3": "Stelde linters, opmaak en een gemeenschappelijk klassen-systeem in voor alle applicaties",
+        "achievement4": "Creëerde pipelines voor het controleren van pull requests, het bouwen en publiceren van applicaties en scripts om processen te vereenvoudigen",
+        "achievement5": "Stelde Git Flow in en controleerde de naleving",
+        "achievement6": "Werkte nauw samen met Google Maps, meldingen en andere complexe functies",
+        "achievement7": "Implementeerde iOS Live Activities volledig met SwiftUI en breidde dit uit naar meerdere applicaties",
+        "achievement8": "Dekte de volledige codebase met tests"
+      }
+    },
+    "friflex": {
+      "title": "Mobiele Applicatie Ontwikkelaar",
+      "organization": "Friflex",
+      "location": "Moskou, Rusland",
+      "duration": "Augustus 2022 – December 2023",
+      "subtitle": "Ontwikkeling van diensten voor het herkennen van schaak- en damspellen",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "Databases",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "Lokalisatie",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST API",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "Ontwerppatronen",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "Objectgeoriënteerd Programmeren (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Ondersteunde de volledige ontwikkelingscyclus: van technische specificatie tot publicatie",
+        "achievement2": "Creëerde 3 op maat gemaakte pakketten en ondersteunde 10+ pakketten en stelde afhankelijkheden in",
+        "achievement3": "Integreerde succesvol externe services (MiniO, Firebase)",
+        "achievement4": "Ontwikkelde administratieve webdashboards met Flutter Web",
+        "achievement5": "Ontwikkelde de backend met Dart",
+        "achievement6": "Creëerde talloze UI-componenten en animaties",
+        "achievement7": "Ontwikkelde een achtergrondservice voor het verzenden van gegevens naar de cloudopslag in delen",
+        "achievement8": "Onderhield een live streaming systeem bestaande uit een mobiele app, backend en webgedeelte"
+      }
+    },
+    "agroStab": {
+      "title": "Full-stack Ontwikkelaar",
+      "organization": "AgroSTAB",
+      "location": "St. Petersburg, Rusland",
+      "duration": "Februari 2022 – Juli 2022",
+      "subtitle": "Ontwikkeling van beheerpaneel voor slimme kassen",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "Engels",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "Ondersteunde de volledige ontwikkelingscyclus: van technische specificatie tot publicatie",
+        "achievement2": "Creëerde de gebruikersinterface met React.js",
+        "achievement3": "Integreerde dataverwerking met react-redux",
+        "achievement4": "Ontwierp de structuur van componenten, plaatsing en connecties",
+        "achievement5": "Voegde interactieve elementen toe om de gebruikerservaring te verbeteren",
+        "achievement6": "Verbeterde de structuur van de backend geschreven in Nest.js en voegde logica toe voor gegevensverwerking",
+        "achievement7": "Ontwierp de PostgreSQL-databasearchitectuur en implementeerde updates",
+        "achievement8": "Ontwikkelde algoritmes voor geplande gegevensupdates in de database met behulp van Cron"
+      }
+    }
+  }
 }
