@@ -135,6 +135,7 @@ class CustomToolbarTab extends StatelessWidget {
               ),
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             title != null
@@ -162,36 +163,9 @@ class AppFlexibleSpace extends StatelessWidget {
     return Responsive.get(
       context,
       def: () => SizedBox.expand(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Flexible(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ...leftTabs.map(
-                    (e) => Flexible(
-                      child: SizedBox(height: double.infinity, child: e),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ...rightTabs.map(
-                    (e) => Flexible(
-                      child: SizedBox(height: double.infinity, child: e),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
+        child: CustomTabsBuilder(
+          leftTabs: leftTabs,
+          rightTabs: rightTabs,
         ),
       ),
       s: () => Align(
@@ -257,6 +231,48 @@ class _AppActionsState extends State<AppActions> with AppRouterObserver {
           });
         },
       ),
+    );
+  }
+}
+
+class CustomTabsBuilder extends StatelessWidget {
+  const CustomTabsBuilder({super.key, required this.leftTabs, required this.rightTabs});
+
+  final List<Widget> leftTabs;
+  final List<Widget> rightTabs;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Flexible(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ...leftTabs.map(
+                (e) => Flexible(
+                  child: SizedBox(height: double.infinity, child: e),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Align(
+          alignment: Alignment.centerRight,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ...rightTabs.map(
+                (e) => Flexible(
+                  child: SizedBox(height: double.infinity, child: e),
+                ),
+              )
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

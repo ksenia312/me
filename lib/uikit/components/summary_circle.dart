@@ -4,7 +4,6 @@ import 'package:me/uikit/elements/app_transform_y_animation.dart';
 import 'package:me/uikit/elements/hovering_widget.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
-import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -36,7 +35,7 @@ class SummaryCircle extends StatelessWidget {
       builder: (context, isHover) {
         final backWidget = _Decoration(
           hasBorders: isHover,
-          backgroundColor: AppColors.extraBlueMore,
+          backgroundColor: context.customColorScheme.summaryBackgroundColor,
           child: Center(child: activeContent),
         );
         final faceWidget = _Decoration(

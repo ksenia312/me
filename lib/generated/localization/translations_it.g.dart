@@ -67,6 +67,7 @@ class _LocaleKeysTabIt extends LocaleKeysTabEn {
 	@override String get summary => 'Sommario';
 	@override String get projects => 'Progetti';
 	@override String get experience => 'Esperienza';
+	@override String get language => 'Lingua';
 }
 
 // Path: skill
@@ -120,6 +121,7 @@ class _LocaleKeysPetProjectsIt extends LocaleKeysPetProjectsEn {
 	// Translations
 	@override String get title => 'Pet projects';
 	@override String get subtitle => 'Unici, creativi, miei!';
+	@override late final _LocaleKeysPetProjectsMarkdownIt markdown = _LocaleKeysPetProjectsMarkdownIt._(_root);
 	@override late final _LocaleKeysPetProjectsErrorIt error = _LocaleKeysPetProjectsErrorIt._(_root);
 }
 
@@ -144,6 +146,7 @@ class _LocaleKeysExperienceIt extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => 'Esperienza';
 	@override String get subtitle => 'La parte noiosa';
+	@override late final _LocaleKeysExperienceCvIt cv = _LocaleKeysExperienceCvIt._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxIt greenflux = _LocaleKeysExperienceGreenfluxIt._(_root);
 	@override late final _LocaleKeysExperienceFriflexIt friflex = _LocaleKeysExperienceFriflexIt._(_root);
 	@override late final _LocaleKeysExperienceAgroStabIt agroStab = _LocaleKeysExperienceAgroStabIt._(_root);
@@ -226,6 +229,16 @@ class _LocaleKeysSummaryEnglishIt extends LocaleKeysSummaryEnglishEn {
 	@override String get content => 'I very, very, very speak English';
 }
 
+// Path: petProjects.markdown
+class _LocaleKeysPetProjectsMarkdownIt extends LocaleKeysPetProjectsMarkdownEn {
+	_LocaleKeysPetProjectsMarkdownIt._(LocaleKeysIt root) : this._root = root, super.internal(root);
+
+	final LocaleKeysIt _root; // ignore: unused_field
+
+	// Translations
+	@override String get imageButton => 'Visualizza immagine su GitHub';
+}
+
 // Path: petProjects.error
 class _LocaleKeysPetProjectsErrorIt extends LocaleKeysPetProjectsErrorEn {
 	_LocaleKeysPetProjectsErrorIt._(LocaleKeysIt root) : this._root = root, super.internal(root);
@@ -233,8 +246,19 @@ class _LocaleKeysPetProjectsErrorIt extends LocaleKeysPetProjectsErrorEn {
 	final LocaleKeysIt _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String get title => 'Ops!';
+	@override String subtitle({required Object id}) => 'Il progetto con ID=${id} non è stato trovato. Si prega di controllare l\'ID e riprovare.';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvIt extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvIt._(LocaleKeysIt root) : this._root = root, super.internal(root);
+
+	final LocaleKeysIt _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => 'Leggi di più sulla mia esperienza nel CV';
+	@override String get button => 'CV aperto';
 }
 
 // Path: experience.greenflux
@@ -407,6 +431,7 @@ extension on LocaleKeysIt {
 			case 'tab.summary': return 'Sommario';
 			case 'tab.projects': return 'Progetti';
 			case 'tab.experience': return 'Esperienza';
+			case 'tab.language': return 'Lingua';
 			case 'skill.teamPlayer': return 'Giocatrice di squadra';
 			case 'skill.communicative': return 'Comunicativa';
 			case 'skill.problemSolver': return 'Risolutrice di problemi';
@@ -441,8 +466,9 @@ extension on LocaleKeysIt {
 			case 'summary.subtitle': return 'Super breve e dolce';
 			case 'petProjects.title': return 'Pet projects';
 			case 'petProjects.subtitle': return 'Unici, creativi, miei!';
-			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.markdown.imageButton': return 'Visualizza immagine su GitHub';
+			case 'petProjects.error.title': return 'Ops!';
+			case 'petProjects.error.subtitle': return ({required Object id}) => 'Il progetto con ID=${id} non è stato trovato. Si prega di controllare l\'ID e riprovare.';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('it'))(n,
 				zero: '${n} anni',
 				one: '${n} anno',
@@ -460,6 +486,8 @@ extension on LocaleKeysIt {
 			case 'mainImageCaption': return 'L\'immagine è stata creata utilizzando l\'elaborazione grafica';
 			case 'experience.title': return 'Esperienza';
 			case 'experience.subtitle': return 'La parte noiosa';
+			case 'experience.cv.caption': return 'Leggi di più sulla mia esperienza nel CV';
+			case 'experience.cv.button': return 'CV aperto';
 			case 'experience.greenflux.title': return 'Sviluppatrice di applicazioni mobili';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'Amsterdam, Paesi Bassi (ibrido)';

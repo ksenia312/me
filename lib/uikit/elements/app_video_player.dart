@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:me/generated/assets.gen.dart';
-import 'package:me/uikit/responsive/responsive_utils.dart';
+import 'package:me/uikit/elements/app_progress.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:video_player/video_player.dart';
 
@@ -52,23 +51,7 @@ class _AppVideoPlayerState extends State<AppVideoPlayer> {
         cursor: SystemMouseCursors.click,
         child: Container(
           color: context.customColorScheme.videoBackgroundColor,
-          child: Stack(
-            children: [
-              if (_controller.value.isInitialized) VideoPlayer(_controller),
-              if (_controller.value.isInitialized)
-                Responsive.get(
-                  context,
-                  def: () => Center(
-                    child: _controller.value.isPlaying
-                        ? Assets.icons.icPause.svg(height: 70, width: 70)
-                        : Assets.icons.icPlay.svg(height: 70, width: 70),
-                  ),
-                  s: () => SizedBox.shrink(),
-                )
-              else
-                Center(child: CircularProgressIndicator()),
-            ],
-          ),
+          child: _controller.value.isInitialized ? VideoPlayer(_controller) : Center(child: AppProgress.medium()),
         ),
       ),
     );

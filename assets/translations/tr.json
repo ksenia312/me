@@ -3,7 +3,8 @@
     "home": "Anasayfa",
     "summary": "Özet",
     "projects": "Projeler",
-    "experience": "Deneyim"
+    "experience": "Deneyim",
+    "language": "Dil"
   },
   "skill": {
     "teamPlayer": "Takım oyuncusu",
@@ -60,7 +61,7 @@
     "subtitle": "Benzersiz, kreatif, benim!",
     "error": {
       "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "subtitle": "Proje ID=$id bulunamadı. Lütfen ID'yi kontrol edip tekrar deneyin."
     }
   },
   "year(ordinal)": {
@@ -83,6 +84,10 @@
   "experience": {
     "title": "Deneyim",
     "subtitle": "Sıkıcı kısım",
+    "cv": {
+      "caption": "Daha fazla bilgi için CV'de okuyun",
+      "button": "Açık CV"
+    },
     "greenflux": {
       "title": "Mobil Uygulama Geliştiricisi",
       "organization": "Greenflux Assets B.V.",

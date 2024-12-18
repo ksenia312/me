@@ -20,6 +20,7 @@ class PetProjectNotifier extends ChangeNotifier {
     PetProjectData data;
     try {
       data = await PetProjectRepository.instance.fetch(id);
+      notifyListeners();
     } catch (_) {
       _setLoading(false);
       return;
@@ -53,11 +54,11 @@ class PetProjectNotifier extends ChangeNotifier {
         iosDemoUrl: iosDemoUrl ?? (iosStoragePath == null ? null : await _storageURL(iosStoragePath)),
       );
     } catch (_) {}
+
     _setLoading(false);
 
     if (data.githubLink != null) {
-      await Future.delayed(const Duration(milliseconds: 1000));
-      await _fetchMarkdown(data.githubLink!);
+      _fetchMarkdown(data.githubLink!);
     }
   }
 

@@ -12,11 +12,11 @@ class AppFloatingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: context.themeData.copyWith(
-        splashColor: AppColors.lightBlueShaded,
+        splashColor: AppColors.icyBlue,
         splashFactory: NoSplash.splashFactory,
-        highlightColor: AppColors.lightBlueShaded,
-        focusColor: AppColors.lightBlueShaded,
-        hoverColor: AppColors.lightBlueShaded,
+        highlightColor: AppColors.icyBlue,
+        focusColor: AppColors.icyBlue,
+        hoverColor: AppColors.icyBlue,
       ),
       child: FloatingActionButton(
         onPressed: onPressed,

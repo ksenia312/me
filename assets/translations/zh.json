@@ -3,7 +3,8 @@
     "home": "首页",
     "summary": "摘要",
     "projects": "项目",
-    "experience": "经验"
+    "experience": "经验",
+    "language": "语言"
   },
   "skill": {
     "teamPlayer": "团队合作者",
@@ -59,8 +60,8 @@
     "title": "个人项目",
     "subtitle": "独特、创意、属于我！",
     "error": {
-      "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "title": "哎呀！",
+      "subtitle": "找不到项目ID=$id。请检查ID并重试。"
     }
   },
   "year(ordinal)": {
@@ -83,6 +84,10 @@
   "experience": {
     "title": "经验",
     "subtitle": "无聊的部分",
+    "cv": {
+      "caption": "阅读更多关于我的经验的CV",
+      "button": "开放CV"
+    },
     "greenflux": {
       "title": "移动应用开发工程师",
       "organization": "Greenflux Assets B.V.",

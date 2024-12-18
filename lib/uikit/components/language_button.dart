@@ -10,7 +10,9 @@ import 'package:me/uikit/theme/app_constants.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
 class LanguageButton extends StatefulWidget {
-  const LanguageButton({super.key});
+  const LanguageButton({super.key, this.onLanguageChanged});
+
+  final ValueChanged<Locale>? onLanguageChanged;
 
   @override
   State<LanguageButton> createState() => _LanguageButtonState();
@@ -26,22 +28,26 @@ class _LanguageButtonState extends State<LanguageButton> {
   Widget build(BuildContext context) {
     return Responsive.get(
       context,
-      def: () => _LanguageButtonDesktop(sortedLocales: sortedLocales),
-      s: () => _LanguageButtonMobile(sortedLocales: sortedLocales),
+      def: () => _LanguageButtonDesktop(sortedLocales: sortedLocales, onLanguageChanged: widget.onLanguageChanged),
+      s: () => _LanguageButtonMobile(sortedLocales: sortedLocales, onLanguageChanged: widget.onLanguageChanged),
     );
   }
 }
 
 class _LanguageButtonDesktop extends StatelessWidget {
-  const _LanguageButtonDesktop({required this.sortedLocales});
+  const _LanguageButtonDesktop({required this.sortedLocales, this.onLanguageChanged});
 
   final List<Locale> sortedLocales;
+  final ValueChanged<Locale>? onLanguageChanged;
 
   @override
   Widget build(BuildContext context) {
     return DropdownButton2<Locale>(
       onChanged: (locale) {
-        if (locale != null) context.setLocale(locale);
+        if (locale != null) {
+          context.setLocale(locale);
+          onLanguageChanged?.call(locale);
+        }
       },
       buttonStyleData: ButtonStyleData(
         padding: EdgeInsets.symmetric(horizontal: AppResponsiveSizes.medium(context)),
@@ -55,13 +61,13 @@ class _LanguageButtonDesktop extends StatelessWidget {
         scrollbarTheme: ScrollbarThemeData(
           mainAxisMargin: 8,
           thickness: WidgetStatePropertyAll(2),
-          thumbColor: WidgetStatePropertyAll(AppColors.dimBlue.withOpacity(0.5)),
+          thumbColor: WidgetStatePropertyAll(AppColors.shadowGreyBlue.withOpacity(0.5)),
         ),
       ),
       iconStyleData: IconStyleData(icon: SizedBox.shrink()),
       menuItemStyleData: MenuItemStyleData(
         selectedMenuItemBuilder: (context, child) => Container(
-          color: AppColors.dimBlue,
+          color: AppColors.shadowGreyBlue,
           alignment: Alignment.center,
           child: child,
         ),
@@ -84,9 +90,10 @@ class _LanguageButtonDesktop extends StatelessWidget {
 }
 
 class _LanguageButtonMobile extends StatelessWidget {
-  const _LanguageButtonMobile({required this.sortedLocales});
+  const _LanguageButtonMobile({required this.sortedLocales, this.onLanguageChanged});
 
   final List<Locale> sortedLocales;
+  final ValueChanged<Locale>? onLanguageChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -99,15 +106,19 @@ class _LanguageButtonMobile extends StatelessWidget {
         constraints: BoxConstraints(
           maxHeight: MediaQuery.of(context).size.height - AppResponsiveSizes.toolbarHeight(context),
         ),
-        builder: (context) => _MobileLanguageSelectorBottomSheet(sortedLocales: sortedLocales),
+        builder: (context) => _MobileLanguageSelectorBottomSheet(
+          onLanguageChanged: onLanguageChanged,
+          sortedLocales: sortedLocales,
+        ),
       ),
     );
   }
 }
 
 class _MobileLanguageSelectorBottomSheet extends StatefulWidget {
-  const _MobileLanguageSelectorBottomSheet({required this.sortedLocales});
+  const _MobileLanguageSelectorBottomSheet({required this.sortedLocales, this.onLanguageChanged});
 
+  final ValueChanged<Locale>? onLanguageChanged;
   final List<Locale> sortedLocales;
 
   @override
@@ -147,7 +158,7 @@ class _MobileLanguageSelectorBottomSheetState extends State<_MobileLanguageSelec
         children: [
           SizedBox(height: AppResponsiveSizes.x2Large(context)),
           Text(
-            'Language',
+            context.keys.tab.language,
             style: context.textTheme.titleLarge,
             textAlign: TextAlign.center,
           ),
@@ -164,11 +175,12 @@ class _MobileLanguageSelectorBottomSheetState extends State<_MobileLanguageSelec
                       onTap: () {
                         context.setLocale(e);
                         Navigator.of(context).pop();
+                        widget.onLanguageChanged?.call(e);
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: AppSizes.toolbarBorderRadius,
-                          color: context.locale == e ? AppColors.blueMore : AppColors.blueMore.withOpacity(0.3),
+                          color: context.locale == e ? AppColors.deepBlueSea : AppColors.deepBlueSea.withOpacity(0.3),
                         ),
                         padding: EdgeInsets.symmetric(
                           vertical: AppResponsiveSizes.x3Large(context),

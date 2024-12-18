@@ -67,6 +67,7 @@ class _LocaleKeysTabKo extends LocaleKeysTabEn {
 	@override String get summary => '요약';
 	@override String get projects => '프로젝트';
 	@override String get experience => '경험';
+	@override String get language => '언어';
 }
 
 // Path: skill
@@ -120,6 +121,7 @@ class _LocaleKeysPetProjectsKo extends LocaleKeysPetProjectsEn {
 	// Translations
 	@override String get title => '개인 프로젝트';
 	@override String get subtitle => '독특하고 창의적이며 내 것!';
+	@override late final _LocaleKeysPetProjectsMarkdownKo markdown = _LocaleKeysPetProjectsMarkdownKo._(_root);
 	@override late final _LocaleKeysPetProjectsErrorKo error = _LocaleKeysPetProjectsErrorKo._(_root);
 }
 
@@ -144,6 +146,7 @@ class _LocaleKeysExperienceKo extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => '경험';
 	@override String get subtitle => '지루한 부분';
+	@override late final _LocaleKeysExperienceCvKo cv = _LocaleKeysExperienceCvKo._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxKo greenflux = _LocaleKeysExperienceGreenfluxKo._(_root);
 	@override late final _LocaleKeysExperienceFriflexKo friflex = _LocaleKeysExperienceFriflexKo._(_root);
 	@override late final _LocaleKeysExperienceAgroStabKo agroStab = _LocaleKeysExperienceAgroStabKo._(_root);
@@ -226,6 +229,16 @@ class _LocaleKeysSummaryEnglishKo extends LocaleKeysSummaryEnglishEn {
 	@override String get content => 'I very, very, very speak English';
 }
 
+// Path: petProjects.markdown
+class _LocaleKeysPetProjectsMarkdownKo extends LocaleKeysPetProjectsMarkdownEn {
+	_LocaleKeysPetProjectsMarkdownKo._(LocaleKeysKo root) : this._root = root, super.internal(root);
+
+	final LocaleKeysKo _root; // ignore: unused_field
+
+	// Translations
+	@override String get imageButton => 'GitHub에서 이미지 보기';
+}
+
 // Path: petProjects.error
 class _LocaleKeysPetProjectsErrorKo extends LocaleKeysPetProjectsErrorEn {
 	_LocaleKeysPetProjectsErrorKo._(LocaleKeysKo root) : this._root = root, super.internal(root);
@@ -233,8 +246,19 @@ class _LocaleKeysPetProjectsErrorKo extends LocaleKeysPetProjectsErrorEn {
 	final LocaleKeysKo _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String get title => '오팹!';
+	@override String subtitle({required Object id}) => 'ID=${id}의 프로젝트를 찾을 수 없습니다. ID를 확인하고 다시 시도하십시오.';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvKo extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvKo._(LocaleKeysKo root) : this._root = root, super.internal(root);
+
+	final LocaleKeysKo _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => '더 많은 정보를 읽어보려면 CV에서 읽으십시오';
+	@override String get button => '열린 CV';
 }
 
 // Path: experience.greenflux
@@ -407,6 +431,7 @@ extension on LocaleKeysKo {
 			case 'tab.summary': return '요약';
 			case 'tab.projects': return '프로젝트';
 			case 'tab.experience': return '경험';
+			case 'tab.language': return '언어';
 			case 'skill.teamPlayer': return '팀 플레이어';
 			case 'skill.communicative': return '소통 능력';
 			case 'skill.problemSolver': return '문제 해결자';
@@ -441,8 +466,9 @@ extension on LocaleKeysKo {
 			case 'summary.subtitle': return '매우 간단하고 달콤하게';
 			case 'petProjects.title': return '개인 프로젝트';
 			case 'petProjects.subtitle': return '독특하고 창의적이며 내 것!';
-			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.markdown.imageButton': return 'GitHub에서 이미지 보기';
+			case 'petProjects.error.title': return '오팹!';
+			case 'petProjects.error.subtitle': return ({required Object id}) => 'ID=${id}의 프로젝트를 찾을 수 없습니다. ID를 확인하고 다시 시도하십시오.';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('ko'))(n,
 				zero: '${n} 년',
 				one: '${n} 년',
@@ -460,6 +486,8 @@ extension on LocaleKeysKo {
 			case 'mainImageCaption': return '이미지는 그래픽 처리를 사용하여 생성되었습니다';
 			case 'experience.title': return '경험';
 			case 'experience.subtitle': return '지루한 부분';
+			case 'experience.cv.caption': return '더 많은 정보를 읽어보려면 CV에서 읽으십시오';
+			case 'experience.cv.button': return '열린 CV';
 			case 'experience.greenflux.title': return '모바일 애플리케이션 개발자';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return '암스테르담, 네덜란드 (하이브리드)';

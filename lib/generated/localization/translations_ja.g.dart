@@ -67,6 +67,7 @@ class _LocaleKeysTabJa extends LocaleKeysTabEn {
 	@override String get summary => '概要';
 	@override String get projects => 'プロジェクト';
 	@override String get experience => '経験';
+	@override String get language => '言語';
 }
 
 // Path: skill
@@ -120,6 +121,7 @@ class _LocaleKeysPetProjectsJa extends LocaleKeysPetProjectsEn {
 	// Translations
 	@override String get title => 'ペットプロジェクト';
 	@override String get subtitle => 'ユニークで創造的、私のもの！';
+	@override late final _LocaleKeysPetProjectsMarkdownJa markdown = _LocaleKeysPetProjectsMarkdownJa._(_root);
 	@override late final _LocaleKeysPetProjectsErrorJa error = _LocaleKeysPetProjectsErrorJa._(_root);
 }
 
@@ -144,6 +146,7 @@ class _LocaleKeysExperienceJa extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => '経験';
 	@override String get subtitle => '退屈な部分';
+	@override late final _LocaleKeysExperienceCvJa cv = _LocaleKeysExperienceCvJa._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxJa greenflux = _LocaleKeysExperienceGreenfluxJa._(_root);
 	@override late final _LocaleKeysExperienceFriflexJa friflex = _LocaleKeysExperienceFriflexJa._(_root);
 	@override late final _LocaleKeysExperienceAgroStabJa agroStab = _LocaleKeysExperienceAgroStabJa._(_root);
@@ -226,6 +229,16 @@ class _LocaleKeysSummaryEnglishJa extends LocaleKeysSummaryEnglishEn {
 	@override String get content => 'I very, very, very speak English';
 }
 
+// Path: petProjects.markdown
+class _LocaleKeysPetProjectsMarkdownJa extends LocaleKeysPetProjectsMarkdownEn {
+	_LocaleKeysPetProjectsMarkdownJa._(LocaleKeysJa root) : this._root = root, super.internal(root);
+
+	final LocaleKeysJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get imageButton => 'GitHubで画像を表示';
+}
+
 // Path: petProjects.error
 class _LocaleKeysPetProjectsErrorJa extends LocaleKeysPetProjectsErrorEn {
 	_LocaleKeysPetProjectsErrorJa._(LocaleKeysJa root) : this._root = root, super.internal(root);
@@ -233,8 +246,19 @@ class _LocaleKeysPetProjectsErrorJa extends LocaleKeysPetProjectsErrorEn {
 	final LocaleKeysJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String get title => 'おっと！';
+	@override String subtitle({required Object id}) => 'ID=${id}のプロジェクトが見つかりませんでした。IDを確認してもう一度お試しください。';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvJa extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvJa._(LocaleKeysJa root) : this._root = root, super.internal(root);
+
+	final LocaleKeysJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => 'より詳しく私の経験については、CVを読む';
+	@override String get button => 'オープンCV';
 }
 
 // Path: experience.greenflux
@@ -407,6 +431,7 @@ extension on LocaleKeysJa {
 			case 'tab.summary': return '概要';
 			case 'tab.projects': return 'プロジェクト';
 			case 'tab.experience': return '経験';
+			case 'tab.language': return '言語';
 			case 'skill.teamPlayer': return 'チームプレーヤー';
 			case 'skill.communicative': return 'コミュニケーション能力がある';
 			case 'skill.problemSolver': return '問題解決者';
@@ -441,8 +466,9 @@ extension on LocaleKeysJa {
 			case 'summary.subtitle': return 'とても簡潔で甘い';
 			case 'petProjects.title': return 'ペットプロジェクト';
 			case 'petProjects.subtitle': return 'ユニークで創造的、私のもの！';
-			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.markdown.imageButton': return 'GitHubで画像を表示';
+			case 'petProjects.error.title': return 'おっと！';
+			case 'petProjects.error.subtitle': return ({required Object id}) => 'ID=${id}のプロジェクトが見つかりませんでした。IDを確認してもう一度お試しください。';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('ja'))(n,
 				zero: '${n} 年',
 				one: '${n} 年',
@@ -460,6 +486,8 @@ extension on LocaleKeysJa {
 			case 'mainImageCaption': return '画像はグラフィック処理を使用して作成されました';
 			case 'experience.title': return '経験';
 			case 'experience.subtitle': return '退屈な部分';
+			case 'experience.cv.caption': return 'より詳しく私の経験については、CVを読む';
+			case 'experience.cv.button': return 'オープンCV';
 			case 'experience.greenflux.title': return 'モバイルアプリケーション開発者';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'アムステルダム、オランダ（ハイブリッド）';

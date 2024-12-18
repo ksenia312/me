@@ -14,7 +14,7 @@ class ProjectsView extends StatefulWidget {
 }
 
 class _ProjectsViewState extends State<ProjectsView> {
-  late final _notifier = PetProjectListNotifier()..addListener(() => setState(() {}));
+  late final _notifier = PetProjectListNotifier.instance..addListener(() => setState(() {}));
 
   @override
   void initState() {
@@ -42,7 +42,7 @@ class _ProjectsViewState extends State<ProjectsView> {
             alignment: AppTitleAlignment.left,
           ),
           SizedBox(height: AppResponsiveSizes.x3Large(context)),
-          ProjectCardsGrid(vms: _notifier.vms),
+          ProjectCardsGrid(vms: _notifier.vms, expectedCount: _notifier.count),
         ],
       ),
     );

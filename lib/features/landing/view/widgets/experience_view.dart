@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/features/download_file/view/download_cv_button.dart';
 import 'package:me/features/landing/notifier/experience_vm.dart';
 import 'package:me/generated/assets.gen.dart';
 import 'package:me/uikit/components/experience_section/experience_section.dart';
@@ -135,6 +136,16 @@ class ExperienceView extends StatelessWidget {
           ExperienceSection(vm: greenfluxVM),
           ExperienceSection(vm: friflexVM),
           ExperienceSection(vm: agroStabVM),
+          SizedBox(height: AppResponsiveSizes.x8large(context)),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(context.keys.experience.cv.caption),
+              SizedBox(height: AppResponsiveSizes.x4Large(context)),
+              DownloadCVButton(),
+            ],
+          ),
         ],
       ),
     );

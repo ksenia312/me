@@ -67,6 +67,7 @@ class _LocaleKeysTabZh extends LocaleKeysTabEn {
 	@override String get summary => '摘要';
 	@override String get projects => '项目';
 	@override String get experience => '经验';
+	@override String get language => '语言';
 }
 
 // Path: skill
@@ -144,6 +145,7 @@ class _LocaleKeysExperienceZh extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => '经验';
 	@override String get subtitle => '无聊的部分';
+	@override late final _LocaleKeysExperienceCvZh cv = _LocaleKeysExperienceCvZh._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxZh greenflux = _LocaleKeysExperienceGreenfluxZh._(_root);
 	@override late final _LocaleKeysExperienceFriflexZh friflex = _LocaleKeysExperienceFriflexZh._(_root);
 	@override late final _LocaleKeysExperienceAgroStabZh agroStab = _LocaleKeysExperienceAgroStabZh._(_root);
@@ -233,8 +235,19 @@ class _LocaleKeysPetProjectsErrorZh extends LocaleKeysPetProjectsErrorEn {
 	final LocaleKeysZh _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String get title => '哎呀！';
+	@override String subtitle({required Object id}) => '找不到项目ID=${id}。请检查ID并重试。';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvZh extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvZh._(LocaleKeysZh root) : this._root = root, super.internal(root);
+
+	final LocaleKeysZh _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => '阅读更多关于我的经验的CV';
+	@override String get button => '开放CV';
 }
 
 // Path: experience.greenflux
@@ -407,6 +420,7 @@ extension on LocaleKeysZh {
 			case 'tab.summary': return '摘要';
 			case 'tab.projects': return '项目';
 			case 'tab.experience': return '经验';
+			case 'tab.language': return '语言';
 			case 'skill.teamPlayer': return '团队合作者';
 			case 'skill.communicative': return '善于沟通';
 			case 'skill.problemSolver': return '问题解决者';
@@ -441,8 +455,8 @@ extension on LocaleKeysZh {
 			case 'summary.subtitle': return '非常简短且甜美';
 			case 'petProjects.title': return '个人项目';
 			case 'petProjects.subtitle': return '独特、创意、属于我！';
-			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.error.title': return '哎呀！';
+			case 'petProjects.error.subtitle': return ({required Object id}) => '找不到项目ID=${id}。请检查ID并重试。';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('zh'))(n,
 				zero: '${n} 年',
 				one: '${n} 年',
@@ -460,6 +474,8 @@ extension on LocaleKeysZh {
 			case 'mainImageCaption': return '图像是通过图形处理创建的';
 			case 'experience.title': return '经验';
 			case 'experience.subtitle': return '无聊的部分';
+			case 'experience.cv.caption': return '阅读更多关于我的经验的CV';
+			case 'experience.cv.button': return '开放CV';
 			case 'experience.greenflux.title': return '移动应用开发工程师';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return '阿姆斯特丹，荷兰（混合工作模式）';

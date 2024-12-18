@@ -67,6 +67,7 @@ class _LocaleKeysTabNl extends LocaleKeysTabEn {
 	@override String get summary => 'Samenvatting';
 	@override String get projects => 'Projecten';
 	@override String get experience => 'Ervaring';
+	@override String get language => 'Taal';
 }
 
 // Path: skill
@@ -120,6 +121,7 @@ class _LocaleKeysPetProjectsNl extends LocaleKeysPetProjectsEn {
 	// Translations
 	@override String get title => 'Pet projecten';
 	@override String get subtitle => 'Uniek, creatief, van mij!';
+	@override late final _LocaleKeysPetProjectsMarkdownNl markdown = _LocaleKeysPetProjectsMarkdownNl._(_root);
 	@override late final _LocaleKeysPetProjectsErrorNl error = _LocaleKeysPetProjectsErrorNl._(_root);
 }
 
@@ -144,6 +146,7 @@ class _LocaleKeysExperienceNl extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => 'Ervaring';
 	@override String get subtitle => 'Het saaie deel';
+	@override late final _LocaleKeysExperienceCvNl cv = _LocaleKeysExperienceCvNl._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxNl greenflux = _LocaleKeysExperienceGreenfluxNl._(_root);
 	@override late final _LocaleKeysExperienceFriflexNl friflex = _LocaleKeysExperienceFriflexNl._(_root);
 	@override late final _LocaleKeysExperienceAgroStabNl agroStab = _LocaleKeysExperienceAgroStabNl._(_root);
@@ -226,6 +229,16 @@ class _LocaleKeysSummaryEnglishNl extends LocaleKeysSummaryEnglishEn {
 	@override String get content => 'I very, very, very speak English';
 }
 
+// Path: petProjects.markdown
+class _LocaleKeysPetProjectsMarkdownNl extends LocaleKeysPetProjectsMarkdownEn {
+	_LocaleKeysPetProjectsMarkdownNl._(LocaleKeysNl root) : this._root = root, super.internal(root);
+
+	final LocaleKeysNl _root; // ignore: unused_field
+
+	// Translations
+	@override String get imageButton => 'Bekijk afbeelding op GitHub';
+}
+
 // Path: petProjects.error
 class _LocaleKeysPetProjectsErrorNl extends LocaleKeysPetProjectsErrorEn {
 	_LocaleKeysPetProjectsErrorNl._(LocaleKeysNl root) : this._root = root, super.internal(root);
@@ -233,8 +246,19 @@ class _LocaleKeysPetProjectsErrorNl extends LocaleKeysPetProjectsErrorEn {
 	final LocaleKeysNl _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String get title => 'Oeps!';
+	@override String subtitle({required Object id}) => 'Project met ID=${id} niet gevonden. Controleer de ID en probeer het opnieuw.';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvNl extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvNl._(LocaleKeysNl root) : this._root = root, super.internal(root);
+
+	final LocaleKeysNl _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => 'Lees meer over mijn ervaring in de CV';
+	@override String get button => 'Open CV';
 }
 
 // Path: experience.greenflux
@@ -407,6 +431,7 @@ extension on LocaleKeysNl {
 			case 'tab.summary': return 'Samenvatting';
 			case 'tab.projects': return 'Projecten';
 			case 'tab.experience': return 'Ervaring';
+			case 'tab.language': return 'Taal';
 			case 'skill.teamPlayer': return 'Teamspeler';
 			case 'skill.communicative': return 'Communicatief';
 			case 'skill.problemSolver': return 'Probleemoplosser';
@@ -441,8 +466,9 @@ extension on LocaleKeysNl {
 			case 'summary.subtitle': return 'Super kort en zoet';
 			case 'petProjects.title': return 'Pet projecten';
 			case 'petProjects.subtitle': return 'Uniek, creatief, van mij!';
-			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.markdown.imageButton': return 'Bekijk afbeelding op GitHub';
+			case 'petProjects.error.title': return 'Oeps!';
+			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project met ID=${id} niet gevonden. Controleer de ID en probeer het opnieuw.';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('nl'))(n,
 				zero: '${n} jaar',
 				one: '${n} jaar',
@@ -460,6 +486,8 @@ extension on LocaleKeysNl {
 			case 'mainImageCaption': return 'De afbeelding is gemaakt met behulp van grafische verwerking';
 			case 'experience.title': return 'Ervaring';
 			case 'experience.subtitle': return 'Het saaie deel';
+			case 'experience.cv.caption': return 'Lees meer over mijn ervaring in de CV';
+			case 'experience.cv.button': return 'Open CV';
 			case 'experience.greenflux.title': return 'Mobiele Applicatie Ontwikkelaar';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'Amsterdam, Nederland (hybride)';

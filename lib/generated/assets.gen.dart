@@ -69,18 +69,19 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_close.svg
   SvgGenImage get icCloseSvg => const SvgGenImage('assets/icons/ic_close.svg');
 
-  /// File path: assets/icons/ic_email.svg
-  SvgGenImage get icEmail => const SvgGenImage('assets/icons/ic_email.svg');
-
   /// File path: assets/icons/ic_error.svg
   SvgGenImage get icError => const SvgGenImage('assets/icons/ic_error.svg');
+
+  /// File path: assets/icons/ic_external_link.svg
+  SvgGenImage get icExternalLink =>
+      const SvgGenImage('assets/icons/ic_external_link.svg');
 
   /// File path: assets/icons/ic_github.svg
   SvgGenImage get icGithub => const SvgGenImage('assets/icons/ic_github.svg');
 
-  /// File path: assets/icons/ic_human_brain.svg
-  SvgGenImage get icHumanBrain =>
-      const SvgGenImage('assets/icons/ic_human_brain.svg');
+  /// File path: assets/icons/ic_google_play.svg
+  SvgGenImage get icGooglePlay =>
+      const SvgGenImage('assets/icons/ic_google_play.svg');
 
   /// File path: assets/icons/ic_linked_in.svg
   SvgGenImage get icLinkedIn =>
@@ -113,10 +114,10 @@ class $AssetsIconsGen {
         icBackArrow,
         icCloseRiv,
         icCloseSvg,
-        icEmail,
         icError,
+        icExternalLink,
         icGithub,
-        icHumanBrain,
+        icGooglePlay,
         icLinkedIn,
         icMenu,
         icOrganization,

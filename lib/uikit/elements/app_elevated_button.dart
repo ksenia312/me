@@ -29,15 +29,15 @@ class AppDarkElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: context.themeData.copyWith(
-        splashColor: AppColors.blueMore,
+        splashColor: AppColors.deepBlueSea,
         splashFactory: NoSplash.splashFactory,
-        highlightColor: AppColors.blueMore,
-        focusColor: AppColors.blueMore,
-        hoverColor: AppColors.blueMore,
+        highlightColor: AppColors.deepBlueSea,
+        focusColor: AppColors.deepBlueSea,
+        hoverColor: AppColors.deepBlueSea,
       ),
       child: ElevatedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(backgroundColor: AppColors.blueMore2),
+        style: ElevatedButton.styleFrom(backgroundColor: AppColors.oceanBlue),
         child: child,
       ),
     );

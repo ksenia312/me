@@ -67,6 +67,7 @@ class _LocaleKeysTabTr extends LocaleKeysTabEn {
 	@override String get summary => 'Özet';
 	@override String get projects => 'Projeler';
 	@override String get experience => 'Deneyim';
+	@override String get language => 'Dil';
 }
 
 // Path: skill
@@ -144,6 +145,7 @@ class _LocaleKeysExperienceTr extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => 'Deneyim';
 	@override String get subtitle => 'Sıkıcı kısım';
+	@override late final _LocaleKeysExperienceCvTr cv = _LocaleKeysExperienceCvTr._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxTr greenflux = _LocaleKeysExperienceGreenfluxTr._(_root);
 	@override late final _LocaleKeysExperienceFriflexTr friflex = _LocaleKeysExperienceFriflexTr._(_root);
 	@override late final _LocaleKeysExperienceAgroStabTr agroStab = _LocaleKeysExperienceAgroStabTr._(_root);
@@ -234,7 +236,18 @@ class _LocaleKeysPetProjectsErrorTr extends LocaleKeysPetProjectsErrorEn {
 
 	// Translations
 	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String subtitle({required Object id}) => 'Proje ID=${id} bulunamadı. Lütfen ID\'yi kontrol edip tekrar deneyin.';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvTr extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvTr._(LocaleKeysTr root) : this._root = root, super.internal(root);
+
+	final LocaleKeysTr _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => 'Daha fazla bilgi için CV\'de okuyun';
+	@override String get button => 'Açık CV';
 }
 
 // Path: experience.greenflux
@@ -407,6 +420,7 @@ extension on LocaleKeysTr {
 			case 'tab.summary': return 'Özet';
 			case 'tab.projects': return 'Projeler';
 			case 'tab.experience': return 'Deneyim';
+			case 'tab.language': return 'Dil';
 			case 'skill.teamPlayer': return 'Takım oyuncusu';
 			case 'skill.communicative': return 'İletişim becerisi';
 			case 'skill.problemSolver': return 'Problem çözücü';
@@ -442,7 +456,7 @@ extension on LocaleKeysTr {
 			case 'petProjects.title': return 'Pet projeler';
 			case 'petProjects.subtitle': return 'Benzersiz, kreatif, benim!';
 			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.error.subtitle': return ({required Object id}) => 'Proje ID=${id} bulunamadı. Lütfen ID\'yi kontrol edip tekrar deneyin.';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('tr'))(n,
 				zero: '${n} yıl',
 				one: '${n} yıl',
@@ -460,6 +474,8 @@ extension on LocaleKeysTr {
 			case 'mainImageCaption': return 'Görsel grafik işleme kullanılarak oluşturuldu';
 			case 'experience.title': return 'Deneyim';
 			case 'experience.subtitle': return 'Sıkıcı kısım';
+			case 'experience.cv.caption': return 'Daha fazla bilgi için CV\'de okuyun';
+			case 'experience.cv.button': return 'Açık CV';
 			case 'experience.greenflux.title': return 'Mobil Uygulama Geliştiricisi';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'Amsterdam, Hollanda (Hibrit)';

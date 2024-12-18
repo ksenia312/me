@@ -31,8 +31,8 @@ class ExperienceSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Responsive.get(
       context,
-      def: () => _ExperienceDesktopLayout(parameters: vm, accentColor: AppColors.blueShaded),
-      m: () => _ExperienceMobileLayout(parameters: vm, accentColor: AppColors.blueShaded),
+      def: () => _ExperienceDesktopLayout(parameters: vm, accentColor: AppColors.mutedBlue),
+      m: () => _ExperienceMobileLayout(parameters: vm, accentColor: AppColors.mutedBlue),
     );
   }
 }

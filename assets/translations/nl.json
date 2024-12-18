@@ -3,7 +3,8 @@
     "home": "Startpagina",
     "summary": "Samenvatting",
     "projects": "Projecten",
-    "experience": "Ervaring"
+    "experience": "Ervaring",
+    "language": "Taal"
   },
   "skill": {
     "teamPlayer": "Teamspeler",
@@ -58,9 +59,12 @@
   "petProjects": {
     "title": "Pet projecten",
     "subtitle": "Uniek, creatief, van mij!",
+    "markdown": {
+      "imageButton": "Bekijk afbeelding op GitHub"
+    },
     "error": {
-      "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "title": "Oeps!",
+      "subtitle": "Project met ID=$id niet gevonden. Controleer de ID en probeer het opnieuw."
     }
   },
   "year(ordinal)": {
@@ -83,6 +87,10 @@
   "experience": {
     "title": "Ervaring",
     "subtitle": "Het saaie deel",
+    "cv": {
+      "caption": "Lees meer over mijn ervaring in de CV",
+      "button": "Open CV"
+    },
     "greenflux": {
       "title": "Mobiele Applicatie Ontwikkelaar",
       "organization": "Greenflux Assets B.V.",

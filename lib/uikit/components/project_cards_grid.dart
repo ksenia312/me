@@ -1,11 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
 import 'package:me/uikit/components/project_card.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
 
 class ProjectCardsGrid extends StatelessWidget {
-  const ProjectCardsGrid({super.key, required this.vms});
+  const ProjectCardsGrid({super.key, required this.vms, required this.expectedCount});
 
+  final int expectedCount;
   final List<PetProjectCardVM> vms;
 
   @override
@@ -33,11 +36,20 @@ class ProjectCardsGrid extends StatelessWidget {
         crossAxisSpacing: 12,
       ),
       shrinkWrap: true,
-      itemCount: vms.length,
-      itemBuilder: (context, index) => ProjectCard(
-        key: ValueKey('${vms[index].data.id}-$index'),
-        vm: vms[index],
-      ),
+      itemCount: max(vms.length, expectedCount),
+      itemBuilder: (context, index) {
+        PetProjectCardVM? vm;
+        try {
+          vm = vms[index];
+        } catch (_) {}
+        if (vm == null) {
+          return const SizedBox.shrink();
+        }
+        return ProjectCard(
+          key: ValueKey('${vm.data.id}-$index'),
+          vm: vm,
+        );
+      },
     );
   }
 }

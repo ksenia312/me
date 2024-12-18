@@ -69,6 +69,7 @@ class LocaleKeysTabEn {
 	String get summary => 'Summary';
 	String get projects => 'Projects';
 	String get experience => 'Experience';
+	String get language => 'Language';
 }
 
 // Path: skill
@@ -122,6 +123,7 @@ class LocaleKeysPetProjectsEn {
 	// Translations
 	String get title => 'Pet projects';
 	String get subtitle => 'Unique, creative, mine!';
+	late final LocaleKeysPetProjectsMarkdownEn markdown = LocaleKeysPetProjectsMarkdownEn.internal(_root);
 	late final LocaleKeysPetProjectsErrorEn error = LocaleKeysPetProjectsErrorEn.internal(_root);
 }
 
@@ -146,6 +148,7 @@ class LocaleKeysExperienceEn {
 	// Translations
 	String get title => 'Experience';
 	String get subtitle => 'The boring part';
+	late final LocaleKeysExperienceCvEn cv = LocaleKeysExperienceCvEn.internal(_root);
 	late final LocaleKeysExperienceGreenfluxEn greenflux = LocaleKeysExperienceGreenfluxEn.internal(_root);
 	late final LocaleKeysExperienceFriflexEn friflex = LocaleKeysExperienceFriflexEn.internal(_root);
 	late final LocaleKeysExperienceAgroStabEn agroStab = LocaleKeysExperienceAgroStabEn.internal(_root);
@@ -228,6 +231,16 @@ class LocaleKeysSummaryEnglishEn {
 	String get content => 'I very, very, very speak English';
 }
 
+// Path: petProjects.markdown
+class LocaleKeysPetProjectsMarkdownEn {
+	LocaleKeysPetProjectsMarkdownEn.internal(this._root);
+
+	final LocaleKeys _root; // ignore: unused_field
+
+	// Translations
+	String get imageButton => 'View image on GitHub';
+}
+
 // Path: petProjects.error
 class LocaleKeysPetProjectsErrorEn {
 	LocaleKeysPetProjectsErrorEn.internal(this._root);
@@ -237,6 +250,17 @@ class LocaleKeysPetProjectsErrorEn {
 	// Translations
 	String get title => 'Oops!';
 	String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+}
+
+// Path: experience.cv
+class LocaleKeysExperienceCvEn {
+	LocaleKeysExperienceCvEn.internal(this._root);
+
+	final LocaleKeys _root; // ignore: unused_field
+
+	// Translations
+	String get caption => 'Read more about my experience in the CV';
+	String get button => 'Open CV';
 }
 
 // Path: experience.greenflux
@@ -409,6 +433,7 @@ extension on LocaleKeys {
 			case 'tab.summary': return 'Summary';
 			case 'tab.projects': return 'Projects';
 			case 'tab.experience': return 'Experience';
+			case 'tab.language': return 'Language';
 			case 'skill.teamPlayer': return 'Team player';
 			case 'skill.communicative': return 'Сommunicative';
 			case 'skill.problemSolver': return 'Problem solver';
@@ -443,6 +468,7 @@ extension on LocaleKeys {
 			case 'summary.subtitle': return 'Super short and sweet';
 			case 'petProjects.title': return 'Pet projects';
 			case 'petProjects.subtitle': return 'Unique, creative, mine!';
+			case 'petProjects.markdown.imageButton': return 'View image on GitHub';
 			case 'petProjects.error.title': return 'Oops!';
 			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('en'))(n,
@@ -462,6 +488,8 @@ extension on LocaleKeys {
 			case 'mainImageCaption': return 'The image was created using graphic processing';
 			case 'experience.title': return 'Experience';
 			case 'experience.subtitle': return 'The boring part';
+			case 'experience.cv.caption': return 'Read more about my experience in the CV';
+			case 'experience.cv.button': return 'Open CV';
 			case 'experience.greenflux.title': return 'Mobile Application Developer';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'Amsterdam, Netherlands (Hybrid)';

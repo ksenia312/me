@@ -60,7 +60,7 @@ class _Decorated extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: AppColors.blueMore3,
+        color: AppColors.stormCloud,
       ),
       padding: EdgeInsets.symmetric(
         horizontal: AppResponsiveSizes.x4Large(context),
@@ -81,7 +81,7 @@ class _Skill extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: AppColors.dimBlueTransparent,
+        color: AppColors.shadowGreyBlueTransparent,
       ),
       padding: EdgeInsets.symmetric(
         horizontal: 12,

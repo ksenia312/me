@@ -3,7 +3,8 @@
     "home": "ホーム",
     "summary": "概要",
     "projects": "プロジェクト",
-    "experience": "経験"
+    "experience": "経験",
+    "language": "言語"
   },
   "skill": {
     "teamPlayer": "チームプレーヤー",
@@ -58,9 +59,12 @@
   "petProjects": {
     "title": "ペットプロジェクト",
     "subtitle": "ユニークで創造的、私のもの！",
+    "markdown": {
+      "imageButton": "GitHubで画像を表示"
+    },
     "error": {
-      "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "title": "おっと！",
+      "subtitle": "ID=$idのプロジェクトが見つかりませんでした。IDを確認してもう一度お試しください。"
     }
   },
   "year(ordinal)": {
@@ -83,6 +87,10 @@
   "experience": {
     "title": "経験",
     "subtitle": "退屈な部分",
+    "cv": {
+      "caption": "より詳しく私の経験については、CVを読む",
+      "button": "オープンCV"
+    },
     "greenflux": {
       "title": "モバイルアプリケーション開発者",
       "organization": "Greenflux Assets B.V.",

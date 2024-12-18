@@ -6,6 +6,7 @@ import 'package:me/features/landing/view/landing_page.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
 import 'package:me/features/pet_project/view/pet_project_page.dart';
 import 'package:me/uikit/elements/app_mobile_menu.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:me/uikit/uikit_page.dart';
 
 class AppRouter {
@@ -21,7 +22,7 @@ class AppRouter {
     GoRoute(
       path: '/',
       pageBuilder: (context, state) => AppTransitionPage(
-        child: LandingPage(),
+        child: LandingPage(initialTab: state.extra as LandingPageInitialTab?),
       ),
     ),
     GoRoute(
@@ -92,7 +93,11 @@ class AppTransitionPage extends CustomTransitionPage {
               child: child,
             );
 
-            return animation.status == AnimationStatus.reverse ? child : slideTransition;
+            return Title(
+              title: context.keys.pageTitle,
+              color: Colors.white,
+              child: animation.status == AnimationStatus.reverse ? child : slideTransition,
+            );
           },
         );
 }

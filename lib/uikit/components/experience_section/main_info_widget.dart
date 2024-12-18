@@ -1,11 +1,17 @@
 part of 'experience_section.dart';
 
 class _MainInfoWidget extends StatelessWidget {
-  const _MainInfoWidget({required this.title, required this.organization, required this.location});
+  const _MainInfoWidget({
+    required this.title,
+    required this.organization,
+    required this.location,
+    this.isMinimal = true,
+  });
 
   final String title;
   final String organization;
   final String location;
+  final bool isMinimal;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +33,7 @@ class _MainInfoWidget extends StatelessWidget {
           ),
           SizedBox(height: AppResponsiveSizes.medium(context)),
           Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: isMinimal ? MainAxisSize.min : MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Assets.icons.icLocation.svg(width: AppResponsiveSizes.large(context)),
@@ -35,7 +41,7 @@ class _MainInfoWidget extends StatelessWidget {
               Flexible(
                 child: Text(
                   location,
-                  style: context.textTheme.titleMedium?.copyWith(color: AppColors.lightGrey),
+                  style: context.textTheme.titleMedium?.copyWith(color: AppColors.silverGrey),
                 ),
               ),
             ],

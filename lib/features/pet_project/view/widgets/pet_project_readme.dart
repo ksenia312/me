@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:me/features/pet_project/notifier/pet_project_notifier.dart';
 import 'package:me/uikit/elements/app_markdown.dart';
+import 'package:me/uikit/elements/app_progress.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
@@ -14,7 +15,7 @@ class PetProjectReadme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (notifier.isMarkdownLoading) {
-      return const Center(child: CircularProgressIndicator());
+      return Center(child: AppProgress.medium());
     }
 
     final markdown = notifier.vm?.markdown;
@@ -33,7 +34,7 @@ class PetProjectReadme extends StatelessWidget {
       borderRadius: BorderRadius.circular(6),
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.blueMore,
+          color: AppColors.deepBlueSea,
           borderRadius: BorderRadius.circular(6),
         ),
         child: Column(
@@ -41,7 +42,7 @@ class PetProjectReadme extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              color: AppColors.extraBlueMore,
+              color: context.customColorScheme.markdownBackgroundColor,
               padding: EdgeInsets.symmetric(
                 horizontal: AppResponsiveSizes.x3Large(context),
                 vertical: AppResponsiveSizes.large(context),

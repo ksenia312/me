@@ -3,7 +3,8 @@
     "home": "Home",
     "summary": "Sommario",
     "projects": "Progetti",
-    "experience": "Esperienza"
+    "experience": "Esperienza",
+    "language": "Lingua"
   },
   "skill": {
     "teamPlayer": "Giocatrice di squadra",
@@ -58,9 +59,12 @@
   "petProjects": {
     "title": "Pet projects",
     "subtitle": "Unici, creativi, miei!",
+    "markdown": {
+      "imageButton": "Visualizza immagine su GitHub"
+    },
     "error": {
-      "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "title": "Ops!",
+      "subtitle": "Il progetto con ID=$id non è stato trovato. Si prega di controllare l'ID e riprovare."
     }
   },
   "year(ordinal)": {
@@ -83,6 +87,10 @@
   "experience": {
     "title": "Esperienza",
     "subtitle": "La parte noiosa",
+    "cv": {
+      "caption": "Leggi di più sulla mia esperienza nel CV",
+      "button": "CV aperto"
+    },
     "greenflux": {
       "title": "Sviluppatrice di applicazioni mobili",
       "organization": "Greenflux Assets B.V.",

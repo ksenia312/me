@@ -5,6 +5,7 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:me/generated/fonts.gen.dart';
 import 'package:me/uikit/elements/app_elevated_button.dart';
 import 'package:me/uikit/extensions/scroll_extension.dart';
+import 'package:me/uikit/localization/localization.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
@@ -39,7 +40,7 @@ class _AppMarkdownState extends State<AppMarkdown> {
       data: widget.markdown.trim(),
       styleSheet: MarkdownStyleSheet(
         p: context.textTheme.bodyMedium?.copyWith(height: 1.5, shadows: []),
-        a: context.textTheme.bodyMedium?.copyWith(color: AppColors.extraLightBlue, shadows: []),
+        a: context.textTheme.bodyMedium?.copyWith(color: AppColors.electricBlue, shadows: []),
         h1: context.textTheme.headlineSmall?.copyWith(shadows: []),
         h2: context.textTheme.titleMedium?.copyWith(fontSize: (context.textTheme.titleMedium?.fontSize ?? 12) * 1.3),
         h3: context.textTheme.titleMedium?.copyWith(),
@@ -71,7 +72,7 @@ class _AppMarkdownState extends State<AppMarkdown> {
         ),
         code: context.textTheme.bodySmall?.copyWith(fontFamily: FontFamily.robotoMono, shadows: []),
         codeblockDecoration: BoxDecoration(
-          color: AppColors.blueMore2,
+          color: AppColors.oceanBlue,
         ),
         codeblockPadding: EdgeInsets.symmetric(
           horizontal: AppResponsiveSizes.x3Large(context),
@@ -95,7 +96,7 @@ class _AppMarkdownState extends State<AppMarkdown> {
         if (link != null && uri.toString().contains(Uri.parse(link).host)) {
           return AppDarkElevatedButton(
             onPressed: () => launchUrlString(link),
-            child: Text('View image on GitHub'),
+            child: Text(context.keys.petProjects.markdown.imageButton),
           );
         }
 

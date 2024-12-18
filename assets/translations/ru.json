@@ -3,7 +3,8 @@
     "home": "Главная",
     "summary": "Обо мне",
     "projects": "Проекты",
-    "experience": "Опыт"
+    "experience": "Опыт",
+    "language": "Язык"
   },
   "skill": {
     "teamPlayer": "Командный игрок",
@@ -59,8 +60,8 @@
     "title": "Pet-проекты",
     "subtitle": "Уникальные, креативные, мои!",
     "error": {
-      "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "title": "Упс!",
+      "subtitle": "Проект с ID=$id не найден. Пожалуйста, проверьте ID и попробуйте еще раз."
     }
   },
   "year(ordinal)": {
@@ -78,11 +79,15 @@
     "subtitle": "Этой страницы не существует",
     "button": "На главную"
   },
-  "pageTitle": "Ксения | Разработчица Flutter",
+  "pageTitle": "Ксения | Flutter Разработчик",
   "mainImageCaption": "Изображение было создано с помощью графической обработки",
   "experience": {
     "title": "Опыт",
     "subtitle": "Скучная часть",
+    "cv": {
+      "caption": "Читайте больше о моей опыте в CV",
+      "button": "Открыть резюме"
+    },
     "greenflux": {
       "title": "Разработчик мобильных приложений",
       "organization": "Greenflux Assets B.V.",

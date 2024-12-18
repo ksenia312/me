@@ -51,7 +51,7 @@ class LocaleKeysRu extends LocaleKeys {
 	@override String get androidDemo => 'Демо Android';
 	@override String get iosDemo => 'Демо iOS';
 	@override late final _LocaleKeysNotFoundRu notFound = _LocaleKeysNotFoundRu._(_root);
-	@override String get pageTitle => 'Ксения | Разработчица Flutter';
+	@override String get pageTitle => 'Ксения | Flutter Разработчик';
 	@override String get mainImageCaption => 'Изображение было создано с помощью графической обработки';
 	@override late final _LocaleKeysExperienceRu experience = _LocaleKeysExperienceRu._(_root);
 }
@@ -67,6 +67,7 @@ class _LocaleKeysTabRu extends LocaleKeysTabEn {
 	@override String get summary => 'Обо мне';
 	@override String get projects => 'Проекты';
 	@override String get experience => 'Опыт';
+	@override String get language => 'Язык';
 }
 
 // Path: skill
@@ -144,6 +145,7 @@ class _LocaleKeysExperienceRu extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => 'Опыт';
 	@override String get subtitle => 'Скучная часть';
+	@override late final _LocaleKeysExperienceCvRu cv = _LocaleKeysExperienceCvRu._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxRu greenflux = _LocaleKeysExperienceGreenfluxRu._(_root);
 	@override late final _LocaleKeysExperienceFriflexRu friflex = _LocaleKeysExperienceFriflexRu._(_root);
 	@override late final _LocaleKeysExperienceAgroStabRu agroStab = _LocaleKeysExperienceAgroStabRu._(_root);
@@ -233,8 +235,19 @@ class _LocaleKeysPetProjectsErrorRu extends LocaleKeysPetProjectsErrorEn {
 	final LocaleKeysRu _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String get title => 'Упс!';
+	@override String subtitle({required Object id}) => 'Проект с ID=${id} не найден. Пожалуйста, проверьте ID и попробуйте еще раз.';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvRu extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvRu._(LocaleKeysRu root) : this._root = root, super.internal(root);
+
+	final LocaleKeysRu _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => 'Читайте больше о моей опыте в CV';
+	@override String get button => 'Открыть резюме';
 }
 
 // Path: experience.greenflux
@@ -407,6 +420,7 @@ extension on LocaleKeysRu {
 			case 'tab.summary': return 'Обо мне';
 			case 'tab.projects': return 'Проекты';
 			case 'tab.experience': return 'Опыт';
+			case 'tab.language': return 'Язык';
 			case 'skill.teamPlayer': return 'Командный игрок';
 			case 'skill.communicative': return 'Коммуникабельная';
 			case 'skill.problemSolver': return 'Решаю проблемы';
@@ -441,8 +455,8 @@ extension on LocaleKeysRu {
 			case 'summary.subtitle': return 'Очень коротко и сладко';
 			case 'petProjects.title': return 'Pet-проекты';
 			case 'petProjects.subtitle': return 'Уникальные, креативные, мои!';
-			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.error.title': return 'Упс!';
+			case 'petProjects.error.subtitle': return ({required Object id}) => 'Проект с ID=${id} не найден. Пожалуйста, проверьте ID и попробуйте еще раз.';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('ru'))(n,
 				zero: '${n} лет',
 				one: '${n} год',
@@ -456,10 +470,12 @@ extension on LocaleKeysRu {
 			case 'notFound.title': return '404';
 			case 'notFound.subtitle': return 'Этой страницы не существует';
 			case 'notFound.button': return 'На главную';
-			case 'pageTitle': return 'Ксения | Разработчица Flutter';
+			case 'pageTitle': return 'Ксения | Flutter Разработчик';
 			case 'mainImageCaption': return 'Изображение было создано с помощью графической обработки';
 			case 'experience.title': return 'Опыт';
 			case 'experience.subtitle': return 'Скучная часть';
+			case 'experience.cv.caption': return 'Читайте больше о моей опыте в CV';
+			case 'experience.cv.button': return 'Открыть резюме';
 			case 'experience.greenflux.title': return 'Разработчик мобильных приложений';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'Амстердам, Нидерланды (гибрид)';

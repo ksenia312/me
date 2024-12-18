@@ -3,7 +3,8 @@
     "home": "Startseite",
     "summary": "Zusammenfassung",
     "projects": "Projekte",
-    "experience": "Erfahrung"
+    "experience": "Erfahrung",
+    "language": "Sprache"
   },
   "skill": {
     "teamPlayer": "Teamplayer",
@@ -58,9 +59,12 @@
   "petProjects": {
     "title": "Pet-Projekte",
     "subtitle": "Einzigartig, kreativ, meins!",
+    "markdown": {
+      "imageButton": "Bild auf GitHub anzeigen"
+    },
     "error": {
-      "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "title": "Ups!",
+      "subtitle": "Projekt mit ID=$id nicht gefunden. Bitte überprüfen Sie die ID und versuchen Sie es erneut."
     }
   },
   "year(ordinal)": {
@@ -83,6 +87,10 @@
   "experience": {
     "title": "Erfahrung",
     "subtitle": "Der langweilige Teil",
+    "cv": {
+      "caption": "Lesen Sie mehr über meine Erfahrung im Lebenslauf",
+      "button": "Open CV"
+    },
     "greenflux": {
       "title": "Mobile Application Developerin",
       "organization": "Greenflux Assets B.V.",

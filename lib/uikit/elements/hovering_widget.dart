@@ -46,7 +46,7 @@ class _HoveringWidgetState extends State<HoveringWidget> {
         child: GestureDetector(
           onTap: onTapResult,
           child: MouseRegion(
-            cursor: onTapResult != null ? SystemMouseCursors.click : SystemMouseCursors.basic,
+            cursor: SystemMouseCursors.click,
             onEnter: (_) => getOnHoverResponsive(true)?.call(),
             onExit: (_) => getOnHoverResponsive(false)?.call(),
             child: widget.builder(context, isActive),

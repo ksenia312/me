@@ -67,6 +67,7 @@ class _LocaleKeysTabHi extends LocaleKeysTabEn {
 	@override String get summary => 'सारांश';
 	@override String get projects => 'प्रोजेक्ट्स';
 	@override String get experience => 'अनुभव';
+	@override String get language => 'भाषा';
 }
 
 // Path: skill
@@ -120,6 +121,7 @@ class _LocaleKeysPetProjectsHi extends LocaleKeysPetProjectsEn {
 	// Translations
 	@override String get title => 'पेट प्रोजेक्ट्स';
 	@override String get subtitle => 'विशिष्ट, रचनात्मक, मेरे!';
+	@override late final _LocaleKeysPetProjectsMarkdownHi markdown = _LocaleKeysPetProjectsMarkdownHi._(_root);
 	@override late final _LocaleKeysPetProjectsErrorHi error = _LocaleKeysPetProjectsErrorHi._(_root);
 }
 
@@ -144,6 +146,7 @@ class _LocaleKeysExperienceHi extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => 'अनुभव';
 	@override String get subtitle => 'उबाऊ हिस्सा';
+	@override late final _LocaleKeysExperienceCvHi cv = _LocaleKeysExperienceCvHi._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxHi greenflux = _LocaleKeysExperienceGreenfluxHi._(_root);
 	@override late final _LocaleKeysExperienceFriflexHi friflex = _LocaleKeysExperienceFriflexHi._(_root);
 	@override late final _LocaleKeysExperienceAgroStabHi agroStab = _LocaleKeysExperienceAgroStabHi._(_root);
@@ -226,6 +229,16 @@ class _LocaleKeysSummaryEnglishHi extends LocaleKeysSummaryEnglishEn {
 	@override String get content => 'I very, very, very speak English';
 }
 
+// Path: petProjects.markdown
+class _LocaleKeysPetProjectsMarkdownHi extends LocaleKeysPetProjectsMarkdownEn {
+	_LocaleKeysPetProjectsMarkdownHi._(LocaleKeysHi root) : this._root = root, super.internal(root);
+
+	final LocaleKeysHi _root; // ignore: unused_field
+
+	// Translations
+	@override String get imageButton => 'GitHub पर छवि देखें';
+}
+
 // Path: petProjects.error
 class _LocaleKeysPetProjectsErrorHi extends LocaleKeysPetProjectsErrorEn {
 	_LocaleKeysPetProjectsErrorHi._(LocaleKeysHi root) : this._root = root, super.internal(root);
@@ -233,8 +246,19 @@ class _LocaleKeysPetProjectsErrorHi extends LocaleKeysPetProjectsErrorEn {
 	final LocaleKeysHi _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String get title => 'ओपस!';
+	@override String subtitle({required Object id}) => 'ID=${id} के लिए परियोजना नहीं मिला. कृपया ID को जांचें और पुन: प्रयास करें.';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvHi extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvHi._(LocaleKeysHi root) : this._root = root, super.internal(root);
+
+	final LocaleKeysHi _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => 'मेरी अभियान के बारे में और पढ़ने के लिए और अधिक जानें';
+	@override String get button => 'खुला CV';
 }
 
 // Path: experience.greenflux
@@ -407,6 +431,7 @@ extension on LocaleKeysHi {
 			case 'tab.summary': return 'सारांश';
 			case 'tab.projects': return 'प्रोजेक्ट्स';
 			case 'tab.experience': return 'अनुभव';
+			case 'tab.language': return 'भाषा';
 			case 'skill.teamPlayer': return 'टीम खिलाड़ी';
 			case 'skill.communicative': return 'संचार में माहिर';
 			case 'skill.problemSolver': return 'समस्या हल करने वाली';
@@ -441,8 +466,9 @@ extension on LocaleKeysHi {
 			case 'summary.subtitle': return 'बहुत संक्षिप्त और मीठा';
 			case 'petProjects.title': return 'पेट प्रोजेक्ट्स';
 			case 'petProjects.subtitle': return 'विशिष्ट, रचनात्मक, मेरे!';
-			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.markdown.imageButton': return 'GitHub पर छवि देखें';
+			case 'petProjects.error.title': return 'ओपस!';
+			case 'petProjects.error.subtitle': return ({required Object id}) => 'ID=${id} के लिए परियोजना नहीं मिला. कृपया ID को जांचें और पुन: प्रयास करें.';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('hi'))(n,
 				zero: '${n} वर्ष',
 				one: '${n} साल',
@@ -460,6 +486,8 @@ extension on LocaleKeysHi {
 			case 'mainImageCaption': return 'छवि को ग्राफिक प्रोसेसिंग की मदद से बनाया गया था';
 			case 'experience.title': return 'अनुभव';
 			case 'experience.subtitle': return 'उबाऊ हिस्सा';
+			case 'experience.cv.caption': return 'मेरी अभियान के बारे में और पढ़ने के लिए और अधिक जानें';
+			case 'experience.cv.button': return 'खुला CV';
 			case 'experience.greenflux.title': return 'मोबाइल एप्लिकेशन डेवलपर';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'एम्स्टर्डम, नीदरलैंड्स (हाइब्रिड)';

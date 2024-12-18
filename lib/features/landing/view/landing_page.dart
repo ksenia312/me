@@ -1,15 +1,10 @@
-import 'package:me/uikit/localization/localization.dart';
-import 'package:flutter/foundation.dart';
+import 'package:me/uikit/components/main_header.dart';
+import 'package:me/uikit/elements/app_footer.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:me/features/landing/notifier/landing_notifier.dart';
 import 'package:me/uikit/components/cat_animation.dart';
 import 'package:me/uikit/components/translated_widget.dart';
 import 'package:me/uikit/components/up_button.dart';
-import 'package:me/uikit/elements/custom_app_bar.dart';
-import 'package:me/uikit/components/language_button.dart';
-
-import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:provider/provider.dart';
 
 import 'widgets/experience_view.dart';
@@ -17,112 +12,109 @@ import 'widgets/projects_view.dart';
 import 'widgets/summary_view.dart';
 import 'widgets/welcome_view.dart';
 
-part 'widgets/contacts_view.dart';
-
-part 'widgets/download_cv_view.dart';
+enum LandingPageInitialTab { welcome, summary, experience, projects }
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+  const LandingPage({super.key, this.initialTab});
+
+  final LandingPageInitialTab? initialTab;
 
   @override
   Widget build(BuildContext context) {
-    return Title(
-      title: context.keys.pageTitle,
-      color: Colors.white,
-      child: ChangeNotifierProvider(
-        create: (context) => LandingNotifier(),
-        child: Consumer<LandingNotifier>(
-          builder: (context, notifier, _) {
-            return Scaffold(
-              extendBodyBehindAppBar: true,
-              floatingActionButton: UpButton(controller: notifier.scrollController),
-              appBar: CustomAppBar(
-                rightTabs: _buildRightTabs(context, notifier),
-                leftTabs: _buildLeftTabs(context, notifier),
-              ),
-              body: _LandingPageBody(),
-            );
-          },
-        ),
+    return ChangeNotifierProvider(
+      create: (context) => LandingNotifier(),
+      child: Consumer<LandingNotifier>(
+        builder: (context, notifier, _) => _LandingPage(notifier: notifier, initialTab: initialTab),
       ),
     );
   }
+}
 
-  List<Widget> _buildRightTabs(BuildContext context, LandingNotifier notifier) {
-    return [
-      if (kDebugMode)
-        CustomToolbarTab.listItem(
-          color: context.customColorScheme.borderColor,
-          onPressed: (context) => context.go('/uikit'),
-          title: 'Open debug menu',
-        ),
-      LanguageButton(),
-    ];
+class _LandingPage extends StatefulWidget {
+  const _LandingPage({required this.notifier, required this.initialTab});
+
+  final LandingNotifier notifier;
+  final LandingPageInitialTab? initialTab;
+
+  @override
+  State<_LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<_LandingPage> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      if (widget.initialTab != null) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          _scrollTo(
+            switch (widget.initialTab!) {
+              LandingPageInitialTab.welcome => widget.notifier.welcomeKey,
+              LandingPageInitialTab.summary => widget.notifier.summaryKey,
+              LandingPageInitialTab.experience => widget.notifier.experienceKey,
+              LandingPageInitialTab.projects => widget.notifier.projectsKey,
+            },
+            duration: Duration.zero,
+          );
+        });
+      }
+    });
+    super.initState();
   }
 
-  List<Widget> _buildLeftTabs(BuildContext context, LandingNotifier notifier) {
-    final tab = context.keys.tab;
-    return [
-      CustomToolbarTab.listItem(
-        onPressed: (context) => _scrollTo(notifier.welcomeKey),
-        title: tab.home,
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      floatingActionButton: UpButton(controller: widget.notifier.scrollController),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      appBar: MainHeader(
+        onWelcomePressed: () => _scrollTo(widget.notifier.welcomeKey),
+        onSummaryPressed: () => _scrollTo(widget.notifier.summaryKey),
+        onExperiencePressed: () => _scrollTo(widget.notifier.experienceKey),
+        onProjectsPressed: () => _scrollTo(widget.notifier.projectsKey),
       ),
-      CustomToolbarTab.listItem(
-        onPressed: (context) => _scrollTo(notifier.summaryKey),
-        title: tab.summary,
-      ),
-      CustomToolbarTab.listItem(
-        onPressed: (context) => _scrollTo(notifier.experienceKey),
-        title: tab.experience,
-      ),
-      CustomToolbarTab.listItem(
-        onPressed: (context) => _scrollTo(notifier.projectsKey),
-        title: tab.projects,
-      ),
-    ];
+      body: Consumer<LandingNotifier>(builder: (context, notifier, child) {
+        return CatAnimationWrapper(
+          builder: (key, artboard, context) {
+            return SingleChildScrollView(
+              controller: notifier.scrollController,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  WelcomeView(key: notifier.welcomeKey),
+                  TranslatedWidget(
+                    key: notifier.summaryKey,
+                    child: SummaryView(globalKey: key, artboard: artboard),
+                  ),
+                  TranslatedWidget(
+                    child: ExperienceView(key: notifier.experienceKey),
+                  ),
+                  TranslatedWidget(
+                    child: ProjectsView(key: notifier.projectsKey),
+                  ),
+                  AppFooter(
+                    onWelcomePressed: () => _scrollTo(notifier.welcomeKey),
+                    onSummaryPressed: () => _scrollTo(notifier.summaryKey),
+                    onExperiencePressed: () => _scrollTo(notifier.experienceKey),
+                    onProjectsPressed: () => _scrollTo(notifier.projectsKey),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      }),
+    );
   }
 
-  void _scrollTo(GlobalKey key) {
+  void _scrollTo(GlobalKey key, {Duration duration = const Duration(milliseconds: 300)}) {
     final context = key.currentContext;
     if (context == null) return;
 
     Scrollable.ensureVisible(
       context,
-      duration: const Duration(milliseconds: 300),
+      duration: duration,
       curve: Curves.easeInOutCubic,
     );
-  }
-}
-
-class _LandingPageBody extends StatelessWidget {
-  const _LandingPageBody();
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<LandingNotifier>(builder: (context, notifier, child) {
-      return CatAnimationWrapper(
-        builder: (key, artboard, context) {
-          return SingleChildScrollView(
-            controller: notifier.scrollController,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                WelcomeView(key: notifier.welcomeKey),
-                TranslatedWidget(
-                  key: notifier.summaryKey,
-                  child: SummaryView(globalKey: key, artboard: artboard),
-                ),
-                TranslatedWidget(
-                  child: ExperienceView(key: notifier.experienceKey),
-                ),
-                TranslatedWidget(
-                  child: ProjectsView(key: notifier.projectsKey),
-                ),
-              ],
-            ),
-          );
-        },
-      );
-    });
   }
 }

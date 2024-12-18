@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:me/features/download_file/notifier/download_cv_notifier.dart';
 import 'package:me/uikit/elements/app_elevated_button.dart';
+import 'package:me/uikit/elements/app_progress.dart';
+import 'package:me/uikit/localization/localization.dart';
 
 class DownloadCVButton extends StatefulWidget {
   const DownloadCVButton({super.key});
@@ -16,15 +18,10 @@ class _DownloadCVButtonState extends State<DownloadCVButton> {
   Widget build(BuildContext context) {
     return AppElevatedButton(
       onPressed: downloadCVService.isLoading ? null : downloadCVService.call,
-      style: ElevatedButton.styleFrom(
-        minimumSize: const Size(150, 70),
-      ),
       child: downloadCVService.isLoading
-          ? CircularProgressIndicator.adaptive(
-              backgroundColor: Theme.of(context).colorScheme.onTertiary,
-            )
+          ? AppProgress.small()
           : Text(
-              'LocaleKeys.openCv.tr()',
+              context.keys.experience.cv.button,
               textAlign: TextAlign.center,
             ),
     );

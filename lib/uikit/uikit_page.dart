@@ -9,6 +9,8 @@ import 'package:me/uikit/components/project_cards_grid.dart';
 import 'package:me/uikit/custom_paint/background_wave_paint.dart';
 import 'package:me/uikit/elements/app_back_button.dart';
 import 'package:me/uikit/elements/app_chip.dart';
+import 'package:me/uikit/elements/app_link_button.dart';
+import 'package:me/uikit/elements/app_progress.dart';
 import 'package:me/uikit/elements/app_title.dart';
 import 'package:me/uikit/elements/app_transform_y_animation.dart';
 import 'package:me/uikit/elements/app_video_player.dart';
@@ -77,6 +79,23 @@ class UikitPage extends StatelessWidget {
       order: ExperienceSectionOrder.last,
     );
     final widgets = [
+      Row(
+        children: [
+          AppProgress.large(),
+          AppProgress.medium(),
+          AppProgress.small(),
+        ],
+      ),
+      Row(
+        children: [
+          AppLinkButton.linkedin(url: 'url', size: AppLinkSize.small),
+          AppLinkButton.linkedin(url: 'url', size: AppLinkSize.large),
+          AppLinkButton.github(url: 'url', size: AppLinkSize.small),
+          AppLinkButton.github(url: 'url', size: AppLinkSize.large),
+          AppLinkButton.telegram(url: 'url', size: AppLinkSize.small),
+          AppLinkButton.telegram(url: 'url', size: AppLinkSize.large),
+        ],
+      ),
       Column(
         children: [
           ExperienceSection(vm: data1),
@@ -154,6 +173,7 @@ class UikitPage extends StatelessWidget {
         ),
       ),
       ProjectCardsGrid(
+        expectedCount: 1,
         vms: [
           PetProjectCardVM(data: _kData, imageUrl: ''),
         ],

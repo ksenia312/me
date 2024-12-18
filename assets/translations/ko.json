@@ -3,7 +3,8 @@
     "home": "홈",
     "summary": "요약",
     "projects": "프로젝트",
-    "experience": "경험"
+    "experience": "경험",
+    "language": "언어"
   },
   "skill": {
     "teamPlayer": "팀 플레이어",
@@ -58,9 +59,12 @@
   "petProjects": {
     "title": "개인 프로젝트",
     "subtitle": "독특하고 창의적이며 내 것!",
+    "markdown": {
+      "imageButton": "GitHub에서 이미지 보기"
+    },
     "error": {
-      "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "title": "오팹!",
+      "subtitle": "ID=$id의 프로젝트를 찾을 수 없습니다. ID를 확인하고 다시 시도하십시오."
     }
   },
   "year(ordinal)": {
@@ -83,6 +87,10 @@
   "experience": {
     "title": "경험",
     "subtitle": "지루한 부분",
+    "cv": {
+      "caption": "더 많은 정보를 읽어보려면 CV에서 읽으십시오",
+      "button": "열린 CV"
+    },
     "greenflux": {
       "title": "모바일 애플리케이션 개발자",
       "organization": "Greenflux Assets B.V.",

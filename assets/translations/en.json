@@ -3,7 +3,8 @@
     "home": "Home",
     "summary": "Summary",
     "projects": "Projects",
-    "experience": "Experience"
+    "experience": "Experience",
+    "language": "Language"
   },
   "skill": {
     "teamPlayer": "Team player",
@@ -58,6 +59,9 @@
   "petProjects": {
     "title": "Pet projects",
     "subtitle": "Unique, creative, mine!",
+    "markdown": {
+      "imageButton": "View image on GitHub"
+    },
     "error": {
       "title": "Oops!",
       "subtitle": "Project with ID=$id not found. Please check the ID and try again."
@@ -83,6 +87,10 @@
   "experience": {
     "title": "Experience",
     "subtitle": "The boring part",
+    "cv": {
+      "caption": "Read more about my experience in the CV",
+      "button": "Open CV"
+    },
     "greenflux": {
       "title": "Mobile Application Developer",
       "organization": "Greenflux Assets B.V.",

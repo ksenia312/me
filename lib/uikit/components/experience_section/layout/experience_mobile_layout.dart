@@ -56,6 +56,7 @@ class _ExperienceMobileLayout extends StatelessWidget {
                 location: parameters.location,
                 organization: parameters.organization,
                 title: parameters.title,
+                isMinimal: false,
               ),
               SizedBox(height: 20),
               _DescriptionWidget(

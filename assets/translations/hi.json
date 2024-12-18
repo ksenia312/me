@@ -3,7 +3,8 @@
     "home": "होम",
     "summary": "सारांश",
     "projects": "प्रोजेक्ट्स",
-    "experience": "अनुभव"
+    "experience": "अनुभव",
+    "language": "भाषा"
   },
   "skill": {
     "teamPlayer": "टीम खिलाड़ी",
@@ -58,9 +59,12 @@
   "petProjects": {
     "title": "पेट प्रोजेक्ट्स",
     "subtitle": "विशिष्ट, रचनात्मक, मेरे!",
+    "markdown": {
+      "imageButton": "GitHub पर छवि देखें"
+    },
     "error": {
-      "title": "Oops!",
-      "subtitle": "Project with ID=$id not found. Please check the ID and try again."
+      "title": "ओपस!",
+      "subtitle": "ID=$id के लिए परियोजना नहीं मिला. कृपया ID को जांचें और पुन: प्रयास करें."
     }
   },
   "year(ordinal)": {
@@ -83,6 +87,10 @@
   "experience": {
     "title": "अनुभव",
     "subtitle": "उबाऊ हिस्सा",
+    "cv": {
+      "caption": "मेरी अभियान के बारे में और पढ़ने के लिए और अधिक जानें",
+      "button": "खुला CV"
+    },
     "greenflux": {
       "title": "मोबाइल एप्लिकेशन डेवलपर",
       "organization": "Greenflux Assets B.V.",

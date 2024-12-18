@@ -67,6 +67,7 @@ class _LocaleKeysTabPt extends LocaleKeysTabEn {
 	@override String get summary => 'Resumo';
 	@override String get projects => 'Projetos';
 	@override String get experience => 'Experiência';
+	@override String get language => 'Idioma';
 }
 
 // Path: skill
@@ -120,6 +121,7 @@ class _LocaleKeysPetProjectsPt extends LocaleKeysPetProjectsEn {
 	// Translations
 	@override String get title => 'Pet projetos';
 	@override String get subtitle => 'Únicos, criativos, meus!';
+	@override late final _LocaleKeysPetProjectsMarkdownPt markdown = _LocaleKeysPetProjectsMarkdownPt._(_root);
 	@override late final _LocaleKeysPetProjectsErrorPt error = _LocaleKeysPetProjectsErrorPt._(_root);
 }
 
@@ -144,6 +146,7 @@ class _LocaleKeysExperiencePt extends LocaleKeysExperienceEn {
 	// Translations
 	@override String get title => 'Experiência';
 	@override String get subtitle => 'A parte chata';
+	@override late final _LocaleKeysExperienceCvPt cv = _LocaleKeysExperienceCvPt._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxPt greenflux = _LocaleKeysExperienceGreenfluxPt._(_root);
 	@override late final _LocaleKeysExperienceFriflexPt friflex = _LocaleKeysExperienceFriflexPt._(_root);
 	@override late final _LocaleKeysExperienceAgroStabPt agroStab = _LocaleKeysExperienceAgroStabPt._(_root);
@@ -226,6 +229,16 @@ class _LocaleKeysSummaryEnglishPt extends LocaleKeysSummaryEnglishEn {
 	@override String get content => 'I very, very, very speak English';
 }
 
+// Path: petProjects.markdown
+class _LocaleKeysPetProjectsMarkdownPt extends LocaleKeysPetProjectsMarkdownEn {
+	_LocaleKeysPetProjectsMarkdownPt._(LocaleKeysPt root) : this._root = root, super.internal(root);
+
+	final LocaleKeysPt _root; // ignore: unused_field
+
+	// Translations
+	@override String get imageButton => 'Ver imagem no GitHub';
+}
+
 // Path: petProjects.error
 class _LocaleKeysPetProjectsErrorPt extends LocaleKeysPetProjectsErrorEn {
 	_LocaleKeysPetProjectsErrorPt._(LocaleKeysPt root) : this._root = root, super.internal(root);
@@ -233,8 +246,19 @@ class _LocaleKeysPetProjectsErrorPt extends LocaleKeysPetProjectsErrorEn {
 	final LocaleKeysPt _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Oops!';
-	@override String subtitle({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+	@override String get title => 'Opa!';
+	@override String subtitle({required Object id}) => 'Projeto com ID=${id} não encontrado. Por favor, verifique o ID e tente novamente.';
+}
+
+// Path: experience.cv
+class _LocaleKeysExperienceCvPt extends LocaleKeysExperienceCvEn {
+	_LocaleKeysExperienceCvPt._(LocaleKeysPt root) : this._root = root, super.internal(root);
+
+	final LocaleKeysPt _root; // ignore: unused_field
+
+	// Translations
+	@override String get caption => 'Leia mais sobre minha experiência no CV';
+	@override String get button => 'CV aberto';
 }
 
 // Path: experience.greenflux
@@ -407,6 +431,7 @@ extension on LocaleKeysPt {
 			case 'tab.summary': return 'Resumo';
 			case 'tab.projects': return 'Projetos';
 			case 'tab.experience': return 'Experiência';
+			case 'tab.language': return 'Idioma';
 			case 'skill.teamPlayer': return 'Jogadora de equipe';
 			case 'skill.communicative': return 'Comunicativa';
 			case 'skill.problemSolver': return 'Resolutora de problemas';
@@ -441,8 +466,9 @@ extension on LocaleKeysPt {
 			case 'summary.subtitle': return 'Muito curto e doce';
 			case 'petProjects.title': return 'Pet projetos';
 			case 'petProjects.subtitle': return 'Únicos, criativos, meus!';
-			case 'petProjects.error.title': return 'Oops!';
-			case 'petProjects.error.subtitle': return ({required Object id}) => 'Project with ID=${id} not found. Please check the ID and try again.';
+			case 'petProjects.markdown.imageButton': return 'Ver imagem no GitHub';
+			case 'petProjects.error.title': return 'Opa!';
+			case 'petProjects.error.subtitle': return ({required Object id}) => 'Projeto com ID=${id} não encontrado. Por favor, verifique o ID e tente novamente.';
 			case 'year': return ({required num n}) => (_root.$meta.ordinalResolver ?? PluralResolvers.ordinal('pt'))(n,
 				zero: '${n} anos',
 				one: '${n} ano',
@@ -460,6 +486,8 @@ extension on LocaleKeysPt {
 			case 'mainImageCaption': return 'A imagem foi criada usando processamento gráfico';
 			case 'experience.title': return 'Experiência';
 			case 'experience.subtitle': return 'A parte chata';
+			case 'experience.cv.caption': return 'Leia mais sobre minha experiência no CV';
+			case 'experience.cv.button': return 'CV aberto';
 			case 'experience.greenflux.title': return 'Desenvolvedora de Aplicativos Móveis';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'Amsterdã, Países Baixos (Híbrido)';
