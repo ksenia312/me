@@ -14,12 +14,14 @@ class AppFooter extends StatelessWidget {
     this.onSummaryPressed,
     this.onExperiencePressed,
     this.onProjectsPressed,
+    this.backgroundColor,
   });
 
   final VoidCallback? onWelcomePressed;
   final VoidCallback? onSummaryPressed;
   final VoidCallback? onExperiencePressed;
   final VoidCallback? onProjectsPressed;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class AppFooter extends StatelessWidget {
       Text('nikitina3619@gmail.com', style: context.textTheme.bodySmall),
     ];
     return Container(
-      color: context.customColorScheme.bottomBarBackgroundColor,
+      color: backgroundColor ?? context.customColorScheme.bottomBarBackgroundColor,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

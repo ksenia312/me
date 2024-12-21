@@ -1,7 +1,10 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/generated/assets.gen.dart';
+import 'package:me/uikit/components/language_button.dart';
 import 'package:me/uikit/elements/app_back_button.dart';
+import 'package:me/uikit/elements/app_footer.dart';
 import 'package:me/uikit/elements/app_mobile_menu.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
@@ -215,6 +218,8 @@ class _AppActionsState extends State<AppActions> with AppRouterObserver {
 
   @override
   Widget build(BuildContext context) {
+    final items = allTabs.whereNot((e) => e is LanguageButton).toList();
+    final bottomItems = allTabs.whereType<LanguageButton>().toList();
     return Responsive.get(
       context,
       def: () => SizedBox.shrink(),
@@ -224,7 +229,11 @@ class _AppActionsState extends State<AppActions> with AppRouterObserver {
           if (isOpen) {
             context.pop();
           } else {
-            AppMobileMenu.go(context, items: allTabs);
+            AppMobileMenu.go(
+              context,
+              items: items,
+              bottomItems: bottomItems,
+            );
           }
           setState(() {
             isOpen = !isOpen;

@@ -1,14 +1,15 @@
 {
-  "name": "Xenikii",
-  "short_name": "Xenikii",
-  "version": "2.0.42.52",
+  "name": "Kseniia | Flutter Developer",
+  "short_name": "Kseniia",
+  "version": "2.0.45.55",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#fffbff",
-  "theme_color": "#fffbff",
-  "description": "Kseniia Flutter developer. Contacts and information",
+  "background_color": "#151822",
+  "theme_color": "#151822",
+  "description": "Experience the ultimate pleasure of browsing Kseniia's Flutter Web site",
   "orientation": "portrait-primary",
-    "prefer_related_applications": false,
+  "prefer_related_applications": false,
+  "display": "standalone",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -20,8 +21,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }

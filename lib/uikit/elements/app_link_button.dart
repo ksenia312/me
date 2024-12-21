@@ -70,10 +70,30 @@ class AppLinkButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final smallIconSize = Responsive.get(context, def: () => 20.0, s: () => 16.0);
-    final smallSize = Responsive.get(context, def: () => 32.0, s: () => 24.0);
-    final largeIconSize = Responsive.get(context, def: () => 24.0, s: () => 20.0);
-    final largeSize = Responsive.get(context, def: () => 40.0, s: () => 32.0);
+    const smallIconSizeFixed = 24.0;
+    const smallSizeFixed = 44.0;
+
+    final smallIconSize = Responsive.get(
+      context,
+      def: () => 28.0,
+      s: () => smallIconSizeFixed,
+    );
+    final smallSize = Responsive.get(
+      context,
+      def: () => 44.0,
+      s: () => smallSizeFixed,
+    );
+    final largeIconSize = Responsive.get(
+      context,
+      def: () => 24.0,
+      s: () => smallIconSizeFixed,
+    );
+    final largeSize = Responsive.get(
+      context,
+      def: () => 48.0,
+      s: () => smallSizeFixed,
+    );
+
     return Container(
       decoration: BoxDecoration(color: context.colorScheme.onSurface, shape: BoxShape.circle),
       height: size == AppLinkSize.small ? smallSize : largeSize,
