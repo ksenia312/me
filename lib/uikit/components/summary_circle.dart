@@ -34,12 +34,12 @@ class SummaryCircle extends StatelessWidget {
     return HoveringWidget(
       builder: (context, isHover) {
         final backWidget = _Decoration(
-          hasBorders: isHover,
+          isHighlight: isHover,
           backgroundColor: context.customColorScheme.summaryBackgroundColor,
           child: Center(child: activeContent),
         );
         final faceWidget = _Decoration(
-          hasBorders: isHover,
+          isHighlight: isHover,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -79,17 +79,18 @@ class SummaryCircle extends StatelessWidget {
 
 class _Decoration extends StatelessWidget {
   const _Decoration({
-    required this.hasBorders,
+    required this.isHighlight,
     required this.child,
     this.backgroundColor,
   });
 
-  final bool hasBorders;
+  final bool isHighlight;
   final Widget child;
   final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
+    final hasBorders = Responsive.get(context, def: () => true, s: () => false);
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: AppResponsiveSizes.x3Large(context),
@@ -97,11 +98,13 @@ class _Decoration extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: backgroundColor ?? context.colorScheme.surface,
-        border: Border.all(
-          color: hasBorders ? context.colorScheme.primary : context.customColorScheme.borderColor,
-          width: hasBorders ? 4 : 2,
-          strokeAlign: BorderSide.strokeAlignOutside,
-        ),
+        border: hasBorders
+            ? Border.all(
+                color: isHighlight ? context.colorScheme.primary : context.customColorScheme.borderColor,
+                width: isHighlight ? 4 : 2,
+                strokeAlign: BorderSide.strokeAlignOutside,
+              )
+            : null,
         borderRadius: Responsive.get(
           context,
           def: () => null,
@@ -113,11 +116,18 @@ class _Decoration extends StatelessWidget {
           s: () => BoxShape.rectangle,
         ),
         boxShadow: [
-          BoxShadow(
-            color: context.colorScheme.onSurface.withOpacity(0.7),
-            blurRadius: AppResponsiveSizes.shadowBlurRadius(context),
-            spreadRadius: hasBorders ? 2.0 : 0.0,
-          ),
+          if (hasBorders)
+            BoxShadow(
+              color: context.colorScheme.onSurface.withOpacity(0.7),
+              blurRadius: AppResponsiveSizes.shadowBlurRadius(context),
+              spreadRadius: isHighlight ? 2.0 : 0.0,
+            )
+          else
+            BoxShadow(
+              color: context.customColorScheme.gradientDarkColor,
+              blurRadius: AppResponsiveSizes.shadowBlurRadius(context),
+              offset: Offset(0, 6),
+            ),
         ],
       ),
       child: child,

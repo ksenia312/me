@@ -28,7 +28,7 @@ class BackgroundWavePaint extends StatelessWidget {
           waveHeight: waveHeight,
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: waveHeight),
+          padding: EdgeInsets.only(top: waveHeight / 2, bottom: waveHeight),
           child: child,
         ),
       ),
@@ -74,12 +74,12 @@ class _BackgroundWavePainter extends CustomPainter {
 
   Path createUpperWave(Size size) {
     final pathUpper = Path();
-    pathUpper.moveTo(0, clippedWaveHeight);
+    pathUpper.moveTo(0, 0);
     drawWave(
       size: size,
       path: pathUpper,
       height: clippedWaveHeight,
-      verticalBaseline: 0,
+      verticalBaseline: -clippedWaveHeight,
     );
     pathUpper.lineTo(size.width, waveHeight);
     pathUpper.lineTo(0, waveHeight);

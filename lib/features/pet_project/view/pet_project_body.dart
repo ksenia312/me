@@ -33,7 +33,14 @@ class _PetProjectBodyState extends State<_PetProjectBody> {
             automaticallyImplyLeading: false,
             leadingWidth: double.infinity,
             toolbarHeight: AppResponsiveSizes.toolbarHeight(context),
-            leading: CustomAppBar(leftTabs: [AppBackButton()], rightTabs: [LanguageButton()]),
+            leading: CustomAppBar(
+              leftTabs: [AppBackButton()],
+              rightTabs: [
+                LanguageButton(
+                  onLanguageChanged: (_) => context.pop(),
+                ),
+              ],
+            ),
             flexibleSpace: PetProjectAppBar(notifier: widget.notifier),
           ),
           Builder(

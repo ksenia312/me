@@ -20,13 +20,15 @@ class PetProjectListNotifier extends ChangeNotifier {
     if (vms.isNotEmpty) return;
 
     try {
+      final result = <PetProjectCardVM>[];
       final dataList = await PetProjectRepository.instance.fetchList();
       count = dataList.length;
 
       for (final data in dataList) {
-        vms.add(PetProjectCardVM(data: data, imageUrl: await getImageUrl(data)));
-        notifyListeners();
+        result.add(PetProjectCardVM(data: data, imageUrl: await getImageUrl(data)));
       }
+      vms.addAll(result);
+      notifyListeners();
     } catch (_) {}
   }
 

@@ -3,8 +3,8 @@ import 'package:me/uikit/elements/app_footer.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/landing/notifier/landing_notifier.dart';
 import 'package:me/uikit/components/cat_animation.dart';
-import 'package:me/uikit/components/translated_widget.dart';
 import 'package:me/uikit/components/up_button.dart';
+import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:provider/provider.dart';
 
 import 'widgets/experience_view.dart';
@@ -82,16 +82,13 @@ class _LandingPageState extends State<_LandingPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   WelcomeView(key: notifier.welcomeKey),
-                  TranslatedWidget(
+                  Container(
                     key: notifier.summaryKey,
                     child: SummaryView(globalKey: key, artboard: artboard),
                   ),
-                  TranslatedWidget(
-                    child: ExperienceView(key: notifier.experienceKey),
-                  ),
-                  TranslatedWidget(
-                    child: ProjectsView(key: notifier.projectsKey),
-                  ),
+                  ExperienceView(key: notifier.experienceKey),
+                  ProjectsView(key: notifier.projectsKey),
+                  SizedBox(height: AppResponsiveSizes.x8large(context)),
                   AppFooter(
                     onWelcomePressed: () => _scrollTo(notifier.welcomeKey),
                     onSummaryPressed: () => _scrollTo(notifier.summaryKey),

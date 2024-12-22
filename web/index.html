@@ -1,17 +1,4 @@
 <!DOCTYPE html><html><head>
-    <!--
-      If you are serving your web app in a path other than the root, change the
-      href value below to reflect the base path you are serving from.
-
-      The path provided below has to start and end with a slash "/" in order for
-      it to work correctly.
-
-      For more details:
-      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-      This is a placeholder for base href that will be replaced by the value of
-      the `--base-href` argument provided to `flutter build`.
-    -->
     <base href="$FLUTTER_BASE_HREF">
 
     <meta charset="UTF-8">
@@ -30,17 +17,15 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <meta name="description" content="Experience the ultimate pleasure of browsing Kseniia's Flutter Web site">
 
-
     <title>Kseniia | Flutter Developer</title>
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    <link rel="manifest" href="icons/site.webmanifest">
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "{{flutter_service_worker_version}}";
+    const serviceWorkerVersion = {{flutter_service_worker_version}};
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter_bootstrap.js" async=""></script>
@@ -125,28 +110,22 @@
       <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
       <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
   </picture>
-  
-  
 
-
-
-
-  
 <script>
     window.addEventListener('load', function (ev) {
+      const version = {{flutter_service_worker_version}};
       // Download main.dart.js
       _flutter.loader.load({
-        entrypointUrl: "main.dart.js?v={{flutter_service_worker_version}}",
+        entrypointUrl: `main.dart.js?v=${version}`,
         serviceWorker: {
-          serviceWorkerVersion: "{{flutter_service_worker_version}}",
+          serviceWorkerVersion: {{flutter_service_worker_version}},
         }
       }).then(function (engineInitializer) {
         return engineInitializer.initializeEngine();
       }).then(function (appRunner) {
         return appRunner.runApp();
-      });
+      }).catch(function () {});
     });
   </script>
-
 
 </body></html>

@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:me/generated/assets.gen.dart';
 import 'package:me/uikit/components/language_button.dart';
 import 'package:me/uikit/elements/app_back_button.dart';
-import 'package:me/uikit/elements/app_footer.dart';
 import 'package:me/uikit/elements/app_mobile_menu.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';

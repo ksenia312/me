@@ -80,7 +80,7 @@ class _SummaryViewState extends State<SummaryView> {
         title: googlePlay.title,
         subtitle: googlePlay.subtitle,
         activeContent: ActiveSummaryLink(
-          title:googlePlay.content,
+          title: googlePlay.content,
           buttonText: googlePlay.contentButton,
           link: _summaryNotifier.appLink,
         ),
@@ -98,7 +98,7 @@ class _SummaryViewState extends State<SummaryView> {
       child: Padding(
         padding: EdgeInsets.fromLTRB(
           AppResponsiveSizes.landingMargin(context),
-          AppResponsiveSizes.x2Large(context) + AppResponsiveSizes.toolbarHeight(context),
+          0,
           AppResponsiveSizes.landingMargin(context),
           AppResponsiveSizes.large(context),
         ),

@@ -75,12 +75,12 @@ class AppLinkButton extends StatelessWidget {
 
     final smallIconSize = Responsive.get(
       context,
-      def: () => 28.0,
+      def: () => 20.0,
       s: () => smallIconSizeFixed,
     );
     final smallSize = Responsive.get(
       context,
-      def: () => 44.0,
+      def: () => 32.0,
       s: () => smallSizeFixed,
     );
     final largeIconSize = Responsive.get(

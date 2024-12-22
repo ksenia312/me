@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
-import 'package:me/uikit/elements/app_footer.dart';
 import 'package:me/uikit/elements/app_link_button.dart';
 import 'package:me/uikit/extensions/pet_project_extension.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
@@ -15,7 +14,7 @@ class PetProjectTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final spacer = SizedBox.square(dimension: 12.0);
+    final spacer = SizedBox.square(dimension: Responsive.get(context, def: () => 16.0, s: () => 12.0));
     final title = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
