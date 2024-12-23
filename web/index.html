@@ -27,8 +27,6 @@
     // The value below is injected by flutter build, do not touch.
     const serviceWorkerVersion = {{flutter_service_worker_version}};
     </script>
-    <!-- This script adds the flutter initialization JS code -->
-    <script src="flutter_bootstrap.js" async=""></script>
     <style>
         *, body, html {
         background-color: #151822;
@@ -111,21 +109,5 @@
       <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
   </picture>
 
-<script>
-    window.addEventListener('load', function (ev) {
-      const version = {{flutter_service_worker_version}};
-      // Download main.dart.js
-      _flutter.loader.load({
-        entrypointUrl: `main.dart.js?v=${version}`,
-        serviceWorker: {
-          serviceWorkerVersion: {{flutter_service_worker_version}},
-        }
-      }).then(function (engineInitializer) {
-        return engineInitializer.initializeEngine();
-      }).then(function (appRunner) {
-        return appRunner.runApp();
-      }).catch(function () {});
-    });
-  </script>
-
+<script src="flutter_bootstrap.js?v=2.0.62" async></script>
 </body></html>

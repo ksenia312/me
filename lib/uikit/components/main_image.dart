@@ -27,8 +27,7 @@ class _MainImageState extends State<MainImage> with AutomaticKeepAliveClientMixi
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final delay = context.mounted ? Responsive.get(context, def: () => 500, s: () => 1000) : 500;
-      Future.delayed(Duration(milliseconds: delay), () {
+      Future.delayed(Duration(milliseconds: 500), () {
         _isLoaded = true;
         if (mounted) {
           setState(() {});
@@ -47,7 +46,7 @@ class _MainImageState extends State<MainImage> with AutomaticKeepAliveClientMixi
       def: () => 750.0,
       s: () => MediaQuery.sizeOf(context).width,
     );
-    final duration =  Duration(milliseconds: Responsive.get(context, def: () => 300, s: () => 500));
+    final duration =  Duration(milliseconds: 300);
     final curve = Curves.easeInOut;
     return SizedBox(
       width: width,

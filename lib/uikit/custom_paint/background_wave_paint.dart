@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
 class BackgroundWavePaint extends StatelessWidget {
@@ -28,7 +29,10 @@ class BackgroundWavePaint extends StatelessWidget {
           waveHeight: waveHeight,
         ),
         child: Padding(
-          padding: EdgeInsets.only(top: waveHeight / 2, bottom: waveHeight),
+          padding: EdgeInsets.only(
+            top: AppResponsiveSizes.x2Large(context) + AppResponsiveSizes.toolbarHeight(context),
+            bottom: waveHeight,
+          ),
           child: child,
         ),
       ),
