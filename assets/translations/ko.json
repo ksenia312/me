@@ -14,7 +14,7 @@
     "nonConflictual": "갈등 없음"
   },
   "welcome": {
-    "title": "플러터 개발자",
+    "title": "모바일 개발자",
     "subtitle": "Kseniia Nikitina"
   },
   "summary": {
@@ -82,7 +82,7 @@
     "subtitle": "이 페이지는 존재하지 않습니다",
     "button": "홈페이지로 가기"
   },
-  "pageTitle": "Kseniia | 플러터 개발자",
+  "pageTitle": "Kseniia | 모바일 개발자",
   "mainImageCaption": "이미지는 그래픽 처리를 사용하여 생성되었습니다",
   "experience": {
     "title": "경험",

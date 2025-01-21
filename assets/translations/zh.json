@@ -14,7 +14,7 @@
     "nonConflictual": "无冲突"
   },
   "welcome": {
-    "title": "Flutter 开发者",
+    "title": "移动开发者",
     "subtitle": "Kseniia Nikitina"
   },
   "summary": {
@@ -79,7 +79,7 @@
     "subtitle": "此页面不存在",
     "button": "返回首页"
   },
-  "pageTitle": "Kseniia | Flutter开发者",
+  "pageTitle": "Kseniia | 移动开发者",
   "mainImageCaption": "图像是通过图形处理创建的",
   "experience": {
     "title": "经验",
