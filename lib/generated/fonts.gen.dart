@@ -10,6 +10,9 @@
 class FontFamily {
   FontFamily._();
 
-  /// Font family: Overpass
-  static const String overpass = 'Overpass';
+  /// Font family: Inter
+  static const String inter = 'Inter';
+
+  /// Font family: RobotoMono
+  static const String robotoMono = 'RobotoMono';
 }

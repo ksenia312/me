@@ -7,57 +7,134 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart' as _svg;
+import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
-  /// File path: assets/fonts/Overpass-Bold.ttf
-  String get overpassBold => 'assets/fonts/Overpass-Bold.ttf';
+  /// File path: assets/fonts/Inter-Black.otf
+  String get interBlack => 'assets/fonts/Inter-Black.otf';
 
-  /// File path: assets/fonts/Overpass-Regular.ttf
-  String get overpassRegular => 'assets/fonts/Overpass-Regular.ttf';
+  /// File path: assets/fonts/Inter-Bold.otf
+  String get interBold => 'assets/fonts/Inter-Bold.otf';
+
+  /// File path: assets/fonts/Inter-ExtraBold.otf
+  String get interExtraBold => 'assets/fonts/Inter-ExtraBold.otf';
+
+  /// File path: assets/fonts/Inter-Light.otf
+  String get interLight => 'assets/fonts/Inter-Light.otf';
+
+  /// File path: assets/fonts/Inter-Medium.otf
+  String get interMedium => 'assets/fonts/Inter-Medium.otf';
+
+  /// File path: assets/fonts/Inter-Regular.otf
+  String get interRegular => 'assets/fonts/Inter-Regular.otf';
+
+  /// File path: assets/fonts/Inter-SemiBold.otf
+  String get interSemiBold => 'assets/fonts/Inter-SemiBold.otf';
+
+  /// File path: assets/fonts/RobotoMono-Regular.ttf
+  String get robotoMonoRegular => 'assets/fonts/RobotoMono-Regular.ttf';
 
   /// List of all assets
-  List<String> get values => [overpassBold, overpassRegular];
+  List<String> get values =>
+      [interBlack, interBold, interExtraBold, interLight, interMedium, interRegular, interSemiBold, robotoMonoRegular];
 }
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/ic_email.svg
-  SvgGenImage get icEmail => const SvgGenImage('assets/icons/ic_email.svg');
+  /// File path: assets/icons/Ic_location.svg
+  SvgGenImage get icLocation => const SvgGenImage('assets/icons/Ic_location.svg');
+
+  /// File path: assets/icons/ic_back_arrow.svg
+  SvgGenImage get icBackArrow => const SvgGenImage('assets/icons/ic_back_arrow.svg');
+
+  /// File path: assets/icons/ic_close.riv
+  String get icCloseRiv => 'assets/icons/ic_close.riv';
+
+  /// File path: assets/icons/ic_close.svg
+  SvgGenImage get icCloseSvg => const SvgGenImage('assets/icons/ic_close.svg');
+
+  /// File path: assets/icons/ic_error.svg
+  SvgGenImage get icError => const SvgGenImage('assets/icons/ic_error.svg');
+
+  /// File path: assets/icons/ic_external_link.svg
+  SvgGenImage get icExternalLink => const SvgGenImage('assets/icons/ic_external_link.svg');
 
   /// File path: assets/icons/ic_github.svg
   SvgGenImage get icGithub => const SvgGenImage('assets/icons/ic_github.svg');
 
-  /// File path: assets/icons/ic_human_brain.svg
-  SvgGenImage get icHumanBrain =>
-      const SvgGenImage('assets/icons/ic_human_brain.svg');
+  /// File path: assets/icons/ic_google_play.svg
+  SvgGenImage get icGooglePlay => const SvgGenImage('assets/icons/ic_google_play.svg');
 
   /// File path: assets/icons/ic_linked_in.svg
-  SvgGenImage get icLinkedIn =>
-      const SvgGenImage('assets/icons/ic_linked_in.svg');
+  SvgGenImage get icLinkedIn => const SvgGenImage('assets/icons/ic_linked_in.svg');
+
+  /// File path: assets/icons/ic_menu.svg
+  SvgGenImage get icMenu => const SvgGenImage('assets/icons/ic_menu.svg');
+
+  /// File path: assets/icons/ic_organization.svg
+  SvgGenImage get icOrganization => const SvgGenImage('assets/icons/ic_organization.svg');
+
+  /// File path: assets/icons/ic_pause.svg
+  SvgGenImage get icPause => const SvgGenImage('assets/icons/ic_pause.svg');
+
+  /// File path: assets/icons/ic_play.svg
+  SvgGenImage get icPlay => const SvgGenImage('assets/icons/ic_play.svg');
 
   /// File path: assets/icons/ic_telegram.svg
-  SvgGenImage get icTelegram =>
-      const SvgGenImage('assets/icons/ic_telegram.svg');
+  SvgGenImage get icTelegram => const SvgGenImage('assets/icons/ic_telegram.svg');
+
+  /// File path: assets/icons/ic_up_arrow.svg
+  SvgGenImage get icUpArrow => const SvgGenImage('assets/icons/ic_up_arrow.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [icEmail, icGithub, icHumanBrain, icLinkedIn, icTelegram];
+  List<dynamic> get values => [
+        icLocation,
+        icBackArrow,
+        icCloseRiv,
+        icCloseSvg,
+        icError,
+        icExternalLink,
+        icGithub,
+        icGooglePlay,
+        icLinkedIn,
+        icMenu,
+        icOrganization,
+        icPause,
+        icPlay,
+        icTelegram,
+        icUpArrow
+      ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/agro-stab-image.svg
+  SvgGenImage get agroStabImage => const SvgGenImage('assets/images/agro-stab-image.svg');
+
+  /// File path: assets/images/cat.riv
+  String get cat => 'assets/images/cat.riv';
+
+  /// File path: assets/images/friflex-image.svg
+  SvgGenImage get friflexImage => const SvgGenImage('assets/images/friflex-image.svg');
+
+  /// File path: assets/images/greenflux-image.svg
+  SvgGenImage get greenfluxImage => const SvgGenImage('assets/images/greenflux-image.svg');
+
   /// File path: assets/images/me.png
   AssetGenImage get me => const AssetGenImage('assets/images/me.png');
 
+  /// File path: assets/images/naming.png
+  AssetGenImage get naming => const AssetGenImage('assets/images/naming.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [me];
+  List<dynamic> get values => [agroStabImage, cat, friflexImage, greenfluxImage, me, naming];
 }
 
 class $AssetsTranslationsGen {
@@ -103,8 +180,7 @@ class $AssetsTranslationsGen {
   String get zh => 'assets/translations/zh.json';
 
   /// List of all assets
-  List<String> get values =>
-      [de, en, es, fr, hi, it, ja, ko, nl, pt, ru, tr, zh];
+  List<String> get values => [de, en, es, fr, hi, it, ja, ko, nl, pt, ru, tr, zh];
 }
 
 class Assets {
@@ -117,9 +193,16 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  });
 
   final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,
@@ -139,7 +222,7 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = false,
+    bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
     FilterQuality filterQuality = FilterQuality.low,
@@ -191,11 +274,24 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(this._assetName);
+  const SvgGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  }) : _isVecFormat = false;
+
+  const SvgGenImage.vec(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  }) : _isVecFormat = true;
 
   final String _assetName;
+  final Size? size;
+  final Set<String> flavors;
+  final bool _isVecFormat;
 
-  SvgPicture svg({
+  _svg.SvgPicture svg({
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
@@ -208,19 +304,32 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme theme = const SvgTheme(),
+    _svg.SvgTheme? theme,
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    return SvgPicture.asset(
-      _assetName,
+    final _svg.BytesLoader loader;
+    if (_isVecFormat) {
+      loader = _vg.AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = _svg.SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+      );
+    }
+    return _svg.SvgPicture(
+      loader,
       key: key,
       matchTextDirection: matchTextDirection,
-      bundle: bundle,
-      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -229,10 +338,7 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      theme: theme,
-      colorFilter: colorFilter,
-      color: color,
-      colorBlendMode: colorBlendMode,
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

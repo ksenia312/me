@@ -1,9 +1,187 @@
 {
-  "greeting": "Meu nome é Kseniia",
-  "greeting2": "Sou desenvolvedora Flutter",
-  "aboutMe": "Vamos nos conhecer! Meu nome é Kseniia, programo desde os 15 anos de idade. Adoro o Flutter e o utilizo tanto no trabalho quanto como hobby.",
-  "aboutMe2": "Tenho experiência no desenvolvimento de aplicativos móveis e sites com o Flutter Web. Além disso, estou profundamente familiarizada com o processo de criação de um backend em Dart usando PostgreSQL e TypeORM Conduit. E, finalmente, sou boa em criar uma arquitetura modular usando pacotes para Dart e Flutter. Também sou simplesmente boa.",
-  "aboutMeTitle": "Sobre mim",
-  "cvTitle": "Leia mais sobre mim no meu currículo!",
-  "openCv": "Abrir currículo"
+  "tab": {
+    "home": "Início",
+    "summary": "Resumo",
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "language": "Idioma"
+  },
+  "skill": {
+    "teamPlayer": "Jogadora de equipe",
+    "communicative": "Comunicativa",
+    "problemSolver": "Resolutora de problemas",
+    "leader": "Líder",
+    "nonConflictual": "Sem conflito"
+  },
+  "welcome": {
+    "title": "Desenvolvedora Mobile",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "experiência total",
+      "content": "Além de Dart, tenho experiência com Kotlin, Swift, JavaScript, Python, C#, R e mais"
+    },
+    "flutterExperience": {
+      "subtitle": "Experiência em Flutter",
+      "content1": "Eu desenvolvo",
+      "content2": "aplicações web e móveis",
+      "content3": "bem como",
+      "content4": "estruturas de backend",
+      "content5": "Especializo-me em sistemas complexos e pacotes personalizados para Flutter"
+    },
+    "highEducation": {
+      "title": "Educação superior",
+      "subtitle": "em engenharia",
+      "content1": "«Programação em sistemas de informação e comunicação» na",
+      "content2": "Universidade ITMO"
+    },
+    "openSource": {
+      "title": "Open-source",
+      "subtitle": "projeto ativo",
+      "content": "Um pacote para comunicação P2P",
+      "contentButton": "Ver pacote"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "aplicativo ativo",
+      "content": "Um aplicativo de chat offline com suporte para compartilhamento de texto e arquivos",
+      "contentButton": "Abrir aplicativo"
+    },
+    "english": {
+      "title": "Inglês",
+      "subtitle": "proficiência no trabalho",
+      "content": "I very, very, very speak English"
+    },
+    "title": "Resumo",
+    "subtitle": "Muito curto e doce"
+  },
+  "petProjects": {
+    "title": "Pet projetos",
+    "subtitle": "Únicos, criativos, meus!",
+    "markdown": {
+      "imageButton": "Ver imagem no GitHub"
+    },
+    "error": {
+      "title": "Opa!",
+      "subtitle": "Projeto com ID=$id não encontrado. Por favor, verifique o ID e tente novamente."
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n anos",
+    "one": "$n ano",
+    "two": "$n anos",
+    "few": "$n anos",
+    "many": "$n anos",
+    "other": "$n anos"
+  },
+  "androidDemo": "Demo Android",
+  "iosDemo": "Demo iOS",
+  "notFound": {
+    "title": "404",
+    "subtitle": "Esta página não existe",
+    "button": "Ir para a página inicial"
+  },
+  "pageTitle": "Kseniia | Desenvolvedora Mobile",
+  "mainImageCaption": "A imagem foi criada usando processamento gráfico",
+  "experience": {
+    "title": "Experiência",
+    "subtitle": "A parte chata",
+    "cv": {
+      "caption": "Leia mais sobre minha experiência no CV",
+      "button": "CV aberto"
+    },
+    "greenflux": {
+      "title": "Desenvolvedora de Aplicativos Móveis",
+      "organization": "Greenflux Assets B.V.",
+      "location": "Amsterdã, Países Baixos (Híbrido)",
+      "duration": "Fevereiro de 2024 – Presente",
+      "subtitle": "Desenvolvimento de aplicativos para estações de recarga de veículos elétricos",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "Inglês",
+        "skill11": "REST API",
+        "skill12": "Figma",
+        "skill13": "Programação Orientada a Objetos (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Apoiei todo o ciclo de desenvolvimento: da especificação técnica à publicação",
+        "achievement2": "Mantive um sistema com mais de 10 aplicativos compartilhando a base de código",
+        "achievement3": "Configurei linters, formatação e implementei um sistema de classes comum para todos os aplicativos",
+        "achievement4": "Criei pipelines para revisar pull requests, compilar e publicar aplicativos, além de scripts para simplificar processos",
+        "achievement5": "Configurei o Git Flow e monitorei sua conformidade",
+        "achievement6": "Trabalhei de perto com Google Maps, notificações e outras funcionalidades complexas",
+        "achievement7": "Implementei completamente o Live Activities do iOS utilizando SwiftUI e estendi para diversos aplicativos",
+        "achievement8": "Cobri toda a base de código com testes"
+      }
+    },
+    "friflex": {
+      "title": "Desenvolvedora de Aplicativos Móveis",
+      "organization": "Friflex",
+      "location": "Moscou, Rússia",
+      "duration": "Agosto de 2022 – Dezembro de 2023",
+      "subtitle": "Desenvolvimento de serviços para reconhecimento de jogos de xadrez e damas",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "Bancos de Dados",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "Localização",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST API",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "Padrões de Design",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "Programação Orientada a Objetos (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Apoiei todo o ciclo de desenvolvimento: da especificação técnica à publicação",
+        "achievement2": "Criei 3 pacotes personalizados e mantive mais de 10 pacotes, além de configurar dependências",
+        "achievement3": "Integrei com sucesso serviços de terceiros (MiniO, Firebase)",
+        "achievement4": "Desenvolvi dashboards administrativos com Flutter Web",
+        "achievement5": "Desenvolvi o backend utilizando Dart",
+        "achievement6": "Criei diversos componentes de UI e animações",
+        "achievement7": "Desenvolvi um serviço de fundo para enviar dados para o armazenamento em nuvem em pedaços",
+        "achievement8": "Mantive o sistema de streaming ao vivo composto pelo aplicativo móvel, backend e parte web"
+      }
+    },
+    "agroStab": {
+      "title": "Desenvolvedora Full-stack",
+      "organization": "AgroSTAB",
+      "location": "São Petersburgo, Rússia",
+      "duration": "Fevereiro de 2022 – Julho de 2022",
+      "subtitle": "Desenvolvimento de painel administrativo para estufas inteligentes",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "Inglês",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "Apoiei todo o ciclo de desenvolvimento: da especificação técnica à publicação",
+        "achievement2": "Desenvolvi a interface do usuário utilizando React.js",
+        "achievement3": "Integrei o processamento de dados utilizando react-redux",
+        "achievement4": "Projetei a estrutura dos componentes, seu posicionamento e conexões",
+        "achievement5": "Adicionei elementos interativos para melhorar a experiência do usuário",
+        "achievement6": "Melhorei a estrutura do backend escrito em Nest.js e adicionei lógica de processamento de dados",
+        "achievement7": "Projetei a arquitetura do banco de dados PostgreSQL e implementei atualizações",
+        "achievement8": "Desenvolvi algoritmos para atualizações agendadas dos dados no banco de dados utilizando Cron"
+      }
+    }
+  }
 }

@@ -1,9 +1,187 @@
 {
-  "greeting": "私の名前はKseniiaです",
-  "greeting2": "私はFlutter開発者です",
-  "aboutMe": "お互いを知りましょう！ 私の名前はKseniiaで、15歳からプログラムをしています。私はFlutterが大好きで、仕事でも趣味でも使用しています。",
-  "aboutMe2": "私はFlutter Webを使ったモバイルアプリとウェブサイトの開発経験があります。また、Dartを使用してPostgreSQLとTypeORM Conduitを使ったバックエンドを作成するプロセスにも詳しいです。最後に、DartとFlutterのパッケージを使用したモジュラーアーキテクチャの作成にも長けています。私は単に上手です。",
-  "aboutMeTitle": "私について",
-  "cvTitle": "私の履歴書で私のことをもっと読んでください！",
-  "openCv": "履歴書を開く"
+  "tab": {
+    "home": "ホーム",
+    "summary": "概要",
+    "projects": "プロジェクト",
+    "experience": "経験",
+    "language": "言語"
+  },
+  "skill": {
+    "teamPlayer": "チームプレーヤー",
+    "communicative": "コミュニケーション能力がある",
+    "problemSolver": "問題解決者",
+    "leader": "リーダー",
+    "nonConflictual": "対立しない"
+  },
+  "welcome": {
+    "title": "モバイル開発者",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "総経験",
+      "content": "Dartに加えて、Kotlin、Swift、JavaScript、Python、C#、Rなどの経験があります"
+    },
+    "flutterExperience": {
+      "subtitle": "Flutter経験",
+      "content1": "私は開発します",
+      "content2": "ウェブおよびモバイル",
+      "content3": "アプリケーション、さらに",
+      "content4": "バックエンド",
+      "content5": "構造。私は複雑なシステムとカスタムFlutterパッケージに特化しています"
+    },
+    "highEducation": {
+      "title": "高等教育",
+      "subtitle": "エンジニアリング",
+      "content1": "「情報および通信システムにおけるプログラミング」",
+      "content2": "ITMO大学"
+    },
+    "openSource": {
+      "title": "オープンソース",
+      "subtitle": "アクティブプロジェクト",
+      "content": "P2P通信のためのパッケージ",
+      "contentButton": "パッケージを見る"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "アクティブアプリ",
+      "content": "テキストとファイルの共有をサポートするオフラインチャットアプリ",
+      "contentButton": "アプリを開く"
+    },
+    "english": {
+      "title": "英語",
+      "subtitle": "業務上の習熟度",
+      "content": "I very, very, very speak English"
+    },
+    "title": "概要",
+    "subtitle": "とても簡潔で甘い"
+  },
+  "petProjects": {
+    "title": "ペットプロジェクト",
+    "subtitle": "ユニークで創造的、私のもの！",
+    "markdown": {
+      "imageButton": "GitHubで画像を表示"
+    },
+    "error": {
+      "title": "おっと！",
+      "subtitle": "ID=$idのプロジェクトが見つかりませんでした。IDを確認してもう一度お試しください。"
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n 年",
+    "one": "$n 年",
+    "two": "$n 年",
+    "few": "$n 年",
+    "many": "$n 年",
+    "other": "$n 年"
+  },
+  "androidDemo": "Androidデモ",
+  "iosDemo": "iOSデモ",
+  "notFound": {
+    "title": "404",
+    "subtitle": "このページは存在しません",
+    "button": "ホームページに戻る"
+  },
+  "pageTitle": "Kseniia | モバイル開発者",
+  "mainImageCaption": "画像はグラフィック処理を使用して作成されました",
+  "experience": {
+    "title": "経験",
+    "subtitle": "退屈な部分",
+    "cv": {
+      "caption": "より詳しく私の経験については、CVを読む",
+      "button": "オープンCV"
+    },
+    "greenflux": {
+      "title": "モバイルアプリケーション開発者",
+      "organization": "Greenflux Assets B.V.",
+      "location": "アムステルダム、オランダ（ハイブリッド）",
+      "duration": "2024年2月 – 現在",
+      "subtitle": "電気自動車の充電ステーション向けアプリケーションの開発",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "英語",
+        "skill11": "REST API",
+        "skill12": "Figma",
+        "skill13": "オブジェクト指向プログラミング（OOP）"
+      },
+      "achievements": {
+        "achievement1": "技術仕様から公開までの開発サイクル全体をサポートしました",
+        "achievement2": "10以上のアプリケーションの共有コードベースを維持しました",
+        "achievement3": "リンター、フォーマット、全てのアプリケーションに共通のクラスシステムを設定しました",
+        "achievement4": "プルリクエストのレビュー、アプリケーションのビルドおよび公開用のパイプラインを作成し、プロセスを簡素化するためのスクリプトを作成しました",
+        "achievement5": "Git Flowを設定し、その遵守を監視しました",
+        "achievement6": "Google Maps、通知、およびその他の複雑な機能と密接に連携しました",
+        "achievement7": "SwiftUIを使ってiOS Live Activitiesを完全に実装し、複数のアプリケーションに拡張しました",
+        "achievement8": "コードベース全体をテストでカバーしました"
+      }
+    },
+    "friflex": {
+      "title": "モバイルアプリケーション開発者",
+      "organization": "Friflex",
+      "location": "モスクワ、ロシア",
+      "duration": "2022年8月 – 2023年12月",
+      "subtitle": "チェスとダマのゲーム認識サービスの開発",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "データベース",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "ローカリゼーション",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST API",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "デザインパターン",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "オブジェクト指向プログラミング（OOP）"
+      },
+      "achievements": {
+        "achievement1": "技術仕様から公開までの開発サイクル全体をサポートしました",
+        "achievement2": "3つのカスタムパッケージを完全に作成し、10以上のパッケージを維持し、それらの依存関係を設定しました",
+        "achievement3": "サードパーティサービス（MiniO、Firebase）の統合に成功しました",
+        "achievement4": "Flutter Webを使って管理用のWebダッシュボードを開発しました",
+        "achievement5": "Dartを使ってバックエンド開発を行いました",
+        "achievement6": "無数のUIコンポーネントとアニメーションを作成しました",
+        "achievement7": "クラウドストレージにデータを分割して送信するバックグラウンドサービスを開発しました",
+        "achievement8": "モバイルアプリケーション、バックエンド、Web部分からなるライブストリーミングシステムを維持しました"
+      }
+    },
+    "agroStab": {
+      "title": "フルスタック開発者",
+      "organization": "AgroSTAB",
+      "location": "サンクトペテルブルク、ロシア",
+      "duration": "2022年2月 – 2022年7月",
+      "subtitle": "スマート温室用の管理パネルの開発",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "英語",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "技術仕様から公開までの開発サイクル全体をサポートしました",
+        "achievement2": "React.jsを使ってユーザーインターフェースを作成しました",
+        "achievement3": "react-reduxを使ってデータ処理の統合を行いました",
+        "achievement4": "コンポーネントの構造、配置、接続を設計しました",
+        "achievement5": "UX向上のためにインタラクティブ要素を追加しました",
+        "achievement6": "Nest.jsで書かれたバックエンドの構造を改善し、データ処理のロジックを追加しました",
+        "achievement7": "PostgreSQLのデータベースアーキテクチャを設計し、更新を実施しました",
+        "achievement8": "Cronを使ってデータベースのデータ更新のアルゴリズムを開発しました"
+      }
+    }
+  }
 }

@@ -1,0 +1,15 @@
+base_locale: en
+fallback_strategy: base_locale
+input_directory: assets/translations
+input_file_pattern: .json
+output_directory: lib/generated/localization
+output_file_name: translations.g.dart
+flutter_integration: true
+enum_name: AppLocale
+class_name: LocaleKeys
+translation_class_visibility: private
+key_case: camel
+key_map_case: camel
+param_case: camel
+
+

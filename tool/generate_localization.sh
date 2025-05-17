@@ -1,1 +1,2 @@
-fvm flutter pub run easy_localization:generate --source-dir=assets/translations -f keys -O lib/localization
+cd ../
+dart run slang

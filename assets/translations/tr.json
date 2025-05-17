@@ -1,9 +1,184 @@
 {
-  "greeting": "Benim adım Kseniia",
-  "greeting2": "Ben bir Flutter geliştiriciyim",
-  "aboutMe": "Birbirimizi tanıyalım! Benim adım Kseniia, 15 yaşından beri programlama yapıyorum. Flutter'ı çok seviyorum ve hem işte hem de hobi olarak kullanıyorum.",
-  "aboutMe2": "Flutter Web ile mobil uygulamalar ve web siteleri geliştirme konusunda deneyime sahibim. Ayrıca, PostgreSQL ve TypeORM Conduit kullanarak Dart ile backend oluşturma sürecini çok iyi biliyorum. Son olarak, Dart ve Flutter için paketler kullanarak modüler bir mimari oluşturma konusunda iyiyim. Ayrıca sadece iyiyim.",
-  "aboutMeTitle": "Hakkımda",
-  "cvTitle": "Hakkımda daha fazlasını özgeçmişimde okuyun!",
-  "openCv": "Özgeçmişi aç"
+  "tab": {
+    "home": "Anasayfa",
+    "summary": "Özet",
+    "projects": "Projeler",
+    "experience": "Deneyim",
+    "language": "Dil"
+  },
+  "skill": {
+    "teamPlayer": "Takım oyuncusu",
+    "communicative": "İletişim becerisi",
+    "problemSolver": "Problem çözücü",
+    "leader": "Lider",
+    "nonConflictual": "Çatışmasız"
+  },
+  "welcome": {
+    "title": "Mobil Geliştirici",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "toplam deneyim",
+      "content": "Dart'a ek olarak, Kotlin, Swift, JavaScript, Python, C#, R ve daha birçok dilde deneyimim var"
+    },
+    "flutterExperience": {
+      "subtitle": "Flutter deneyimi",
+      "content1": "Ben geliştiriyorum",
+      "content2": "web ve mobil",
+      "content3": "uygulamalar ve ayrıca",
+      "content4": "backend",
+      "content5": "yapıları. Karmaşık sistemler ve özelleştirilmiş Flutter paketleri konusunda uzmanım"
+    },
+    "highEducation": {
+      "title": "Yükseköğretim",
+      "subtitle": "mühendislik alanında",
+      "content1": "«Bilgi ve iletişim sistemlerinde programlama»",
+      "content2": "ITMO Üniversitesi"
+    },
+    "openSource": {
+      "title": "Açık kaynak",
+      "subtitle": "aktif proje",
+      "content": "P2P iletişim için paket",
+      "contentButton": "Paketi görüntüle"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "aktif uygulama",
+      "content": "Metin paylaşımı ve dosya paylaşımı için çevrimdışı sohbet uygulaması",
+      "contentButton": "Uygulamayı aç"
+    },
+    "english": {
+      "title": "İngilizce",
+      "subtitle": "iş seviyesi",
+      "content": "I very, very, very speak English"
+    },
+    "title": "Özet",
+    "subtitle": "Çok kısa ve tatlı"
+  },
+  "petProjects": {
+    "title": "Pet projeler",
+    "subtitle": "Benzersiz, kreatif, benim!",
+    "error": {
+      "title": "Oops!",
+      "subtitle": "Proje ID=$id bulunamadı. Lütfen ID'yi kontrol edip tekrar deneyin."
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n yıl",
+    "one": "$n yıl",
+    "two": "$n yıl",
+    "few": "$n yıl",
+    "many": "$n yıl",
+    "other": "$n yıl"
+  },
+  "androidDemo": "Android Demo",
+  "iosDemo": "iOS Demo",
+  "notFound": {
+    "title": "404",
+    "subtitle": "Bu sayfa mevcut değil",
+    "button": "Anasayfaya git"
+  },
+  "pageTitle": "Kseniia | Mobil Geliştirici",
+  "mainImageCaption": "Görsel grafik işleme kullanılarak oluşturuldu",
+  "experience": {
+    "title": "Deneyim",
+    "subtitle": "Sıkıcı kısım",
+    "cv": {
+      "caption": "Daha fazla bilgi için CV'de okuyun",
+      "button": "Açık CV"
+    },
+    "greenflux": {
+      "title": "Mobil Uygulama Geliştiricisi",
+      "organization": "Greenflux Assets B.V.",
+      "location": "Amsterdam, Hollanda (Hibrit)",
+      "duration": "Şubat 2024 – Günümüz",
+      "subtitle": "Elektrikli araç şarj istasyonları için uygulama geliştirme",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "İngilizce",
+        "skill11": "REST API",
+        "skill12": "Figma",
+        "skill13": "Nesne Yönelimli Programlama (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Teknik spesifikasyondan yayına kadar tüm geliştirme döngüsünü destekledim",
+        "achievement2": "Paylaşılan bir kod tabanına sahip 10'dan fazla uygulamanın sistemini sürdürdüm",
+        "achievement3": "Tüm uygulamalar için linters, formatlama ve ortak sınıf sistemi kurdum",
+        "achievement4": "Pull request'leri kontrol etmek, uygulamaları derlemek ve yayınlamak için pipeline'lar oluşturdum, süreçleri basitleştiren betikler yazdım",
+        "achievement5": "Git Flow'u yapılandırdım ve uyumunu izledim",
+        "achievement6": "Google Maps, bildirimler ve diğer karmaşık fonksiyonlarla yakın bir şekilde çalıştım",
+        "achievement7": "SwiftUI kullanarak iOS Live Activities'yi tamamen uyguladım ve bunu birkaç uygulamaya genişlettim",
+        "achievement8": "Tüm kod tabanını testlerle kapsadım"
+      }
+    },
+    "friflex": {
+      "title": "Mobil Uygulama Geliştiricisi",
+      "organization": "Friflex",
+      "location": "Moskova, Rusya",
+      "duration": "Ağustos 2022 – Aralık 2023",
+      "subtitle": "Satranç ve dama oyunlarını tanıyan servislerin geliştirilmesi",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "Veritabanları",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "Lokalizasyon",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST API",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "Tasarım Desenleri",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "Nesne Yönelimli Programlama (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Teknik spesifikasyondan yayına kadar tüm geliştirme döngüsünü destekledim",
+        "achievement2": "3 özel paket oluşturdum ve 10'dan fazla paketi sürdürdüm, bunlar arasındaki bağımlılıkları yapılandırdım",
+        "achievement3": "Üçüncü taraf hizmetleri başarıyla entegre ettim (MiniO, Firebase)",
+        "achievement4": "Flutter Web kullanarak yönetim panelleri geliştirdim",
+        "achievement5": "Dart kullanarak backend geliştirdim",
+        "achievement6": "Birçok UI bileşeni ve animasyonlar geliştirdim",
+        "achievement7": "Verileri bulut depolama alanına parçalar halinde gönderen bir arka plan servisi geliştirdim",
+        "achievement8": "Mobil uygulama, backend ve web kısmından oluşan canlı yayın sistemini sürdürdüm"
+      }
+    },
+    "agroStab": {
+      "title": "Full-stack Geliştirici",
+      "organization": "AgroSTAB",
+      "location": "St. Petersburg, Rusya",
+      "duration": "Şubat 2022 – Temmuz 2022",
+      "subtitle": "Akıllı seralar için yönetim paneli geliştirme",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "İngilizce",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "Teknik spesifikasyondan yayına kadar tüm geliştirme döngüsünü destekledim",
+        "achievement2": "React.js kullanarak kullanıcı arayüzünü geliştirdim",
+        "achievement3": "react-redux kullanarak veri işleme entegrasyonu sağladım",
+        "achievement4": "Bileşenlerin yapısını, yerleşimini ve bağlantılarını tasarladım",
+        "achievement5": "Kullanıcı deneyimini iyileştirmek için etkileşimli öğeler ekledim",
+        "achievement6": "Nest.js ile yazılmış backend yapısını iyileştirdim ve veri işleme mantığı ekledim",
+        "achievement7": "PostgreSQL veritabanı yapısını tasarladım ve güncellemeleri uyguladım",
+        "achievement8": "Cron kullanarak veritabanında planlı veri güncellemeleri için algoritmalar geliştirdim"
+      }
+    }
+  }
 }

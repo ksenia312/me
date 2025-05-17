@@ -1,9 +1,188 @@
 {
-  "greeting": "Mein Name ist Kseniia",
-  "greeting2": "Ich bin Flutter-Entwicklerin",
-  "aboutMe": "Lernen wir uns kennen! Mein Name ist Kseniia, ich programmiere seit meinem 15. Lebensjahr. Ich liebe Flutter und verwende es sowohl bei der Arbeit als auch als Hobby.",
-  "aboutMe2": "Ich habe Erfahrung in der Entwicklung von mobilen Apps und Websites mit Flutter Web. Darüber hinaus kenne ich mich bestens mit der Erstellung eines Backends in Dart unter Verwendung von PostgreSQL und TypeORM Conduit aus. Und schließlich bin ich gut darin, eine modulare Architektur mit Paketen für Dart und Flutter zu erstellen. Ich bin auch einfach gut.",
-  "aboutMeTitle": "Über mich",
-  "cvTitle": "Lesen Sie mehr über mich in meinem Lebenslauf!",
-  "openCv": "Lebenslauf öffnen"
+  "tab": {
+    "home": "Startseite",
+    "summary": "Zusammenfassung",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "language": "Sprache"
+  },
+  "skill": {
+    "teamPlayer": "Teamplayer",
+    "communicative": "Kommunikativ",
+    "problemSolver": "Problemlöser",
+    "leader": "Führerin",
+    "nonConflictual": "Konfliktfrei"
+  },
+  "welcome": {
+    "title": "Mobile-Entwicklerin",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "Gesamterfahrung",
+      "content": "Neben Dart habe ich Erfahrung mit Kotlin, Swift, JavaScript, Python, C#, R und mehr"
+    },
+    "flutterExperience": {
+      "subtitle": "Flutter-Erfahrung",
+      "content1": "Ich entwickle",
+      "content2": "Web- und mobile",
+      "content3": "Anwendungen sowie",
+      "content4": "Backend",
+      "content5": "Strukturen. Ich spezialisiere mich auf komplexe Systeme und benutzerdefinierte Flutter-Pakete"
+    },
+    "highEducation": {
+      "title": "Hochschulbildung",
+      "subtitle": "im Ingenieurwesen",
+      "content1": "«Programmieren in Informations- und Kommunikationssystemen» an der",
+      "content2": "ITMO-Universität"
+    },
+    "openSource": {
+      "title": "Open-source",
+      "subtitle": "Aktives Projekt",
+      "content": "Ein Paket für P2P-Kommunikation",
+      "contentButton": "Paket anzeigen"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "Aktive App",
+      "content": "Eine Offline-Chat-App mit Unterstützung für Text- und Dateifreigabe",
+      "contentButton": "App öffnen"
+    },
+    "english": {
+      "title": "Englisch",
+      "subtitle": "Berufliche Kompetenz",
+      "content": "I very, very, very speak English"
+    },
+    "title": "Zusammenfassung",
+    "subtitle": "Super kurz und süß"
+  },
+  "petProjects": {
+    "title": "Pet-Projekte",
+    "subtitle": "Einzigartig, kreativ, meins!",
+    "markdown": {
+      "imageButton": "Bild auf GitHub anzeigen"
+    },
+    "error": {
+      "title": "Ups!",
+      "subtitle": "Projekt mit ID=$id nicht gefunden. Bitte überprüfen Sie die ID und versuchen Sie es erneut."
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n Jahre",
+    "one": "$n Jahr",
+    "two": "$n Jahre",
+    "few": "$n Jahre",
+    "many": "$n Jahre",
+    "other": "$n Jahre"
+  },
+  "androidDemo": "Android-Demo",
+  "iosDemo": "iOS-Demo",
+  "notFound": {
+    "title": "404",
+    "subtitle": "Diese Seite existiert nicht",
+    "button": "Zur Startseite"
+  },
+  "pageTitle": "Kseniia | Mobile-Entwicklerin",
+  "mainImageCaption": "Das Bild wurde mithilfe von Grafikbearbeitung erstellt",
+  "experience": {
+    "title": "Erfahrung",
+    "subtitle": "Der langweilige Teil",
+    "cv": {
+      "caption": "Lesen Sie mehr über meine Erfahrung im Lebenslauf",
+      "button": "Open CV"
+    },
+    "greenflux": {
+      "title": "Mobile Application Developerin",
+      "organization": "Greenflux Assets B.V.",
+      "location": "Amsterdam, Niederlande (Hybrid)",
+      "duration": "Februar 2024 – Gegenwart",
+      "subtitle": "Entwicklung von Anwendungen für Ladestationen für Elektrofahrzeuge",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "Englisch",
+        "skill11": "REST APIs",
+        "skill12": "Figma",
+        "skill13": "Objektorientierte Programmierung (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Unterstützte den gesamten Entwicklungszyklus: von der technischen Spezifikation bis zur Veröffentlichung",
+        "achievement2": "Pflegte ein System aus mehr als 10 Anwendungen mit einer gemeinsamen Codebasis",
+        "achievement3": "Richtete Linter, Formatierung ein und führte ein gemeinsames Klassensystem für alle Anwendungen ein",
+        "achievement4": "Erstellte Pipelines zur Prüfung von Pull-Requests, für das Bauen und Veröffentlichen von Anwendungen sowie Skripte zur Vereinfachung von Prozessen",
+        "achievement5": "Richtete Git Flow ein und überwachte die Einhaltung",
+        "achievement6": "Arbeitete eng mit Google Maps, Benachrichtigungen und anderen komplexen Funktionen zusammen",
+        "achievement7": "Implementierte vollständig iOS Live Activities mit SwiftUI und erweiterte sie auf mehrere Anwendungen",
+        "achievement8": "Deckte den gesamten Code mit Tests ab"
+      }
+    },
+    "friflex": {
+      "title": "Mobile Application Developerin",
+      "organization": "Friflex",
+      "location": "Moskau, Russland",
+      "duration": "August 2022 – Dezember 2023",
+      "subtitle": "Entwicklung von Diensten zur Erkennung von Schach- und Dame-Spielen",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "Datenbanken",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "Lokalisierung",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST APIs",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "Design Patterns",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "Objektorientierte Programmierung (OOP)"
+      },
+      "achievements": {
+        "achievement1": "Unterstützte den gesamten Entwicklungszyklus: von der technischen Spezifikation bis zur Veröffentlichung",
+        "achievement2": "Erstellte 3 benutzerdefinierte Pakete und pflegte über 10 Pakete, konfigurierte deren Abhängigkeiten",
+        "achievement3": "Erfolgreich Drittanbieterdienste integriert (MiniO, Firebase)",
+        "achievement4": "Entwickelte administrative Web-Dashboards mit Flutter Web",
+        "achievement5": "Entwickelte den Backend mit Dart",
+        "achievement6": "Erstellte unzählige UI-Komponenten und Animationen",
+        "achievement7": "Entwickelte einen Hintergrunddienst zur Übertragung von Daten in die Cloud in Teilen",
+        "achievement8": "Unterstützte ein System für Live-Streaming, das aus einer mobilen Anwendung, Backend und Web bestand"
+      }
+    },
+    "agroStab": {
+      "title": "Full-stack Developerin",
+      "organization": "AgroSTAB",
+      "location": "Sankt Petersburg, Russland",
+      "duration": "Februar 2022 – Juli 2022",
+      "subtitle": "Entwicklung von Verwaltungs-Panels für Smart Greenhouses",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "Englisch",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "Unterstützte den gesamten Entwicklungszyklus: von der technischen Spezifikation bis zur Veröffentlichung",
+        "achievement2": "Erstellte die Benutzeroberfläche mit React.js",
+        "achievement3": "Integrierte Datenverarbeitung mit react-redux",
+        "achievement4": "Projektierte die Struktur der Komponenten, deren Anordnung und Verbindungen",
+        "achievement5": "Fügte interaktive Elemente hinzu, um die Benutzererfahrung zu verbessern",
+        "achievement6": "Verbesserte die Struktur des Backends, das in Nest.js geschrieben wurde, und fügte Logik zur Datenverarbeitung hinzu",
+        "achievement7": "Projektierte die Architektur der PostgreSQL-Datenbank und implementierte Updates",
+        "achievement8": "Entwickelte Algorithmen für geplante Datenaktualisierungen mit Cron"
+      }
+    }
+  }
 }
+

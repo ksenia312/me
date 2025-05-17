@@ -1,27 +1,45 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:me/app/firebase/firebase_options.dart';
-import 'package:me/features/landing/landing.dart';
-import 'package:me/localization/locales.dart';
-import 'package:me/uikit/theme.dart';
-
-import 'common/utils/responsive_builder.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:go_router/go_router.dart';
+import 'package:me/app/config/firebase_options.dart';
+import 'package:me/generated/assets.gen.dart';
+import 'package:me/uikit/components/main_image.dart';
+import 'package:me/uikit/localization/localization.dart';
+import 'package:me/uikit/responsive/responsive_builder.dart';
+import 'package:me/uikit/router/app_router.dart';
+import 'package:me/uikit/theme/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
+  await AppLocalization.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(
-    EasyLocalization(
-      supportedLocales: supportedLocales,
-      fallbackLocale: fallbackLocale,
-      startLocale: fallbackLocale,
-      path: 'assets/translations',
-      child: const MyApp(),
+  await MainImage.load();
+
+  final assetsToCache = <SvgGenImage>[
+    ...Assets.icons.values.whereType<SvgGenImage>(),
+    Assets.images.greenfluxImage,
+    Assets.images.friflexImage,
+    Assets.images.agroStabImage,
+  ];
+
+  await Future.wait(
+    assetsToCache.map(
+      (asset) async {
+        final loader = SvgAssetLoader(asset.path);
+        await svg.cache.putIfAbsent(loader.cacheKey(null), () => loader.loadBytes(null));
+      },
     ),
+  );
+
+  usePathUrlStrategy();
+  GoRouter.optionURLReflectsImperativeAPIs = true;
+
+  runApp(
+    AppLocalization(child: const MyApp()),
   );
 }
 
@@ -30,15 +48,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: ResponsiveBuilder.builder,
-      title: 'Xenikii',
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      theme: AppTheme.data,
-      home: const Landing(),
+    return ResponsiveBuilder.builder(
+      context,
+      Builder(
+        builder: (context) {
+          return MaterialApp.router(
+            title: 'Kseniia',
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            theme: AppTheme.dataOf(context),
+            routerConfig: AppRouter.router,
+          );
+        },
+      ),
     );
   }
 }

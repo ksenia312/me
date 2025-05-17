@@ -1,9 +1,184 @@
 {
-  "greeting": "我的名字是Kseniia",
-  "greeting2": "我是Flutter开发者",
-  "aboutMe": "让我们彼此了解一下吧！我叫Kseniia，我从15岁开始编程。我热爱Flutter，无论是工作还是兴趣都在使用。",
-  "aboutMe2": "我有使用Flutter Web开发移动应用程序和网站的经验。此外，我对使用Dart在PostgreSQL和TypeORM Conduit中创建后端的过程非常熟悉。最后，我擅长使用Dart和Flutter的包创建模块化架构。我也很擅长。",
-  "aboutMeTitle": "关于我",
-  "cvTitle": "在我的简历中阅读更多关于我的信息！",
-  "openCv": "打开简历"
+  "tab": {
+    "home": "首页",
+    "summary": "摘要",
+    "projects": "项目",
+    "experience": "经验",
+    "language": "语言"
+  },
+  "skill": {
+    "teamPlayer": "团队合作者",
+    "communicative": "善于沟通",
+    "problemSolver": "问题解决者",
+    "leader": "领导者",
+    "nonConflictual": "无冲突"
+  },
+  "welcome": {
+    "title": "移动开发者",
+    "subtitle": "Kseniia Nikitina"
+  },
+  "summary": {
+    "totalExperience": {
+      "subtitle": "总经验",
+      "content": "除了Dart，我还具有Kotlin、Swift、JavaScript、Python、C#、R等语言的经验"
+    },
+    "flutterExperience": {
+      "subtitle": "Flutter经验",
+      "content1": "我开发",
+      "content2": "Web和移动",
+      "content3": "应用程序，以及",
+      "content4": "后端",
+      "content5": "结构。我专注于复杂系统和自定义Flutter包"
+    },
+    "highEducation": {
+      "title": "高等教育",
+      "subtitle": "工程学",
+      "content1": "«信息与通信系统编程»，在",
+      "content2": "ITMO大学"
+    },
+    "openSource": {
+      "title": "开源",
+      "subtitle": "活跃项目",
+      "content": "P2P通信的包",
+      "contentButton": "查看包"
+    },
+    "googlePlay": {
+      "title": "Google Play",
+      "subtitle": "活跃应用",
+      "content": "支持文本和文件共享的离线聊天应用",
+      "contentButton": "打开应用"
+    },
+    "english": {
+      "title": "英语",
+      "subtitle": "工作水平",
+      "content": "I very, very, very speak English"
+    },
+    "title": "总结",
+    "subtitle": "非常简短且甜美"
+  },
+  "petProjects": {
+    "title": "个人项目",
+    "subtitle": "独特、创意、属于我！",
+    "error": {
+      "title": "哎呀！",
+      "subtitle": "找不到项目ID=$id。请检查ID并重试。"
+    }
+  },
+  "year(ordinal)": {
+    "zero": "$n 年",
+    "one": "$n 年",
+    "two": "$n 年",
+    "few": "$n 年",
+    "many": "$n 年",
+    "other": "$n 年"
+  },
+  "androidDemo": "Android 演示",
+  "iosDemo": "iOS 演示",
+  "notFound": {
+    "title": "404",
+    "subtitle": "此页面不存在",
+    "button": "返回首页"
+  },
+  "pageTitle": "Kseniia | 移动开发者",
+  "mainImageCaption": "图像是通过图形处理创建的",
+  "experience": {
+    "title": "经验",
+    "subtitle": "无聊的部分",
+    "cv": {
+      "caption": "阅读更多关于我的经验的CV",
+      "button": "开放CV"
+    },
+    "greenflux": {
+      "title": "移动应用开发工程师",
+      "organization": "Greenflux Assets B.V.",
+      "location": "阿姆斯特丹，荷兰（混合工作模式）",
+      "duration": "2024年2月 – 至今",
+      "subtitle": "开发电动汽车充电站的应用程序",
+      "skills": {
+        "skill1": "Dart",
+        "skill2": "Flutter",
+        "skill3": "Google Play",
+        "skill4": "Firebase",
+        "skill5": "Git",
+        "skill6": "ChatGPT",
+        "skill7": "BloC",
+        "skill8": "App Store",
+        "skill9": "SwiftUI",
+        "skill10": "英语",
+        "skill11": "REST API",
+        "skill12": "Figma",
+        "skill13": "面向对象编程（OOP）"
+      },
+      "achievements": {
+        "achievement1": "支持了整个开发周期：从技术规格到发布",
+        "achievement2": "维护了一个包含10多个应用程序的系统，所有应用程序共享相同的代码库",
+        "achievement3": "配置了linter、格式化工具，并为所有应用程序实施了统一的类系统",
+        "achievement4": "创建了用于检查pull requests、构建和发布应用程序的管道，并编写了简化流程的脚本",
+        "achievement5": "配置了Git Flow并监控其遵循情况",
+        "achievement6": "与Google Maps、通知和其他复杂功能紧密合作",
+        "achievement7": "使用SwiftUI完全实现了iOS Live Activities，并扩展到多个应用程序",
+        "achievement8": "为所有代码库编写了测试"
+      }
+    },
+    "friflex": {
+      "title": "移动应用开发工程师",
+      "organization": "Friflex",
+      "location": "莫斯科，俄罗斯",
+      "duration": "2022年8月 – 2023年12月",
+      "subtitle": "开发用于识别象棋和跳棋游戏的服务",
+      "skills": {
+        "skill1": "Firebase",
+        "skill2": "数据库",
+        "skill3": "PostgreSQL",
+        "skill4": "Figma",
+        "skill5": "本地化",
+        "skill6": "ChatGPT",
+        "skill7": "Dart",
+        "skill8": "REST API",
+        "skill9": "Flutter",
+        "skill10": "Google Play",
+        "skill11": "设计模式",
+        "skill12": "Git",
+        "skill13": "BloC",
+        "skill14": "面向对象编程（OOP）"
+      },
+      "achievements": {
+        "achievement1": "支持了整个开发周期：从技术规格到发布",
+        "achievement2": "完全开发了3个自定义包，并维护了超过10个包，配置了它们之间的依赖关系",
+        "achievement3": "成功集成了第三方服务（MiniO、Firebase）",
+        "achievement4": "使用Flutter Web开发了管理面板",
+        "achievement5": "使用Dart开发了后端",
+        "achievement6": "创建了大量UI组件和动画",
+        "achievement7": "开发了一个后台服务，将数据分块发送到云存储",
+        "achievement8": "维护了一个由移动应用、后端和Web部分组成的直播流系统"
+      }
+    },
+    "agroStab": {
+      "title": "全栈开发工程师",
+      "organization": "AgroSTAB",
+      "location": "圣彼得堡，俄罗斯",
+      "duration": "2022年2月 – 2022年7月",
+      "subtitle": "为智能温室开发管理面板",
+      "skills": {
+        "skill1": "Mqtt",
+        "skill2": "Cron",
+        "skill3": "PostgreSQL",
+        "skill4": "Linux",
+        "skill5": "英语",
+        "skill6": "Git",
+        "skill7": "ReactJS",
+        "skill8": "GitLab"
+      },
+      "achievements": {
+        "achievement1": "支持了整个开发周期：从技术规格到发布",
+        "achievement2": "使用React.js开发了用户界面",
+        "achievement3": "使用react-redux集成了数据处理",
+        "achievement4": "设计了组件的结构、位置和连接方式",
+        "achievement5": "添加了交互元素以改善用户体验",
+        "achievement6": "改进了用Nest.js编写的后端结构，并添加了数据处理逻辑",
+        "achievement7": "设计了PostgreSQL数据库架构，并实现了更新",
+        "achievement8": "使用Cron开发了数据库中定时更新数据的算法"
+      }
+    }
+  }
 }
