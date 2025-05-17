@@ -1,8 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:me/domain/pet_project/model/pet_project_data.dart';
 import 'package:me/features/pet_project/notifier/pet_project_vm.dart';
 import 'package:me/features/pet_project/view/pet_project_page.dart';
+import 'package:me/uikit/elements/app_image.dart';
 import 'package:me/uikit/extensions/pet_project_extension.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/responsive/responsive_utils.dart';
@@ -104,20 +104,17 @@ class _Image extends StatelessWidget {
           child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(color: vm.data.accentColor, borderRadius: borderRadius),
-            child: CachedNetworkImage(
-              imageUrl:'https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg',
+            child: AppImage(
+              imageUrl: vm.imageUrl,
               fit: BoxFit.fitHeight,
               height: constraints.biggest.height,
               width: constraints.biggest.width,
-              fadeInCurve: Curves.easeInOut,
-              fadeOutCurve: Curves.easeInOut,
               errorWidget: (context, _, __) => Image.asset(
                 vm.imageUrl,
                 fit: BoxFit.cover,
                 height: constraints.biggest.height * 0.9,
                 width: constraints.biggest.width * 0.9,
-                errorBuilder: (context, error, stackTrace){
-                  print("error=$error, stackTrace=$stackTrace, url=${vm.imageUrl}");
+                errorBuilder: (context, error, stackTrace) {
                   return SizedBox.shrink();
                 },
               ),

@@ -1,8 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:markdown/markdown.dart' as md;
 import 'package:me/generated/fonts.gen.dart';
+import 'package:me/uikit/elements/app_image.dart';
 import 'package:me/uikit/elements/app_elevated_button.dart';
 import 'package:me/uikit/extensions/scroll_extension.dart';
 import 'package:me/uikit/localization/localization.dart';
@@ -10,8 +11,6 @@ import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/app_colors.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-
-import 'package:markdown/markdown.dart' as md;
 
 class AppMarkdown extends StatefulWidget {
   const AppMarkdown({
@@ -101,7 +100,7 @@ class _AppMarkdownState extends State<AppMarkdown> {
           );
         }
 
-        return CachedNetworkImage(
+        return AppImage(
           imageUrl: uri.toString(),
           errorWidget: (context, _, __) => SizedBox.shrink(),
         );

@@ -1,7 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:me/features/pet_project/notifier/pet_project_notifier.dart';
 import 'package:me/generated/assets.gen.dart';
+import 'package:me/uikit/elements/app_image.dart';
 import 'package:me/uikit/responsive/responsive_sizes.dart';
 import 'package:me/uikit/theme/context_extensions.dart';
 
@@ -48,14 +48,10 @@ class PetProjectAppBar extends StatelessWidget {
                     )
                   : imageUrl == null
                       ? SizedBox.shrink()
-                      : CachedNetworkImage(
+                      : AppImage(
                           imageUrl: imageUrl,
                           fit: BoxFit.fitHeight,
-                          fadeInCurve: Curves.easeInOut,
-                          fadeOutCurve: Curves.easeInOut,
                           filterQuality: FilterQuality.high,
-                          fadeInDuration: const Duration(milliseconds: 300),
-                          fadeOutDuration: const Duration(milliseconds: 300),
                         ),
             ),
           );
