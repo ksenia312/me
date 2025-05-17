@@ -17,9 +17,9 @@ class LocaleKeys implements BaseTranslations<AppLocale, LocaleKeys> {
 
 	/// You can call this constructor and build your own translation instance of this locale.
 	/// Constructing via the enum [AppLocale.build] is preferred.
-	LocaleKeys({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
+	LocaleKeys({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver, TranslationMetadata<AppLocale, LocaleKeys>? meta})
 		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
+		  $meta = meta ?? TranslationMetadata(
 		    locale: AppLocale.en,
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
@@ -35,6 +35,8 @@ class LocaleKeys implements BaseTranslations<AppLocale, LocaleKeys> {
 	dynamic operator[](String key) => $meta.getTranslation(key);
 
 	late final LocaleKeys _root = this; // ignore: unused_field
+
+	LocaleKeys $copyWith({TranslationMetadata<AppLocale, LocaleKeys>? meta}) => LocaleKeys(meta: meta ?? this.$meta);
 
 	// Translations
 	late final LocaleKeysTabEn tab = LocaleKeysTabEn.internal(_root);
@@ -105,7 +107,7 @@ class LocaleKeysSummaryEn {
 
 	// Translations
 	late final LocaleKeysSummaryTotalExperienceEn totalExperience = LocaleKeysSummaryTotalExperienceEn.internal(_root);
-	late final LocaleKeysSummaryFlutterExperienceEn flutterExperience = LocaleKeysSummaryFlutterExperienceEn.internal(_root);
+	late final LocaleKeysSummaryMobileExperienceEn mobileExperience = LocaleKeysSummaryMobileExperienceEn.internal(_root);
 	late final LocaleKeysSummaryHighEducationEn highEducation = LocaleKeysSummaryHighEducationEn.internal(_root);
 	late final LocaleKeysSummaryOpenSourceEn openSource = LocaleKeysSummaryOpenSourceEn.internal(_root);
 	late final LocaleKeysSummaryGooglePlayEn googlePlay = LocaleKeysSummaryGooglePlayEn.internal(_root);
@@ -165,19 +167,19 @@ class LocaleKeysSummaryTotalExperienceEn {
 	String get content => 'In addition to Dart, I have experience with Kotlin, Swift, JavaScript, Python, C#, R, and more';
 }
 
-// Path: summary.flutterExperience
-class LocaleKeysSummaryFlutterExperienceEn {
-	LocaleKeysSummaryFlutterExperienceEn.internal(this._root);
+// Path: summary.mobileExperience
+class LocaleKeysSummaryMobileExperienceEn {
+	LocaleKeysSummaryMobileExperienceEn.internal(this._root);
 
 	final LocaleKeys _root; // ignore: unused_field
 
 	// Translations
-	String get subtitle => 'Flutter experience';
+	String get subtitle => 'mobile apps experience';
 	String get content1 => 'I develop';
 	String get content2 => 'web and mobile';
 	String get content3 => 'applications as well as';
 	String get content4 => 'backend';
-	String get content5 => 'structures. I specialize in complex systems and custom Flutter packages';
+	String get content5 => 'structures. I specialize in complex systems and custom packages';
 }
 
 // Path: summary.highEducation
@@ -443,12 +445,12 @@ extension on LocaleKeys {
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return 'total experience';
 			case 'summary.totalExperience.content': return 'In addition to Dart, I have experience with Kotlin, Swift, JavaScript, Python, C#, R, and more';
-			case 'summary.flutterExperience.subtitle': return 'Flutter experience';
-			case 'summary.flutterExperience.content1': return 'I develop';
-			case 'summary.flutterExperience.content2': return 'web and mobile';
-			case 'summary.flutterExperience.content3': return 'applications as well as';
-			case 'summary.flutterExperience.content4': return 'backend';
-			case 'summary.flutterExperience.content5': return 'structures. I specialize in complex systems and custom Flutter packages';
+			case 'summary.mobileExperience.subtitle': return 'mobile apps experience';
+			case 'summary.mobileExperience.content1': return 'I develop';
+			case 'summary.mobileExperience.content2': return 'web and mobile';
+			case 'summary.mobileExperience.content3': return 'applications as well as';
+			case 'summary.mobileExperience.content4': return 'backend';
+			case 'summary.mobileExperience.content5': return 'structures. I specialize in complex systems and custom packages';
 			case 'summary.highEducation.title': return 'Higher education';
 			case 'summary.highEducation.subtitle': return 'in engineering';
 			case 'summary.highEducation.content1': return '«Programming in information and communication systems» at';

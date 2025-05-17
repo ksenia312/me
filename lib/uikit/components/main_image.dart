@@ -89,7 +89,7 @@ class _MainImageState extends State<MainImage> with AutomaticKeepAliveClientMixi
                   child: Text(
                     context.keys.mainImageCaption,
                     style: context.textTheme.labelSmall?.copyWith(
-                      color: context.colorScheme.onSurface.withOpacity(0.2),
+                      color: context.colorScheme.onSurface.withValues(alpha: 0.2),
                     ),
                   ),
                 ),

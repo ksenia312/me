@@ -22,13 +22,13 @@
       "subtitle": "कुल अनुभव",
       "content": "Dart के अलावा, मेरे पास Kotlin, Swift, JavaScript, Python, C#, R और अन्य में अनुभव है"
     },
-    "flutterExperience": {
-      "subtitle": "Flutter अनुभव",
-      "content1": "मैं विकसित करती हूँ",
+    "mobileExperience": {
+      "subtitle": "मोबाइल ऐप का अनुभव",
+      "content1": "मैं विकसित करता हूँ",
       "content2": "वेब और मोबाइल",
-      "content3": "एप्लिकेशन, साथ ही",
+      "content3": "एप्लिकेशन के साथ-साथ",
       "content4": "बैकएंड",
-      "content5": "संरचनाएँ। मैं जटिल प्रणालियों और कस्टम Flutter पैकेजों में विशेषज्ञ हूँ"
+      "content5": "संरचनाएँ। मैं जटिल प्रणालियों और कस्टम पैकेजों में विशेषज्ञ हूँ।"
     },
     "highEducation": {
       "title": "उच्च शिक्षा",

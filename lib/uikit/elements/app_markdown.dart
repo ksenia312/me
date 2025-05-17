@@ -79,7 +79,7 @@ class _AppMarkdownState extends State<AppMarkdown> {
           vertical: AppResponsiveSizes.medium(context),
         ),
         blockquoteDecoration: BoxDecoration(
-          color: context.customColorScheme.borderColor.withOpacity(0.2),
+          color: context.customColorScheme.borderColor.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(3),
           border: Border(
             left: BorderSide(color: context.customColorScheme.borderColor, width: 3),
@@ -91,7 +91,8 @@ class _AppMarkdownState extends State<AppMarkdown> {
         ),
         blockSpacing: AppResponsiveSizes.medium(context),
       ),
-      imageBuilder: (uri, title, alt) {
+      sizedImageBuilder: (config) {
+        final uri = config.uri;
         final link = widget.imagesSourceLink;
         if (link != null && uri.toString().contains(Uri.parse(link).host)) {
           return AppDarkElevatedButton(

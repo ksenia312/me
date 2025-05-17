@@ -22,13 +22,13 @@
       "subtitle": "総経験",
       "content": "Dartに加えて、Kotlin、Swift、JavaScript、Python、C#、Rなどの経験があります"
     },
-    "flutterExperience": {
-      "subtitle": "Flutter経験",
+    "mobileExperience": {
+      "subtitle": "モバイルアプリの経験",
       "content1": "私は開発します",
       "content2": "ウェブおよびモバイル",
-      "content3": "アプリケーション、さらに",
+      "content3": "アプリケーションと",
       "content4": "バックエンド",
-      "content5": "構造。私は複雑なシステムとカスタムFlutterパッケージに特化しています"
+      "content5": "構造。複雑なシステムとカスタムパッケージを専門としています。"
     },
     "highEducation": {
       "title": "高等教育",

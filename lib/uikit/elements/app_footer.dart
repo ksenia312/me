@@ -30,8 +30,9 @@ class AppFooter extends StatelessWidget {
       Text('© 2024 xenikii', style: context.textTheme.bodySmall),
       Text('nikitina3619@gmail.com', style: context.textTheme.bodySmall),
     ];
+    final color = backgroundColor ?? context.customColorScheme.bottomBarBackgroundColor;
     return Container(
-      color: backgroundColor ?? context.customColorScheme.bottomBarBackgroundColor,
+      color: color,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -69,7 +70,8 @@ class AppFooter extends StatelessWidget {
           ),
           SizedBox(height: AppResponsiveSizes.small(context)),
           SelectionArea(
-            child: Padding(
+            child: Container(
+              color: color,
               padding: const EdgeInsets.all(spacer),
               child: Responsive.get(
                 context,

@@ -22,13 +22,13 @@
       "subtitle": "总经验",
       "content": "除了Dart，我还具有Kotlin、Swift、JavaScript、Python、C#、R等语言的经验"
     },
-    "flutterExperience": {
-      "subtitle": "Flutter经验",
+    "mobileExperience": {
+      "subtitle": "移动应用经验",
       "content1": "我开发",
-      "content2": "Web和移动",
-      "content3": "应用程序，以及",
+      "content2": "web 和移动",
+      "content3": "应用程序以及",
       "content4": "后端",
-      "content5": "结构。我专注于复杂系统和自定义Flutter包"
+      "content5": "结构。我专注于复杂的系统和定制包。"
     },
     "highEducation": {
       "title": "高等教育",

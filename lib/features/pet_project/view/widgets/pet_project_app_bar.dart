@@ -36,7 +36,7 @@ class PetProjectAppBar extends StatelessWidget {
             },
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              color: isError ? context.colorScheme.error.withOpacity(0.2) : color,
+              color: isError ? context.colorScheme.error.withValues(alpha: 0.2) : color,
               padding: EdgeInsets.only(top: AppResponsiveSizes.toolbarHeight(context)),
               child: isError
                   ? Center(

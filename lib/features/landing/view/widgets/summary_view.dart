@@ -28,7 +28,7 @@ class _SummaryViewState extends State<SummaryView> {
   Widget build(BuildContext context) {
     final summary = context.keys.summary;
     final totalExperience = summary.totalExperience;
-    final flutterExperience = summary.flutterExperience;
+    final mobileExperience = summary.mobileExperience;
     final highEducation = summary.highEducation;
     final openSource = summary.openSource;
     final googlePlay = summary.googlePlay;
@@ -41,16 +41,16 @@ class _SummaryViewState extends State<SummaryView> {
         activeContent: ActiveSummaryText(text: totalExperience.content),
       ),
       SummaryCircle(
-        key: ValueKey(flutterExperience.subtitle),
+        key: ValueKey(mobileExperience.subtitle),
         title: context.keys.year(n: _summaryNotifier.flutterExperienceInYears),
-        subtitle: flutterExperience.subtitle,
+        subtitle: mobileExperience.subtitle,
         activeContent: ActiveSummaryRawText(
           spans: [
-            ActiveSummaryTextSpan(text: flutterExperience.content1),
-            ActiveSummaryTextSpan(text: flutterExperience.content2, isBold: true),
-            ActiveSummaryTextSpan(text: flutterExperience.content3),
-            ActiveSummaryTextSpan(text: flutterExperience.content4, isBold: true),
-            ActiveSummaryTextSpan(text: flutterExperience.content5),
+            ActiveSummaryTextSpan(text: mobileExperience.content1),
+            ActiveSummaryTextSpan(text: mobileExperience.content2, isBold: true),
+            ActiveSummaryTextSpan(text: mobileExperience.content3),
+            ActiveSummaryTextSpan(text: mobileExperience.content4, isBold: true),
+            ActiveSummaryTextSpan(text: mobileExperience.content5),
           ],
         ),
       ),

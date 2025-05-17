@@ -22,13 +22,13 @@
       "subtitle": "общий опыт",
       "content": "Помимо Dart, у меня есть опыт работы с Kotlin, Swift, JavaScript, Python, C#, R и др."
     },
-    "flutterExperience": {
-      "subtitle": "опыт Flutter",
+    "mobileExperience": {
+      "subtitle": "опыт работы с мобильными приложениями",
       "content1": "Я разрабатываю",
       "content2": "веб- и мобильные",
       "content3": "приложения, а также",
-      "content4": "бэкенд-структуры.",
-      "content5": "Я специализируюсь на сложных системах и кастомных Flutter-пакетах"
+      "content4": "бэкенд-",
+      "content5": "структуры. Я специализируюсь на сложных системах и пользовательских пакетах."
     },
     "highEducation": {
       "title": "Высшее образование",

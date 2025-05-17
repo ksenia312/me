@@ -17,6 +17,7 @@ class PetProjectListNotifier extends ChangeNotifier {
   int count = 7;
 
   Future<void> init() async {
+    print("init");
     if (vms.isNotEmpty) return;
 
     try {
@@ -33,6 +34,7 @@ class PetProjectListNotifier extends ChangeNotifier {
   }
 
   Future<String> getImageUrl(PetProjectData data) async {
+    print("getImageUrl ${data.id}");
     final url = await DownloadFileRepository.instance.getDownloadUrl(data.imageStoragePath);
     return url;
   }

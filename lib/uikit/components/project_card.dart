@@ -36,7 +36,7 @@ class ProjectCard extends StatelessWidget {
               ),
               Positioned.fill(
                 child: ColoredBox(
-                  color: context.customColorScheme.gradientLightColor.withOpacity(0.1),
+                  color: context.customColorScheme.gradientLightColor.withValues(alpha: 0.1),
                 ),
               ),
               Positioned(
@@ -50,7 +50,7 @@ class ProjectCard extends StatelessWidget {
                     AppResponsiveSizes.x3Large(context) + _hiddenIndent,
                     AppResponsiveSizes.x4Large(context) + _hiddenIndent,
                   ),
-                  color: context.customColorScheme.gradientLightColor.withOpacity(0.9),
+                  color: context.customColorScheme.gradientLightColor.withValues(alpha: 0.9),
                   child: _TextContent(data: vm.data),
                 ),
               ),
@@ -66,12 +66,12 @@ class ProjectCard extends StatelessWidget {
           offset: Offset(0, 8),
           blurRadius: 12,
           spreadRadius: 6,
-          color: Colors.black.withOpacity(0.15),
+          color: Colors.black.withValues(alpha: 0.15),
         ),
         BoxShadow(
           offset: Offset(0, 4),
           blurRadius: 4,
-          color: Colors.black.withOpacity(0.3),
+          color: Colors.black.withValues(alpha: 0.3),
         ),
       ];
 
@@ -105,7 +105,7 @@ class _Image extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(color: vm.data.accentColor, borderRadius: borderRadius),
             child: CachedNetworkImage(
-              imageUrl: vm.imageUrl,
+              imageUrl:'https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg',
               fit: BoxFit.fitHeight,
               height: constraints.biggest.height,
               width: constraints.biggest.width,
@@ -116,7 +116,10 @@ class _Image extends StatelessWidget {
                 fit: BoxFit.cover,
                 height: constraints.biggest.height * 0.9,
                 width: constraints.biggest.width * 0.9,
-                errorBuilder: (context, error, stackTrace) => SizedBox.shrink(),
+                errorBuilder: (context, error, stackTrace){
+                  print("error=$error, stackTrace=$stackTrace, url=${vm.imageUrl}");
+                  return SizedBox.shrink();
+                },
               ),
             ),
           ),

@@ -26,7 +26,7 @@ class AppTheme {
       focusColor: AppColors.shadowGreyBlue,
       hoverColor: AppColors.shadowGreyBlue,
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.duskBlue.withOpacity(0.8),
+        backgroundColor: AppColors.duskBlue.withValues(alpha: 0.8),
         foregroundColor: AppColors.white,
         elevation: 0,
       ),

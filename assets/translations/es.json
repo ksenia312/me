@@ -22,13 +22,13 @@
       "subtitle": "experiencia total",
       "content": "Además de Dart, tengo experiencia con Kotlin, Swift, JavaScript, Python, C#, R y más"
     },
-    "flutterExperience": {
-      "subtitle": "Experiencia en Flutter",
+    "mobileExperience": {
+      "subtitle": "experiencia en aplicaciones móviles",
       "content1": "Desarrollo",
       "content2": "aplicaciones web y móviles",
-      "content3": "así como",
-      "content4": "estructuras backend",
-      "content5": "Me especializo en sistemas complejos y paquetes personalizados de Flutter"
+      "content3": "así como estructuras",
+      "content4": "backend",
+      "content5": ". Me especializo en sistemas complejos y paquetes personalizados."
     },
     "highEducation": {
       "title": "Educación superior",

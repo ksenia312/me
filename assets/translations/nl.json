@@ -22,13 +22,13 @@
       "subtitle": "totale ervaring",
       "content": "Naast Dart heb ik ervaring met Kotlin, Swift, JavaScript, Python, C#, R en meer"
     },
-    "flutterExperience": {
-      "subtitle": "Flutter ervaring",
+    "mobileExperience": {
+      "subtitle": "ervaring met mobiele apps",
       "content1": "Ik ontwikkel",
       "content2": "web- en mobiele",
-      "content3": "applicaties, evenals",
-      "content4": "backend",
-      "content5": "structuren. Ik ben gespecialiseerd in complexe systemen en aangepaste Flutter-pakketten"
+      "content3": "applicaties evenals",
+      "content4": "backend-",
+      "content5": "structuren. Ik specialiseer me in complexe systemen en aangepaste pakketten."
     },
     "highEducation": {
       "title": "Hogere opleiding",

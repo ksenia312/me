@@ -13,9 +13,9 @@ import 'translations.g.dart';
 class LocaleKeysZh extends LocaleKeys {
 	/// You can call this constructor and build your own translation instance of this locale.
 	/// Constructing via the enum [AppLocale.build] is preferred.
-	LocaleKeysZh({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
+	LocaleKeysZh({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver, TranslationMetadata<AppLocale, LocaleKeys>? meta})
 		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
+		  $meta = meta ?? TranslationMetadata(
 		    locale: AppLocale.zh,
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
@@ -33,6 +33,9 @@ class LocaleKeysZh extends LocaleKeys {
 	@override dynamic operator[](String key) => $meta.getTranslation(key) ?? super.$meta.getTranslation(key);
 
 	late final LocaleKeysZh _root = this; // ignore: unused_field
+
+	@override 
+	LocaleKeysZh $copyWith({TranslationMetadata<AppLocale, LocaleKeys>? meta}) => LocaleKeysZh(meta: meta ?? this.$meta);
 
 	// Translations
 	@override late final _LocaleKeysTabZh tab = _LocaleKeysTabZh._(_root);
@@ -103,7 +106,7 @@ class _LocaleKeysSummaryZh extends LocaleKeysSummaryEn {
 
 	// Translations
 	@override late final _LocaleKeysSummaryTotalExperienceZh totalExperience = _LocaleKeysSummaryTotalExperienceZh._(_root);
-	@override late final _LocaleKeysSummaryFlutterExperienceZh flutterExperience = _LocaleKeysSummaryFlutterExperienceZh._(_root);
+	@override late final _LocaleKeysSummaryMobileExperienceZh mobileExperience = _LocaleKeysSummaryMobileExperienceZh._(_root);
 	@override late final _LocaleKeysSummaryHighEducationZh highEducation = _LocaleKeysSummaryHighEducationZh._(_root);
 	@override late final _LocaleKeysSummaryOpenSourceZh openSource = _LocaleKeysSummaryOpenSourceZh._(_root);
 	@override late final _LocaleKeysSummaryGooglePlayZh googlePlay = _LocaleKeysSummaryGooglePlayZh._(_root);
@@ -162,19 +165,19 @@ class _LocaleKeysSummaryTotalExperienceZh extends LocaleKeysSummaryTotalExperien
 	@override String get content => '除了Dart，我还具有Kotlin、Swift、JavaScript、Python、C#、R等语言的经验';
 }
 
-// Path: summary.flutterExperience
-class _LocaleKeysSummaryFlutterExperienceZh extends LocaleKeysSummaryFlutterExperienceEn {
-	_LocaleKeysSummaryFlutterExperienceZh._(LocaleKeysZh root) : this._root = root, super.internal(root);
+// Path: summary.mobileExperience
+class _LocaleKeysSummaryMobileExperienceZh extends LocaleKeysSummaryMobileExperienceEn {
+	_LocaleKeysSummaryMobileExperienceZh._(LocaleKeysZh root) : this._root = root, super.internal(root);
 
 	final LocaleKeysZh _root; // ignore: unused_field
 
 	// Translations
-	@override String get subtitle => 'Flutter经验';
+	@override String get subtitle => '移动应用经验';
 	@override String get content1 => '我开发';
-	@override String get content2 => 'Web和移动';
-	@override String get content3 => '应用程序，以及';
+	@override String get content2 => 'web 和移动';
+	@override String get content3 => '应用程序以及';
 	@override String get content4 => '后端';
-	@override String get content5 => '结构。我专注于复杂系统和自定义Flutter包';
+	@override String get content5 => '结构。我专注于复杂的系统和定制包。';
 }
 
 // Path: summary.highEducation
@@ -430,12 +433,12 @@ extension on LocaleKeysZh {
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return '总经验';
 			case 'summary.totalExperience.content': return '除了Dart，我还具有Kotlin、Swift、JavaScript、Python、C#、R等语言的经验';
-			case 'summary.flutterExperience.subtitle': return 'Flutter经验';
-			case 'summary.flutterExperience.content1': return '我开发';
-			case 'summary.flutterExperience.content2': return 'Web和移动';
-			case 'summary.flutterExperience.content3': return '应用程序，以及';
-			case 'summary.flutterExperience.content4': return '后端';
-			case 'summary.flutterExperience.content5': return '结构。我专注于复杂系统和自定义Flutter包';
+			case 'summary.mobileExperience.subtitle': return '移动应用经验';
+			case 'summary.mobileExperience.content1': return '我开发';
+			case 'summary.mobileExperience.content2': return 'web 和移动';
+			case 'summary.mobileExperience.content3': return '应用程序以及';
+			case 'summary.mobileExperience.content4': return '后端';
+			case 'summary.mobileExperience.content5': return '结构。我专注于复杂的系统和定制包。';
 			case 'summary.highEducation.title': return '高等教育';
 			case 'summary.highEducation.subtitle': return '工程学';
 			case 'summary.highEducation.content1': return '«信息与通信系统编程»，在';
