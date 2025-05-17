@@ -45,6 +45,7 @@ abstract class ResponsiveBuilder {
         return ResponsiveScaledBox(
           width: ResponsiveValue<double>(
             context,
+            defaultValue: MediaQuery.sizeOf(context).width,
             conditionalValues: [
               Condition.between(start: 0, end: 350, value: 350),
             ],

@@ -13,6 +13,8 @@ class ProjectCardsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final  actualItemCount = max(vms.length, expectedCount);
+
     return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -36,19 +38,17 @@ class ProjectCardsGrid extends StatelessWidget {
         crossAxisSpacing: 12,
       ),
       shrinkWrap: true,
-      itemCount: max(vms.length, expectedCount),
+      itemCount: actualItemCount,
       itemBuilder: (context, index) {
-        PetProjectCardVM? vm;
-        try {
-          vm = vms[index];
-        } catch (_) {}
-        if (vm == null) {
+        if (index < vms.length) {
+          final vm = vms[index];
+          return ProjectCard(
+            key: ValueKey('${vm.data.id}-$index'),
+            vm: vm,
+          );
+        } else {
           return const SizedBox.shrink();
         }
-        return ProjectCard(
-          key: ValueKey('${vm.data.id}-$index'),
-          vm: vm,
-        );
       },
     );
   }

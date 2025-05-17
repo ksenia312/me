@@ -13,9 +13,9 @@ import 'translations.g.dart';
 class LocaleKeysJa extends LocaleKeys {
 	/// You can call this constructor and build your own translation instance of this locale.
 	/// Constructing via the enum [AppLocale.build] is preferred.
-	LocaleKeysJa({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
+	LocaleKeysJa({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver, TranslationMetadata<AppLocale, LocaleKeys>? meta})
 		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
+		  $meta = meta ?? TranslationMetadata(
 		    locale: AppLocale.ja,
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
@@ -33,6 +33,9 @@ class LocaleKeysJa extends LocaleKeys {
 	@override dynamic operator[](String key) => $meta.getTranslation(key) ?? super.$meta.getTranslation(key);
 
 	late final LocaleKeysJa _root = this; // ignore: unused_field
+
+	@override 
+	LocaleKeysJa $copyWith({TranslationMetadata<AppLocale, LocaleKeys>? meta}) => LocaleKeysJa(meta: meta ?? this.$meta);
 
 	// Translations
 	@override late final _LocaleKeysTabJa tab = _LocaleKeysTabJa._(_root);
@@ -103,7 +106,7 @@ class _LocaleKeysSummaryJa extends LocaleKeysSummaryEn {
 
 	// Translations
 	@override late final _LocaleKeysSummaryTotalExperienceJa totalExperience = _LocaleKeysSummaryTotalExperienceJa._(_root);
-	@override late final _LocaleKeysSummaryFlutterExperienceJa flutterExperience = _LocaleKeysSummaryFlutterExperienceJa._(_root);
+	@override late final _LocaleKeysSummaryMobileExperienceJa mobileExperience = _LocaleKeysSummaryMobileExperienceJa._(_root);
 	@override late final _LocaleKeysSummaryHighEducationJa highEducation = _LocaleKeysSummaryHighEducationJa._(_root);
 	@override late final _LocaleKeysSummaryOpenSourceJa openSource = _LocaleKeysSummaryOpenSourceJa._(_root);
 	@override late final _LocaleKeysSummaryGooglePlayJa googlePlay = _LocaleKeysSummaryGooglePlayJa._(_root);
@@ -163,19 +166,19 @@ class _LocaleKeysSummaryTotalExperienceJa extends LocaleKeysSummaryTotalExperien
 	@override String get content => 'Dartに加えて、Kotlin、Swift、JavaScript、Python、C#、Rなどの経験があります';
 }
 
-// Path: summary.flutterExperience
-class _LocaleKeysSummaryFlutterExperienceJa extends LocaleKeysSummaryFlutterExperienceEn {
-	_LocaleKeysSummaryFlutterExperienceJa._(LocaleKeysJa root) : this._root = root, super.internal(root);
+// Path: summary.mobileExperience
+class _LocaleKeysSummaryMobileExperienceJa extends LocaleKeysSummaryMobileExperienceEn {
+	_LocaleKeysSummaryMobileExperienceJa._(LocaleKeysJa root) : this._root = root, super.internal(root);
 
 	final LocaleKeysJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get subtitle => 'Flutter経験';
+	@override String get subtitle => 'モバイルアプリの経験';
 	@override String get content1 => '私は開発します';
 	@override String get content2 => 'ウェブおよびモバイル';
-	@override String get content3 => 'アプリケーション、さらに';
+	@override String get content3 => 'アプリケーションと';
 	@override String get content4 => 'バックエンド';
-	@override String get content5 => '構造。私は複雑なシステムとカスタムFlutterパッケージに特化しています';
+	@override String get content5 => '構造。複雑なシステムとカスタムパッケージを専門としています。';
 }
 
 // Path: summary.highEducation
@@ -441,12 +444,12 @@ extension on LocaleKeysJa {
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return '総経験';
 			case 'summary.totalExperience.content': return 'Dartに加えて、Kotlin、Swift、JavaScript、Python、C#、Rなどの経験があります';
-			case 'summary.flutterExperience.subtitle': return 'Flutter経験';
-			case 'summary.flutterExperience.content1': return '私は開発します';
-			case 'summary.flutterExperience.content2': return 'ウェブおよびモバイル';
-			case 'summary.flutterExperience.content3': return 'アプリケーション、さらに';
-			case 'summary.flutterExperience.content4': return 'バックエンド';
-			case 'summary.flutterExperience.content5': return '構造。私は複雑なシステムとカスタムFlutterパッケージに特化しています';
+			case 'summary.mobileExperience.subtitle': return 'モバイルアプリの経験';
+			case 'summary.mobileExperience.content1': return '私は開発します';
+			case 'summary.mobileExperience.content2': return 'ウェブおよびモバイル';
+			case 'summary.mobileExperience.content3': return 'アプリケーションと';
+			case 'summary.mobileExperience.content4': return 'バックエンド';
+			case 'summary.mobileExperience.content5': return '構造。複雑なシステムとカスタムパッケージを専門としています。';
 			case 'summary.highEducation.title': return '高等教育';
 			case 'summary.highEducation.subtitle': return 'エンジニアリング';
 			case 'summary.highEducation.content1': return '「情報および通信システムにおけるプログラミング」';

@@ -45,7 +45,7 @@ class SummaryCircle extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: context.textTheme.titleLarge,
+                style: context.textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: AppResponsiveSizes.medium(context)),
@@ -118,7 +118,7 @@ class _Decoration extends StatelessWidget {
         boxShadow: [
           if (hasBorders)
             BoxShadow(
-              color: context.colorScheme.onSurface.withOpacity(0.7),
+              color: context.colorScheme.onSurface.withValues(alpha: 0.7),
               blurRadius: AppResponsiveSizes.shadowBlurRadius(context),
               spreadRadius: isHighlight ? 2.0 : 0.0,
             )

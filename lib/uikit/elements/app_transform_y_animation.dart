@@ -52,11 +52,7 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Si
     setState(() {
       isFaceVisible = !isFaceVisible;
     });
-    if (_controller.status.isForwardOrCompleted) {
-      _controller.reverse();
-    } else {
-      _controller.forward();
-    }
+    _controller.status.isForwardOrCompleted == true ? _controller.reverse() : _controller.forward();
   }
 
   @override
@@ -68,23 +64,27 @@ class _AppTransformYAnimationState extends State<AppTransformYAnimation> with Si
         builder: (context, child) {
           final value = _animation.value;
           final angle = pi * widget.turnsCount * 2 * value;
-          final isFaceVisible = (angle <= pi / 2) || (angle >= 3 * pi / 2);
 
           return Transform(
+            alignment: Alignment.center,
             transform: Matrix4.identity()
               ..setEntry(3, 2, 0.002)
               ..rotateY(angle),
-            alignment: Alignment.center,
-            child: isFaceVisible
-                ? widget.faceChild
-                : Transform(
-                    transform: Matrix4.identity()..rotateY(pi),
-                    alignment: Alignment.center,
-                    child: widget.backChild,
-                  ),
+            child: _getFrontOrBack(angle),
           );
         },
       ),
+    );
+  }
+
+  Widget _getFrontOrBack(double angle) {
+    if ((angle <= pi / 2) || (angle >= 3 * pi / 2)) {
+      return widget.faceChild;
+    }
+    return Transform(
+      transform: Matrix4.identity()..rotateY(pi),
+      alignment: Alignment.center,
+      child: widget.backChild,
     );
   }
 }

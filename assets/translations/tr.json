@@ -22,13 +22,13 @@
       "subtitle": "toplam deneyim",
       "content": "Dart'a ek olarak, Kotlin, Swift, JavaScript, Python, C#, R ve daha birçok dilde deneyimim var"
     },
-    "flutterExperience": {
-      "subtitle": "Flutter deneyimi",
-      "content1": "Ben geliştiriyorum",
+    "mobileExperience": {
+      "subtitle": "mobil uygulama deneyimi",
+      "content1": "Geliştiriyorum",
       "content2": "web ve mobil",
-      "content3": "uygulamalar ve ayrıca",
+      "content3": "uygulamaları ve ayrıca",
       "content4": "backend",
-      "content5": "yapıları. Karmaşık sistemler ve özelleştirilmiş Flutter paketleri konusunda uzmanım"
+      "content5": "yapıları. Karmaşık sistemler ve özel paketler konusunda uzmanım."
     },
     "highEducation": {
       "title": "Yükseköğretim",

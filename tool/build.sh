@@ -2,7 +2,7 @@ cd ../
 source .env
 export $(cut -d= -f1 .env)
 
-fvm flutter build web --wasm \
+fvm flutter build web --wasm --source-maps \
 --no-tree-shake-icons \
 --dart-define=API_KEY="$API_KEY" \
 --dart-define=APP_ID="$APP_ID" \

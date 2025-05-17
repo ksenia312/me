@@ -13,9 +13,9 @@ import 'translations.g.dart';
 class LocaleKeysFr extends LocaleKeys {
 	/// You can call this constructor and build your own translation instance of this locale.
 	/// Constructing via the enum [AppLocale.build] is preferred.
-	LocaleKeysFr({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
+	LocaleKeysFr({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver, TranslationMetadata<AppLocale, LocaleKeys>? meta})
 		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
+		  $meta = meta ?? TranslationMetadata(
 		    locale: AppLocale.fr,
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
@@ -33,6 +33,9 @@ class LocaleKeysFr extends LocaleKeys {
 	@override dynamic operator[](String key) => $meta.getTranslation(key) ?? super.$meta.getTranslation(key);
 
 	late final LocaleKeysFr _root = this; // ignore: unused_field
+
+	@override 
+	LocaleKeysFr $copyWith({TranslationMetadata<AppLocale, LocaleKeys>? meta}) => LocaleKeysFr(meta: meta ?? this.$meta);
 
 	// Translations
 	@override late final _LocaleKeysTabFr tab = _LocaleKeysTabFr._(_root);
@@ -103,7 +106,7 @@ class _LocaleKeysSummaryFr extends LocaleKeysSummaryEn {
 
 	// Translations
 	@override late final _LocaleKeysSummaryTotalExperienceFr totalExperience = _LocaleKeysSummaryTotalExperienceFr._(_root);
-	@override late final _LocaleKeysSummaryFlutterExperienceFr flutterExperience = _LocaleKeysSummaryFlutterExperienceFr._(_root);
+	@override late final _LocaleKeysSummaryMobileExperienceFr mobileExperience = _LocaleKeysSummaryMobileExperienceFr._(_root);
 	@override late final _LocaleKeysSummaryHighEducationFr highEducation = _LocaleKeysSummaryHighEducationFr._(_root);
 	@override late final _LocaleKeysSummaryOpenSourceFr openSource = _LocaleKeysSummaryOpenSourceFr._(_root);
 	@override late final _LocaleKeysSummaryGooglePlayFr googlePlay = _LocaleKeysSummaryGooglePlayFr._(_root);
@@ -163,19 +166,19 @@ class _LocaleKeysSummaryTotalExperienceFr extends LocaleKeysSummaryTotalExperien
 	@override String get content => 'En plus de Dart, j\'ai de l\'expérience avec Kotlin, Swift, JavaScript, Python, C#, R et plus encore';
 }
 
-// Path: summary.flutterExperience
-class _LocaleKeysSummaryFlutterExperienceFr extends LocaleKeysSummaryFlutterExperienceEn {
-	_LocaleKeysSummaryFlutterExperienceFr._(LocaleKeysFr root) : this._root = root, super.internal(root);
+// Path: summary.mobileExperience
+class _LocaleKeysSummaryMobileExperienceFr extends LocaleKeysSummaryMobileExperienceEn {
+	_LocaleKeysSummaryMobileExperienceFr._(LocaleKeysFr root) : this._root = root, super.internal(root);
 
 	final LocaleKeysFr _root; // ignore: unused_field
 
 	// Translations
-	@override String get subtitle => 'Expérience Flutter';
-	@override String get content1 => 'Je développe';
-	@override String get content2 => 'des applications web et mobiles';
-	@override String get content3 => 'ainsi que';
-	@override String get content4 => 'des structures backend';
-	@override String get content5 => 'Je me spécialise dans les systèmes complexes et les packages Flutter personnalisés';
+	@override String get subtitle => 'expérience dans les applications mobiles';
+	@override String get content1 => 'Je développe des';
+	@override String get content2 => 'applications web et mobiles';
+	@override String get content3 => 'ainsi que des structures';
+	@override String get content4 => 'backend';
+	@override String get content5 => '. Je me spécialise dans les systèmes complexes et les packages personnalisés.';
 }
 
 // Path: summary.highEducation
@@ -441,12 +444,12 @@ extension on LocaleKeysFr {
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return 'expérience totale';
 			case 'summary.totalExperience.content': return 'En plus de Dart, j\'ai de l\'expérience avec Kotlin, Swift, JavaScript, Python, C#, R et plus encore';
-			case 'summary.flutterExperience.subtitle': return 'Expérience Flutter';
-			case 'summary.flutterExperience.content1': return 'Je développe';
-			case 'summary.flutterExperience.content2': return 'des applications web et mobiles';
-			case 'summary.flutterExperience.content3': return 'ainsi que';
-			case 'summary.flutterExperience.content4': return 'des structures backend';
-			case 'summary.flutterExperience.content5': return 'Je me spécialise dans les systèmes complexes et les packages Flutter personnalisés';
+			case 'summary.mobileExperience.subtitle': return 'expérience dans les applications mobiles';
+			case 'summary.mobileExperience.content1': return 'Je développe des';
+			case 'summary.mobileExperience.content2': return 'applications web et mobiles';
+			case 'summary.mobileExperience.content3': return 'ainsi que des structures';
+			case 'summary.mobileExperience.content4': return 'backend';
+			case 'summary.mobileExperience.content5': return '. Je me spécialise dans les systèmes complexes et les packages personnalisés.';
 			case 'summary.highEducation.title': return 'Éducation supérieure';
 			case 'summary.highEducation.subtitle': return 'en ingénierie';
 			case 'summary.highEducation.content1': return '«Programmation dans les systèmes d\'information et de communication» à l\'université';

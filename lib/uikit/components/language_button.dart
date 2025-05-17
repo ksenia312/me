@@ -61,7 +61,7 @@ class _LanguageButtonDesktop extends StatelessWidget {
         scrollbarTheme: ScrollbarThemeData(
           mainAxisMargin: 8,
           thickness: WidgetStatePropertyAll(2),
-          thumbColor: WidgetStatePropertyAll(AppColors.shadowGreyBlue.withOpacity(0.5)),
+          thumbColor: WidgetStatePropertyAll(AppColors.shadowGreyBlue.withValues(alpha: 0.5)),
         ),
       ),
       iconStyleData: IconStyleData(icon: SizedBox.shrink()),
@@ -180,7 +180,7 @@ class _MobileLanguageSelectorBottomSheetState extends State<_MobileLanguageSelec
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: AppSizes.toolbarBorderRadius,
-                          color: context.locale == e ? AppColors.deepBlueSea : AppColors.deepBlueSea.withOpacity(0.3),
+                          color: context.locale == e ? AppColors.deepBlueSea : AppColors.deepBlueSea.withValues(alpha: 0.3),
                         ),
                         padding: EdgeInsets.symmetric(
                           vertical: AppResponsiveSizes.x3Large(context),

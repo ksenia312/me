@@ -177,11 +177,11 @@ class AppTextTheme {
   );
 
   static final _fontShadow = Shadow(
-    color: AppColors.white.withOpacity(0.5),
+    color: AppColors.white.withValues(alpha: 0.5),
     blurRadius: 10,
   );
   static final _fontShadowSmall = Shadow(
-    color: AppColors.white.withOpacity(0.5),
+    color: AppColors.white.withValues(alpha: 0.5),
     blurRadius: 4,
   );
 }
