@@ -20,7 +20,7 @@
   "summary": {
     "totalExperience": {
       "subtitle": "toplam deneyim",
-      "content": "Dart'a ek olarak, Kotlin, Swift, JavaScript, Python, C#, R ve daha birçok dilde deneyimim var"
+      "content": "Kotlin, Dart, Swift, JavaScript, Python, C#, R ve daha fazlasında deneyimim var"
     },
     "mobileExperience": {
       "subtitle": "mobil uygulama deneyimi",
@@ -88,11 +88,26 @@
       "caption": "Daha fazla bilgi için CV'de okuyun",
       "button": "Açık CV"
     },
+    "q42": {
+      "title": "Mobil Uygulama Geliştiricisi",
+      "organization": "Q42 Internet B.V.",
+      "location": "Amsterdam, Hollanda (Hibrit)",
+      "duration": "Haziran 2025 – Günümüz",
+      "subtitle": "Yeni başladım :)",
+      "skills": {
+        "skill1": "Kotlin",
+        "skill2": "Jetpack Compose",
+        "skill3": "Figma",
+        "skill4": "Git",
+        "skill5": "İngilizce",
+        "skill6": "Nesne Yönelimli Programlama (OOP)"
+      }
+    },
     "greenflux": {
       "title": "Mobil Uygulama Geliştiricisi",
       "organization": "Greenflux Assets B.V.",
       "location": "Amsterdam, Hollanda (Hibrit)",
-      "duration": "Şubat 2024 – Günümüz",
+      "duration": "Şubat 2024 – Haziran 2025",
       "subtitle": "Elektrikli araç şarj istasyonları için uygulama geliştirme",
       "skills": {
         "skill1": "Dart",

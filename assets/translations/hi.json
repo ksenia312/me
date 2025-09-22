@@ -20,7 +20,7 @@
   "summary": {
     "totalExperience": {
       "subtitle": "कुल अनुभव",
-      "content": "Dart के अलावा, मेरे पास Kotlin, Swift, JavaScript, Python, C#, R और अन्य में अनुभव है"
+      "content": "मुझे Kotlin, Dart, Swift, JavaScript, Python, C#, R, और अन्य में अनुभव है"
     },
     "mobileExperience": {
       "subtitle": "मोबाइल ऐप का अनुभव",
@@ -91,11 +91,26 @@
       "caption": "मेरी अभियान के बारे में और पढ़ने के लिए और अधिक जानें",
       "button": "खुला CV"
     },
+    "q42": {
+      "title": "मोबाइल एप्लिकेशन डेवलपर",
+      "organization": "Q42 Internet B.V.",
+      "location": "एम्स्टर्डम, नीदरलैंड्स (हाइब्रिड)",
+      "duration": "जून 2025 – वर्तमान",
+      "subtitle": "हाल ही में शुरू किया :)",
+      "skills": {
+        "skill1": "Kotlin",
+        "skill2": "Jetpack Compose",
+        "skill3": "Figma",
+        "skill4": "Git",
+        "skill5": "अंग्रेज़ी",
+        "skill6": "ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग (OOP)"
+      }
+    },
     "greenflux": {
       "title": "मोबाइल एप्लिकेशन डेवलपर",
       "organization": "Greenflux Assets B.V.",
       "location": "एम्स्टर्डम, नीदरलैंड्स (हाइब्रिड)",
-      "duration": "फरवरी 2024 – वर्तमान",
+      "duration": "फ़रवरी 2024 – जून 2025",
       "subtitle": "इलेक्ट्रिक वाहन चार्जिंग के लिए एप्लिकेशन विकसित करना",
       "skills": {
         "skill1": "Dart",

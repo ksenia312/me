@@ -150,6 +150,7 @@ class _LocaleKeysExperienceJa extends LocaleKeysExperienceEn {
 	@override String get title => '経験';
 	@override String get subtitle => '退屈な部分';
 	@override late final _LocaleKeysExperienceCvJa cv = _LocaleKeysExperienceCvJa._(_root);
+	@override late final _LocaleKeysExperienceQ42Ja q42 = _LocaleKeysExperienceQ42Ja._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxJa greenflux = _LocaleKeysExperienceGreenfluxJa._(_root);
 	@override late final _LocaleKeysExperienceFriflexJa friflex = _LocaleKeysExperienceFriflexJa._(_root);
 	@override late final _LocaleKeysExperienceAgroStabJa agroStab = _LocaleKeysExperienceAgroStabJa._(_root);
@@ -163,7 +164,7 @@ class _LocaleKeysSummaryTotalExperienceJa extends LocaleKeysSummaryTotalExperien
 
 	// Translations
 	@override String get subtitle => '総経験';
-	@override String get content => 'Dartに加えて、Kotlin、Swift、JavaScript、Python、C#、Rなどの経験があります';
+	@override String get content => 'Kotlin、Dart、Swift、JavaScript、Python、C#、R などの経験があります';
 }
 
 // Path: summary.mobileExperience
@@ -264,6 +265,21 @@ class _LocaleKeysExperienceCvJa extends LocaleKeysExperienceCvEn {
 	@override String get button => 'オープンCV';
 }
 
+// Path: experience.q42
+class _LocaleKeysExperienceQ42Ja extends LocaleKeysExperienceQ42En {
+	_LocaleKeysExperienceQ42Ja._(LocaleKeysJa root) : this._root = root, super.internal(root);
+
+	final LocaleKeysJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'モバイルアプリケーション開発者';
+	@override String get organization => 'Q42 Internet B.V.';
+	@override String get location => 'アムステルダム、オランダ（ハイブリッド）';
+	@override String get duration => '2025年6月 – 現在';
+	@override String get subtitle => '最近始めました :)';
+	@override late final _LocaleKeysExperienceQ42SkillsJa skills = _LocaleKeysExperienceQ42SkillsJa._(_root);
+}
+
 // Path: experience.greenflux
 class _LocaleKeysExperienceGreenfluxJa extends LocaleKeysExperienceGreenfluxEn {
 	_LocaleKeysExperienceGreenfluxJa._(LocaleKeysJa root) : this._root = root, super.internal(root);
@@ -274,7 +290,7 @@ class _LocaleKeysExperienceGreenfluxJa extends LocaleKeysExperienceGreenfluxEn {
 	@override String get title => 'モバイルアプリケーション開発者';
 	@override String get organization => 'Greenflux Assets B.V.';
 	@override String get location => 'アムステルダム、オランダ（ハイブリッド）';
-	@override String get duration => '2024年2月 – 現在';
+	@override String get duration => '2024年2月 – 2025年6月';
 	@override String get subtitle => '電気自動車の充電ステーション向けアプリケーションの開発';
 	@override late final _LocaleKeysExperienceGreenfluxSkillsJa skills = _LocaleKeysExperienceGreenfluxSkillsJa._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxAchievementsJa achievements = _LocaleKeysExperienceGreenfluxAchievementsJa._(_root);
@@ -310,6 +326,21 @@ class _LocaleKeysExperienceAgroStabJa extends LocaleKeysExperienceAgroStabEn {
 	@override String get subtitle => 'スマート温室用の管理パネルの開発';
 	@override late final _LocaleKeysExperienceAgroStabSkillsJa skills = _LocaleKeysExperienceAgroStabSkillsJa._(_root);
 	@override late final _LocaleKeysExperienceAgroStabAchievementsJa achievements = _LocaleKeysExperienceAgroStabAchievementsJa._(_root);
+}
+
+// Path: experience.q42.skills
+class _LocaleKeysExperienceQ42SkillsJa extends LocaleKeysExperienceQ42SkillsEn {
+	_LocaleKeysExperienceQ42SkillsJa._(LocaleKeysJa root) : this._root = root, super.internal(root);
+
+	final LocaleKeysJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get skill1 => 'Kotlin';
+	@override String get skill2 => 'Jetpack Compose';
+	@override String get skill3 => 'Figma';
+	@override String get skill4 => 'Git';
+	@override String get skill5 => '英語';
+	@override String get skill6 => 'オブジェクト指向プログラミング (OOP)';
 }
 
 // Path: experience.greenflux.skills
@@ -443,7 +474,7 @@ extension on LocaleKeysJa {
 			case 'welcome.title': return 'モバイル開発者';
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return '総経験';
-			case 'summary.totalExperience.content': return 'Dartに加えて、Kotlin、Swift、JavaScript、Python、C#、Rなどの経験があります';
+			case 'summary.totalExperience.content': return 'Kotlin、Dart、Swift、JavaScript、Python、C#、R などの経験があります';
 			case 'summary.mobileExperience.subtitle': return 'モバイルアプリの経験';
 			case 'summary.mobileExperience.content1': return '私は開発します';
 			case 'summary.mobileExperience.content2': return 'ウェブおよびモバイル';
@@ -491,10 +522,21 @@ extension on LocaleKeysJa {
 			case 'experience.subtitle': return '退屈な部分';
 			case 'experience.cv.caption': return 'より詳しく私の経験については、CVを読む';
 			case 'experience.cv.button': return 'オープンCV';
+			case 'experience.q42.title': return 'モバイルアプリケーション開発者';
+			case 'experience.q42.organization': return 'Q42 Internet B.V.';
+			case 'experience.q42.location': return 'アムステルダム、オランダ（ハイブリッド）';
+			case 'experience.q42.duration': return '2025年6月 – 現在';
+			case 'experience.q42.subtitle': return '最近始めました :)';
+			case 'experience.q42.skills.skill1': return 'Kotlin';
+			case 'experience.q42.skills.skill2': return 'Jetpack Compose';
+			case 'experience.q42.skills.skill3': return 'Figma';
+			case 'experience.q42.skills.skill4': return 'Git';
+			case 'experience.q42.skills.skill5': return '英語';
+			case 'experience.q42.skills.skill6': return 'オブジェクト指向プログラミング (OOP)';
 			case 'experience.greenflux.title': return 'モバイルアプリケーション開発者';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'アムステルダム、オランダ（ハイブリッド）';
-			case 'experience.greenflux.duration': return '2024年2月 – 現在';
+			case 'experience.greenflux.duration': return '2024年2月 – 2025年6月';
 			case 'experience.greenflux.subtitle': return '電気自動車の充電ステーション向けアプリケーションの開発';
 			case 'experience.greenflux.skills.skill1': return 'Dart';
 			case 'experience.greenflux.skills.skill2': return 'Flutter';

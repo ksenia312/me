@@ -150,6 +150,7 @@ class _LocaleKeysExperienceFr extends LocaleKeysExperienceEn {
 	@override String get title => 'Expérience';
 	@override String get subtitle => 'La partie ennuyeuse';
 	@override late final _LocaleKeysExperienceCvFr cv = _LocaleKeysExperienceCvFr._(_root);
+	@override late final _LocaleKeysExperienceQ42Fr q42 = _LocaleKeysExperienceQ42Fr._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxFr greenflux = _LocaleKeysExperienceGreenfluxFr._(_root);
 	@override late final _LocaleKeysExperienceFriflexFr friflex = _LocaleKeysExperienceFriflexFr._(_root);
 	@override late final _LocaleKeysExperienceAgroStabFr agroStab = _LocaleKeysExperienceAgroStabFr._(_root);
@@ -163,7 +164,7 @@ class _LocaleKeysSummaryTotalExperienceFr extends LocaleKeysSummaryTotalExperien
 
 	// Translations
 	@override String get subtitle => 'expérience totale';
-	@override String get content => 'En plus de Dart, j\'ai de l\'expérience avec Kotlin, Swift, JavaScript, Python, C#, R et plus encore';
+	@override String get content => 'J\'ai de l\'expérience avec Kotlin, Dart, Swift, JavaScript, Python, C#, R, et plus';
 }
 
 // Path: summary.mobileExperience
@@ -264,6 +265,21 @@ class _LocaleKeysExperienceCvFr extends LocaleKeysExperienceCvEn {
 	@override String get button => 'CV ouvert';
 }
 
+// Path: experience.q42
+class _LocaleKeysExperienceQ42Fr extends LocaleKeysExperienceQ42En {
+	_LocaleKeysExperienceQ42Fr._(LocaleKeysFr root) : this._root = root, super.internal(root);
+
+	final LocaleKeysFr _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Développeur d\'Applications Mobiles';
+	@override String get organization => 'Q42 Internet B.V.';
+	@override String get location => 'Amsterdam, Pays-Bas (Hybride)';
+	@override String get duration => 'Juin 2025 – Présent';
+	@override String get subtitle => 'Commencé récemment :)';
+	@override late final _LocaleKeysExperienceQ42SkillsFr skills = _LocaleKeysExperienceQ42SkillsFr._(_root);
+}
+
 // Path: experience.greenflux
 class _LocaleKeysExperienceGreenfluxFr extends LocaleKeysExperienceGreenfluxEn {
 	_LocaleKeysExperienceGreenfluxFr._(LocaleKeysFr root) : this._root = root, super.internal(root);
@@ -274,7 +290,7 @@ class _LocaleKeysExperienceGreenfluxFr extends LocaleKeysExperienceGreenfluxEn {
 	@override String get title => 'Développeuse d\'applications mobiles';
 	@override String get organization => 'Greenflux Assets B.V.';
 	@override String get location => 'Amsterdam, Pays-Bas (Hybride)';
-	@override String get duration => 'Février 2024 – Présent';
+	@override String get duration => 'Février 2024 – Juin 2025';
 	@override String get subtitle => 'Développement d\'applications pour les stations de recharge de véhicules électriques';
 	@override late final _LocaleKeysExperienceGreenfluxSkillsFr skills = _LocaleKeysExperienceGreenfluxSkillsFr._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxAchievementsFr achievements = _LocaleKeysExperienceGreenfluxAchievementsFr._(_root);
@@ -310,6 +326,21 @@ class _LocaleKeysExperienceAgroStabFr extends LocaleKeysExperienceAgroStabEn {
 	@override String get subtitle => 'Développement de panneaux de contrôle pour serres intelligentes';
 	@override late final _LocaleKeysExperienceAgroStabSkillsFr skills = _LocaleKeysExperienceAgroStabSkillsFr._(_root);
 	@override late final _LocaleKeysExperienceAgroStabAchievementsFr achievements = _LocaleKeysExperienceAgroStabAchievementsFr._(_root);
+}
+
+// Path: experience.q42.skills
+class _LocaleKeysExperienceQ42SkillsFr extends LocaleKeysExperienceQ42SkillsEn {
+	_LocaleKeysExperienceQ42SkillsFr._(LocaleKeysFr root) : this._root = root, super.internal(root);
+
+	final LocaleKeysFr _root; // ignore: unused_field
+
+	// Translations
+	@override String get skill1 => 'Kotlin';
+	@override String get skill2 => 'Jetpack Compose';
+	@override String get skill3 => 'Figma';
+	@override String get skill4 => 'Git';
+	@override String get skill5 => 'Anglais';
+	@override String get skill6 => 'Programmation Orientée Objet (POO)';
 }
 
 // Path: experience.greenflux.skills
@@ -443,7 +474,7 @@ extension on LocaleKeysFr {
 			case 'welcome.title': return 'Développeuse Mobile';
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return 'expérience totale';
-			case 'summary.totalExperience.content': return 'En plus de Dart, j\'ai de l\'expérience avec Kotlin, Swift, JavaScript, Python, C#, R et plus encore';
+			case 'summary.totalExperience.content': return 'J\'ai de l\'expérience avec Kotlin, Dart, Swift, JavaScript, Python, C#, R, et plus';
 			case 'summary.mobileExperience.subtitle': return 'expérience dans les applications mobiles';
 			case 'summary.mobileExperience.content1': return 'Je développe des';
 			case 'summary.mobileExperience.content2': return 'applications web et mobiles';
@@ -491,10 +522,21 @@ extension on LocaleKeysFr {
 			case 'experience.subtitle': return 'La partie ennuyeuse';
 			case 'experience.cv.caption': return 'Lire plus sur ma expérience dans le CV';
 			case 'experience.cv.button': return 'CV ouvert';
+			case 'experience.q42.title': return 'Développeur d\'Applications Mobiles';
+			case 'experience.q42.organization': return 'Q42 Internet B.V.';
+			case 'experience.q42.location': return 'Amsterdam, Pays-Bas (Hybride)';
+			case 'experience.q42.duration': return 'Juin 2025 – Présent';
+			case 'experience.q42.subtitle': return 'Commencé récemment :)';
+			case 'experience.q42.skills.skill1': return 'Kotlin';
+			case 'experience.q42.skills.skill2': return 'Jetpack Compose';
+			case 'experience.q42.skills.skill3': return 'Figma';
+			case 'experience.q42.skills.skill4': return 'Git';
+			case 'experience.q42.skills.skill5': return 'Anglais';
+			case 'experience.q42.skills.skill6': return 'Programmation Orientée Objet (POO)';
 			case 'experience.greenflux.title': return 'Développeuse d\'applications mobiles';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'Amsterdam, Pays-Bas (Hybride)';
-			case 'experience.greenflux.duration': return 'Février 2024 – Présent';
+			case 'experience.greenflux.duration': return 'Février 2024 – Juin 2025';
 			case 'experience.greenflux.subtitle': return 'Développement d\'applications pour les stations de recharge de véhicules électriques';
 			case 'experience.greenflux.skills.skill1': return 'Dart';
 			case 'experience.greenflux.skills.skill2': return 'Flutter';

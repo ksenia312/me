@@ -20,7 +20,7 @@
   "summary": {
     "totalExperience": {
       "subtitle": "総経験",
-      "content": "Dartに加えて、Kotlin、Swift、JavaScript、Python、C#、Rなどの経験があります"
+      "content": "Kotlin、Dart、Swift、JavaScript、Python、C#、R などの経験があります"
     },
     "mobileExperience": {
       "subtitle": "モバイルアプリの経験",
@@ -91,11 +91,26 @@
       "caption": "より詳しく私の経験については、CVを読む",
       "button": "オープンCV"
     },
+    "q42": {
+      "title": "モバイルアプリケーション開発者",
+      "organization": "Q42 Internet B.V.",
+      "location": "アムステルダム、オランダ（ハイブリッド）",
+      "duration": "2025年6月 – 現在",
+      "subtitle": "最近始めました :)",
+      "skills": {
+        "skill1": "Kotlin",
+        "skill2": "Jetpack Compose",
+        "skill3": "Figma",
+        "skill4": "Git",
+        "skill5": "英語",
+        "skill6": "オブジェクト指向プログラミング (OOP)"
+      }
+    },
     "greenflux": {
       "title": "モバイルアプリケーション開発者",
       "organization": "Greenflux Assets B.V.",
       "location": "アムステルダム、オランダ（ハイブリッド）",
-      "duration": "2024年2月 – 現在",
+      "duration": "2024年2月 – 2025年6月",
       "subtitle": "電気自動車の充電ステーション向けアプリケーションの開発",
       "skills": {
         "skill1": "Dart",

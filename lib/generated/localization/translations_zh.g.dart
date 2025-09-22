@@ -149,6 +149,7 @@ class _LocaleKeysExperienceZh extends LocaleKeysExperienceEn {
 	@override String get title => '经验';
 	@override String get subtitle => '无聊的部分';
 	@override late final _LocaleKeysExperienceCvZh cv = _LocaleKeysExperienceCvZh._(_root);
+	@override late final _LocaleKeysExperienceQ42Zh q42 = _LocaleKeysExperienceQ42Zh._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxZh greenflux = _LocaleKeysExperienceGreenfluxZh._(_root);
 	@override late final _LocaleKeysExperienceFriflexZh friflex = _LocaleKeysExperienceFriflexZh._(_root);
 	@override late final _LocaleKeysExperienceAgroStabZh agroStab = _LocaleKeysExperienceAgroStabZh._(_root);
@@ -162,7 +163,7 @@ class _LocaleKeysSummaryTotalExperienceZh extends LocaleKeysSummaryTotalExperien
 
 	// Translations
 	@override String get subtitle => '总经验';
-	@override String get content => '除了Dart，我还具有Kotlin、Swift、JavaScript、Python、C#、R等语言的经验';
+	@override String get content => '我有 Kotlin、Dart、Swift、JavaScript、Python、C#、R 等多种语言的经验';
 }
 
 // Path: summary.mobileExperience
@@ -253,6 +254,21 @@ class _LocaleKeysExperienceCvZh extends LocaleKeysExperienceCvEn {
 	@override String get button => '开放CV';
 }
 
+// Path: experience.q42
+class _LocaleKeysExperienceQ42Zh extends LocaleKeysExperienceQ42En {
+	_LocaleKeysExperienceQ42Zh._(LocaleKeysZh root) : this._root = root, super.internal(root);
+
+	final LocaleKeysZh _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => '移动应用开发者';
+	@override String get organization => 'Q42 Internet B.V.';
+	@override String get location => '阿姆斯特丹，荷兰（混合办公）';
+	@override String get duration => '2025年6月 – 现在';
+	@override String get subtitle => '最近开始 :)';
+	@override late final _LocaleKeysExperienceQ42SkillsZh skills = _LocaleKeysExperienceQ42SkillsZh._(_root);
+}
+
 // Path: experience.greenflux
 class _LocaleKeysExperienceGreenfluxZh extends LocaleKeysExperienceGreenfluxEn {
 	_LocaleKeysExperienceGreenfluxZh._(LocaleKeysZh root) : this._root = root, super.internal(root);
@@ -263,7 +279,7 @@ class _LocaleKeysExperienceGreenfluxZh extends LocaleKeysExperienceGreenfluxEn {
 	@override String get title => '移动应用开发工程师';
 	@override String get organization => 'Greenflux Assets B.V.';
 	@override String get location => '阿姆斯特丹，荷兰（混合工作模式）';
-	@override String get duration => '2024年2月 – 至今';
+	@override String get duration => '2024年2月 – 2025年6月';
 	@override String get subtitle => '开发电动汽车充电站的应用程序';
 	@override late final _LocaleKeysExperienceGreenfluxSkillsZh skills = _LocaleKeysExperienceGreenfluxSkillsZh._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxAchievementsZh achievements = _LocaleKeysExperienceGreenfluxAchievementsZh._(_root);
@@ -299,6 +315,21 @@ class _LocaleKeysExperienceAgroStabZh extends LocaleKeysExperienceAgroStabEn {
 	@override String get subtitle => '为智能温室开发管理面板';
 	@override late final _LocaleKeysExperienceAgroStabSkillsZh skills = _LocaleKeysExperienceAgroStabSkillsZh._(_root);
 	@override late final _LocaleKeysExperienceAgroStabAchievementsZh achievements = _LocaleKeysExperienceAgroStabAchievementsZh._(_root);
+}
+
+// Path: experience.q42.skills
+class _LocaleKeysExperienceQ42SkillsZh extends LocaleKeysExperienceQ42SkillsEn {
+	_LocaleKeysExperienceQ42SkillsZh._(LocaleKeysZh root) : this._root = root, super.internal(root);
+
+	final LocaleKeysZh _root; // ignore: unused_field
+
+	// Translations
+	@override String get skill1 => 'Kotlin';
+	@override String get skill2 => 'Jetpack Compose';
+	@override String get skill3 => 'Figma';
+	@override String get skill4 => 'Git';
+	@override String get skill5 => '英语';
+	@override String get skill6 => '面向对象编程 (OOP)';
 }
 
 // Path: experience.greenflux.skills
@@ -432,7 +463,7 @@ extension on LocaleKeysZh {
 			case 'welcome.title': return '移动开发者';
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return '总经验';
-			case 'summary.totalExperience.content': return '除了Dart，我还具有Kotlin、Swift、JavaScript、Python、C#、R等语言的经验';
+			case 'summary.totalExperience.content': return '我有 Kotlin、Dart、Swift、JavaScript、Python、C#、R 等多种语言的经验';
 			case 'summary.mobileExperience.subtitle': return '移动应用经验';
 			case 'summary.mobileExperience.content1': return '我开发';
 			case 'summary.mobileExperience.content2': return 'web 和移动';
@@ -479,10 +510,21 @@ extension on LocaleKeysZh {
 			case 'experience.subtitle': return '无聊的部分';
 			case 'experience.cv.caption': return '阅读更多关于我的经验的CV';
 			case 'experience.cv.button': return '开放CV';
+			case 'experience.q42.title': return '移动应用开发者';
+			case 'experience.q42.organization': return 'Q42 Internet B.V.';
+			case 'experience.q42.location': return '阿姆斯特丹，荷兰（混合办公）';
+			case 'experience.q42.duration': return '2025年6月 – 现在';
+			case 'experience.q42.subtitle': return '最近开始 :)';
+			case 'experience.q42.skills.skill1': return 'Kotlin';
+			case 'experience.q42.skills.skill2': return 'Jetpack Compose';
+			case 'experience.q42.skills.skill3': return 'Figma';
+			case 'experience.q42.skills.skill4': return 'Git';
+			case 'experience.q42.skills.skill5': return '英语';
+			case 'experience.q42.skills.skill6': return '面向对象编程 (OOP)';
 			case 'experience.greenflux.title': return '移动应用开发工程师';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return '阿姆斯特丹，荷兰（混合工作模式）';
-			case 'experience.greenflux.duration': return '2024年2月 – 至今';
+			case 'experience.greenflux.duration': return '2024年2月 – 2025年6月';
 			case 'experience.greenflux.subtitle': return '开发电动汽车充电站的应用程序';
 			case 'experience.greenflux.skills.skill1': return 'Dart';
 			case 'experience.greenflux.skills.skill2': return 'Flutter';

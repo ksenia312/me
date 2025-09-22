@@ -22,7 +22,7 @@ class _DescriptionWidget extends StatelessWidget {
             runAlignment: WrapAlignment.start,
             children: [...skills.map((e) => _Skill(skill: e))],
           ),
-          SizedBox(height: AppResponsiveSizes.x3Large(context)),
+          if (achievements.isNotEmpty) SizedBox(height: AppResponsiveSizes.x3Large(context)),
           ...achievements
               .map(
                 (e) => Row(

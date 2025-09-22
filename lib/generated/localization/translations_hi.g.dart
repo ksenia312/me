@@ -150,6 +150,7 @@ class _LocaleKeysExperienceHi extends LocaleKeysExperienceEn {
 	@override String get title => 'अनुभव';
 	@override String get subtitle => 'उबाऊ हिस्सा';
 	@override late final _LocaleKeysExperienceCvHi cv = _LocaleKeysExperienceCvHi._(_root);
+	@override late final _LocaleKeysExperienceQ42Hi q42 = _LocaleKeysExperienceQ42Hi._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxHi greenflux = _LocaleKeysExperienceGreenfluxHi._(_root);
 	@override late final _LocaleKeysExperienceFriflexHi friflex = _LocaleKeysExperienceFriflexHi._(_root);
 	@override late final _LocaleKeysExperienceAgroStabHi agroStab = _LocaleKeysExperienceAgroStabHi._(_root);
@@ -163,7 +164,7 @@ class _LocaleKeysSummaryTotalExperienceHi extends LocaleKeysSummaryTotalExperien
 
 	// Translations
 	@override String get subtitle => 'कुल अनुभव';
-	@override String get content => 'Dart के अलावा, मेरे पास Kotlin, Swift, JavaScript, Python, C#, R और अन्य में अनुभव है';
+	@override String get content => 'मुझे Kotlin, Dart, Swift, JavaScript, Python, C#, R, और अन्य में अनुभव है';
 }
 
 // Path: summary.mobileExperience
@@ -264,6 +265,21 @@ class _LocaleKeysExperienceCvHi extends LocaleKeysExperienceCvEn {
 	@override String get button => 'खुला CV';
 }
 
+// Path: experience.q42
+class _LocaleKeysExperienceQ42Hi extends LocaleKeysExperienceQ42En {
+	_LocaleKeysExperienceQ42Hi._(LocaleKeysHi root) : this._root = root, super.internal(root);
+
+	final LocaleKeysHi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'मोबाइल एप्लिकेशन डेवलपर';
+	@override String get organization => 'Q42 Internet B.V.';
+	@override String get location => 'एम्स्टर्डम, नीदरलैंड्स (हाइब्रिड)';
+	@override String get duration => 'जून 2025 – वर्तमान';
+	@override String get subtitle => 'हाल ही में शुरू किया :)';
+	@override late final _LocaleKeysExperienceQ42SkillsHi skills = _LocaleKeysExperienceQ42SkillsHi._(_root);
+}
+
 // Path: experience.greenflux
 class _LocaleKeysExperienceGreenfluxHi extends LocaleKeysExperienceGreenfluxEn {
 	_LocaleKeysExperienceGreenfluxHi._(LocaleKeysHi root) : this._root = root, super.internal(root);
@@ -274,7 +290,7 @@ class _LocaleKeysExperienceGreenfluxHi extends LocaleKeysExperienceGreenfluxEn {
 	@override String get title => 'मोबाइल एप्लिकेशन डेवलपर';
 	@override String get organization => 'Greenflux Assets B.V.';
 	@override String get location => 'एम्स्टर्डम, नीदरलैंड्स (हाइब्रिड)';
-	@override String get duration => 'फरवरी 2024 – वर्तमान';
+	@override String get duration => 'फ़रवरी 2024 – जून 2025';
 	@override String get subtitle => 'इलेक्ट्रिक वाहन चार्जिंग के लिए एप्लिकेशन विकसित करना';
 	@override late final _LocaleKeysExperienceGreenfluxSkillsHi skills = _LocaleKeysExperienceGreenfluxSkillsHi._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxAchievementsHi achievements = _LocaleKeysExperienceGreenfluxAchievementsHi._(_root);
@@ -310,6 +326,21 @@ class _LocaleKeysExperienceAgroStabHi extends LocaleKeysExperienceAgroStabEn {
 	@override String get subtitle => 'स्मार्ट ग्रीनहाउस के लिए प्रशासनिक पैनल का विकास';
 	@override late final _LocaleKeysExperienceAgroStabSkillsHi skills = _LocaleKeysExperienceAgroStabSkillsHi._(_root);
 	@override late final _LocaleKeysExperienceAgroStabAchievementsHi achievements = _LocaleKeysExperienceAgroStabAchievementsHi._(_root);
+}
+
+// Path: experience.q42.skills
+class _LocaleKeysExperienceQ42SkillsHi extends LocaleKeysExperienceQ42SkillsEn {
+	_LocaleKeysExperienceQ42SkillsHi._(LocaleKeysHi root) : this._root = root, super.internal(root);
+
+	final LocaleKeysHi _root; // ignore: unused_field
+
+	// Translations
+	@override String get skill1 => 'Kotlin';
+	@override String get skill2 => 'Jetpack Compose';
+	@override String get skill3 => 'Figma';
+	@override String get skill4 => 'Git';
+	@override String get skill5 => 'अंग्रेज़ी';
+	@override String get skill6 => 'ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग (OOP)';
 }
 
 // Path: experience.greenflux.skills
@@ -443,7 +474,7 @@ extension on LocaleKeysHi {
 			case 'welcome.title': return 'मोबाइल डेवलपर';
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return 'कुल अनुभव';
-			case 'summary.totalExperience.content': return 'Dart के अलावा, मेरे पास Kotlin, Swift, JavaScript, Python, C#, R और अन्य में अनुभव है';
+			case 'summary.totalExperience.content': return 'मुझे Kotlin, Dart, Swift, JavaScript, Python, C#, R, और अन्य में अनुभव है';
 			case 'summary.mobileExperience.subtitle': return 'मोबाइल ऐप का अनुभव';
 			case 'summary.mobileExperience.content1': return 'मैं विकसित करता हूँ';
 			case 'summary.mobileExperience.content2': return 'वेब और मोबाइल';
@@ -491,10 +522,21 @@ extension on LocaleKeysHi {
 			case 'experience.subtitle': return 'उबाऊ हिस्सा';
 			case 'experience.cv.caption': return 'मेरी अभियान के बारे में और पढ़ने के लिए और अधिक जानें';
 			case 'experience.cv.button': return 'खुला CV';
+			case 'experience.q42.title': return 'मोबाइल एप्लिकेशन डेवलपर';
+			case 'experience.q42.organization': return 'Q42 Internet B.V.';
+			case 'experience.q42.location': return 'एम्स्टर्डम, नीदरलैंड्स (हाइब्रिड)';
+			case 'experience.q42.duration': return 'जून 2025 – वर्तमान';
+			case 'experience.q42.subtitle': return 'हाल ही में शुरू किया :)';
+			case 'experience.q42.skills.skill1': return 'Kotlin';
+			case 'experience.q42.skills.skill2': return 'Jetpack Compose';
+			case 'experience.q42.skills.skill3': return 'Figma';
+			case 'experience.q42.skills.skill4': return 'Git';
+			case 'experience.q42.skills.skill5': return 'अंग्रेज़ी';
+			case 'experience.q42.skills.skill6': return 'ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग (OOP)';
 			case 'experience.greenflux.title': return 'मोबाइल एप्लिकेशन डेवलपर';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'एम्स्टर्डम, नीदरलैंड्स (हाइब्रिड)';
-			case 'experience.greenflux.duration': return 'फरवरी 2024 – वर्तमान';
+			case 'experience.greenflux.duration': return 'फ़रवरी 2024 – जून 2025';
 			case 'experience.greenflux.subtitle': return 'इलेक्ट्रिक वाहन चार्जिंग के लिए एप्लिकेशन विकसित करना';
 			case 'experience.greenflux.skills.skill1': return 'Dart';
 			case 'experience.greenflux.skills.skill2': return 'Flutter';

@@ -20,7 +20,7 @@
   "summary": {
     "totalExperience": {
       "subtitle": "Gesamterfahrung",
-      "content": "Neben Dart habe ich Erfahrung mit Kotlin, Swift, JavaScript, Python, C#, R und mehr"
+      "content": "Ich habe Erfahrung mit Kotlin, Dart, Swift, JavaScript, Python, C#, R und mehr"
     },
     "mobileExperience": {
       "subtitle": "Erfahrung mit mobilen Apps",
@@ -91,11 +91,26 @@
       "caption": "Lesen Sie mehr über meine Erfahrung im Lebenslauf",
       "button": "Open CV"
     },
+    "q42": {
+      "title": "Mobile Application Entwickler",
+      "organization": "Q42 Internet B.V.",
+      "location": "Amsterdam, Niederlande (Hybrid)",
+      "duration": "Juni 2025 – Gegenwart",
+      "subtitle": "Kürzlich angefangen :)",
+      "skills": {
+        "skill1": "Kotlin",
+        "skill2": "Jetpack Compose",
+        "skill3": "Figma",
+        "skill4": "Git",
+        "skill5": "Englisch",
+        "skill6": "Objektorientierte Programmierung (OOP)"
+      }
+    },
     "greenflux": {
       "title": "Mobile Application Developerin",
       "organization": "Greenflux Assets B.V.",
       "location": "Amsterdam, Niederlande (Hybrid)",
-      "duration": "Februar 2024 – Gegenwart",
+      "duration": "Februar 2024 – Juni 2025",
       "subtitle": "Entwicklung von Anwendungen für Ladestationen für Elektrofahrzeuge",
       "skills": {
         "skill1": "Dart",

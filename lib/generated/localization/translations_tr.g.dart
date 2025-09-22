@@ -149,6 +149,7 @@ class _LocaleKeysExperienceTr extends LocaleKeysExperienceEn {
 	@override String get title => 'Deneyim';
 	@override String get subtitle => 'Sıkıcı kısım';
 	@override late final _LocaleKeysExperienceCvTr cv = _LocaleKeysExperienceCvTr._(_root);
+	@override late final _LocaleKeysExperienceQ42Tr q42 = _LocaleKeysExperienceQ42Tr._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxTr greenflux = _LocaleKeysExperienceGreenfluxTr._(_root);
 	@override late final _LocaleKeysExperienceFriflexTr friflex = _LocaleKeysExperienceFriflexTr._(_root);
 	@override late final _LocaleKeysExperienceAgroStabTr agroStab = _LocaleKeysExperienceAgroStabTr._(_root);
@@ -162,7 +163,7 @@ class _LocaleKeysSummaryTotalExperienceTr extends LocaleKeysSummaryTotalExperien
 
 	// Translations
 	@override String get subtitle => 'toplam deneyim';
-	@override String get content => 'Dart\'a ek olarak, Kotlin, Swift, JavaScript, Python, C#, R ve daha birçok dilde deneyimim var';
+	@override String get content => 'Kotlin, Dart, Swift, JavaScript, Python, C#, R ve daha fazlasında deneyimim var';
 }
 
 // Path: summary.mobileExperience
@@ -253,6 +254,21 @@ class _LocaleKeysExperienceCvTr extends LocaleKeysExperienceCvEn {
 	@override String get button => 'Açık CV';
 }
 
+// Path: experience.q42
+class _LocaleKeysExperienceQ42Tr extends LocaleKeysExperienceQ42En {
+	_LocaleKeysExperienceQ42Tr._(LocaleKeysTr root) : this._root = root, super.internal(root);
+
+	final LocaleKeysTr _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Mobil Uygulama Geliştiricisi';
+	@override String get organization => 'Q42 Internet B.V.';
+	@override String get location => 'Amsterdam, Hollanda (Hibrit)';
+	@override String get duration => 'Haziran 2025 – Günümüz';
+	@override String get subtitle => 'Yeni başladım :)';
+	@override late final _LocaleKeysExperienceQ42SkillsTr skills = _LocaleKeysExperienceQ42SkillsTr._(_root);
+}
+
 // Path: experience.greenflux
 class _LocaleKeysExperienceGreenfluxTr extends LocaleKeysExperienceGreenfluxEn {
 	_LocaleKeysExperienceGreenfluxTr._(LocaleKeysTr root) : this._root = root, super.internal(root);
@@ -263,7 +279,7 @@ class _LocaleKeysExperienceGreenfluxTr extends LocaleKeysExperienceGreenfluxEn {
 	@override String get title => 'Mobil Uygulama Geliştiricisi';
 	@override String get organization => 'Greenflux Assets B.V.';
 	@override String get location => 'Amsterdam, Hollanda (Hibrit)';
-	@override String get duration => 'Şubat 2024 – Günümüz';
+	@override String get duration => 'Şubat 2024 – Haziran 2025';
 	@override String get subtitle => 'Elektrikli araç şarj istasyonları için uygulama geliştirme';
 	@override late final _LocaleKeysExperienceGreenfluxSkillsTr skills = _LocaleKeysExperienceGreenfluxSkillsTr._(_root);
 	@override late final _LocaleKeysExperienceGreenfluxAchievementsTr achievements = _LocaleKeysExperienceGreenfluxAchievementsTr._(_root);
@@ -299,6 +315,21 @@ class _LocaleKeysExperienceAgroStabTr extends LocaleKeysExperienceAgroStabEn {
 	@override String get subtitle => 'Akıllı seralar için yönetim paneli geliştirme';
 	@override late final _LocaleKeysExperienceAgroStabSkillsTr skills = _LocaleKeysExperienceAgroStabSkillsTr._(_root);
 	@override late final _LocaleKeysExperienceAgroStabAchievementsTr achievements = _LocaleKeysExperienceAgroStabAchievementsTr._(_root);
+}
+
+// Path: experience.q42.skills
+class _LocaleKeysExperienceQ42SkillsTr extends LocaleKeysExperienceQ42SkillsEn {
+	_LocaleKeysExperienceQ42SkillsTr._(LocaleKeysTr root) : this._root = root, super.internal(root);
+
+	final LocaleKeysTr _root; // ignore: unused_field
+
+	// Translations
+	@override String get skill1 => 'Kotlin';
+	@override String get skill2 => 'Jetpack Compose';
+	@override String get skill3 => 'Figma';
+	@override String get skill4 => 'Git';
+	@override String get skill5 => 'İngilizce';
+	@override String get skill6 => 'Nesne Yönelimli Programlama (OOP)';
 }
 
 // Path: experience.greenflux.skills
@@ -432,7 +463,7 @@ extension on LocaleKeysTr {
 			case 'welcome.title': return 'Mobil Geliştirici';
 			case 'welcome.subtitle': return 'Kseniia Nikitina';
 			case 'summary.totalExperience.subtitle': return 'toplam deneyim';
-			case 'summary.totalExperience.content': return 'Dart\'a ek olarak, Kotlin, Swift, JavaScript, Python, C#, R ve daha birçok dilde deneyimim var';
+			case 'summary.totalExperience.content': return 'Kotlin, Dart, Swift, JavaScript, Python, C#, R ve daha fazlasında deneyimim var';
 			case 'summary.mobileExperience.subtitle': return 'mobil uygulama deneyimi';
 			case 'summary.mobileExperience.content1': return 'Geliştiriyorum';
 			case 'summary.mobileExperience.content2': return 'web ve mobil';
@@ -479,10 +510,21 @@ extension on LocaleKeysTr {
 			case 'experience.subtitle': return 'Sıkıcı kısım';
 			case 'experience.cv.caption': return 'Daha fazla bilgi için CV\'de okuyun';
 			case 'experience.cv.button': return 'Açık CV';
+			case 'experience.q42.title': return 'Mobil Uygulama Geliştiricisi';
+			case 'experience.q42.organization': return 'Q42 Internet B.V.';
+			case 'experience.q42.location': return 'Amsterdam, Hollanda (Hibrit)';
+			case 'experience.q42.duration': return 'Haziran 2025 – Günümüz';
+			case 'experience.q42.subtitle': return 'Yeni başladım :)';
+			case 'experience.q42.skills.skill1': return 'Kotlin';
+			case 'experience.q42.skills.skill2': return 'Jetpack Compose';
+			case 'experience.q42.skills.skill3': return 'Figma';
+			case 'experience.q42.skills.skill4': return 'Git';
+			case 'experience.q42.skills.skill5': return 'İngilizce';
+			case 'experience.q42.skills.skill6': return 'Nesne Yönelimli Programlama (OOP)';
 			case 'experience.greenflux.title': return 'Mobil Uygulama Geliştiricisi';
 			case 'experience.greenflux.organization': return 'Greenflux Assets B.V.';
 			case 'experience.greenflux.location': return 'Amsterdam, Hollanda (Hibrit)';
-			case 'experience.greenflux.duration': return 'Şubat 2024 – Günümüz';
+			case 'experience.greenflux.duration': return 'Şubat 2024 – Haziran 2025';
 			case 'experience.greenflux.subtitle': return 'Elektrikli araç şarj istasyonları için uygulama geliştirme';
 			case 'experience.greenflux.skills.skill1': return 'Dart';
 			case 'experience.greenflux.skills.skill2': return 'Flutter';

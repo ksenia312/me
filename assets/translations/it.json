@@ -20,7 +20,7 @@
   "summary": {
     "totalExperience": {
       "subtitle": "esperienza totale",
-      "content": "Oltre a Dart, ho esperienza con Kotlin, Swift, JavaScript, Python, C#, R e altro"
+      "content": "Ho esperienza con Kotlin, Dart, Swift, JavaScript, Python, C#, R e altro"
     },
     "mobileExperience": {
       "subtitle": "esperienza in app mobile",
@@ -91,11 +91,26 @@
       "caption": "Leggi di più sulla mia esperienza nel CV",
       "button": "CV aperto"
     },
+    "q42": {
+      "title": "Sviluppatore di Applicazioni Mobili",
+      "organization": "Q42 Internet B.V.",
+      "location": "Amsterdam, Paesi Bassi (Ibrido)",
+      "duration": "Giugno 2025 – Presente",
+      "subtitle": "Iniziato di recente :)",
+      "skills": {
+        "skill1": "Kotlin",
+        "skill2": "Jetpack Compose",
+        "skill3": "Figma",
+        "skill4": "Git",
+        "skill5": "Inglese",
+        "skill6": "Programmazione Orientata agli Oggetti (OOP)"
+      }
+    },
     "greenflux": {
       "title": "Sviluppatrice di applicazioni mobili",
       "organization": "Greenflux Assets B.V.",
       "location": "Amsterdam, Paesi Bassi (ibrido)",
-      "duration": "Febbraio 2024 – Presente",
+      "duration": "Febbraio 2024 – Giugno 2025",
       "subtitle": "Sviluppo di applicazioni per stazioni di ricarica di veicoli elettrici",
       "skills": {
         "skill1": "Dart",

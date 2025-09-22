@@ -26,7 +26,7 @@ class _MainInfoWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Assets.icons.icLocation.svg(width: AppResponsiveSizes.large(context)),
+              Assets.icons.icOrganization.svg(width: AppResponsiveSizes.large(context)),
               SizedBox(width: AppResponsiveSizes.medium(context)),
               Flexible(child: Text(organization, style: context.textTheme.titleMedium)),
             ],

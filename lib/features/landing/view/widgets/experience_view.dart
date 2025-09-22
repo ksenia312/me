@@ -14,9 +14,28 @@ class ExperienceView extends StatelessWidget {
   Widget build(BuildContext context) {
     final experience = context.keys.experience;
     final greenflux = experience.greenflux;
+    final q42 = experience.q42;
     final friflex = experience.friflex;
     final agroStab = experience.agroStab;
 
+    final q42VM = ExperienceVM(
+      title: q42.title,
+      organization: q42.organization,
+      location: q42.location,
+      image: Assets.images.q42Image.svg(),
+      duration: q42.duration,
+      subtitle: q42.subtitle,
+      skills: [
+        q42.skills.skill1,
+        q42.skills.skill2,
+        q42.skills.skill3,
+        q42.skills.skill4,
+        q42.skills.skill5,
+        q42.skills.skill6,
+      ],
+      achievements: [],
+      order: ExperienceSectionOrder.first,
+    );
     final greenfluxVM = ExperienceVM(
       title: greenflux.title,
       organization: greenflux.organization,
@@ -49,7 +68,7 @@ class ExperienceView extends StatelessWidget {
         greenflux.achievements.achievement7,
         greenflux.achievements.achievement8,
       ],
-      order: ExperienceSectionOrder.first,
+      order: ExperienceSectionOrder.middle,
     );
     final friflexVM = ExperienceVM(
       title: friflex.title,
@@ -133,6 +152,7 @@ class ExperienceView extends StatelessWidget {
             alignment: AppTitleAlignment.left,
           ),
           SizedBox(height: AppResponsiveSizes.x3Large(context)),
+          ExperienceSection(vm: q42VM),
           ExperienceSection(vm: greenfluxVM),
           ExperienceSection(vm: friflexVM),
           ExperienceSection(vm: agroStabVM),

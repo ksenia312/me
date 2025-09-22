@@ -20,7 +20,7 @@
   "summary": {
     "totalExperience": {
       "subtitle": "总经验",
-      "content": "除了Dart，我还具有Kotlin、Swift、JavaScript、Python、C#、R等语言的经验"
+      "content": "我有 Kotlin、Dart、Swift、JavaScript、Python、C#、R 等多种语言的经验"
     },
     "mobileExperience": {
       "subtitle": "移动应用经验",
@@ -88,11 +88,26 @@
       "caption": "阅读更多关于我的经验的CV",
       "button": "开放CV"
     },
+    "q42": {
+      "title": "移动应用开发者",
+      "organization": "Q42 Internet B.V.",
+      "location": "阿姆斯特丹，荷兰（混合办公）",
+      "duration": "2025年6月 – 现在",
+      "subtitle": "最近开始 :)",
+      "skills": {
+        "skill1": "Kotlin",
+        "skill2": "Jetpack Compose",
+        "skill3": "Figma",
+        "skill4": "Git",
+        "skill5": "英语",
+        "skill6": "面向对象编程 (OOP)"
+      }
+    },
     "greenflux": {
       "title": "移动应用开发工程师",
       "organization": "Greenflux Assets B.V.",
       "location": "阿姆斯特丹，荷兰（混合工作模式）",
-      "duration": "2024年2月 – 至今",
+      "duration": "2024年2月 – 2025年6月",
       "subtitle": "开发电动汽车充电站的应用程序",
       "skills": {
         "skill1": "Dart",
